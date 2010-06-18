@@ -1,0 +1,18 @@
+==== MegaStore Functional Requirements ====
+
+- Order collection into DB
+- Order editing from UI
+- Compiling orders in bundles for fulfillment
+- Exporting order bundles to RussianPost software
+- Changing of orders status
+- Sending of notifications about order status change to users
+- Receiving of user answers to notifications
+- Integration with "Systema Sklad"
+- Search through orders
+- Decision making support
+    - What supplies to order, limited by money, time
+    - What maximum orders we can fulfill with current supplies
+    - Demand trends
+    - Automatic price regulations based on demand
+
+- Suggest products to user, based on behavior modelling

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<body>
+    <ui:composition template="/WEB-INF/template.xhtml">
+
+        <ui:define name="topnav"></ui:define>
+        <ui:define name="sidebar"></ui:define>
+
+        <ui:define name="body">
+                    <h1>Accept</h1>
+            <h:form>
+                <h:outputLabel for="orderNum" value="Order number:" />
+                <h:inputText id="orderNum" value="#{processOrder.orderNum}" />
+                
+                <h:commandButton action="#{processOrder.accept}"  value="Accept Order"  />
+                <h:commandButton action="cancel" value="Cancel" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>

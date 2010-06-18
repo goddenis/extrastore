@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+         
+    <listener>
+        <listener-class>org.jboss.seam.servlet.SeamListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>facelets.DEVELOPMENT</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.xhtml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.sun.faces.disableUnicodeEscaping</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    
+
+
+    <!-- Plugging the "Blue Sky" skin into the project -->
+    <context-param>
+        <param-name>org.richfaces.SKIN</param-name>
+        <param-value>DEFAULT</param-value>
+    </context-param>
+
+
+    <!-- Making the RichFaces skin spread to standard HTML controls -->
+    <context-param>
+        <param-name>org.richfaces.CONTROL_SKINNING</param-name>
+        <param-value>enable</param-value>
+    </context-param>
+
+
+    <!-- Defining and mapping the RichFaces filter -->
+    <filter>
+        <display-name>RichFaces Filter</display-name>
+        <filter-name>richfaces</filter-name>
+        <filter-class>org.ajax4jsf.Filter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>richfaces</filter-name>
+        <servlet-name>Faces Servlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+
+    
+
+    <filter>
+        <filter-name>Seam Filter</filter-name>
+        <filter-class>org.jboss.seam.servlet.SeamFilter</filter-class>
+        <init-param>
+            <!-- Store uploaded files as temporary files on disk,
+            rather than byte arrays in memory. -->
+            <param-name>createTempFiles</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>maxRequestSize</param-name>
+            <param-value>1048576</param-value>
+        </init-param>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>Seam Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> 
+
+    <filter>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+
+        <!--
+        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>DEBUG</param-value>
+        </init-param>
+        <init-param>
+            <param-name>statusPath</param-name>
+            <param-value>/status</param-value>
+        </init-param>
+        -->
+        
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.seam</url-pattern>
+    </servlet-mapping>
+
+
+    
+    <security-constraint> 
+        <display-name>Restrict XHTML Documents</display-name>
+        <web-resource-collection>
+            <web-resource-name>XHTML</web-resource-name>
+            <url-pattern>*.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>NONE</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <session-config>
+        <session-timeout>60</session-timeout> 
+    </session-config>     
+
+</web-app>

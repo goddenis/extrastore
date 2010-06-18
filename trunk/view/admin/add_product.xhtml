@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:s="http://jboss.com/products/seam/taglib" xmlns:a="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+<body>
+<ui:composition template="/WEB-INF/admin_template.xhtml">
+    <ui:define name="topnav">
+        <ui:include src="/WEB-INF/incl/admin_nav.xhtml">
+            <ui:param name="page" value="admin"/>
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="sidebar">
+        <ui:include src="/WEB-INF/incl/sidebar.xhtml"/>
+    </ui:define>
+
+    <ui:define name="body">
+        <h1>Добавить товар</h1>
+
+        <h:form id="AddProductForm" styleClass="addressForm">
+
+            <h:messages globalOnly="true"/>
+            <s:validateAll>
+
+
+                <s:decorate template="../edit.xhtml" id="asin">
+                    <ui:define name="label">Артикул</ui:define>
+                    <h:inputText value="#{addProduct.product.ASIN}" size="6"
+                                 title="Например: KZ0072" required="true">
+                        <a:support event="onblur" reRender="asin"/>
+                    </h:inputText>
+                </s:decorate>
+
+
+                <s:decorate template="../edit.xhtml" id="title">
+                    <ui:define name="label">Название</ui:define>
+                    <h:inputText value="#{addProduct.product.title}" size="54"
+                                 title="Например: Японские ананасы-камикадзе" required="true">
+                        <a:support event="onblur" reRender="title"/>
+                    </h:inputText>
+                </s:decorate>
+
+ <style type="text/css">
+.top {
+    vertical-align: top;
+
+}
+.info {
+    height: 202px;
+    overflow: auto;
+}
+</style>
+
+                <s:label styleClass="label"><s:span styleClass="required">*</s:span>Изображение</s:label>
+            </s:validateAll>
+
+
+ <h:panelGrid columns="2" columnClasses="top,top">
+            <rich:fileUpload fileUploadListener="#{addProduct.listener}"
+                maxFilesQuantity="#{addProduct.uploadsAvailable}"
+                id="upload"
+                immediateUpload="false"
+                acceptedTypes="jpg, gif, png, bmp">
+                <a4j:support event="onuploadcomplete" reRender="uploadInfo" />
+            </rich:fileUpload>
+            <h:panelGroup id="uploadInfo">
+                <rich:panel bodyClass="info">
+                    <f:facet name="header">
+                        <h:outputText value="Загруженые изображения" />
+                    </f:facet>
+                    <h:outputText value="Нет загруженных изображений"
+                        rendered="#{addProduct.size==0}" />
+                    <rich:dataGrid columns="1" value="#{addProduct.files}"
+                        var="file" rowKeyVar="row">
+                        <rich:panel bodyClass="rich-laguna-panel-no-header">
+                            <h:panelGrid columns="2">
+                                <a4j:mediaOutput element="img" mimeType="#{file.mime}"
+                                    createContent="#{addProduct.paint}" value="#{row}"
+                                    style="width:100px; height:100px;" cacheable="false">
+                                    <f:param value="#{addProduct.timeStamp}" name="time"/>
+                                </a4j:mediaOutput>
+                                <h:panelGrid columns="2">
+                                    <h:outputText value="Имя файла:" />
+                                    <h:outputText value="#{file.name}" />
+                                    <h:outputText value="Размер файла :" />
+                                    <h:outputText value="#{file.length} байт" />
+                                </h:panelGrid>
+                            </h:panelGrid>
+                        </rich:panel>
+                    </rich:dataGrid>
+                </rich:panel>
+                <rich:spacer height="3"/>
+                <br />
+                <a4j:commandButton action="#{addProduct.clearUploadData}"
+                    reRender="uploadInfo, upload" value="Очистить загруженные изображения"
+                    rendered="#{addProduct.size>0}" />
+            </h:panelGroup>
+        </h:panelGrid>
+
+<s:validateAll>                
+
+                <s:decorate template="../edit.xhtml" id="category">
+                    <ui:define name="label">Категории</ui:define>
+                    <h:selectManyMenu value="#{addProduct.selCategories}" required="true"
+                                      style="width: 480px; font-size: 115%;">
+                        <s:convertEntity/>
+                        <s:selectItems value="#{allCategories}"
+                                       var="category"
+                                       label="#{category.name}"/>
+
+                        <a:support event="onblur" reRender="category"/>
+                    </h:selectManyMenu>
+                </s:decorate>
+
+
+                <s:decorate template="../edit.xhtml" id="description">
+                    <ui:define name="label">Описание</ui:define>
+                    <h:inputTextarea value="#{addProduct.product.description}" rows="9"
+                                     cols="65" required="true" title="Например: Очень сладкие апельсины."
+                                     style="font-size: 100%;">
+                        <a:support event="onblur" reRender="description"/>
+                    </h:inputTextarea>
+                </s:decorate>
+
+
+                <s:decorate template="../edit.xhtml" id="price">
+                    <ui:define name="label">Цена</ui:define>
+                    <h:inputText value="#{addProduct.product.price}" size="6"
+                                 title="Например: 99" required="true">
+                        <a:support event="onblur" reRender="price"/>
+                    </h:inputText> руб.
+                </s:decorate>
+
+
+            </s:validateAll>
+
+            <h:commandButton id="SubmitProductButton"
+                             type="submit"
+                             action="#{addProduct.save}"
+                             value="Сохранить"/>
+
+
+        </h:form>
+
+
+    </ui:define>
+</ui:composition>
+</body>
+</html>
+
+
+
+

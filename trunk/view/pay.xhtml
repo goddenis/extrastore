@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<body>
+    <ui:composition template="/WEB-INF/template.xhtml">
+        <ui:define name="topnav">
+        </ui:define>
+
+        <ui:define name="sidebar">
+        </ui:define>
+
+        <ui:define name="body">
+            <h1>Выберите способ оплаты</h1>
+
+                <div style="width: 100%;">
+
+                    <f:subview id="no_order" rendered="#{currentOrder==null}">
+                        <p>You have no order.</p>
+                    </f:subview>
+
+
+                        <f:subview id="payview" rendered="#{currentOrder != null}">
+                            <h:form id="PayActionForm">
+
+                                <br />
+                                <h:commandButton id="BackButton"
+                                                 type="submit"
+                                                 action="back"
+                                                 value="Назад"  />
+
+                                &#160; &#160;
+                                <h:commandButton id="SubmitPayButton"
+                                                 type="submit"
+                                                 action="pay"
+                                                 value="Pay"  />
+                            </h:form>
+                        </f:subview>
+
+                    <f:subview id="notloggedin" rendered="#{!identity.loggedIn}">
+                        <p class="warning">You must be logged in to place an order</p>
+                    </f:subview>
+                </div>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>

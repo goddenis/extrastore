@@ -1,0 +1,21 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:s="http://jboss.com/products/seam/taglib">
+
+    <ul id="AdminNavigation">
+        <li id="page_admin"><s:link id="ManageOrders" view="/admin/admin.xhtml" value="Manage Orders" propagation="none"/></li>
+        <li id="page_process"><s:link id="ProcessStatus" view="/admin/process.xhtml" value="Process Status" propagation="none"/></li>
+        <li id="page_add"><s:link id="AddProduct" view="/admin/add_product.xhtml" value="Добавить товар" propagation="none"/></li>
+        <li id="page_products"><s:link id="ProductsList" view="/admin/products.xhtml" value="Товары" propagation="none"/></li>
+
+    </ul>
+
+    <script type="text/javascript" language="JavaScript">
+        function setClass(id, className) {
+            obj = document.getElementById(id);
+            if (obj != null) {
+                obj.className = className;
+            }
+        }
+        setClass("page_" + "#{page}", "current");
+    </script>
+</div>

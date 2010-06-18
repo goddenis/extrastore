@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:s="http://jboss.com/products/seam/taglib" xmlns:a="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich" xmlns:a4j="http://richfaces.org/a4j">
+<body>
+<ui:composition template="/WEB-INF/admin_template.xhtml">
+    <ui:define name="topnav">
+        <ui:include src="/WEB-INF/incl/admin_nav.xhtml">
+            <ui:param name="page" value="admin"/>
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="sidebar">
+        <ui:include src="/WEB-INF/incl/sidebar.xhtml"/>
+    </ui:define>
+
+    <ui:define name="body">
+        <h1>Товары</h1>
+
+        <h:form id="AddProductForm" styleClass="addressForm">
+
+            <h:messages globalOnly="true"/>
+            <s:validateAll />
+
+
+            <h:dataTable id="ProductsDataTable"
+                         value="#{products}" var="product">
+                <h:column id="orderColumn">
+                    <f:facet name="header">Номер</f:facet>
+                    #{product.productId}
+                </h:column>
+                <h:column id="productName">
+                    <f:facet name="header">Название</f:facet>
+                    #{product.title}
+                </h:column>
+                <h:column id="quantityColumn">
+                    <f:facet name="quantity">Количество</f:facet>
+                    #{product.inventory.quantity}
+                </h:column>
+                <h:column id="deleteProduct">
+                    <s:button id="DeleteButton" action="#{showproducts.deleteProduct}" value="Удалить" />
+                </h:column>
+
+            </h:dataTable>
+
+
+
+
+        </h:form>
+
+
+    </ui:define>
+</ui:composition>
+</body>
+</html>
+
+
+
+

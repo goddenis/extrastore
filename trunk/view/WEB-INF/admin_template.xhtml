@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:rich="http://richfaces.org/rich"
+      xml:lang="ru"
+      lang="ru">
+<f:view>
+
+    
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>
+            <ui:insert name="title">Товары для здоровья, спорта и фитнеса</ui:insert> — extrastore.ru
+        </title>
+        <link href="#{facesContext.externalContext.requestContextPath}/screen_.css" rel="stylesheet" type="text/css"/>
+        <link href="#{facesContext.externalContext.requestContextPath}/megastore.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+    <body>
+    <div id="box">
+
+        <div id="head">
+            <div id="logo">
+                    <s:link id="home" view="/browse.xhtml" propagation="none">
+                        <div id="shopname">extra<b>store</b>.ru</div>
+                    </s:link>
+
+                <h:form id="SearchForm">
+                    <h:inputText id="Query" value="#{search.searchQuery}" size="15" styleClass="search-input"/>
+
+                    <h:commandButton id="Search" action="#{search.doSearch}"
+                                     value="#{messages.searchButton}" styleClass="search-button"/>
+                </h:form>
+            </div>
+
+
+            <div id="menu">
+                <ui:insert name="topnav">
+                </ui:insert>
+            </div>
+
+
+        </div>
+
+        <div id="left-outer">
+            <div id="left" class="column">
+                <ui:insert name="sidebar">
+                </ui:insert>
+                <br/><br/>
+
+            </div>
+        </div>
+
+
+
+        <div id="content-outer">
+            <div id="content" class="column">
+
+                <div id="errors">
+                    <ui:insert name="errors">
+                        <!--<h:messages globalOnly="true"-->
+                                    <!--layout="table"-->
+                                    <!--styleClass="cntError"/>-->
+                    </ui:insert>
+                </div>
+
+                <ui:debug hotkey="D"/>
+                <ui:insert name="body">
+                    PAGE BODY
+                </ui:insert>
+
+
+            </div>
+            <!-- #content -->
+        </div>
+        <!-- #content-outer -->
+
+
+        <div id="foot">
+            <p id="contacts">
+                Телефон: 8 800 100 31 01<br/>
+                Эл. почта: <a href="mailto:order@extrastore.ru">order@extrastore.ru</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    </body>
+
+</f:view>
+</html>
+

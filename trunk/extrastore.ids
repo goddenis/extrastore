@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <DataSource DataSourceSourceName="LOCAL">
+    <option name="DRIVER_CLASS" value="com.mysql.jdbc.Driver" />
+    <option name="DATABASE_URL" value="jdbc:mysql://localhost:3306/registry" />
+    <option name="DRIVER_PATH" />
+    <option name="DATBASE_USERNAME" value="root" />
+    <option name="ENCODED_DATABASE_PASSWORD" value="df9b" />
+    <option name="DEFAULT_SCHEMA_NAME" />
+    <option name="TABLE_PATTERN" value="" />
+    <option name="UUID" value="dca67f59-637a-4397-9b28-6a1bb345f1d5" />
+    <option name="NAME" value="megastoreDatasource" />
+    <option name="DATABASE_PRODUCT_NAME" />
+    <option name="DATABASE_PRODUCT_VERSION" />
+    <TABLE_DATA>
+      <option name="NAME" value="goods" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="number" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="name" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="64" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="weight" />
+        <option name="SQL_TYPE" value="DOUBLE UNSIGNED" />
+        <option name="JDBC_TYPE" value="8" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="22" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="num_boxed" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="price" />
+        <option name="SQL_TYPE" value="DOUBLE UNSIGNED" />
+        <option name="JDBC_TYPE" value="8" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="22" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="description" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="256" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="available" />
+        <option name="SQL_TYPE" value="BIT" />
+        <option name="JDBC_TYPE" value="-7" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="0" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="goods2sales" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="good_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="sale_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="quantity" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="price" />
+        <option name="SQL_TYPE" value="FLOAT UNSIGNED" />
+        <option name="JDBC_TYPE" value="7" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="12" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="members" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="sponsor_id" />
+        <option name="SQL_TYPE" value="INT" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="name" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="24" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="surname" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="24" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="patronymic" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="24" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="registration_date" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="birth_date" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="passport_number" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="12" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="passport_issued_date" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="passport_issued_by" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="32" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="post_index" />
+        <option name="SQL_TYPE" value="CHAR" />
+        <option name="JDBC_TYPE" value="1" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="6" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="region" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="32" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="town" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="16" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="address" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="64" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="phone" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="16" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="email" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="32" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="post_addresses" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="client_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="index" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="city" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="32" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="street" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="32" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="house" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="6" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="apartment" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="5" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="post_clients" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="name" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="128" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="email" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="64" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="post_containers" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="order_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="type" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="post_containers_types" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="name" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="128" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="width" />
+        <option name="SQL_TYPE" value="FLOAT UNSIGNED" />
+        <option name="JDBC_TYPE" value="7" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="12" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="height" />
+        <option name="SQL_TYPE" value="FLOAT UNSIGNED" />
+        <option name="JDBC_TYPE" value="7" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="12" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="depth" />
+        <option name="SQL_TYPE" value="FLOAT UNSIGNED" />
+        <option name="JDBC_TYPE" value="7" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="12" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="post_items" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="order_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="container_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="goods_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="quantity" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="post_orders" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="sale_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="date_received" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="date_sent" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="date_paid" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="recepient" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="128" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="post_index" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="address" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="192" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="phone" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="32" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="email" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="48" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="accepted" />
+        <option name="SQL_TYPE" value="BIT" />
+        <option name="JDBC_TYPE" value="-7" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="0" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="comment" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="128" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="payment_type" />
+        <option name="SQL_TYPE" value="TINYINT" />
+        <option name="JDBC_TYPE" value="-6" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="3" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="is_reserved" />
+        <option name="SQL_TYPE" value="BIT" />
+        <option name="JDBC_TYPE" value="-7" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="0" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="post_phones" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="client_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="phone" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="18" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="role" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="name" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="16" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="role2user" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="member_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="role_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <RELATIONSHIP_ELEMENT>
+        <option name="RELATION_NAME" value="FK118DDC4729527129" />
+        <option name="TARGET_TABLE" value="users" />
+        <option name="TARGET_SCHEMA" />
+        <option name="TARGET_CATALOG" value="registry" />
+        <option name="TARGET_COLUMN" value="id" />
+        <option name="SOURCE_COLUMN" value="member_id" />
+        <option name="CASCADE_REMOVE" value="false" />
+        <option name="CASCADE_UPDATE" value="false" />
+      </RELATIONSHIP_ELEMENT>
+      <RELATIONSHIP_ELEMENT>
+        <option name="RELATION_NAME" value="FK118DDC472B61F278" />
+        <option name="TARGET_TABLE" value="role" />
+        <option name="TARGET_SCHEMA" />
+        <option name="TARGET_CATALOG" value="registry" />
+        <option name="TARGET_COLUMN" value="id" />
+        <option name="SOURCE_COLUMN" value="role_id" />
+        <option name="CASCADE_REMOVE" value="false" />
+        <option name="CASCADE_UPDATE" value="false" />
+      </RELATIONSHIP_ELEMENT>
+      <RELATIONSHIP_ELEMENT>
+        <option name="RELATION_NAME" value="FK118DDC47AA687B5B" />
+        <option name="TARGET_TABLE" value="users" />
+        <option name="TARGET_SCHEMA" />
+        <option name="TARGET_CATALOG" value="registry" />
+        <option name="TARGET_COLUMN" value="id" />
+        <option name="SOURCE_COLUMN" value="member_id" />
+        <option name="CASCADE_REMOVE" value="false" />
+        <option name="CASCADE_UPDATE" value="false" />
+      </RELATIONSHIP_ELEMENT>
+      <RELATIONSHIP_ELEMENT>
+        <option name="RELATION_NAME" value="FK118DDC47AC77FCAA" />
+        <option name="TARGET_TABLE" value="role" />
+        <option name="TARGET_SCHEMA" />
+        <option name="TARGET_CATALOG" value="registry" />
+        <option name="TARGET_COLUMN" value="id" />
+        <option name="SOURCE_COLUMN" value="role_id" />
+        <option name="CASCADE_REMOVE" value="false" />
+        <option name="CASCADE_UPDATE" value="false" />
+      </RELATIONSHIP_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="sales" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="member_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="date" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="storage_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="storage_remains" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="storage_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="good_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="quantity" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="true" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="reserved_quantity" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="storage_uploads" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="user_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="storage_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="good_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="quantity" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="date" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <RELATIONSHIP_ELEMENT>
+        <option name="RELATION_NAME" value="FK403CF0CE51A2C08A" />
+        <option name="TARGET_TABLE" value="users" />
+        <option name="TARGET_SCHEMA" />
+        <option name="TARGET_CATALOG" value="registry" />
+        <option name="TARGET_COLUMN" value="id" />
+        <option name="SOURCE_COLUMN" value="user_id" />
+        <option name="CASCADE_REMOVE" value="false" />
+        <option name="CASCADE_UPDATE" value="false" />
+      </RELATIONSHIP_ELEMENT>
+      <RELATIONSHIP_ELEMENT>
+        <option name="RELATION_NAME" value="FK403CF0CED08CB658" />
+        <option name="TARGET_TABLE" value="users" />
+        <option name="TARGET_SCHEMA" />
+        <option name="TARGET_CATALOG" value="registry" />
+        <option name="TARGET_COLUMN" value="id" />
+        <option name="SOURCE_COLUMN" value="user_id" />
+        <option name="CASCADE_REMOVE" value="false" />
+        <option name="CASCADE_UPDATE" value="false" />
+      </RELATIONSHIP_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="storages" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="address" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="64" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="creation_date" />
+        <option name="SQL_TYPE" value="DATE" />
+        <option name="JDBC_TYPE" value="91" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="phone" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="16" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="email" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="32" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="holder_id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <TABLE_DATA>
+      <option name="NAME" value="users" />
+      <option name="SCHEMA" />
+      <option name="CATALOG" value="registry" />
+      <option name="TYPE" value="TABLE" />
+      <FIELD_ELEMENT>
+        <option name="NAME" value="id" />
+        <option name="SQL_TYPE" value="INT UNSIGNED" />
+        <option name="JDBC_TYPE" value="4" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="true" />
+        <option name="LENGTH" value="10" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="login" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="16" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+      <FIELD_ELEMENT>
+        <option name="NAME" value="password" />
+        <option name="SQL_TYPE" value="VARCHAR" />
+        <option name="JDBC_TYPE" value="12" />
+        <option name="TYPE" />
+        <option name="PRIMARY" value="false" />
+        <option name="LENGTH" value="16" />
+        <option name="PRECISION" value="0" />
+        <option name="NULLABLE" value="false" />
+      </FIELD_ELEMENT>
+    </TABLE_DATA>
+    <libraries>
+      <library>
+        <url>jar://D:/proj/megastore/lib/mysql-connector.jar!/</url>
+      </library>
+    </libraries>
+  </DataSource>
+</component>
+

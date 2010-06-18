@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<body>
+    <ui:composition template="/WEB-INF/template.xhtml">
+        <ui:define name="topnav">
+            <ui:include src="/WEB-INF/incl/store_nav.xhtml">
+                <ui:param name="page" value="orders" />
+            </ui:include>
+        </ui:define>
+
+       
+        <ui:define name="body">
+            <h1>Ваши заказы</h1>
+
+            <f:subview id="no_orders" rendered="#{!orders.rowAvailable}">
+                <p>У вас пока нет заказов.</p>
+                <p>←<s:link view="/browse.xhtml">Вернуться в магазин</s:link></p>
+            </f:subview>
+
+            <f:subview id="ordersummary" rendered="#{orders.rowAvailable}">
+
+            <h:dataTable id="OrdersDataTable"
+                         value="#{orders}" var="item"
+                         styleClass="dvdtable"
+                         headerClass="dvdtablehead"
+                         rowClasses="dvdtableodd,dvdtableeven"
+                         columnClasses="dvdtablecol">
+                <h:column id="orderColumn">
+                    <f:facet name="header">Номер</f:facet>
+                    #{item.orderId}
+                </h:column>
+                <h:column id="orderDateColumn">
+                    <f:facet name="header">Дата</f:facet>
+                    <h:outputText id="OrderDateValue" value="#{item.orderDate}">
+                        <s:convertDateTime type="both" dateStyle="full"/>
+                    </h:outputText>
+                </h:column>
+                <h:column id="statusColumn">
+                    <f:facet name="header">Статус</f:facet>
+                    #{item.status}
+                </h:column>
+
+                <h:column id="column4">
+                    <s:button id="ShowDetailsButton" action="#{showorders.detailOrder}" value="Информация" />
+                </h:column>
+                <h:column id="column5">
+                    <s:button id="CancelButton" action="#{showorders.cancelOrder}" value="Отменить" rendered="#{item.open}"/>
+                </h:column>
+            </h:dataTable>
+
+            <f:subview id="orderdetails" rendered="#{myorder != null}">
+                <div class="cntInfo">
+                    <h2>Информация о заказе</h2>
+
+                    <h:panelGrid id="OrderDetailsPanel" columns="2">
+                        <h:outputText id="OrderIdText" value="Номер:" />
+                        <h:outputText id="OrderIdValue" value="#{myorder.orderId}" />
+
+                        <h:outputText id="StatusText" value="Статус:" />
+                        <h:panelGroup id="StatusPanel">
+                            <h:outputText id="StatusValue" value="#{myorder.status}" />
+                            <h:outputText id="TrackingNumber"
+                                          value="(Идентификатор посылки: #{myorder.trackingNumber})"
+                                          rendered="#{myorder.statusCode==3}"/>
+                        </h:panelGroup>
+
+                        <h:outputText id="OrderDateText" value="Дата заказа:" />
+                        <h:outputText id="OrderDateValue" value="#{myorder.orderDate}">
+                            <s:convertDateTime type="both" dateStyle="full"/>
+                        </h:outputText>
+
+                        <h:outputText id="OrderAddressText" value="Адрес доставки:" />
+                        <h:outputText id="OrderAddressValue" value="#{myorder.customer.address1}" />
+
+
+
+                        <h:outputText id="TotalAmountText" value="Полная стоимость:" />
+                        <h:outputText id="TotalAmountValue" value="#{myorder.totalAmount}">
+                            <f:convertNumber type="currency" currencySymbol="руб." />
+                        </h:outputText>
+                    </h:panelGrid>
+
+
+                    <div class="cntInfo">
+                        <h:dataTable id="OrderLinesDataTable"
+                                     value="#{myorder.orderLines}" var="item"
+                                     styleClass="dvdtable"
+                                     headerClass="dvdtablehead"
+                                     rowClasses="dvdtableodd,dvdtableeven"
+                                     columnClasses="dvdtablecol">
+                            <h:column id="titleColumn">
+                                <f:facet name="header">
+                                    <h:outputText id="TitleText" value="#{messages.cartTitleColumn}" />
+                                </f:facet>
+                                <h:outputText id="TitleValue" value="#{item.product.title}" />
+                            </h:column>
+                            <h:column id="actorColumn">
+                                <f:facet name="header">
+                                    <h:outputText id="ActorText" value="#{messages.cartActorColumn}" />
+                                </f:facet>
+                                <h:outputText id="ActorValue" value="#{item.product.actors[0].name}" />
+                            </h:column>
+                            <h:column id="quantityColumn">
+                                <f:facet name="header">
+                                    <h:outputText id="QuantityText" value="#{messages.cartQuantityColumn}" />
+                                </f:facet>
+                                <h:outputText id="QuantityValue" value="#{item.quantity}" />
+                            </h:column>
+                            <h:column id="priceColumn">
+                                <f:facet name="header">
+                                    <h:outputText id="PriceText" value="#{messages.cartPriceColumn}" />
+                                </f:facet>
+                                <h:outputText id="PriceValue" value="#{item.product.price}">
+                                    <f:convertNumber type="currency" currencySymbol="руб." />
+                                </h:outputText>
+                            </h:column>
+                        </h:dataTable>
+                    </div>
+                </div>
+            </f:subview>
+        </f:subview>
+        </ui:define>
+    </ui:composition>
+</body>
+</html>
+
+
+
+

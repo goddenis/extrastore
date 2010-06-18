@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="FILTER_RESOLVED_ITEMS" value="false" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="c19f718d-1b95-4479-b352-3e46d4231f24" name="Default" comment="">
+      <change type="MOVED" beforePath="D:\proj\extrastore\resources\megastore-dev-ds.xml" afterPath="$PROJECT_DIR$/resources/extrastore-dev-ds.xml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Checkout.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Checkout.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Actor.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Actor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\AllTest.xml" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/AllTest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/AdminShowOrdersAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ShowOrders.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ShowOrders.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Customer.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Customer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/WEB-INF/components.xml" afterPath="$PROJECT_DIR$/resources/WEB-INF/components.xml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\UploadedFile.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/UploadedFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/messages_ru.properties" afterPath="$PROJECT_DIR$/resources/messages_ru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/WEB-INF/incl/sidebar.xhtml" afterPath="$PROJECT_DIR$/view/WEB-INF/incl/sidebar.xhtml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\FullTextSearchAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/FullTextSearchAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\SearchTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/SearchTest.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\AfterShippingAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/AfterShippingAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" afterPath="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\OrderApprovalDecision.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/OrderApprovalDecision.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Product.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Product.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Accept.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Accept.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Inventory.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Inventory.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\resources\megastore-prod-ds.xml" afterPath="$PROJECT_DIR$/resources/extrastore-prod-ds.xml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Browse.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Browse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/idea/persistence.xml" afterPath="$PROJECT_DIR$/resources/idea/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/resources/hibernate.cfg.xml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\resources\megastore-test-ds.xml" afterPath="$PROJECT_DIR$/resources/extrastore-test-ds.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/idea/components.properties" afterPath="$PROJECT_DIR$/resources/idea/components.properties" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\CheckoutAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/CheckoutAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Products.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Products.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ProcessOrderAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ProcessOrderAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\BestSellersTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/BestSellersTest.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\StoreManager.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/StoreManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" afterPath="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Ship.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Ship.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\AuthenticatorAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/AuthenticatorAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\OrderLine.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/OrderLine.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\BrowseAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/BrowseAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/admin.xhtml" afterPath="$PROJECT_DIR$/view/admin/admin.xhtml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ShowOrdersAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ShowOrdersAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Authenticator.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Authenticator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hot/ru" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Indexer.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Indexer.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\AddProductAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/AddProductAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/application.xml" afterPath="$PROJECT_DIR$/resources/META-INF/application.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ProcessDefinitionSwitcher.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ProcessDefinitionSwitcher.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Admin.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Admin.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\OrderApprovalDecisionTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/OrderApprovalDecisionTest.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ShipAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ShipAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\ProductUnitTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/ProductUnitTest.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ProductsAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ProductsAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hot/ru/versilov" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\EditCustomer.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/EditCustomer.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\FileUploadBean.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/FileUploadBean.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\AddProduct.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/AddProduct.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\IndexerAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/IndexerAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Category.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Category.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\StoreManagerTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/StoreManagerTest.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ShoppingCartBean.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ShoppingCartBean.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\EditCustomerAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/EditCustomerAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ShoppingCart.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ShoppingCart.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\FullTextSearch.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/FullTextSearch.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/admin/orders.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/persistence-dev.xml" afterPath="$PROJECT_DIR$/resources/META-INF/persistence-dev.xml" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ShipperAssignment.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ShipperAssignment.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\OrderTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/OrderTest.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\EventListener.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/EventListener.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\ProcessOrder.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/ProcessOrder.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\InsufficientQuantityException.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/InsufficientQuantityException.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\AcceptAction.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/AcceptAction.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\User.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/User.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\StoreManagerBean.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/StoreManagerBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/AdminShowOrders.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\InventoryTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/InventoryTest.java" />
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\test\ru\versilov\megastore\test\ProcessOrderTest.java" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/ProcessOrderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/jboss-app.xml" afterPath="$PROJECT_DIR$/resources/META-INF/jboss-app.xml" />
+    </list>
+    <list id="ce7bece6-9bdc-4244-bcb8-63fd442bb93d" name="Logout facility" comment="Logout facility" />
+    <list id="d7639013-3de4-467b-bbbf-d54682157346" name="Fine up checkout pages" comment="Fine up checkout pages" />
+    <list id="653ffa5e-c114-49ae-83df-31f50dd081a3" name="Order to basket" comment="Address page updated. Almost ready." />
+    <list id="cdca4ddd-35de-4382-9bec-accb3a67611d" name="IDEA files" comment="Do not commit them." />
+    <list id="44ed2771-06ee-4946-a8cf-ce70ed897c8b" name="User registration" comment="Some late update." />
+    <list id="97965b36-62bf-430d-b50e-eae4591bced5" name="Make nice error reporting in forms" comment="Make nice error reporting in forms" />
+    <list id="f4b97a1a-09ea-4003-9cc5-73ac78ef2b3b" name="Auth page in checkout" comment="Auth page in checkout.&#10;Resolved scenarios with user login and relogin.&#10;Login panel added." />
+    <list id="accac147-90fa-4e42-9aea-1072b5369456" name="Product page makeup" comment="Product page makeup" />
+    <list id="4ae71409-7a18-4fad-a234-d518c424fbe4" name="Show orders" comment="Show orders page brought to life and translated.&#10;Process creation action updated.">
+      <change type="MOVED" beforePath="D:\proj\extrastore\src\main\ru\versilov\megastore\Order.java" afterPath="$PROJECT_DIR$/src/main/ru/versilov/extrastore/Order.java" />
+    </list>
+    <list id="34c0ea30-c6bb-41e0-b11a-8678af562f74" name="Make MySQL feel Russian through UTF-8" comment="" />
+    <list id="62d4d97d-c41e-4a40-af24-17a4e0e6c43c" name="Category Aliases like &quot;http://localhost/browse/films/action&quot;" comment="Category Aliases like &quot;http://localhost/browse/films/action&quot;&#10;and also conversationId parameter renamed to cid for brevity." />
+    <list id="a6d478b4-58c4-42da-a49b-9c31c6681b77" name="Confirm page" comment="Confirm page and order complete pages are finished (almost)." />
+    <ignored path="$USER_HOME_GRIFFON$/" />
+    <ignored path="bootstrap/tmp/" />
+    <ignored path="$USER_HOME_GRAILS$/" />
+    <ignored path="megastore.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="bootstrap/data/" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/megastore$TestMegaStore.ic" NAME="TestMegaStore Coverage Results" MODIFIED="1255551341031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ru.versilov.megastore.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/IndexerAction.java" line="64" class="ru.versilov.extrastore.IndexerAction" package="ru.versilov.extrastore">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
+  <component name="FacetEditorsStateManager">
+    <facet-type-state type="javaeeApplication">
+      <facet-type>
+        <state>
+          <packaging-tree show-included-content="false" show-library-files="false" />
+        </state>
+      </facet-type>
+    </facet-type-state>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="megastore" />
+  </component>
+  <component name="FavoritesProjectViewPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" />
+          <option name="myItemType" value="com.intellij.ide.favoritesTreeView.FavoritesTreeNodeDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+    <subPane subId="megastore">
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" />
+          <option name="myItemType" value="com.intellij.ide.favoritesTreeView.FavoritesTreeNodeDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="FileColors" enabled="true" enabledForTabs="true" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="IndexerAction.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/IndexerAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="47" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/WEB-INF/web.xml">
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="45" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/META-INF/application.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="18" selection-start="615" selection-end="615" vertical-scroll-proportion="0.39586028">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.app.viewlets.ApplicationModuleGeneralEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="extrastore-dev-ds.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/extrastore-dev-ds.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="50" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persistence-dev.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-dev.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="33" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persistence.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/idea/persistence.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="32" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="components.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/WEB-INF/components.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="33" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/view/browse.xhtml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/OrderTest.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/application.xml" />
+        <option value="$PROJECT_DIR$/resources/META-INF/jboss-app.xml" />
+        <option value="$PROJECT_DIR$/.project" />
+        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/seam-gen.properties" />
+        <option value="$PROJECT_DIR$/resources/messages_ru.properties" />
+        <option value="$PROJECT_DIR$/resources/idea/components.properties" />
+        <option value="$PROJECT_DIR$/resources/WEB-INF/components.xml" />
+        <option value="$PROJECT_DIR$/resources/META-INF/persistence-dev.xml" />
+        <option value="$PROJECT_DIR$/resources/megastore-dev-ds.xml" />
+        <option value="$PROJECT_DIR$/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/resources/idea/persistence.xml" />
+        <option value="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" />
+        <option value="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" />
+        <option value="$PROJECT_DIR$/resources/extrastore-dev-ds.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="J2EEProjectPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.javaee.module.view.nodes.JavaeeProjectNodeDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+    <subPane subId="file" />
+    <subPane subId="deploy">
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.javaee.module.view.nodes.JavaeeProjectNodeDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="PackagesPane">
+    <subPane />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="false" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="megastore" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers ProjectPane="true" />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages ProjectPane="true" />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Production">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/test">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Favorites">
+        <subPane subId="megastore" />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="107" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="78" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="31" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="101" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="options.splitter.main.proportions" value="0.24929178" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="84" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="89" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="89" />
+    <property name="last_opened_file_path" value="D:\proj\seamBook\ch4\SeamCalculatorFacelets" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="764" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="90" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="89" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="107" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="781" />
+    <property name="options.splitter.details.proportions" value="0.28101265" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="RESOURCE_BUNDLE_SPLITTER_PROPORTION" value="0.5" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="TEMP_MODULE_EXPLODED_DIR_FOR_megastore/web/Web" value="C:\Documents and Settings\Catalyst\Local Settings\Temp\webExplodedDir4677438449499823396tmp" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.versilov.megastore" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.versilov.megastore.test" />
+      <recent name="ru.versilov.megastore" />
+      <recent name="ru.versilov.megadvdstore" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JBoss Server.JBoss 4">
+    <configuration default="false" name="ProcessOrderTest" type="TestNG" factoryName="TestNG" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="emma" />
+      <extension name="snapshooter" />
+      <module name="megastore" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="ru.versilov.megastore.test" />
+      <option name="MAIN_CLASS_NAME" value="ru.versilov.megastore.test.ProcessOrderTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Remote">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <option name="JNDI_PORT" value="1099" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <option name="SERVER" value="" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" class_name="" html_or_swf_file_path="" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" port="0" run_mode="HtmlOrSwfFile" scope="Class" socket_policy_port="0" url_to_launch="http://">
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" runner="emma" />
+      <extension name="snapshooter" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="emma" />
+      <extension name="snapshooter" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" runner="emma" />
+      <extension name="snapshooter" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="JBoss 4" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 4.2.3.GA">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dsun.lang.ClassLoader.allowArraySyntax=true -server -mx1024M -XX:MaxPermSize=512M" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <deployment>
+        <artifact name="extrastore:javaEEApplication exploded">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" value="default" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="3620" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="2429" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/../jboss-4.2.3.GA/bin/run.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" -c default" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/../jboss-4.2.3.GA/bin/shutdown.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" -s jnp://localhost:1099 -S" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:/bin/run.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:/bin/shutdown.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" -s jnp://localhost:2147483647 -S" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="extrastore:javaEEApplication exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="TestNG.ProcessOrderTest" />
+      <item index="1" class="java.lang.String" itemvalue="JBoss Server.JBoss 4" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.TestExtraStore" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ScopeViewComponent">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="Root">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="megastore">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="megastore">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+    <subPane subId="Problems" />
+    <subPane subId="Production">
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="Root">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="megastore">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="megastore">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+    <subPane subId="All">
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="Root">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="megastore">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="megastore">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="SHOW_INHERITED" />
+  </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="UPDATE_RUN_STATUS" value="false" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <configuration useDefault="true">C:\Documents and Settings\Catalyst\Application Data\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\proj\extrastore" />
+          <option name="myCopyRoot" value="D:\proj\extrastore" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\proj\extrastore" />
+          <option name="myCopyRoot" value="D:\proj\extrastore" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <changelist id="c19f718d-1b95-4479-b352-3e46d4231f24" name="Default" comment="" />
+      <created>1261084585078</created>
+      <updated>1276841950156</updated>
+    </task>
+    <task id="LOCAL-00001" summary="IDEA files">
+      <changelist id="cdca4ddd-35de-4382-9bec-accb3a67611d" name="IDEA files" comment="Do not commit them." />
+      <created>1261084574093</created>
+      <updated>1262892561031</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Category Aliases like &quot;http://localhost/browse/films/action&quot;">
+      <changelist id="62d4d97d-c41e-4a40-af24-17a4e0e6c43c" name="Category Aliases like &quot;http://localhost/browse/films/action&quot;" comment="" />
+      <changelist id="62d4d97d-c41e-4a40-af24-17a4e0e6c43c" name="Category Aliases like &quot;http://localhost/browse/films/action&quot;" comment="" />
+      <created>1262712093328</created>
+      <updated>1262890377265</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Product page makeup">
+      <changelist id="accac147-90fa-4e42-9aea-1072b5369456" name="Product page makeup" comment="" />
+      <changelist id="accac147-90fa-4e42-9aea-1072b5369456" name="Product page makeup" comment="" />
+      <created>1262925719968</created>
+      <updated>1263071196734</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Order to basket">
+      <changelist id="653ffa5e-c114-49ae-83df-31f50dd081a3" name="Order to basket" comment="" />
+      <changelist id="653ffa5e-c114-49ae-83df-31f50dd081a3" name="Order to basket" comment="" />
+      <created>1263071196703</created>
+      <updated>1265307535140</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Make MySQL feel Russian through UTF-8">
+      <changelist id="34c0ea30-c6bb-41e0-b11a-8678af562f74" name="Make MySQL feel Russian through UTF-8" comment="" />
+      <changelist id="34c0ea30-c6bb-41e0-b11a-8678af562f74" name="Make MySQL feel Russian through UTF-8" comment="" />
+      <created>1265307535093</created>
+      <updated>1265309089046</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Auth page in checkout">
+      <changelist id="f4b97a1a-09ea-4003-9cc5-73ac78ef2b3b" name="Auth page in checkout" comment="" />
+      <changelist id="f4b97a1a-09ea-4003-9cc5-73ac78ef2b3b" name="Auth page in checkout" comment="" />
+      <created>1265309089031</created>
+      <updated>1265952115421</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fine up checkout pages">
+      <changelist id="d7639013-3de4-467b-bbbf-d54682157346" name="Fine up checkout pages" comment="" />
+      <changelist id="d7639013-3de4-467b-bbbf-d54682157346" name="Fine up checkout pages" comment="" />
+      <created>1265952115390</created>
+      <updated>1266008349437</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Make nice error reporting in forms">
+      <changelist id="97965b36-62bf-430d-b50e-eae4591bced5" name="Make nice error reporting in forms" comment="" />
+      <changelist id="97965b36-62bf-430d-b50e-eae4591bced5" name="Make nice error reporting in forms" comment="" />
+      <created>1266008349390</created>
+      <updated>1266262162405</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Confirm page">
+      <changelist id="a6d478b4-58c4-42da-a49b-9c31c6681b77" name="Confirm page" comment="" />
+      <changelist id="a6d478b4-58c4-42da-a49b-9c31c6681b77" name="Confirm page" comment="" />
+      <created>1266262162358</created>
+      <updated>1266962670968</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Show orders">
+      <changelist id="4ae71409-7a18-4fad-a234-d518c424fbe4" name="Show orders" comment="" />
+      <changelist id="4ae71409-7a18-4fad-a234-d518c424fbe4" name="Show orders" comment="" />
+      <created>1266962670921</created>
+      <updated>1274452133796</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Logout facility">
+      <changelist id="ce7bece6-9bdc-4244-bcb8-63fd442bb93d" name="Logout facility" comment="" />
+      <changelist id="ce7bece6-9bdc-4244-bcb8-63fd442bb93d" name="Logout facility" comment="" />
+      <created>1267042134406</created>
+      <updated>1267212680609</updated>
+    </task>
+    <task id="LOCAL-00014" summary="User registration">
+      <changelist id="44ed2771-06ee-4946-a8cf-ce70ed897c8b" name="User registration" comment="" />
+      <changelist id="44ed2771-06ee-4946-a8cf-ce70ed897c8b" name="User registration" comment="" />
+      <created>1267212680562</created>
+      <updated>1274452099921</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Admin orders list">
+      <created>1274452133781</created>
+      <updated>1276595775196</updated>
+    </task>
+    <task active="true" id="LOCAL-00016" summary="Products CRUD">
+      <created>1276841950140</created>
+      <updated>1276841950171</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <option name="createChangelist" value="false" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-4" y="26" width="1288" height="1002" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20081301" sideWeight="0.5498242" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2195122" sideWeight="0.5205158" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2195122" sideWeight="0.52520514" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1699187" sideWeight="0.58499414" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5193435" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1024" y="164" width="1019" height="754" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Seam" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2195122" sideWeight="0.49706918" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2195122" sideWeight="0.52520514" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23252033" sideWeight="0.54513484" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.657277" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399187" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2195122" sideWeight="0.5205158" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2195122" sideWeight="0.47948417" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.512" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298122" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4419695" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942554" sideWeight="0.0" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45422536" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiple changes." />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <confirmMoveToFailedCommit value="1" />
+    <MESSAGE value="Removed redundant string." />
+    <MESSAGE value="Now can browse by category!&#10;Tests not written yet." />
+    <MESSAGE value="Limited products list to 27 products for total query (no category selected)." />
+    <MESSAGE value="Category Aliases like &quot;http://localhost/browse/films/action&quot;&#10;and also conversationId parameter renamed to cid for brevity." />
+    <MESSAGE value="Changed schema file location to appropriate (jboss.org instead of jboss.com)" />
+    <MESSAGE value="Alias added (forgot to commit before)" />
+    <MESSAGE value="CSS externalized to megastore.css" />
+    <MESSAGE value="Comments added." />
+    <MESSAGE value="Disabled russian text crambling through disabling Unicode escaping." />
+    <MESSAGE value="Product page makeup" />
+    <MESSAGE value="Order to basket" />
+    <MESSAGE value="Search updated to simple field under logo.&#10;Search page separated from 'browse' page." />
+    <MESSAGE value="Some alignment." />
+    <MESSAGE value="Checkout without registration made possible.&#10;A lot of minor changes I can't remember." />
+    <MESSAGE value="Address page updated. Almost ready." />
+    <MESSAGE value="Auth page in checkout" />
+    <MESSAGE value="Auth page in checkout.&#10;Resolved scenarios with user login and relogin.&#10;Login panel added." />
+    <MESSAGE value="Fine up checkout pages" />
+    <MESSAGE value="Make nice error reporting in forms" />
+    <MESSAGE value="Confirm page and order complete pages are finished (almost)." />
+    <MESSAGE value="Show orders page brought to life and translated.&#10;Process creation action updated." />
+    <MESSAGE value="Logout facility" />
+    <MESSAGE value="User authentication with check, if user already exists.&#10;Call phone update.&#10;Email notification sent for new order." />
+    <MESSAGE value="Some late update." />
+    <MESSAGE value="Multiple changes." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="megastore" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="megastore" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="true" />
+    <buildFile url="file://$PROJECT_DIR$/build.xml">
+      <antCommandLine value="" />
+      <runInBackground value="true" />
+      <targetFilters>
+        <filter targetName="archive" isVisible="true" />
+        <filter targetName="buildtest" isVisible="true" />
+        <filter targetName="check-deployed" isVisible="true" />
+        <filter targetName="clean" isVisible="true" />
+        <filter targetName="clear-profile-artifacts" isVisible="true" />
+        <filter targetName="compile" isVisible="true" />
+        <filter targetName="compiletest" isVisible="true" />
+        <filter targetName="copyclasses" isVisible="true" />
+        <filter targetName="copytestclasses" isVisible="true" />
+        <filter targetName="datasource" isVisible="false" />
+        <filter targetName="deploy" isVisible="true" />
+        <filter targetName="ear" isVisible="true" />
+        <filter targetName="explode" isVisible="true" />
+        <filter targetName="groovy.compile" isVisible="false" />
+        <filter targetName="groovy.compiletest" isVisible="true" />
+        <filter targetName="groovy.copy" isVisible="false" />
+        <filter targetName="init" isVisible="true" />
+        <filter targetName="jar" isVisible="true" />
+        <filter targetName="javadoc" isVisible="false" />
+        <filter targetName="purge" isVisible="true" />
+        <filter targetName="redeploy" isVisible="true" />
+        <filter targetName="reexplode" isVisible="true" />
+        <filter targetName="restart" isVisible="true" />
+        <filter targetName="restart-deployed" isVisible="true" />
+        <filter targetName="restart-exploded" isVisible="true" />
+        <filter targetName="stage" isVisible="false" />
+        <filter targetName="test" isVisible="true" />
+        <filter targetName="undeploy" isVisible="true" />
+        <filter targetName="unexplode" isVisible="true" />
+        <filter targetName="validate" isVisible="true" />
+        <filter targetName="validateConfiguration" isVisible="false" />
+        <filter targetName="war" isVisible="true" />
+      </targetFilters>
+      <treeView value="true" />
+      <verbose value="true" />
+      <viewClosedWhenNoErrors value="false" />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../jbpm-4.1/install/build.xml">
+      <antCommandLine value="" />
+      <runInBackground value="true" />
+      <targetFilters />
+      <treeView value="true" />
+      <verbose value="true" />
+      <viewClosedWhenNoErrors value="false" />
+    </buildFile>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/resources/extrastore-prod-ds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/extrastore-test-ds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/FullTextSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="17" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/FullTextSearchAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="13" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="51" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/idea/import.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-prod.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="36" selection-start="1782" selection-end="1782" vertical-scroll-proportion="-10.666667" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="32" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.6264295" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/IndexerAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="47" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/WEB-INF/web.xml">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="45" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/extrastore-dev-ds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="50" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-dev.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="33" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/idea/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="32" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/WEB-INF/components.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="33" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="18" selection-start="615" selection-end="615" vertical-scroll-proportion="0.39586028">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.app.viewlets.ApplicationModuleGeneralEditorProvider">
+        <state />
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl>
+              <option name="proportions">
+                <list>
+                  <option value="0.2" />
+                  <option value="0.5" />
+                </list>
+              </option>
+            </SplitterProportionsDataImpl>
+          </splitter-proportions>
+          <last-edited>extrastore:javaEEApplication exploded</last-edited>
+          <settings />
+        </UIState>
+      </state>
+      <state key="Copyright.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl />
+          </splitter-proportions>
+        </UIState>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <UIState>
+          <splitter-proportions>
+            <SplitterProportionsDataImpl>
+              <option name="proportions">
+                <list>
+                  <option value="0.2" />
+                </list>
+              </option>
+            </SplitterProportionsDataImpl>
+          </splitter-proportions>
+          <settings />
+        </UIState>
+      </state>
+    </states>
+  </component>
+</project>
+

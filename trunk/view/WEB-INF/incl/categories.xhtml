@@ -1,0 +1,16 @@
+<div class="menu" id="left-menu"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:s="http://jboss.com/products/seam/taglib"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html" xmlns:rich="http://richfaces.org/rich">
+
+
+        <ui:repeat value="#{allCategories}" var="category">
+            <span class="pointer red">&gt;</span>
+            <s:link view="/browse.xhtml"><f:param name="name" value="#{category.alias}" />#{category.name}</s:link><br/>
+        </ui:repeat>
+
+
+    
+</div>

@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:s="http://jboss.com/products/seam/taglib">
+<body>
+<ui:composition template="/WEB-INF/template.xhtml">
+    <ui:define name="topnav">
+        <ui:include src="/WEB-INF/incl/store_nav.xhtml">
+            <ui:param name="page" value="cart"/>
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="sidebar">
+        <!--<ui:include src="/WEB-INF/incl/login.xhtml" />-->
+        <ui:include src="/WEB-INF/incl/categories.xhtml" />
+        
+    </ui:define>
+
+    <ui:define name="body">
+        <h1>Корзина</h1>
+
+        <p>
+
+        </p>
+
+        <f:subview id="emptycart" rendered="#{empty cart.cart}">
+            <p>Ваша корзина пуста.</p>
+
+            <h:form id="EmptyCartForm">
+                <h:commandButton id="ContinueShoppingButton" action="browse" value="Продолжить покупки"/>
+            </h:form>
+        </f:subview>
+
+        <f:subview id="cartdetails" rendered="#{not empty cart.cart}">
+            <h:form id="CartDetailsForm">
+                <h:dataTable id="CartItemsTable"
+                             value="#{cart.cart}" var="item"
+                             styleClass="carttable"
+                             headerClass="carttablehead"
+                             rowClasses="carttableodd,carttableeven"
+                             columnClasses="carttablecol" cellspacing="0">
+
+                    <h:column id="titleColumn" headerClass="cart-good-header">
+                        <f:facet name="header">
+                            <h:outputText id="TitleText" value="#{messages.cartTitleColumn}"/>
+                        </f:facet>
+                        <h:graphicImage url="#{item.product.imageURL}" rendered="#{item.product.imageURL != null}" alt="#{item.product.title}" styleClass="cartproductimage" width="81px" />
+                        <s:link id="TitleLink" style="font-size: 12pt;" view="/product.xhtml">
+                            <f:param id="ProductIdForTextLink" name="id" value="#{item.product.productId}"/>
+                            #{item.product.title}
+                        </s:link><br />
+                        <span class="pricelabel">
+                         <h:outputText value="#{item.product.price}">
+                            <f:convertNumber type="currency" currencySymbol="руб."/>
+                        </h:outputText>
+                        </span>
+
+                    </h:column>
+
+                    <h:column id="quantityColumn" headerClass="cart-quantity-header">
+                        <f:facet name="header">
+                            <h:outputText id="QuantityText" value="#{messages.cartQuantityColumn}"/>
+                        </f:facet>
+                        <div style="text-align: right;">
+                        <h:inputText id="QuantityValueText" value="#{item.quantity}" size="3" style="font-size: 108%; text-align: right;"/>
+                        </div>
+                    </h:column>
+
+                    <h:column id="priceColumn" headerClass="cart-price-header">
+                        <f:facet name="header">
+                            <h:outputText id="PriceText" value="#{messages.cartPriceColumn}"/>
+                        </f:facet>
+                        <div class="price">
+                             <h:outputText value="#{item.quantity*item.product.price}">
+                                <f:convertNumber type="currency" currencySymbol="руб."/>
+                            </h:outputText>
+                       
+                        </div>
+                    </h:column>
+
+                </h:dataTable>
+
+                <div id="cart-bottom">
+                Стоимость без учёта доставки: #{cart.subtotal} руб.<br/><br />
+                <h:commandButton id="UpdateCartButton"
+                                 action="#{cart.updateCart}"
+                                 value="#{messages.checkoutUpdateButton}"/>&#160;
+                <h:commandButton id="PurchaseButton"
+                                 action="#{checkout.createOrder}"
+                                 value="#{messages.checkoutPurchaseButton}"/>
+                </div>
+            </h:form>
+
+        </f:subview>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

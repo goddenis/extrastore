@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m:message xmlns="http://www.w3.org/1999/xhtml"
+           xmlns:m="http://jboss.com/products/seam/mail"
+           xmlns:h="http://java.sun.com/jsf/html"
+           xmlns:rich="http://richfaces.org/rich"
+           xmlns:f="http://java.sun.com/jsf/core"
+           charset="UTF-8">
+
+    <!--<m:from name="#{currentOrder.customer.firstName}" address="#{currentOrder.customer.email}" rendered="#{currentOrder.customer.email.length() > 0}" />-->
+    <m:from name="#{currentOrder.customer.firstName}" address="order@sozvezdie-store.ru" rendered="#{currentOrder.customer.email == null}"/>
+    <m:from name="#{currentOrder.customer.firstName}" address="#{currentOrder.customer.email}" rendered="#{currentOrder.customer.email != null}" />
+    <m:to>order@sozvezdie-store.ru</m:to>
+    <m:subject>Заказ для #{currentOrder.customer.firstName}</m:subject>
+    <m:body>
+        <rich:dataTable value="#{currentOrder.orderLines}" var="orderLine" id="goodsTable">
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Наименование"/>
+                </f:facet>
+                <h:outputText value="#{orderLine.product.ASIN} "/><h:outputText value="#{orderLine.product.title}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Количество"/>
+                </f:facet>
+                <h:outputText value="#{orderLine.quantity}" rendered="#{orderLine.quantity > 0}"/>
+            </h:column>
+        </rich:dataTable>
+        <p>Всего: #{currentOrder.itemsQuantity} пачек.</p>
+        <p></p>
+        <p>Адрес: #{currentOrder.customer.zip}, #{currentOrder.customer.address1}</p>
+        <p>Получатель: #{currentOrder.customer.firstName}</p>
+        <p>Телефон: #{currentOrder.customer.phone}</p>
+        <p>Эл. почта: #{currentOrder.customer.email}</p>
+        <p><h:outputText value="Комментарий: #{currentOrder.comment}" rendered="#{currentOrder.comment.length() > 0}" /></p>
+        <p>Номер заказа: #{currentOrder.orderId}</p>
+        <p>Полная стоимость: #{currentOrder.totalAmount} руб.</p>
+        <p>С уважением,<br/>Служба доставки "Созвездие"</p>
+    </m:body>
+</m:message>
