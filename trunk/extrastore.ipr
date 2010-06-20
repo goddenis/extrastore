@@ -336,7 +336,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/extrastore.iml" filepath="$PROJECT_DIR$/extrastore.iml" />
-      <module fileurl="file://$PROJECT_DIR$/megastore.iml" filepath="$PROJECT_DIR$/megastore.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">

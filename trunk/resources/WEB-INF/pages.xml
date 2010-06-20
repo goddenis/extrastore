@@ -29,6 +29,18 @@
         <!--</navigation>-->
     <!--</page>-->
 
+    <page view-id="/admin/productslist.xhtml">
+        <param name="firstResult" value="#{productsList.firstResult}"/>
+        <param name="sort" value="#{productsList.orderColumn}"/>
+        <param name="dir" value="#{productsList.orderDirection}"/>
+        <param name="logic" value="#{productsList.restrictionLogicOperator}"/>
+
+        <param name="from"/>
+        <param name="description" value="#{productsList.product.description}"/>
+        <param name="name" value="#{productsList.product.title}"/>
+    </page>
+
+
     <page view-id="/complete.xhtml">
         <end-conversation />
     </page>
