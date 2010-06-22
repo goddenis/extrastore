@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="c19f718d-1b95-4479-b352-3e46d4231f24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/WEB-INF/pages.xml" afterPath="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/productslist.xhtml" afterPath="$PROJECT_DIR$/view/admin/productslist.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrastore.iws" afterPath="$PROJECT_DIR$/extrastore.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/admin.xhtml" afterPath="$PROJECT_DIR$/view/admin/admin.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" afterPath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
     </list>
     <list id="ce7bece6-9bdc-4244-bcb8-63fd442bb93d" name="Logout facility" comment="Logout facility" />
     <list id="d7639013-3de4-467b-bbbf-d54682157346" name="Fine up checkout pages" comment="Fine up checkout pages" />
@@ -127,7 +127,7 @@
       <file leaf-file-name="ProductsList.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="45" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
+            <state line="29" column="52" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,16 +139,16 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-10.2">
+            <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-54.1">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.xhtml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="admin.xhtml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin/admin.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="42" selection-start="414" selection-end="414" vertical-scroll-proportion="0.26444444">
+            <state line="75" column="41" selection-start="3947" selection-end="3947" vertical-scroll-proportion="-16.32">
               <folding />
             </state>
           </provider>
@@ -163,10 +163,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="productslist.xhtml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="productslist.xhtml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/admin/productslist.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="0" selection-end="454" vertical-scroll-proportion="-6.12">
+            <state line="104" column="73" selection-start="4635" selection-end="4635" vertical-scroll-proportion="0.6422222">
               <folding />
             </state>
           </provider>
@@ -192,15 +192,15 @@
         <option value="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" />
         <option value="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" />
         <option value="$PROJECT_DIR$/resources/extrastore-dev-ds.xml" />
-        <option value="$PROJECT_DIR$/resources/WEB-INF/urlrewrite.xml" />
         <option value="$PROJECT_DIR$/view/layout/template.xhtml" />
         <option value="$PROJECT_DIR$/view/layout/menu.xhtml" />
         <option value="$PROJECT_DIR$/resources/messages_ru.properties" />
-        <option value="$PROJECT_DIR$/view/admin/productslist.xhtml" />
-        <option value="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
         <option value="$PROJECT_DIR$/view/admin/productslist.page.xml" />
         <option value="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
         <option value="$PROJECT_DIR$/view/admin/admin.xhtml" />
+        <option value="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
+        <option value="$PROJECT_DIR$/resources/WEB-INF/urlrewrite.xml" />
+        <option value="$PROJECT_DIR$/view/admin/productslist.xhtml" />
       </list>
     </option>
   </component>
@@ -401,7 +401,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -415,11 +415,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1003,7 +1003,7 @@
     <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switched admin default page to new template." />
+    <option name="LAST_COMMIT_MESSAGE" value="View product now works OKay." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1017,7 +1017,6 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="Limited products list to 27 products for total query (no category selected)." />
     <MESSAGE value="Category Aliases like &quot;http://localhost/browse/films/action&quot;&#10;and also conversationId parameter renamed to cid for brevity." />
     <MESSAGE value="Changed schema file location to appropriate (jboss.org instead of jboss.com)" />
     <MESSAGE value="Alias added (forgot to commit before)" />
@@ -1042,6 +1041,7 @@
     <MESSAGE value="Multiple changes." />
     <MESSAGE value="Pagination made working, through adding parameters to pages.xml file." />
     <MESSAGE value="Switched admin default page to new template." />
+    <MESSAGE value="View product now works OKay." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1116,14 +1116,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/messages_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="26" selection-end="26" vertical-scroll-proportion="0.11670481" />
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/src/jboss-seam-sources.jar!/org/jboss/seam/framework/EntityQuery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="156" column="24" selection-start="3677" selection-end="3677" vertical-scroll-proportion="6.4841075" />
@@ -1189,14 +1181,16 @@
         <state line="372" column="58" selection-start="10684" selection-end="10684" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="45" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="30" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/admin.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="41" selection-start="3947" selection-end="3947" vertical-scroll-proportion="-16.32">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/WEB-INF/pages.xml">
@@ -1204,21 +1198,28 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-10.2">
+        <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-54.1">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="52" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/WEB-INF/urlrewrite.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="62" selection-start="366" selection-end="366" vertical-scroll-proportion="0.45102042">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin/productslist.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="0" selection-end="454" vertical-scroll-proportion="-6.12">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/admin.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="414" selection-end="414" vertical-scroll-proportion="0.26444444">
+        <state line="104" column="73" selection-start="4635" selection-end="4635" vertical-scroll-proportion="0.6422222">
           <folding />
         </state>
       </provider>

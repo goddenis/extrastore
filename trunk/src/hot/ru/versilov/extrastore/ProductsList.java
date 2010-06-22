@@ -21,8 +21,8 @@ public class ProductsList extends EntityQuery<Product> {
 	private static final String EJBQL = "select product from Product product";
 
 	private static final String[] RESTRICTIONS = {
-			"lower(product.description) like lower(concat(#{productsList.product.description},'%'))",
-			"lower(product.title) like lower(concat(#{productsList.product.title},'%'))",};
+			"lower(product.description) like lower(concat('%',#{productsList.product.description},'%'))",
+			"lower(product.title) like lower(concat('%',#{productsList.product.title},'%'))",};
 
 	private Product product = new Product();
 
