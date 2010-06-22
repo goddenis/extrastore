@@ -25,7 +25,7 @@
     	</classes>
     </test>
 
-    <test name="ExtraaStore: new">
+    <test name="ExtraStore: new">
         <classes>
             <class name="ru.versilov.extrastore.test.InventoryTest" />
             <class name="ru.versilov.extrastore.test.OrderApprovalDecisionTest" />

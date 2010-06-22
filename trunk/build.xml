@@ -422,6 +422,8 @@
                 <exclude name="import*.sql"/>
                 <exclude name="${project.name}-*-ds.xml"/>
                 <exclude name="components-*.properties"/>
+                <exclude name="idea"/>
+                <exclude name="doc"/>
             </fileset>
             <fileset dir="${basedir}/view"/>
         </copy>

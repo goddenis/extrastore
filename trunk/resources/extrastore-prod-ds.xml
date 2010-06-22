@@ -6,8 +6,8 @@
 
 <datasources>
     <local-tx-datasource>
-        <jndi-name>megastoreDatasource</jndi-name>
-        <connection-url>jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}megastore</connection-url>
+        <jndi-name>extrastoreDatasource</jndi-name>
+        <connection-url>jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}extrastore</connection-url>
         <!-- <connection-url>jdbc:hsqldb:.</connection-url> -->
         <driver-class>org.hsqldb.jdbcDriver</driver-class>
         <user-name>sa</user-name>
@@ -15,8 +15,8 @@
     </local-tx-datasource>
 
     <mbean code="org.jboss.jdbc.HypersonicDatabase" 
-           name="jboss:service=Hypersonic,database=megastore">
-        <attribute name="Database">megastore</attribute>
+           name="jboss:service=Hypersonic,database=extrastore">
+        <attribute name="Database">extrastore</attribute>
         <attribute name="InProcessMode">true</attribute>
     </mbean>  
     

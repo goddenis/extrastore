@@ -102,7 +102,7 @@
                         value="#{_product.productId}"/>
             </s:link>
             #{' '}
-            <s:link view="/productEdit.xhtml"
+            <s:link view="/admin/productEdit.xhtml"
                    value="Edit"
              propagation="none"
                       id="productEdit"
@@ -152,7 +152,7 @@
     </div>
 
     <s:div styleClass="actionButtons" rendered="#{empty from}">
-        <s:button view="/productEdit.xhtml"
+        <s:button view="/admin/productEdit.xhtml"
                     id="create"
            propagation="none"
                  value="Create product">

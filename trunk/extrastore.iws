@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="c19f718d-1b95-4479-b352-3e46d4231f24" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/extrastore-test-ds.xml" afterPath="$PROJECT_DIR$/resources/extrastore-test-ds.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/WEB-INF/pages.xml" afterPath="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/AllTest.xml" afterPath="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/AllTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/productslist.xhtml" afterPath="$PROJECT_DIR$/view/admin/productslist.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrastore.iws" afterPath="$PROJECT_DIR$/extrastore.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" afterPath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/extrastore-prod-ds.xml" afterPath="$PROJECT_DIR$/resources/extrastore-prod-ds.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/admin/product.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" afterPath="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" afterPath="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsHome.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/admin/productEdit.xhtml" />
     </list>
     <list id="ce7bece6-9bdc-4244-bcb8-63fd442bb93d" name="Logout facility" comment="Logout facility" />
     <list id="d7639013-3de4-467b-bbbf-d54682157346" name="Fine up checkout pages" comment="Fine up checkout pages" />
@@ -16,8 +25,8 @@
     <list id="44ed2771-06ee-4946-a8cf-ce70ed897c8b" name="User registration" comment="Some late update." />
     <list id="97965b36-62bf-430d-b50e-eae4591bced5" name="Make nice error reporting in forms" comment="Make nice error reporting in forms" />
     <list id="f4b97a1a-09ea-4003-9cc5-73ac78ef2b3b" name="Auth page in checkout" comment="Auth page in checkout.&#10;Resolved scenarios with user login and relogin.&#10;Login panel added." />
-    <list id="accac147-90fa-4e42-9aea-1072b5369456" name="Product page makeup" comment="Product page makeup" />
     <list id="4ae71409-7a18-4fad-a234-d518c424fbe4" name="Show orders" comment="Show orders page brought to life and translated.&#10;Process creation action updated." />
+    <list id="accac147-90fa-4e42-9aea-1072b5369456" name="Product page makeup" comment="Product page makeup" />
     <list id="34c0ea30-c6bb-41e0-b11a-8678af562f74" name="Make MySQL feel Russian through UTF-8" comment="" />
     <list id="62d4d97d-c41e-4a40-af24-17a4e0e6c43c" name="Category Aliases like &quot;http://localhost/browse/films/action&quot;" comment="Category Aliases like &quot;http://localhost/browse/films/action&quot;&#10;and also conversationId parameter renamed to cid for brevity." />
     <list id="a6d478b4-58c4-42da-a49b-9c31c6681b77" name="Confirm page" comment="Confirm page and order complete pages are finished (almost)." />
@@ -124,49 +133,55 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProductsList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="52" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
+            <state line="425" column="41" selection-start="17862" selection-end="17862" vertical-scroll-proportion="-10.72">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/WEB-INF/pages.xml">
-          <provider editor-type-id="com.intellij.seam.fileEditor.PagesGraphFileEditorProvider">
-            <state />
-          </provider>
+      <file leaf-file-name="components-test.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/components-test.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-54.1">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.xhtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/admin.xhtml">
+      <file leaf-file-name="components-dev.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/components-dev.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="41" selection-start="3947" selection-end="3947" vertical-scroll-proportion="-16.32">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/Product.java">
+      <file leaf-file-name="persistence.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/idea/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="30" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0">
+            <state line="9" column="35" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="productslist.xhtml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/admin/productslist.xhtml">
+      <file leaf-file-name="import.sql" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/idea/import.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="73" selection-start="4635" selection-end="4635" vertical-scroll-proportion="0.6422222">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="import-dev.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/import-dev.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -185,22 +200,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/resources/META-INF/persistence-dev.xml" />
-        <option value="$PROJECT_DIR$/resources/megastore-dev-ds.xml" />
-        <option value="$PROJECT_DIR$/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/resources/idea/persistence.xml" />
-        <option value="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" />
-        <option value="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" />
-        <option value="$PROJECT_DIR$/resources/extrastore-dev-ds.xml" />
-        <option value="$PROJECT_DIR$/view/layout/template.xhtml" />
-        <option value="$PROJECT_DIR$/view/layout/menu.xhtml" />
         <option value="$PROJECT_DIR$/resources/messages_ru.properties" />
         <option value="$PROJECT_DIR$/view/admin/productslist.page.xml" />
-        <option value="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
         <option value="$PROJECT_DIR$/view/admin/admin.xhtml" />
         <option value="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
         <option value="$PROJECT_DIR$/resources/WEB-INF/urlrewrite.xml" />
+        <option value="$PROJECT_DIR$/view/admin/product.xhtml" />
         <option value="$PROJECT_DIR$/view/admin/productslist.xhtml" />
+        <option value="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
+        <option value="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsHome.java" />
+        <option value="$PROJECT_DIR$/view/admin/productEdit.xhtml" />
+        <option value="$PROJECT_DIR$/src/test/ru/versilov/extrastore/test/AllTest.xml" />
+        <option value="$PROJECT_DIR$/resources/META-INF/persistence-prod.xml" />
+        <option value="$PROJECT_DIR$/resources/extrastore-prod-ds.xml" />
+        <option value="$PROJECT_DIR$/resources/extrastore-test-ds.xml" />
+        <option value="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -401,6 +416,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -423,6 +492,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extrastore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane">
@@ -435,6 +540,7 @@
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="78" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="31" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="101" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
@@ -487,38 +593,7 @@
       <recent name="ru.versilov.megadvdstore" />
     </key>
   </component>
-  <component name="RunManager" selected="JBoss Server.JBoss 4">
-    <configuration default="false" name="ProcessOrderTest" type="TestNG" factoryName="TestNG" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" runner="emma" />
-      <extension name="snapshooter" />
-      <module name="megastore" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="ru.versilov.megastore.test" />
-      <option name="MAIN_CLASS_NAME" value="ru.versilov.megastore.test.ProcessOrderTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="TestNG.TestExtraStore">
     <configuration default="true" type="JBossConfiguration" factoryName="Remote">
       <option name="LOCAL" value="false" />
       <deployment />
@@ -746,10 +821,9 @@
         </option>
       </method>
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.ProcessOrderTest" />
-      <item index="1" class="java.lang.String" itemvalue="JBoss Server.JBoss 4" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.TestExtraStore" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JBoss Server.JBoss 4" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.TestExtraStore" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -963,7 +1037,8 @@
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2195122" sideWeight="0.5205158" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2195122" sideWeight="0.52520514" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1699187" sideWeight="0.58499414" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4419695" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1699187" sideWeight="0.60609615" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5298945" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1024" y="164" width="1019" height="754" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -985,7 +1060,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4419695" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298122" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45422536" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1116,110 +1190,114 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/src/jboss-seam-sources.jar!/org/jboss/seam/framework/EntityQuery.java">
+    <entry file="file://$PROJECT_DIR$/resources/extrastore-prod-ds.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="24" selection-start="3677" selection-end="3677" vertical-scroll-proportion="6.4841075" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/IndexerAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.25211865" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/layout/template.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="772" selection-end="772" vertical-scroll-proportion="0.11333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/products.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="55" selection-start="532" selection-end="561" vertical-scroll-proportion="0.32903227" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="30" selection-start="616" selection-end="616" vertical-scroll-proportion="0.65106386" />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.app.viewlets.ApplicationModuleGeneralEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/ejb-jar.xml">
-      <provider editor-type-id="com.intellij.javaee.module.components.MethodPermissionsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.components.TransactionAttributesEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.components.EjbRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.components.EjbModuleGeneralEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/jboss-app.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-dev.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="19" column="103" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/WEB-INF/components.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="58" selection-start="2350" selection-end="2350" vertical-scroll-proportion="1.0408163" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/src/jboss-seam-sources.jar!/org/jboss/seam/framework/Query.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="372" column="58" selection-start="10684" selection-end="10684" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="30" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/admin.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="41" selection-start="3947" selection-end="3947" vertical-scroll-proportion="-16.32">
+        <state line="75" column="22" selection-start="3354" selection-end="3354" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/WEB-INF/pages.xml">
-      <provider editor-type-id="com.intellij.seam.fileEditor.PagesGraphFileEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/resources/jbpm.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-54.1">
+        <state line="15" column="103" selection-start="738" selection-end="738" vertical-scroll-proportion="0.52040815">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java">
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-test.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="52" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
+        <state line="16" column="42" selection-start="897" selection-end="897" vertical-scroll-proportion="-4.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/WEB-INF/urlrewrite.xml">
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-dev.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="62" selection-start="366" selection-end="366" vertical-scroll-proportion="0.45102042">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.8333333">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/productslist.xhtml">
+    <entry file="file://$PROJECT_DIR$/resources/extrastore-test-ds.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="73" selection-start="4635" selection-end="4635" vertical-scroll-proportion="0.6422222">
+        <state line="24" column="29" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/components-test.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/components-dev.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/idea/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="35" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="425" column="41" selection-start="17862" selection-end="17862" vertical-scroll-proportion="-10.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/import-dev.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="51" selection-start="4031" selection-end="4031" vertical-scroll-proportion="0.31567797">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/import-prod.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/import-test.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3793" column="46" selection-start="781665" selection-end="781665" vertical-scroll-proportion="0.7768052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/idea/components.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="60" selection-start="152" selection-end="152" vertical-scroll-proportion="0.03601695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/idea/import.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

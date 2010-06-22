@@ -5,7 +5,7 @@
              version="1.0">
    <persistence-unit name="megastoreDatabase">
       <provider>org.hibernate.ejb.HibernatePersistence</provider>
-      <jta-data-source>java:/megastoreDatasource</jta-data-source>
+      <jta-data-source>java:/extrastoreDatasource</jta-data-source>
       <properties>
          <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
          <property name="hibernate.cache.use_query_cache" value="true"/>
