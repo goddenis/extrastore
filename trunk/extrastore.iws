@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="c19f718d-1b95-4479-b352-3e46d4231f24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/messages_ru.properties" afterPath="$PROJECT_DIR$/resources/messages_ru.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/WEB-INF/pages.xml" afterPath="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrastore.ipr" afterPath="$PROJECT_DIR$/extrastore.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrastore.iws" afterPath="$PROJECT_DIR$/extrastore.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/admin/productslist.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" afterPath="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extrastore.iml" afterPath="$PROJECT_DIR$/extrastore.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/admin.xhtml" afterPath="$PROJECT_DIR$/view/admin/admin.xhtml" />
     </list>
     <list id="ce7bece6-9bdc-4244-bcb8-63fd442bb93d" name="Logout facility" comment="Logout facility" />
     <list id="d7639013-3de4-467b-bbbf-d54682157346" name="Fine up checkout pages" comment="Fine up checkout pages" />
@@ -20,17 +16,17 @@
     <list id="44ed2771-06ee-4946-a8cf-ce70ed897c8b" name="User registration" comment="Some late update." />
     <list id="97965b36-62bf-430d-b50e-eae4591bced5" name="Make nice error reporting in forms" comment="Make nice error reporting in forms" />
     <list id="f4b97a1a-09ea-4003-9cc5-73ac78ef2b3b" name="Auth page in checkout" comment="Auth page in checkout.&#10;Resolved scenarios with user login and relogin.&#10;Login panel added." />
-    <list id="4ae71409-7a18-4fad-a234-d518c424fbe4" name="Show orders" comment="Show orders page brought to life and translated.&#10;Process creation action updated." />
     <list id="accac147-90fa-4e42-9aea-1072b5369456" name="Product page makeup" comment="Product page makeup" />
+    <list id="4ae71409-7a18-4fad-a234-d518c424fbe4" name="Show orders" comment="Show orders page brought to life and translated.&#10;Process creation action updated." />
     <list id="34c0ea30-c6bb-41e0-b11a-8678af562f74" name="Make MySQL feel Russian through UTF-8" comment="" />
     <list id="62d4d97d-c41e-4a40-af24-17a4e0e6c43c" name="Category Aliases like &quot;http://localhost/browse/films/action&quot;" comment="Category Aliases like &quot;http://localhost/browse/films/action&quot;&#10;and also conversationId parameter renamed to cid for brevity." />
     <list id="a6d478b4-58c4-42da-a49b-9c31c6681b77" name="Confirm page" comment="Confirm page and order complete pages are finished (almost)." />
-    <ignored path="bootstrap/data/" />
-    <ignored path=".idea/workspace.xml" />
     <ignored path="megastore.iws" />
     <ignored path="bootstrap/tmp/" />
-    <ignored path="$USER_HOME_GRAILS$/" />
     <ignored path="$USER_HOME_GRIFFON$/" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$USER_HOME_GRAILS$/" />
+    <ignored path="bootstrap/data/" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,13 +133,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pages.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/WEB-INF/pages.xml">
           <provider editor-type-id="com.intellij.seam.fileEditor.PagesGraphFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="25" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.7234042">
+            <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-10.2">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.xhtml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/admin/admin.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="42" selection-start="414" selection-end="414" vertical-scroll-proportion="0.26444444">
               <folding />
             </state>
           </provider>
@@ -161,7 +166,7 @@
       <file leaf-file-name="productslist.xhtml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin/productslist.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="31" selection-start="3317" selection-end="3318" vertical-scroll-proportion="-12.56">
+            <state line="9" column="0" selection-start="0" selection-end="454" vertical-scroll-proportion="-6.12">
               <folding />
             </state>
           </provider>
@@ -180,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/resources/WEB-INF/components.xml" />
         <option value="$PROJECT_DIR$/resources/META-INF/persistence-dev.xml" />
         <option value="$PROJECT_DIR$/resources/megastore-dev-ds.xml" />
         <option value="$PROJECT_DIR$/resources/hibernate.cfg.xml" />
@@ -196,6 +200,7 @@
         <option value="$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java" />
         <option value="$PROJECT_DIR$/view/admin/productslist.page.xml" />
         <option value="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
+        <option value="$PROJECT_DIR$/view/admin/admin.xhtml" />
       </list>
     </option>
   </component>
@@ -309,8 +314,64 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
+      <pane id="Favorites">
+        <subPane subId="megastore" />
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Production">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="view">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="megastore">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/test">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="ProjectPane">
         <subPane>
@@ -362,95 +423,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extrastore" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extrastore" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites">
-        <subPane subId="megastore" />
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Tests">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="megastore">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="megastore">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src/test">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Production">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="megastore">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="megastore">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="megastore">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="megastore">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="view">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+      <pane id="PackagesPane">
+        <subPane />
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="107" />
-    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="78" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="31" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="101" />
-    <property name="options.splitter.main.proportions" value="0.24929178" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="options.splitter.main.proportions" value="0.24929178" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="84" />
@@ -468,23 +459,23 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="107" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="781" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="781" />
     <property name="options.splitter.details.proportions" value="0.28101265" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="RESOURCE_BUNDLE_SPLITTER_PROPORTION" value="0.5" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
     <property name="TEMP_MODULE_EXPLODED_DIR_FOR_megastore/web/Web" value="C:\Documents and Settings\Catalyst\Local Settings\Temp\webExplodedDir4677438449499823396tmp" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -528,13 +519,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="JBossConfiguration" factoryName="Remote">
       <option name="LOCAL" value="false" />
       <deployment />
@@ -548,6 +532,13 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -714,31 +705,11 @@
       </server-settings>
       <predefined_log_file id="JBoss" enabled="true" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4360" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="2429" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -1032,7 +1003,7 @@
     <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagination made working, through adding parameters to pages.xml file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched admin default page to new template." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1046,7 +1017,6 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="Now can browse by category!&#10;Tests not written yet." />
     <MESSAGE value="Limited products list to 27 products for total query (no category selected)." />
     <MESSAGE value="Category Aliases like &quot;http://localhost/browse/films/action&quot;&#10;and also conversationId parameter renamed to cid for brevity." />
     <MESSAGE value="Changed schema file location to appropriate (jboss.org instead of jboss.com)" />
@@ -1071,6 +1041,7 @@
     <MESSAGE value="Some late update." />
     <MESSAGE value="Multiple changes." />
     <MESSAGE value="Pagination made working, through adding parameters to pages.xml file." />
+    <MESSAGE value="Switched admin default page to new template." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1146,11 +1117,11 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/messages_en.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="14" selection-start="26" selection-end="26" vertical-scroll-proportion="0.11670481" />
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/src/jboss-seam-sources.jar!/org/jboss/seam/framework/EntityQuery.java">
@@ -1174,16 +1145,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="30" selection-start="616" selection-end="616" vertical-scroll-proportion="0.65106386" />
+      </provider>
       <provider editor-type-id="com.intellij.javaee.module.view.app.viewlets.ApplicationModuleGeneralEditorProvider">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="30" selection-start="616" selection-end="616" vertical-scroll-proportion="0.65106386">
-          <folding />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/ejb-jar.xml">
+      <provider editor-type-id="com.intellij.javaee.module.components.MethodPermissionsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
       <provider editor-type-id="com.intellij.javaee.module.components.TransactionAttributesEditorProvider">
         <state />
       </provider>
@@ -1193,43 +1168,30 @@
       <provider editor-type-id="com.intellij.javaee.module.components.EjbModuleGeneralEditorProvider">
         <state />
       </provider>
-      <provider editor-type-id="com.intellij.javaee.module.components.MethodPermissionsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/jboss-app.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/persistence-dev.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/WEB-INF/components.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="58" selection-start="2350" selection-end="2350" vertical-scroll-proportion="1.0408163">
-          <folding />
-        </state>
+        <state line="47" column="58" selection-start="2350" selection-end="2350" vertical-scroll-proportion="1.0408163" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/src/jboss-seam-sources.jar!/org/jboss/seam/framework/Query.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="372" column="58" selection-start="10684" selection-end="10684" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="372" column="58" selection-start="10684" selection-end="10684" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="45" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ru/versilov/extrastore/Product.java">
@@ -1237,26 +1199,26 @@
         <state line="44" column="30" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/productslist.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="31" selection-start="3317" selection-end="3318" vertical-scroll-proportion="-12.56">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hot/ru/versilov/extrastore/ProductsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="45" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/WEB-INF/pages.xml">
       <provider editor-type-id="com.intellij.seam.fileEditor.PagesGraphFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="25" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.7234042">
+        <state line="89" column="31" selection-start="2971" selection-end="2971" vertical-scroll-proportion="-10.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/productslist.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="0" selection-end="454" vertical-scroll-proportion="-6.12">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/admin.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="42" selection-start="414" selection-end="414" vertical-scroll-proportion="0.26444444">
           <folding />
         </state>
       </provider>
