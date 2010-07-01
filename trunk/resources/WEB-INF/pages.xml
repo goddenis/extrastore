@@ -28,6 +28,11 @@
             <!--</rule>-->
         <!--</navigation>-->
     <!--</page>-->
+    
+    <page view-id="/complete.xhtml">
+        <end-conversation />
+    </page>
+
 
     <page view-id="/admin/productslist.xhtml">
         <param name="firstResult" value="#{productsList.firstResult}"/>
@@ -39,11 +44,16 @@
         <param name="description" value="#{productsList.product.description}"/>
         <param name="name" value="#{productsList.product.title}"/>
     </page>
+    
+    <page view-id="/admin/ordersList.xhtml">
 
-
-    <page view-id="/complete.xhtml">
-        <end-conversation />
+        <param name="from"/>
+        <param name="name" value="#{ordersList.curOrder.customer.firstName}"/>
+        <param name="city" value="#{ordersList.curOrder.customer.city}"/>
     </page>
+    
+
+
 
     <page view-id="/admin/product.xhtml">
         <param name="productFrom"/>
@@ -85,6 +95,38 @@
     </page>
 
 
+    <page view-id="/admin/orderEdit.xhtml">
+        <begin-conversation join="true" flush-mode="MANUAL"/>
+
+        <action execute="#{ordersHome.wire}"/>
+
+        <param name="orderFrom"/>
+        <param name="orderId" value="#{ordersHome.orderId}"/>
+
+
+        <navigation from-action="#{ordersHome.persist}">
+           <rule if-outcome="persisted">
+              <end-conversation/>
+              <redirect view-id="/admin/ordersList.xhtml"/>
+           </rule>
+        </navigation>
+
+        <navigation from-action="#{ordersHome.update}">
+           <rule if-outcome="updated">
+              <end-conversation/>
+              <redirect view-id="/admin/ordresList.xhtml"/>
+           </rule>
+        </navigation>
+
+        <navigation from-action="#{ordrersHome.remove}">
+           <rule if-outcome="removed">
+              <end-conversation/>
+              <redirect view-id="/admin/orderslist.xhtml"/>
+           </rule>
+        </navigation>
+
+    </page>
+    
 
        
     <page view-id="/product.xhtml" 
@@ -115,9 +157,9 @@
     </page>
 
     <!-- this action ensures that only admin users can access anything under /admin" -->
-    <page view-id="/admin/*">
-        <restrict>#{s:hasRole('admin')}</restrict>
-    </page>
+    <!--<page view-id="/admin/*">-->
+        <!--<restrict>#{s:hasRole('admin')}</restrict>-->
+    <!--</page>-->
     
     <page view-id="*">    
         <navigation from-action="#{identity.logout}">

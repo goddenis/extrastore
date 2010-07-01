@@ -1,0 +1,105 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    template="/layout/template.xhtml">
+
+<ui:define name="body">
+
+    <a4j:form>
+
+    <div class="results" id="ordersList">
+
+    <rich:extendedDataTable id="ordersList"
+                var="_order"
+              value="#{ordersList.resultList}"
+           rendered="#{not empty ordersList.resultList}"
+            selectionMode="multi"
+            selection="#{ordersList.selection}"
+            rows="25"
+            height="710px">
+        <f:facet name="header">
+             <h:outputText value="Заказы" />
+        </f:facet>
+
+        <rich:column width="45px" sortable="true" sortBy="#{_order.orderId}" label="Номер">
+            <f:facet name="header">
+                <h:outputText value="Номер" />
+            </f:facet>
+            <h:outputText value="#{_order.orderId}"/>
+        </rich:column>
+        
+        <rich:column sortable="true" sortBy="#{_order.customer.city}"
+                filterBy="#{_order.customer.city}" filterEvent="onkeyup" label="Город" width="130px">
+            <f:facet name="header">
+                <h:outputText value="Город" />
+            </f:facet>
+            <h:outputText value="#{_order.customer.city}"/>
+        </rich:column>
+
+        <rich:column sortable="true" sortBy="#{_order.customer.firstName}"
+                filterBy="#{_order.customer.firstName}" filterEvent="onkeyup" label="Клиент" width="180px">
+            <f:facet name="header">
+                <h:outputText value="Клиент" />
+            </f:facet>
+            <h:outputText value="#{_order.customer.firstName} #{_order.customer.lastName}"/>
+        </rich:column>
+        <rich:column sortable="true" sortBy="#{_order.totalAmount}">
+            <f:facet name="header">
+                <h:outputText value="Стоимость" />
+            </f:facet>
+            <h:outputText value="#{_order.totalAmount}"/>
+        </rich:column>
+        <rich:column sortable="true" sortBy="#{_order.status}">
+            <f:facet name="header">
+                <h:outputText value="Статус" />
+            </f:facet>
+            <h:outputText value="#{_order.status}" />
+        </rich:column>
+        <rich:column styleClass="action" width="210px">
+            <f:facet name="header">Action</f:facet>
+            <s:link view="/#{empty from ? 'order' : from}.xhtml"
+                   value="#{empty from ? 'View' : 'Select'}"
+             propagation="#{empty from ? 'none' : 'default'}"
+                      id="ordersViewId">
+                <f:param name="id"
+                        value="#{_order.orderId}"/>
+            </s:link>
+            #{' '}
+            <s:link view="/admin/orderEdit.xhtml"
+                   value="Edit"
+             propagation="none"
+                      id="orderEdit"
+                rendered="#{empty from}">
+                <f:param name="orderId"
+                        value="#{_order.orderId}"/>
+            </s:link>
+            <a4j:commandButton value="Отправлен" actionListener="#{ordersList.sent(_order)}" immediate="false" reRender="ordersList" />
+        </rich:column>
+        <f:facet name="footer">
+             <rich:datascroller renderIfSinglePage="false" maxPages="7" />
+        </f:facet>
+    </rich:extendedDataTable>
+
+    </div>
+
+    <s:div styleClass="actionButtons" rendered="#{empty from}">
+        <s:button view="/admin/orderEdit.xhtml"
+                    id="create"
+           propagation="none"
+                 value="Create order">
+            <f:param name="orderId"/>
+        </s:button>
+        <a4j:commandButton actionListener="#{ordersList.send}" value="Отправить" reRender="ordersList" />
+    </s:div>
+
+    </a4j:form>
+
+</ui:define>
+
+</ui:composition>

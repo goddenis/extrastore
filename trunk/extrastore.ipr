@@ -326,6 +326,7 @@
     <dictionary name="Catalyst">
       <words>
         <w>auth</w>
+        <w>ejbql</w>
         <w>товар</w>
       </words>
     </dictionary>

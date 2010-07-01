@@ -7,7 +7,7 @@
 <datasources>
     <local-tx-datasource>
         <jndi-name>extrastoreDatasource</jndi-name>
-        <connection-url>jdbc:mysql://localhost:3306/megastore</connection-url>
+        <connection-url>jdbc:mysql://localhost:3306/extrastore</connection-url>
         <driver-class>com.hsqldb.jdbcDriver</driver-class>
         <user-name>root</user-name>
         <password>1</password>

@@ -30,7 +30,24 @@ public class Order
 {
     private static final long serialVersionUID = -5451107485769007079L;
 
-    public enum Status {OPEN,CANCELLED,PROCESSING,SHIPPED}
+    public enum Status {
+        OPEN("Открыт"),
+        CANCELLED("Отменён"),
+        PROCESSING("В обработке"),
+        SHIPPED("Отправлен"),
+        DELIVERED("Доставлен");
+
+        private String humanName;
+
+        Status(String name) {
+            this.humanName = name;
+        }
+
+        @Override
+        public String toString() {
+            return humanName;
+        }
+    }
 
     public static BigDecimal TAX_RATE = new BigDecimal(".0825");
 
