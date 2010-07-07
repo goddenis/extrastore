@@ -1,0 +1,6 @@
+#labels libs,jar,ClassNotFound
+#Hacks (ugly and not)
+
+= Different modules libs issue =
+
+Solution: move all libs for a project into one dir (ear/lib), and reference them in war through manifest.mf (lies in war/WEB-INF/classes/META-INF).
