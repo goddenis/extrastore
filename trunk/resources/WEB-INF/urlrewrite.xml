@@ -16,6 +16,11 @@
         <from>^/browse/(\d+)$</from>
         <to last="true">/browse.seam?cat=$1</to>
     </rule>
+
+    <rule>
+        <from>^/admin/order/(\d+)$</from>
+        <to last="true">/admin/order?id=$1</to>
+    </rule>
     
     <rule>
         <from>^/([/a-zA-Z_]*)$</from>

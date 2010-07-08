@@ -2,10 +2,17 @@ package ru.versilov.extrastore;
 
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.framework.EntityQuery;
+import org.richfaces.component.UIExtendedDataTable;
+import org.richfaces.model.DataProvider;
+import org.richfaces.model.ExtendedTableDataModel;
+import org.richfaces.model.ScrollableTableDataModel;
 import org.richfaces.model.selection.Selection;
+import org.richfaces.model.selection.SimpleSelection;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,7 +31,10 @@ public class OrdersList extends EntityQuery<Order> {
 
     private Order order = new Order();
 
-    private Selection selection;
+    private Selection selection = new SimpleSelection();
+    private List<Order> selectedOrders = new ArrayList<Order>();
+
+    private ExtendedTableDataModel<Order> ordersDataModel;
 
     public OrdersList() {
         setEjbql(EJBQL);
@@ -32,9 +42,42 @@ public class OrdersList extends EntityQuery<Order> {
         setMaxResults(125);
     }
 
+    public ExtendedTableDataModel<Order> getOrdersDataModel() {
+     		if (ordersDataModel == null) {
+			ordersDataModel = new ExtendedTableDataModel<Order>(new DataProvider<Order>(){
+
+				private static final long serialVersionUID = 505408782103164847L;
+
+				public Order getItemByKey(Object key) {
+					for(Order c : getResultList()){
+						if (key.equals(getKey(c))){
+							return c;
+						}
+					}
+					return null;
+				}
+
+				public List<Order> getItemsByRange(int firstRow, int endRow) {
+					return getResultList().subList(firstRow, endRow);
+				}
+
+				public Object getKey(Order item) {
+					return item.getOrderId();
+				}
+
+				public int getRowCount() {
+					return getResultList().size();
+				}
+				
+			});
+		}
+		return ordersDataModel;
+    }
+
     public Order getCurOrder() {
         return order;
     }
+
 
     public Selection getSelection() {
         return selection;
@@ -50,26 +93,55 @@ public class OrdersList extends EntityQuery<Order> {
         System.out.println("Order No." + order.getOrderId() + " was sent.");
     }
 
+    public void accept(Order order) {
+        // Change status and send e-mail notification here.
+        order.setStatus(Order.Status.PROCESSING);
+        System.out.println("Order No." + order.getOrderId() + " was accepted.");
+    }
+
+
     protected Order getOrderById(Integer id) {
         return null;
     }
 
-    public void send() {
-        String keys = "(";
-        Iterator ik = selection.getKeys();
-        while (ik.hasNext()) {
-            Integer key = (Integer)ik.next();
-            if (keys.length() == 1) {
-                keys += key;
-            } else {
-                keys += (", " + key);
-            }
-        }
-        keys += ")";
-        String ejbql = "update Order o set o.status = 3 where o.orderId in " + keys;
-        int result = getPersistenceContext().createQuery(ejbql).executeUpdate();
-        System.out.println(result + " orders were updated.");
+    public void openSelection() {
+        int result = updateSelectedOrdersStatus(Order.Status.OPEN);
+        System.out.println(result + " orders were opened.");
+    }
 
+    public void acceptSelection() {
+        int result = updateSelectedOrdersStatus(Order.Status.PROCESSING);      
+        System.out.println(result + " orders were accepted.");
+    }
+
+    public void sendSelection() {
+        int result = updateSelectedOrdersStatus(Order.Status.SHIPPED);
+        System.out.println(result + " orders were shipped.");
+    }
+
+    protected void takeSelection() {
+    	selectedOrders.clear();
+		Iterator<Object> iterator = getSelection().getKeys();
+		while (iterator.hasNext()) {
+			Object key = iterator.next();
+            ordersDataModel.setRowKey(key);
+            if (ordersDataModel.isRowAvailable()) {
+                Order o = ordersDataModel.getRowData();
+			    selectedOrders.add(o);
+            }
+		}    
+    }
+
+    protected int updateSelectedOrdersStatus(Order.Status newStatus) {
+        takeSelection();
+        int result = 0;
+        for (Order selectedOrder : selectedOrders) {
+            selectedOrder.setStatus(newStatus);
+            System.out.println("Order #" + selectedOrder.getOrderId() + " was changed.");
+            result++;
+        }
+
+        return result;
     }
 
     

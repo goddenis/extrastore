@@ -17,7 +17,7 @@
 
     <rich:extendedDataTable id="ordersList"
                 var="_order"
-              value="#{ordersList.resultList}"
+              value="#{ordersList.ordersDataModel}"
            rendered="#{not empty ordersList.resultList}"
             selectionMode="multi"
             selection="#{ordersList.selection}"
@@ -63,12 +63,11 @@
         </rich:column>
         <rich:column styleClass="action" width="210px">
             <f:facet name="header">Action</f:facet>
-            <s:link view="/#{empty from ? 'order' : from}.xhtml"
+            <s:link view="/admin/#{empty from ? 'order' : from}"
                    value="#{empty from ? 'View' : 'Select'}"
              propagation="#{empty from ? 'none' : 'default'}"
                       id="ordersViewId">
-                <f:param name="id"
-                        value="#{_order.orderId}"/>
+                <f:param name="id" value="#{_order.orderId}" />
             </s:link>
             #{' '}
             <s:link view="/admin/orderEdit.xhtml"
@@ -79,7 +78,8 @@
                 <f:param name="orderId"
                         value="#{_order.orderId}"/>
             </s:link>
-            <a4j:commandButton value="Отправлен" actionListener="#{ordersList.sent(_order)}" immediate="false" reRender="ordersList" />
+            <a4j:commandButton value="Принять" rendered="#{_order.status.ordinal() == 0}" actionListener="#{ordersList.accept(_order)}" immediate="false" reRender="ordersList" />
+            <a4j:commandButton value="Отправлен" rendered="#{_order.status.ordinal() == 2}" actionListener="#{ordersList.sent(_order)}" immediate="false" reRender="ordersList" />
         </rich:column>
         <f:facet name="footer">
              <rich:datascroller renderIfSinglePage="false" maxPages="7" />
@@ -95,7 +95,9 @@
                  value="Create order">
             <f:param name="orderId"/>
         </s:button>
-        <a4j:commandButton actionListener="#{ordersList.send}" value="Отправить" reRender="ordersList" />
+        <a4j:commandButton actionListener="#{ordersList.openSelection}" value="Открыть" reRender="ordersList" />
+        <a4j:commandButton actionListener="#{ordersList.acceptSelection}" value="Принять" reRender="ordersList" />
+        <a4j:commandButton actionListener="#{ordersList.sendSelection}" value="Отправить" reRender="ordersList" />
     </s:div>
 
     </a4j:form>

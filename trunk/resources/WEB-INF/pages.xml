@@ -58,7 +58,6 @@
     <page view-id="/admin/product.xhtml">
         <param name="productFrom"/>
         <param name="productId" value="#{productsHome.productId}"/>
-
     </page>
 
 
@@ -93,6 +92,12 @@
         </navigation>
 
     </page>
+    
+    <page view-id="/admin/order.xhtml">
+        <param name="orderFrom"/>
+        <param name="id" value="#{ordersHome.orderId}"/>
+    </page>
+    
 
 
     <page view-id="/admin/orderEdit.xhtml">
@@ -118,7 +123,7 @@
            </rule>
         </navigation>
 
-        <navigation from-action="#{ordrersHome.remove}">
+        <navigation from-action="#{ordersHome.remove}">
            <rule if-outcome="removed">
               <end-conversation/>
               <redirect view-id="/admin/orderslist.xhtml"/>

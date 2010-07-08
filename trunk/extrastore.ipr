@@ -34,8 +34,8 @@
         <element id="file-copy" path="$PROJECT_DIR$/resources/ordermanagement2.jpdl.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/ordermanagement3.jpdl.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/processorder.jpdl.xml" />
-        <element id="module-output" name="extrastore" />
         <element id="javaee-facet-resources" facet="extrastore/ejb/EJB" />
+        <element id="module-output" name="extrastore" />
       </root>
     </artifact>
     <artifact type="exploded-war" build-on-make="true" name="extrastore:Web exploded">
@@ -49,11 +49,11 @@
           <element id="directory" name="classes">
             <element id="file-copy" path="$PROJECT_DIR$/resources/messages_en.properties" />
             <element id="file-copy" path="$PROJECT_DIR$/resources/idea/components.properties" />
+            <element id="directory" name="META-INF">
+              <element id="file-copy" path="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" />
+            </element>
           </element>
-          <element id="directory" name="lib">
-            <element id="library" level="project" name="to_war" />
-          </element>
-          <element id="javaee-facet-resources" facet="extrastore/web/Web" />
+          <element id="directory" name="lib" />
         </element>
         <element id="javaee-facet-resources" facet="extrastore/web/Web" />
       </root>
@@ -69,18 +69,17 @@
         <element id="file-copy" path="$PROJECT_DIR$/resources/hibernate.cfg.xml" />
         <element id="directory" name="lib">
           <element id="library" level="project" name="to_ear" />
+          <element id="library" level="project" name="to_war" />
         </element>
         <element id="file-copy" path="$PROJECT_DIR$/lib/jboss-seam.jar" />
         <element id="directory" name="extrastore.jar">
           <element id="artifact" artifact-name="extraastore:EJB exploded" />
-          <element id="directory" name="META-INF">
-            <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-          </element>
+          <element id="directory" name="META-INF" />
         </element>
         <element id="directory" name="extrastore.war">
           <element id="artifact" artifact-name="extrastore:Web exploded" />
           <element id="directory" name="META-INF">
-            <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+            <element id="file-copy" path="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" />
           </element>
         </element>
         <element id="javaee-facet-resources" facet="extrastore/javaeeApplication/javaEEApplication" />
@@ -466,8 +465,8 @@
         <root url="jar://$PROJECT_DIR$/lib/jsf-facelets.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/urlrewritefilter.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/richfaces-ui.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/commons-digester.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
