@@ -6,6 +6,10 @@
  */
 package ru.versilov.extrastore;
 
+import javax.faces.event.ActionEvent;
+import javax.faces.event.ValueChangeEvent;
+
+
 public interface Checkout
 {
     public int getAuthType();
@@ -18,4 +22,6 @@ public interface Checkout
     public Order submitOrder();
 
     public void destroy();
+
+    String fillRegionAndAreaByIndex();
 }

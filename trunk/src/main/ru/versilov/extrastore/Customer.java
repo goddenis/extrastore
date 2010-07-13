@@ -26,8 +26,10 @@ public class Customer
 
     String  address1;
     String  address2;
-    String  city;
     String  zip;
+    String  region;
+    String  area;
+    String  city;
 
     String  phone;
 
@@ -78,6 +80,24 @@ public class Customer
     }
     public void setZip(String zip) {
         this.zip = zip;
+    }
+
+    @Column(name="region", length=36)
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    @Column(name="area", length=36)
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
     }
 
     @Column(name="PHONE",length=50)

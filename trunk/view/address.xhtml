@@ -22,9 +22,12 @@
 
 
             <f:subview id="addressaction" rendered="#{currentOrder != null}">
-                <h:form id="AddressActionForm" styleClass="addressForm">
+                <a:form id="AddressActionForm" styleClass="addressForm">
 
                     <h:messages globalOnly="true"/>
+                    <a:outputPanel ajaxRendered="true">
+                        <h:messages />
+                    </a:outputPanel>
                     <s:validateAll>
 
 
@@ -32,25 +35,48 @@
                             <ui:define name="label">Ф.И.О. получателя</ui:define>
                             <h:inputText value="#{currentOrder.customer.firstName}" size="54"
                                          title="Например: Милованов Пётр Антонович" required="true">
-                                <a:support event="onblur" reRender="name"/>
                             </h:inputText>
                         </s:decorate>
 
 
-                        <s:decorate template="edit.xhtml" id="index">
+                        <s:decorate template="edit.xhtml" id="zip">
                             <ui:define name="label">Индекс</ui:define>
                             <h:inputText value="#{currentOrder.customer.zip}" size="6"
                                          title="Например: 443110" required="true">
-                                <a:support event="onblur" reRender="index"/>
+                                <a:support event="onblur" action="#{checkout.fillRegionAndAreaByIndex}"
+                                            ajaxSingle="true" reRender="zip, region, area, city" />
                             </h:inputText>
                         </s:decorate>
+
+                        <a:outputPanel layout="none">
+
+                        <s:decorate template="edit.xhtml" id="region">
+                            <ui:define name="label">Область</ui:define>
+                            <h:inputText value="#{currentOrder.customer.region}"
+                                             required="true" size="36" />
+                            <a:support event="onblur" reRender="region" />
+                        </s:decorate>
+
+                        <s:decorate template="edit.xhtml" id="area">
+                            <ui:define name="label">Район</ui:define>
+                            <h:inputText value="#{currentOrder.customer.area}"
+                                             required="false" size="36" />
+                        </s:decorate>
+
+
+                        <s:decorate template="edit.xhtml" id="city">
+                            <ui:define name="label">Город</ui:define>
+                            <h:inputText value="#{currentOrder.customer.city}"
+                                             required="false" size="36" />
+                        </s:decorate>
+                            
+                        </a:outputPanel>
 
 
                         <s:decorate template="edit.xhtml" id="address">
                             <ui:define name="label">Адрес</ui:define>
                             <h:inputTextarea value="#{currentOrder.customer.address1}" rows="2"
                                              cols="57" required="true" title="Например: г. Самара, ул. Ново-Садовая, д. 57, кв. 2">
-                                <a:support event="onblur" reRender="address"/>
                             </h:inputTextarea>
                         </s:decorate>
 
@@ -59,7 +85,6 @@
                             <ui:define name="label">Телефон</ui:define>
                             <h:inputText value="#{currentOrder.customer.phone}" size="36"
                                          title="Например: +7 905 304 2007" required="true">
-                                <a:support event="onblur" reRender="phone"/>
                             </h:inputText>
                         </s:decorate>
 
@@ -80,7 +105,7 @@
                                      type="submit"
                                      action="address"
                                      value="#{messages.submitAddressButton}"/>
-                </h:form>
+                </a:form>
             </f:subview>
 
         </div>

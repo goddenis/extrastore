@@ -20,7 +20,10 @@ import org.jboss.seam.bpm.Actor;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
+import javax.faces.event.ActionEvent;
+import javax.faces.event.ValueChangeEvent;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import java.io.Serializable;
@@ -131,6 +134,8 @@ public class CheckoutAction
                 this.customer.email = identity.getCredentials().getUsername();
                 this.customer.password = "password";    // If it's less, than 6 symbols weird exception occurs: null id in Customer entyr (don't flush the session, after an exception occurs).
 
+                this.customer.zip = "443110";
+
                 em.persist(customer);
 
                 identity.getCredentials().setPassword(this.customer.password);
@@ -168,6 +173,23 @@ public class CheckoutAction
         return "auth";
     }
 
+
+    public String fillRegionAndAreaByIndex() {
+        System.out.println("Checkout: Filling region and city.");
+        int zip = Integer.parseInt(customer.zip);
+        OPS ops;
+        try {
+            ops = (OPS)em.createQuery("select o from OPS o where o.index=" + zip).getSingleResult();
+        } catch (NoResultException e) {
+            facesMessages.addToControl("zip", "Такого индекса не существует.");
+            return null;
+        }
+        customer.setRegion(ops.getRegion());
+        customer.setArea(ops.getArea());
+        customer.setCity(ops.getCity());
+
+        return null;
+    }
 
     @Conversational
     public void address() {
