@@ -1,6 +1,7 @@
 package ru.versilov.extrastore;
 
-import org.jboss.seam.annotations.Name;
+import org.jboss.seam.ScopeType;
+import org.jboss.seam.annotations.*;
 import org.jboss.seam.framework.EntityQuery;
 import org.richfaces.component.UIExtendedDataTable;
 import org.richfaces.model.DataProvider;
@@ -9,6 +10,13 @@ import org.richfaces.model.ScrollableTableDataModel;
 import org.richfaces.model.selection.Selection;
 import org.richfaces.model.selection.SimpleSelection;
 
+import javax.ejb.Remove;
+import javax.ejb.Stateful;
+import javax.el.ValueExpression;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -21,25 +29,46 @@ import java.util.List;
  * Time: 0:30:45
  * To change this template use File | Settings | File Templates.
  */
+@Stateful
 @Name("ordersList")
-public class OrdersList extends EntityQuery<Order> {
+@Scope(ScopeType.SESSION)
+public class OrdersList implements OrdersListI {
     private static final String EJBQL = "select o from Order o";
-
-    private static final String[] RESTRICTIONS = {
-            "lower(o.customer.firstName) like lower(concat(#{ordersList.curOrder.customer.firstName},'%'))",
-            "lower(o.customer.city) like lower(concat(#{ordersList.curOrder.customer.city},'%'))"};
 
     private Order order = new Order();
 
     private Selection selection = new SimpleSelection();
     private List<Order> selectedOrders = new ArrayList<Order>();
 
+    @PersistenceContext(type=PersistenceContextType.EXTENDED)
+    private EntityManager em;
+
+    private List<Order> resultList = null;
+
+    private boolean incompleteOnly = true;
+
     private ExtendedTableDataModel<Order> ordersDataModel;
 
     public OrdersList() {
-        setEjbql(EJBQL);
-        setRestrictionExpressionStrings(Arrays.asList(RESTRICTIONS));
-        setMaxResults(125);
+    }
+
+
+
+    public List<Order> getResultList() {
+        if (resultList == null) {
+            String query = EJBQL;
+            if (incompleteOnly) {
+                query += " where o.status <> 3";
+            }
+            resultList = em.createQuery(query).getResultList();
+        }
+        return resultList;
+    }
+
+    // Make the next getResultList() call re-render list;
+    private void invalidateResultList() {
+        resultList = null;
+        ordersDataModel = null;
     }
 
     public ExtendedTableDataModel<Order> getOrdersDataModel() {
@@ -78,6 +107,16 @@ public class OrdersList extends EntityQuery<Order> {
         return order;
     }
 
+    public boolean isIncompleteOnly() {
+        return incompleteOnly;
+    }
+
+    public void setIncompleteOnly(boolean incompleteOnly) {
+        if (incompleteOnly != this.incompleteOnly)  {
+            this.incompleteOnly = incompleteOnly;
+            invalidateResultList();
+        }
+    }
 
     public Selection getSelection() {
         return selection;
@@ -99,23 +138,19 @@ public class OrdersList extends EntityQuery<Order> {
         System.out.println("Order No." + order.getOrderId() + " was accepted.");
     }
 
-
-    protected Order getOrderById(Integer id) {
-        return null;
-    }
-
     public void openSelection() {
         int result = updateSelectedOrdersStatus(Order.Status.OPEN);
         System.out.println(result + " orders were opened.");
     }
 
     public void acceptSelection() {
-        int result = updateSelectedOrdersStatus(Order.Status.PROCESSING);      
+        int result = updateSelectedOrdersStatus(Order.Status.PROCESSING);
         System.out.println(result + " orders were accepted.");
     }
 
     public void sendSelection() {
         int result = updateSelectedOrdersStatus(Order.Status.SHIPPED);
+        invalidateResultList();
         System.out.println(result + " orders were shipped.");
     }
 
@@ -142,6 +177,11 @@ public class OrdersList extends EntityQuery<Order> {
         }
 
         return result;
+    }
+
+    @Remove
+    public void remove() {
+        
     }
 
     

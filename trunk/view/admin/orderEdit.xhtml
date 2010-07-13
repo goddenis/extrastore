@@ -21,7 +21,7 @@
                 <ui:define name="label">Number</ui:define>
                 <h:inputText id="number"
                        required="true"
-                          value="#{ordersHome.instance.ASIN}">
+                          value="#{ordersHome.instance.orderId}">
                     <a:support event="onblur" reRender="numberField" bypassUpdates="true" ajaxSingle="true"/>
                 </h:inputText>
             </s:decorate>
@@ -34,7 +34,7 @@
                        required="true"
                            size="64"
                       maxlength="64"
-                          value="#{ordersHome.instance.title}">
+                          value="#{ordersHome.instance.customer.firstName}">
                     <a:support event="onblur" reRender="nameField" bypassUpdates="true" ajaxSingle="true"/>
                 </h:inputText>
             </s:decorate>
@@ -44,19 +44,19 @@
 
 
             <s:decorate id="descriptionField" template="/layout/edit.xhtml">
-                <ui:define name="label">Description</ui:define>
+                <ui:define name="label">Comment</ui:define>
                 <h:inputTextarea id="description"
                                cols="80"
                                rows="13"
-                           required="true"
-                              value="#{ordersHome.instance.description}"/>
+                           required="false"
+                              value="#{ordersHome.instance.comment}"/>
             </s:decorate>
 
 
             <s:decorate id="priceField" template="/layout/edit.xhtml">
                 <ui:define name="label">Price</ui:define>
                 <h:inputText id="price"
-                          value="#{ordersHome.instance.price}">
+                          value="#{ordersHome.instance.totalAmount}">
                     <a:support event="onblur" reRender="priceField" bypassUpdates="true" ajaxSingle="true"/>
                 </h:inputText>
             </s:decorate>
@@ -97,7 +97,7 @@
             <s:button id="cancelAdd"
                    value="Cancel"
              propagation="end"
-                    view="/admin/#{empty orderFrom ? 'orderslist' : orderFrom}.xhtml"
+                    view="/admin/#{empty orderFrom ? 'ordersList' : orderFrom}.xhtml"
                 rendered="#{!ordersHome.managed}"/>
 
         </div>

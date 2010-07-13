@@ -31,21 +31,27 @@ public class Order
     private static final long serialVersionUID = -5451107485769007079L;
 
     public enum Status {
-        OPEN("Открыт"),
-        CANCELLED("Отменён"),
-        PROCESSING("В обработке"),
-        SHIPPED("Отправлен"),
-        DELIVERED("Доставлен");
+        OPEN("Открыт", "order-status-open"),
+        CANCELLED("Отменён", "order-status-cancelled"),
+        PROCESSING("В обработке", "order-status-processing"),
+        SHIPPED("Отправлен", "order-status-shipped"),
+        DELIVERED("Доставлен", "order-status-delivered");
 
         private String humanName;
+        private String styleClass;
 
-        Status(String name) {
+        Status(String name, String styleClass) {
             this.humanName = name;
+            this.styleClass = styleClass;
         }
 
         @Override
         public String toString() {
             return humanName;
+        }
+
+        public String getStyleClass() {
+            return styleClass;
         }
     }
 
@@ -156,7 +162,11 @@ public class Order
 
     @Transient
     public int getItemsQuantity() {
-        return itemsQuantity;        
+        itemsQuantity = 0;
+        for (OrderLine line: orderLines) {
+            itemsQuantity += line.getQuantity();
+        }
+        return itemsQuantity;
     }
 
     @Column(name="TRACKING")

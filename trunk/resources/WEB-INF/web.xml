@@ -29,7 +29,7 @@
     <!-- Plugging the "Blue Sky" skin into the project -->
     <context-param>
         <param-name>org.richfaces.SKIN</param-name>
-        <param-value>DEFAULT</param-value>
+        <param-value>darkX</param-value>
     </context-param>
 
 

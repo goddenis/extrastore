@@ -467,6 +467,7 @@
         <root url="jar://$PROJECT_DIR$/lib/richfaces-ui.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/commons-digester.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/darkX.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>

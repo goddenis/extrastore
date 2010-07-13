@@ -11,9 +11,16 @@
 
 <ui:define name="body">
 
+    <a4j:loadStyle src="/stylesheet/admin.css" />
+
     <a4j:form>
 
-    <div class="results" id="ordersList">
+    <h:selectBooleanCheckbox value="#{ordersList.incompleteOnly}">
+        <a4j:support ajaxSingle="true" event="onchange" reRender="ordersList" />
+    </h:selectBooleanCheckbox>
+    <h:outputText value="Только незаверёшнные" />
+
+    <div class="results">
 
     <rich:extendedDataTable id="ordersList"
                 var="_order"
@@ -21,45 +28,71 @@
            rendered="#{not empty ordersList.resultList}"
             selectionMode="multi"
             selection="#{ordersList.selection}"
-            rows="25"
-            height="710px">
+            rows="18"
+            height="523px">
         <f:facet name="header">
              <h:outputText value="Заказы" />
         </f:facet>
 
-        <rich:column width="45px" sortable="true" sortBy="#{_order.orderId}" label="Номер">
+        <rich:column width="45px" sortable="true" sortBy="#{_order.orderId}" sortOrder="DESCENDING" label="Номер">
             <f:facet name="header">
                 <h:outputText value="Номер" />
             </f:facet>
-            <h:outputText value="#{_order.orderId}"/>
+            <h:outputText value="#{_order.orderId}" style="font-weight: bold;"/>
         </rich:column>
         
         <rich:column sortable="true" sortBy="#{_order.customer.city}"
-                filterBy="#{_order.customer.city}" filterEvent="onkeyup" label="Город" width="130px">
+                filterBy="#{_order.customer.city}" filterEvent="onkeyup" label="Город" width="100px">
             <f:facet name="header">
                 <h:outputText value="Город" />
             </f:facet>
-            <h:outputText value="#{_order.customer.city}"/>
+            <h:outputText value="#{_order.customer.city}"  styleClass="#{_order.status.styleClass}"/>
         </rich:column>
 
         <rich:column sortable="true" sortBy="#{_order.customer.firstName}"
-                filterBy="#{_order.customer.firstName}" filterEvent="onkeyup" label="Клиент" width="180px">
+                filterBy="#{_order.customer.firstName}" filterEvent="onkeyup"  label="Клиент" width="140px">
             <f:facet name="header">
                 <h:outputText value="Клиент" />
             </f:facet>
-            <h:outputText value="#{_order.customer.firstName} #{_order.customer.lastName}"/>
+            <h:outputText value="#{_order.customer.firstName} #{_order.customer.lastName}"  styleClass="#{_order.status.styleClass}"/>
         </rich:column>
         <rich:column sortable="true" sortBy="#{_order.totalAmount}">
             <f:facet name="header">
                 <h:outputText value="Стоимость" />
             </f:facet>
-            <h:outputText value="#{_order.totalAmount}"/>
+            <h:outputText value="#{_order.totalAmount}" styleClass="#{_order.status.styleClass}"/>
         </rich:column>
-        <rich:column sortable="true" sortBy="#{_order.status}">
+
+        <rich:column sortable="true" sortBy="#{_order.itemsQuantity}" width="70px">
+            <f:facet name="header">
+                <h:outputText value="Состав" />
+            </f:facet>
+            <h:outputText value="#{_order.itemsQuantity}" styleClass="#{_order.status.styleClass}" />
+            <rich:toolTip>
+                <table border="0">
+                    <ui:repeat value="#{_order.orderLines}" var="line">
+                        <tr>
+                            <td style="padding-right: 9px;">#{line.product.ASIN}</td>
+                            <td style="padding-right: 13px;">#{line.product.title}</td>
+                            <td>#{line.quantity}</td>
+                        </tr>
+                    </ui:repeat>
+                </table>
+            </rich:toolTip>
+        </rich:column>
+
+        <rich:column sortable="true" sortBy="#{_order.status}" width="80px">
             <f:facet name="header">
                 <h:outputText value="Статус" />
             </f:facet>
-            <h:outputText value="#{_order.status}" />
+            <h:outputText value="#{_order.status}" styleClass="#{_order.status.styleClass}" />
+        </rich:column>
+
+        <rich:column sortable="true" sortBy="#{_order.orderDate}" width="70px">
+            <f:facet name="header">
+                <h:outputText value="Дата" />
+            </f:facet>
+            <h:outputText value="#{_order.orderDate}" styleClass="#{_order.status.styleClass}" />
         </rich:column>
         <rich:column styleClass="action" width="210px">
             <f:facet name="header">Action</f:facet>
@@ -78,11 +111,11 @@
                 <f:param name="orderId"
                         value="#{_order.orderId}"/>
             </s:link>
-            <a4j:commandButton value="Принять" rendered="#{_order.status.ordinal() == 0}" actionListener="#{ordersList.accept(_order)}" immediate="false" reRender="ordersList" />
-            <a4j:commandButton value="Отправлен" rendered="#{_order.status.ordinal() == 2}" actionListener="#{ordersList.sent(_order)}" immediate="false" reRender="ordersList" />
+            <a4j:commandLink value="Принять" rendered="#{_order.status.ordinal() == 0}" actionListener="#{ordersList.accept(_order)}" immediate="false" reRender="ordersList" />
+            <a4j:commandLink value="Отправлен" rendered="#{_order.status.ordinal() == 2}" actionListener="#{ordersList.sent(_order)}" immediate="false" reRender="ordersList" />
         </rich:column>
         <f:facet name="footer">
-             <rich:datascroller renderIfSinglePage="false" maxPages="7" />
+             <rich:datascroller renderIfSinglePage="false" maxPages="7" ajaxSingle="true" for="ordersList" />
         </f:facet>
     </rich:extendedDataTable>
 
@@ -92,7 +125,7 @@
         <s:button view="/admin/orderEdit.xhtml"
                     id="create"
            propagation="none"
-                 value="Create order">
+                 value="Новый заказ">
             <f:param name="orderId"/>
         </s:button>
         <a4j:commandButton actionListener="#{ordersList.openSelection}" value="Открыть" reRender="ordersList" />
