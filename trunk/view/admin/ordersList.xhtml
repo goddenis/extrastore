@@ -19,6 +19,9 @@
         <a4j:support ajaxSingle="true" event="onchange" reRender="ordersList" />
     </h:selectBooleanCheckbox>
     <h:outputText value="Только незаверёшнные" />
+    <h:outputText value="   " escape="false" />
+        
+    <a4j:commandButton value="Обновить" action="#{ordersList.invalidateResultList}" reRender="ordersList" />
 
     <div class="results">
 
@@ -29,7 +32,7 @@
             selectionMode="multi"
             selection="#{ordersList.selection}"
             rows="18"
-            height="523px">
+            height="524px">
         <f:facet name="header">
              <h:outputText value="Заказы" />
         </f:facet>
@@ -50,7 +53,7 @@
         </rich:column>
 
         <rich:column sortable="true" sortBy="#{_order.customer.firstName}"
-                filterBy="#{_order.customer.firstName}" filterEvent="onkeyup"  label="Клиент" width="140px">
+                filterBy="#{_order.customer.firstName}" filterEvent="onkeyup"  label="Клиент" width="180px">
             <f:facet name="header">
                 <h:outputText value="Клиент" />
             </f:facet>
@@ -60,7 +63,9 @@
             <f:facet name="header">
                 <h:outputText value="Стоимость" />
             </f:facet>
-            <h:outputText value="#{_order.totalAmount}" styleClass="#{_order.status.styleClass}"/>
+            <h:outputText value="#{_order.totalAmount}" styleClass="#{_order.status.styleClass}">
+                <f:convertNumber type="currency"/>
+            </h:outputText>
         </rich:column>
 
         <rich:column sortable="true" sortBy="#{_order.itemsQuantity}" width="70px">

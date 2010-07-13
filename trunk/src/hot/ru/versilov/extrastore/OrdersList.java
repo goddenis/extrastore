@@ -16,6 +16,7 @@ import javax.el.ValueExpression;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
+import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,7 +67,7 @@ public class OrdersList implements OrdersListI {
     }
 
     // Make the next getResultList() call re-render list;
-    private void invalidateResultList() {
+    public void invalidateResultList() {
         resultList = null;
         ordersDataModel = null;
     }

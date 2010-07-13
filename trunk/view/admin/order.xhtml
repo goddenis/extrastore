@@ -15,24 +15,64 @@
 
 
         <s:decorate id="number" template="/layout/display.xhtml">
-            <ui:define name="label">Number</ui:define>
+            <ui:define name="label">Номер</ui:define>
             <h:outputText value="#{ordersHome.instance.orderId}"/>
         </s:decorate>
 
+        <s:decorate id="date" template="/layout/display.xhtml">
+            <ui:define name="label">Дата</ui:define>
+            <h:outputText value="#{ordersHome.instance.orderDate}"/>
+        </s:decorate>
+
+
         <s:decorate id="name" template="/layout/display.xhtml">
-            <ui:define name="label">Customer Name</ui:define>
+            <ui:define name="label">Клиент</ui:define>
             <h:outputText value="#{ordersHome.instance.customer.firstName}"/>
         </s:decorate>
 
-        <s:decorate id="description" template="/layout/display.xhtml">
-            <ui:define name="label">Comment</ui:define>
-            <h:outputText value="#{ordersHome.instance.comment}"/>
+        <s:decorate id="address" template="/layout/display.xhtml">
+            <ui:define name="label">Адрес</ui:define>
+            <h:outputText value="#{ordersHome.instance.customer.zip}, #{ordersHome.instance.customer.region}, #{ordersHome.instance.customer.area}, #{ordersHome.instance.customer.city}, #{ordersHome.instance.customer.address1}"/>
+        </s:decorate>
+
+        <s:decorate id="phone" template="/layout/display.xhtml">
+            <ui:define name="label">Телефон</ui:define>
+            <h:outputText value="#{ordersHome.instance.customer.phone}"/>
         </s:decorate>
 
 
+
+        <s:decorate id="description" template="/layout/display.xhtml" rendered="#{ordersHome.instance.comment.length() > 0}">
+            <ui:define name="label">Комментарий</ui:define>
+            <h:outputText value="#{ordersHome.instance.comment}"/>
+        </s:decorate>
+
+        <s:decorate id="content" template="/layout/display.xhtml">
+            <ui:define name="label">Состав</ui:define>
+
+        <table border="0">
+            <ui:repeat value="#{ordersHome.instance.orderLines}" var="line">
+                <tr>
+                    <td style="padding-right: 9px;">#{line.product.ASIN}</td>
+                    <td style="padding-right: 13px;">#{line.product.title}</td>
+                    <td>#{line.quantity}</td>
+                </tr>
+            </ui:repeat>
+        </table>
+        </s:decorate>
+
+        <s:decorate id="quantity" template="/layout/display.xhtml">
+            <ui:define name="label">Всего</ui:define>
+            <h:outputText value="#{ordersHome.instance.itemsQuantity} предметов"/>
+        </s:decorate>
+
+
+
         <s:decorate id="price" template="/layout/display.xhtml">
-            <ui:define name="label">Total Price</ui:define>
-            <h:outputText value="#{ordersHome.instance.totalAmount}"/>
+            <ui:define name="label">Полная стоимость</ui:define>
+            <h:outputText value="#{ordersHome.instance.totalAmount}">
+                <f:convertNumber type="currency" currencySymbol="руб."/>
+            </h:outputText>
         </s:decorate>
 
         <div style="clear:both"/>

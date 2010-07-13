@@ -26,6 +26,8 @@ public interface OrdersListI {
 
     void setIncompleteOnly(boolean incompleteOnly);
 
+    void invalidateResultList();
+
     Selection getSelection();
 
     void setSelection(Selection selection);
