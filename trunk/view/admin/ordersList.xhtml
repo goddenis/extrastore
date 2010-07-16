@@ -21,7 +21,7 @@
     <h:outputText value="Только незаверёшнные" />
     <h:outputText value="   " escape="false" />
         
-    <a4j:commandButton value="Обновить" action="#{ordersList.invalidateResultList}" reRender="ordersList" />
+    <a4j:commandButton value="Обновить" action="#{ordersList.invalidateResultList}" reRender="ordersList" ajaxSingle="true" />
 
     <div class="results">
 
@@ -59,16 +59,17 @@
             </f:facet>
             <h:outputText value="#{_order.customer.firstName} #{_order.customer.lastName}"  styleClass="#{_order.status.styleClass}"/>
         </rich:column>
-        <rich:column sortable="true" sortBy="#{_order.totalAmount}">
+
+        <rich:column sortable="true" sortBy="#{_order.totalAmount}" style="text-align: right; padding: 0 7px;" width="80px">
             <f:facet name="header">
                 <h:outputText value="Стоимость" />
             </f:facet>
             <h:outputText value="#{_order.totalAmount}" styleClass="#{_order.status.styleClass}">
-                <f:convertNumber type="currency"/>
+                <f:convertNumber type="currency" currencySymbol=""/>
             </h:outputText>
         </rich:column>
 
-        <rich:column sortable="true" sortBy="#{_order.itemsQuantity}" width="70px">
+        <rich:column sortable="true" sortBy="#{_order.itemsQuantity}" style="text-align: right; padding: 0 9px;" width="70px">
             <f:facet name="header">
                 <h:outputText value="Состав" />
             </f:facet>
@@ -78,7 +79,7 @@
                     <ui:repeat value="#{_order.orderLines}" var="line">
                         <tr>
                             <td style="padding-right: 9px;">#{line.product.ASIN}</td>
-                            <td style="padding-right: 13px;">#{line.product.title}</td>
+                            <td style="padding-right: 13px; text-align:left;">#{line.product.title}</td>
                             <td>#{line.quantity}</td>
                         </tr>
                     </ui:repeat>

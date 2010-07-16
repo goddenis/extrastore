@@ -35,6 +35,12 @@
             <h:outputText value="#{ordersHome.instance.customer.zip}, #{ordersHome.instance.customer.region}, #{ordersHome.instance.customer.area}, #{ordersHome.instance.customer.city}, #{ordersHome.instance.customer.address1}"/>
         </s:decorate>
 
+        <s:decorate id="email" template="/layout/display.xhtml" rendered="#{ordersHome.instance.customer.email != null}">
+            <ui:define name="label">Эл. почта</ui:define>
+            <h:outputLink value="mailto:#{ordersHome.instance.customer.email}" >#{ordersHome.instance.customer.email}</h:outputLink>
+        </s:decorate>
+
+
         <s:decorate id="phone" template="/layout/display.xhtml">
             <ui:define name="label">Телефон</ui:define>
             <h:outputText value="#{ordersHome.instance.customer.phone}"/>
@@ -69,7 +75,7 @@
 
 
         <s:decorate id="price" template="/layout/display.xhtml">
-            <ui:define name="label">Полная стоимость</ui:define>
+            <ui:define name="label">Cтоимость</ui:define>
             <h:outputText value="#{ordersHome.instance.totalAmount}">
                 <f:convertNumber type="currency" currencySymbol="руб."/>
             </h:outputText>

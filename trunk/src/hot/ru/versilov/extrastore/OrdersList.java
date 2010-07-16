@@ -61,12 +61,15 @@ public class OrdersList implements OrdersListI {
             if (incompleteOnly) {
                 query += " where o.status <> 3";
             }
+            // Clear the EM cache in case changes to the orders were made.
+            em.clear();
             resultList = em.createQuery(query).getResultList();
         }
         return resultList;
     }
 
     // Make the next getResultList() call re-render list;
+    @Observer({"orderChanged", "orderRemoved"})
     public void invalidateResultList() {
         resultList = null;
         ordersDataModel = null;

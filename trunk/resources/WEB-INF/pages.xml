@@ -44,6 +44,7 @@
         <param name="description" value="#{productsList.product.description}"/>
         <param name="name" value="#{productsList.product.title}"/>
     </page>
+
     
     <page view-id="/admin/ordersList.xhtml">
 
@@ -119,7 +120,7 @@
         <navigation from-action="#{ordersHome.update}">
            <rule if-outcome="updated">
               <end-conversation/>
-              <redirect view-id="/admin/ordresList.xhtml"/>
+              <redirect view-id="/admin/ordersList.xhtml"/>
            </rule>
         </navigation>
 

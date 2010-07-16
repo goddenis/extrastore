@@ -9,13 +9,7 @@ package ru.versilov.extrastore;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="ORDERLINES")
@@ -30,6 +24,15 @@ public class OrderLine
     int     quantity;
     Date    orderDate;
     Order   order;
+
+    public OrderLine() {
+        
+    }
+
+    public OrderLine(Product product, int quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
 
     @Id @GeneratedValue
     @Column(name="ORDERLINEID")
@@ -49,7 +52,7 @@ public class OrderLine
     }
     
     @ManyToOne
-    @JoinColumn(name="ORDERID")
+    @JoinColumn(name="ORDERID", nullable=false)
     public Order getOrder() {
         return order;
     }
@@ -75,5 +78,25 @@ public class OrderLine
     }
     public void addQuantity(int howmany) {
         quantity += howmany;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        OrderLine orderLine = (OrderLine) o;
+
+        if (quantity != orderLine.quantity) return false;
+        if (product != null ? !product.equals(orderLine.product) : orderLine.product != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = product != null ? product.hashCode() : 0;
+        result = 31 * result + quantity;
+        return result;
     }
 }

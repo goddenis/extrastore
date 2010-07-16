@@ -108,9 +108,7 @@ public class Order
             }
         }
 
-        OrderLine line = new OrderLine();
-        line.setProduct(product);
-        line.setQuantity(quantity);
+        OrderLine line = new OrderLine(product, quantity);
         line.setOrder(this);
 
         orderLines.add(line);

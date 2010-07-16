@@ -1,7 +1,13 @@
 package ru.versilov.extrastore;
 
 import org.jboss.seam.annotations.Name;
+import org.jboss.seam.core.Events;
 import org.jboss.seam.framework.EntityHome;
+
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.persistence.EntityManager;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,6 +19,7 @@ import org.jboss.seam.framework.EntityHome;
 
 @Name("ordersHome")
 public class OrdersHome extends EntityHome<Order> {
+
 
     public void setOrderId(Long id) {
         setId(id);
@@ -42,9 +49,64 @@ public class OrdersHome extends EntityHome<Order> {
         return true;
     }
 
+    @Override
+    public String update() {
+        Order o = this.getInstance();
+        for (OrderLine line: o.getOrderLines()) {
+            line.setOrder(o);
+        }
+        // Recalculate net amount etc. according to the new order lines.
+        o.calculateTotals();
+
+        Events.instance().raiseTransactionSuccessEvent("orderChanged", o.getOrderId());
+        
+        return super.update();
+    }
+
     public Order getDefinedInstance() {
         return isIdDefined() ? getInstance() : null;
     }
 
+    protected Product getProductByASIN(String asin) {
+        EntityManager em = this.getEntityManager();
+        Product product = (Product)em.createQuery("select p from Product p where p.ASIN = :asin ")
+                .setParameter("asin", asin)
+                .getSingleResult();
+        return product;
+    }
+
+    public List<OrderLine> getOtherLines() {
+        List<OrderLine> list = new ArrayList<OrderLine>();
+
+        List<Long> prods = new ArrayList<Long>();
+
+        for (OrderLine line: this.getInstance().getOrderLines()) {
+            prods.add(line.getProduct().getProductId());
+        }
+
+        List<Product> otherProducts = this.getEntityManager().createQuery("select p from Product p where p.productId not in(:prods)").setParameter("prods", prods).getResultList();
+
+        for (Product p: otherProducts) {
+            list.add(new OrderLine(p, 0));
+        }
+        return list;
+    }
+
+    public void setOtherLines(List<OrderLine> lines) {
+        
+    }
+
+    public List<OrderLine> getTargetLines() {
+        return this.getInstance().getOrderLines();
+    }
+
+    public void setTargetLines(List<OrderLine> orderLines) {
+        for (OrderLine line: this.getInstance().getOrderLines()) {
+            this.getEntityManager().remove(line);
+        }
+        this.getInstance().getOrderLines().clear();
+        this.getEntityManager().merge(this.getInstance());
+        this.getInstance().setOrderLines(orderLines);
+    }
 
 }

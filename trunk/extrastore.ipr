@@ -326,6 +326,8 @@
       <words>
         <w>auth</w>
         <w>ejbql</w>
+        <w>extrastore</w>
+        <w>versilov</w>
         <w>товар</w>
       </words>
     </dictionary>
