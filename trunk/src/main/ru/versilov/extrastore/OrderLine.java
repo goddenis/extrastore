@@ -22,7 +22,6 @@ public class OrderLine
     int     position;
     Product product;
     int     quantity;
-    Date    orderDate;
     Order   order;
 
     public OrderLine() {

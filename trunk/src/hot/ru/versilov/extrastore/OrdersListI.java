@@ -32,15 +32,17 @@ public interface OrdersListI {
 
     void setSelection(Selection selection);
 
-    void sent(Order order);
 
+    void sent(Order order);
     void accept(Order order);
+    void remove(Order order);
+    void cancel(Order order);
 
     void openSelection();
-
     void acceptSelection();
-
     void sendSelection();
+    void removeSelection();
+    void cancelSelection();
 
     void remove();
     

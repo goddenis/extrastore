@@ -6,6 +6,8 @@
  */
 package ru.versilov.extrastore;
 
+import org.jboss.seam.core.Events;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -35,7 +37,8 @@ public class Order
         CANCELLED("Отменён", "order-status-cancelled"),
         PROCESSING("В обработке", "order-status-processing"),
         SHIPPED("Отправлен", "order-status-shipped"),
-        DELIVERED("Доставлен", "order-status-delivered");
+        DELIVERED("Доставлен", "order-status-delivered"),
+        REMOVED("Удалён", "order-status-removed");
 
         private String humanName;
         private String styleClass;
@@ -181,6 +184,7 @@ public class Order
     }
     public void setStatus(Status status) {
         this.status = status;
+        Events.instance().raiseAsynchronousEvent("orderStatusChanged", this.getOrderId());
     }
 
     @Column(name="COMMENT", nullable=true)

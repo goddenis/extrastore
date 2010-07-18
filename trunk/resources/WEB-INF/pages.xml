@@ -127,7 +127,7 @@
         <navigation from-action="#{ordersHome.remove}">
            <rule if-outcome="removed">
               <end-conversation/>
-              <redirect view-id="/admin/orderslist.xhtml"/>
+              <redirect view-id="/admin/ordersList.xhtml"/>
            </rule>
         </navigation>
 

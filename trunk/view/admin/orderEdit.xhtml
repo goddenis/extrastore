@@ -70,6 +70,7 @@
                     <a:support event="onblur" reRender="areaField" bypassUpdates="true" ajaxSingle="true"/>
                 </h:inputText>
             </s:decorate>
+
             <s:decorate id="cityField" template="/layout/edit.xhtml">
                 <ui:define name="label">Город</ui:define>
                 <h:inputText id="city"
@@ -79,6 +80,16 @@
                     <a:support event="onblur" reRender="cityField" bypassUpdates="true" ajaxSingle="true"/>
                 </h:inputText>
             </s:decorate>
+            <s:decorate id="addressField" template="/layout/edit.xhtml">
+                <ui:define name="label">Адрес</ui:define>
+                <h:inputText id="address"
+                       required="true"
+                           size="64"
+                          value="#{ordersHome.instance.customer.address1}">
+                    <a:support event="onblur" reRender="addressField" bypassUpdates="true" ajaxSingle="true"/>
+                </h:inputText>
+            </s:decorate>
+            
 
 
 

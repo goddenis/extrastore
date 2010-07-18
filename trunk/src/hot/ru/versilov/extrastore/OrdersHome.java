@@ -52,8 +52,15 @@ public class OrdersHome extends EntityHome<Order> {
     @Override
     public String update() {
         Order o = this.getInstance();
-        for (OrderLine line: o.getOrderLines()) {
-            line.setOrder(o);
+        Iterator<OrderLine> i = o.getOrderLines().iterator();
+        while (i.hasNext()) {
+            OrderLine line = i.next();
+            if (line.getQuantity() == 0) {
+                // Clean out empty lines
+                i.remove();
+            } else {
+                line.setOrder(o);
+            }
         }
         // Recalculate net amount etc. according to the new order lines.
         o.calculateTotals();
@@ -61,6 +68,13 @@ public class OrdersHome extends EntityHome<Order> {
         Events.instance().raiseTransactionSuccessEvent("orderChanged", o.getOrderId());
         
         return super.update();
+    }
+
+    @Override
+    public String remove() {
+        Events.instance().raiseTransactionSuccessEvent("orderRemoved", this.getInstance().getOrderId());
+        
+        return super.remove();    //To change body of overridden methods use File | Settings | File Templates.
     }
 
     public Order getDefinedInstance() {
@@ -77,14 +91,21 @@ public class OrdersHome extends EntityHome<Order> {
 
     public List<OrderLine> getOtherLines() {
         List<OrderLine> list = new ArrayList<OrderLine>();
+        List<Product> otherProducts;
 
-        List<Long> prods = new ArrayList<Long>();
+        if (this.getInstance().getOrderLines().size() > 0) {
+            List<Long> prods = new ArrayList<Long>();
 
-        for (OrderLine line: this.getInstance().getOrderLines()) {
-            prods.add(line.getProduct().getProductId());
+            for (OrderLine line: this.getInstance().getOrderLines()) {
+                prods.add(line.getProduct().getProductId());
+            }
+
+            otherProducts = this.getEntityManager().createQuery("select p from Product p where p.productId not in(:prods)").setParameter("prods", prods).getResultList();
+
+        } else {
+            otherProducts = this.getEntityManager().createQuery("select p from Product p").getResultList();
         }
-
-        List<Product> otherProducts = this.getEntityManager().createQuery("select p from Product p where p.productId not in(:prods)").setParameter("prods", prods).getResultList();
+        
 
         for (Product p: otherProducts) {
             list.add(new OrderLine(p, 0));

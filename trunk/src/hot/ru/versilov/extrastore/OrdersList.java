@@ -2,24 +2,17 @@ package ru.versilov.extrastore;
 
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
-import org.jboss.seam.framework.EntityQuery;
-import org.richfaces.component.UIExtendedDataTable;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
-import org.richfaces.model.ScrollableTableDataModel;
 import org.richfaces.model.selection.Selection;
 import org.richfaces.model.selection.SimpleSelection;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
-import javax.el.ValueExpression;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
-import java.awt.*;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -54,12 +47,14 @@ public class OrdersList implements OrdersListI {
     }
 
 
+    private static final String COMPLETE_STATUS = Order.Status.CANCELLED.ordinal() + ", " + Order.Status.REMOVED.ordinal() + ", " + Order.Status.DELIVERED.ordinal() + ", " + Order.Status.SHIPPED.ordinal();
+
 
     public List<Order> getResultList() {
         if (resultList == null) {
             String query = EJBQL;
             if (incompleteOnly) {
-                query += " where o.status <> 3";
+                query += " where o.status not in (" + COMPLETE_STATUS + ")";
             }
             // Clear the EM cache in case changes to the orders were made.
             em.clear();
@@ -142,21 +137,39 @@ public class OrdersList implements OrdersListI {
         System.out.println("Order No." + order.getOrderId() + " was accepted.");
     }
 
+    public void remove(Order order) {
+        order.setStatus(Order.Status.REMOVED);
+    }
+
+    public void cancel(Order order) {
+        order.setStatus(Order.Status.CANCELLED);
+    }
+
+
     public void openSelection() {
         int result = updateSelectedOrdersStatus(Order.Status.OPEN);
         System.out.println(result + " orders were opened.");
     }
 
     public void acceptSelection() {
-        int result = updateSelectedOrdersStatus(Order.Status.PROCESSING);
-        System.out.println(result + " orders were accepted.");
+        updateSelectedOrdersStatus(Order.Status.PROCESSING);
     }
 
     public void sendSelection() {
-        int result = updateSelectedOrdersStatus(Order.Status.SHIPPED);
+        updateSelectedOrdersStatus(Order.Status.SHIPPED);
         invalidateResultList();
-        System.out.println(result + " orders were shipped.");
     }
+
+    public void cancelSelection() {
+        updateSelectedOrdersStatus(Order.Status.CANCELLED);
+        invalidateResultList();
+    }
+
+    public void removeSelection() {
+        updateSelectedOrdersStatus(Order.Status.REMOVED);
+        invalidateResultList();
+    }
+
 
     protected void takeSelection() {
     	selectedOrders.clear();

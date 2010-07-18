@@ -32,7 +32,8 @@
 
         <s:decorate id="address" template="/layout/display.xhtml">
             <ui:define name="label">Адрес</ui:define>
-            <h:outputText value="#{ordersHome.instance.customer.zip}, #{ordersHome.instance.customer.region}, #{ordersHome.instance.customer.area}, #{ordersHome.instance.customer.city}, #{ordersHome.instance.customer.address1}"/>
+            <h:outputText value="#{ordersHome.instance.customer.zip}, #{ordersHome.instance.customer.region}, #{ordersHome.instance.customer.area}, #{ordersHome.instance.customer.city},"/><br />
+            <h:outputText value="#{ordersHome.instance.customer.address1}" />
         </s:decorate>
 
         <s:decorate id="email" template="/layout/display.xhtml" rendered="#{ordersHome.instance.customer.email != null}">

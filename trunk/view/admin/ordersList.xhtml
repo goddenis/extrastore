@@ -102,7 +102,7 @@
         </rich:column>
         <rich:column styleClass="action" width="210px">
             <f:facet name="header">Action</f:facet>
-            <s:link view="/admin/#{empty from ? 'order' : from}"
+            <s:link view="/admin/#{empty from ? 'order' : from}.xhtml"
                    value="#{empty from ? 'View' : 'Select'}"
              propagation="#{empty from ? 'none' : 'default'}"
                       id="ordersViewId">
@@ -117,8 +117,10 @@
                 <f:param name="orderId"
                         value="#{_order.orderId}"/>
             </s:link>
+            <a4j:commandLink value="Удалить" actionListener="#{ordersList.remove(_order)}" reRender="ordersList" />
             <a4j:commandLink value="Принять" rendered="#{_order.status.ordinal() == 0}" actionListener="#{ordersList.accept(_order)}" immediate="false" reRender="ordersList" />
             <a4j:commandLink value="Отправлен" rendered="#{_order.status.ordinal() == 2}" actionListener="#{ordersList.sent(_order)}" immediate="false" reRender="ordersList" />
+            <a4j:commandLink value="Отменить" rendered="#{_order.status.ordinal() != 1}" actionListener="#{ordersList.cancel(_order)}" immediate="false" reRender="ordersList" />
         </rich:column>
         <f:facet name="footer">
              <rich:datascroller renderIfSinglePage="false" maxPages="7" ajaxSingle="true" for="ordersList" />
@@ -137,6 +139,8 @@
         <a4j:commandButton actionListener="#{ordersList.openSelection}" value="Открыть" reRender="ordersList" />
         <a4j:commandButton actionListener="#{ordersList.acceptSelection}" value="Принять" reRender="ordersList" />
         <a4j:commandButton actionListener="#{ordersList.sendSelection}" value="Отправить" reRender="ordersList" />
+        <a4j:commandButton actionListener="#{ordersList.cancelSelection}" value="Отменить" reRender="ordersList" />
+        <a4j:commandButton actionListener="#{ordersList.removeSelection}" value="Удалить" reRender="ordersList" />
     </s:div>
 
     </a4j:form>

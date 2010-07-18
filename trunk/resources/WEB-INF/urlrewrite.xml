@@ -19,7 +19,7 @@
 
     <rule>
         <from>^/admin/order/(\d+)$</from>
-        <to last="true">/admin/order?id=$1</to>
+        <to last="true">/admin/order.seam?id=$1</to>
     </rule>
     
     <rule>
@@ -47,6 +47,12 @@
         <from>/browse.seam\?name=(\w+)&amp;(.*)</from>
         <to>/browse/$1?$2</to>
     </outbound-rule>
+
+    <outbound-rule>
+        <from>/amdin/order.seam\?id=(\d+)</from>
+        <to>/admin/order/$1</to>
+    </outbound-rule>
+
 
 
 
