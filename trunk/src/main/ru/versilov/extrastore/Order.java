@@ -184,7 +184,14 @@ public class Order
     }
     public void setStatus(Status status) {
         this.status = status;
-        Events.instance().raiseAsynchronousEvent("orderStatusChanged", this.getOrderId());
+    }
+
+    // Set status with rasing an event.
+    // Event receiver, among all, sends email (and sms) notification to the customer.
+    @Transient
+    public void setStatusWithNotification(Status status) {
+        this.setStatus(status);
+        Events.instance().raiseAsynchronousEvent("orderStatusChanged", this);
     }
 
     @Column(name="COMMENT", nullable=true)

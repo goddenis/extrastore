@@ -133,16 +133,16 @@ public class OrdersList implements OrdersListI {
 
     public void accept(Order order) {
         // Change status and send e-mail notification here.
-        order.setStatus(Order.Status.PROCESSING);
+        order.setStatusWithNotification(Order.Status.PROCESSING);
         System.out.println("Order No." + order.getOrderId() + " was accepted.");
     }
 
     public void remove(Order order) {
-        order.setStatus(Order.Status.REMOVED);
+        order.setStatusWithNotification(Order.Status.REMOVED);
     }
 
     public void cancel(Order order) {
-        order.setStatus(Order.Status.CANCELLED);
+        order.setStatusWithNotification(Order.Status.CANCELLED);
     }
 
 
@@ -188,7 +188,7 @@ public class OrdersList implements OrdersListI {
         takeSelection();
         int result = 0;
         for (Order selectedOrder : selectedOrders) {
-            selectedOrder.setStatus(newStatus);
+            selectedOrder.setStatusWithNotification(newStatus);
             System.out.println("Order #" + selectedOrder.getOrderId() + " was changed.");
             result++;
         }

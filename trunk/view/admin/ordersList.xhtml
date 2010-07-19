@@ -50,6 +50,10 @@
                 <h:outputText value="Город" />
             </f:facet>
             <h:outputText value="#{_order.customer.city}"  styleClass="#{_order.status.styleClass}"/>
+            <rich:toolTip>
+                <h:outputText value="#{_order.customer.zip}, #{_order.customer.region}, #{_order.customer.area}, #{_order.customer.city}," /><br />
+                <h:outputText value="#{_order.customer.address1}" />
+            </rich:toolTip>
         </rich:column>
 
         <rich:column sortable="true" sortBy="#{_order.customer.firstName}"
@@ -58,6 +62,11 @@
                 <h:outputText value="Клиент" />
             </f:facet>
             <h:outputText value="#{_order.customer.firstName} #{_order.customer.lastName}"  styleClass="#{_order.status.styleClass}"/>
+            <rich:toolTip>              
+                <h:outputText value="Тел.: #{_order.customer.phone}" /><br />
+                <h:outputText value="Эл. почта: #{_order.customer.email}" rendered="#{_order.customer.email != null}" />
+            </rich:toolTip>
+
         </rich:column>
 
         <rich:column sortable="true" sortBy="#{_order.totalAmount}" style="text-align: right; padding: 0 7px;" width="80px">

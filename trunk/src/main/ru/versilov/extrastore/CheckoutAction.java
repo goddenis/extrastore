@@ -272,6 +272,7 @@ public class CheckoutAction
     protected void sendEmailNotification(Order order) {
         try {
             renderer.render("/order/email_notification.xhtml");
+            renderer.render("/email/order_received.xhtml");
         } catch (Exception e) {
             log.error("Error saving new order", e);
             facesMessages.add("Ошибка при отправке уведомления о заказе: " + e.getMessage());

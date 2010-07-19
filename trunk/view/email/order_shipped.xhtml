@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<m:message xmlns="http://www.w3.org/1999/xhtml"
+           xmlns:m="http://jboss.com/products/seam/mail"
+           xmlns:h="http://java.sun.com/jsf/html"
+           xmlns:rich="http://richfaces.org/rich"
+           xmlns:f="http://java.sun.com/jsf/core"
+           charset="UTF-8"
+           rendered="#{order.customer.email != null}">
+
+    <m:from name="Служба доставки Созвездие" address="order@sozvezdie-store.ru" />
+    <m:to>#{order.customer.email}</m:to>
+    <m:subject>Заказ ##{order.orderId} отправлен</m:subject>
+    <m:body>
+
+        <p>Уважаемый(ая) #{order.customer.firstName}.</p>
+
+        <p>Ваш заказ ##{order.orderId} отправлен <h:outputText value=" #{order.orderDate}" />.</p>
+
+        
+        <p>С уважением,<br/>Служба доставки "Созвездие"</p>
+    </m:body>
+</m:message>

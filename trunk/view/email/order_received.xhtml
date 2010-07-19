@@ -4,14 +4,19 @@
            xmlns:h="http://java.sun.com/jsf/html"
            xmlns:rich="http://richfaces.org/rich"
            xmlns:f="http://java.sun.com/jsf/core"
-           charset="UTF-8">
+           charset="UTF-8"
+           rendered="#{currentOrder.customer.email != null}">
 
-    <!--<m:from name="#{currentOrder.customer.firstName}" address="#{currentOrder.customer.email}" rendered="#{currentOrder.customer.email.length() > 0}" />-->
-    <m:from name="#{currentOrder.customer.firstName}" address="order@sozvezdie-store.ru" rendered="#{currentOrder.customer.email == null}"/>
-    <m:from name="#{currentOrder.customer.firstName}" address="#{currentOrder.customer.email}" rendered="#{currentOrder.customer.email != null}" />
-    <m:to>order@sozvezdie-store.ru</m:to>
-    <m:subject>Заказ для #{currentOrder.customer.firstName}</m:subject>
+    <m:from name="Служба доставки Созвездие" address="order@sozvezdie-store.ru" />
+    <m:to>#{currentOrder.customer.email}</m:to>
+    <m:subject>Заказ ##{currentOrder.orderId}</m:subject>
     <m:body>
+
+        <p>Уважаемый(ая) #{currentOrder.customer.firstName}.</p>
+
+        <p>Ваш заказ принят.</p>
+        <p>Данные вашего заказа:</p>
+
         <rich:dataTable value="#{currentOrder.orderLines}" var="orderLine" id="goodsTable">
 
             <h:column>
@@ -28,9 +33,9 @@
                 <h:outputText value="#{orderLine.quantity}" rendered="#{orderLine.quantity > 0}"/>
             </h:column>
         </rich:dataTable>
-        <p>Всего: #{currentOrder.itemsQuantity} пачек.</p>
+        <p>Всего: #{currentOrder.itemsQuantity} предмет(ов).</p>
         <p></p>
-        <p>Адрес:  #{currentOrder.customer.zip}, #{currentOrder.customer.region}, #{currentOrder.customer.area}, #{currentOrder.customer.city},<br />
+        <p>Адрес: #{currentOrder.customer.zip}, #{currentOrder.customer.region}, #{currentOrder.customer.area}, #{currentOrder.customer.city},<br />
         #{currentOrder.customer.address1}</p>
         <p>Получатель: #{currentOrder.customer.firstName}</p>
         <p>Телефон: #{currentOrder.customer.phone}</p>
