@@ -4,9 +4,10 @@
  * Distributable under LGPL license.
  * See terms of license at gnu.org.
  */
-package ru.versilov.extrastore;
+package ru.versilov.extrastore.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -37,6 +38,8 @@ public class Customer
     String  creditCard     = "000-0000-0000";
     int     ccMonth        = 1;
     int     ccYear         = 2005;
+
+    Set<Order> orders;
 
 
     public Customer() {
@@ -158,4 +161,13 @@ public class Customer
         return "Customer#" + getId() + "(" + email + ")";
     }
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="customer")
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
 }
+

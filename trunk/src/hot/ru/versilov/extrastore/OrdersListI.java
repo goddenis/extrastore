@@ -1,11 +1,9 @@
 package ru.versilov.extrastore;
 
-import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.Selection;
+import ru.versilov.extrastore.model.Order;
 
-import javax.ejb.Remove;
-import java.util.Iterator;
 import java.util.List;
 
 /**

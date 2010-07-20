@@ -3,9 +3,10 @@ package ru.versilov.extrastore;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.core.Events;
 import org.jboss.seam.framework.EntityHome;
+import ru.versilov.extrastore.model.Order;
+import ru.versilov.extrastore.model.OrderLine;
+import ru.versilov.extrastore.model.Product;
 
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import java.util.*;
 

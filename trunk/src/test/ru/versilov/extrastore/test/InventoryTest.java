@@ -1,7 +1,7 @@
 package ru.versilov.extrastore.test;
 
 import org.testng.annotations.Test;
-import ru.versilov.extrastore.Inventory;
+import ru.versilov.extrastore.model.Inventory;
 
 /**
  * Created by IntelliJ IDEA.

@@ -1,6 +1,8 @@
 package ru.versilov.extrastore;
 
 import org.richfaces.event.UploadEvent;
+import ru.versilov.extrastore.model.Category;
+import ru.versilov.extrastore.model.Product;
 
 import java.io.IOException;
 import java.io.OutputStream;

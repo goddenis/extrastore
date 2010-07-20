@@ -10,6 +10,8 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Out;
 import org.jboss.seam.bpm.Actor;
 import org.jboss.seam.security.Identity;
+import ru.versilov.extrastore.model.Admin;
+import ru.versilov.extrastore.model.User;
 
 @Stateless
 @Name("authenticator")
@@ -21,7 +23,7 @@ public class AuthenticatorAction implements Authenticator
     @In Actor actor;
     @In Identity identity;
 
-    @Out(required=false, scope=ScopeType.SESSION) 
+    @Out(required=false, scope=ScopeType.SESSION)
     User currentUser;
 
     public boolean authenticate()

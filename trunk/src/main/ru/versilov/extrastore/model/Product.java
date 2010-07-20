@@ -4,7 +4,7 @@
  * Distributable under LGPL license.
  * See terms of license at gnu.org.
  */
-package ru.versilov.extrastore;
+package ru.versilov.extrastore.model;
 
 import java.io.IOException;
 import java.io.OutputStream;

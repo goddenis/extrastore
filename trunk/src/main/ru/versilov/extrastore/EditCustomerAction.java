@@ -27,6 +27,7 @@ import org.jboss.seam.bpm.Actor;
 import org.jboss.seam.contexts.Context;
 import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.security.Identity;
+import ru.versilov.extrastore.model.Customer;
 
 @Stateful
 @Name("editCustomer")

@@ -4,7 +4,7 @@
  * Distributable under LGPL license.
  * See terms of license at gnu.org.
  */
-package ru.versilov.extrastore;
+package ru.versilov.extrastore.model;
 
 import org.jboss.seam.core.Events;
 
@@ -128,7 +128,7 @@ public class Order
 
     
     @ManyToOne
-    @JoinColumn(name="USERID")
+    @JoinColumn(name="USERID", nullable = false)
     public Customer getCustomer() {
         return customer;
     }

@@ -43,7 +43,7 @@
              scope="stateless"
              auto-create="true"/>
     <framework:entity-home name="orderHome"
-                           entity-class="ru.versilov.extrastore.Order"
+                           entity-class="ru.versilov.extrastore.model.Order"
                            scope="conversation"
                            auto-create="true">
         <framework:id>#{orderId}</framework:id>

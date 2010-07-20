@@ -1,8 +1,8 @@
 package ru.versilov.extrastore;
 
 import org.jboss.seam.Component;
-import org.jboss.seam.annotations.In;
-import org.jboss.seam.annotations.Name;
+import ru.versilov.extrastore.model.OrderLine;
+import ru.versilov.extrastore.model.Product;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;

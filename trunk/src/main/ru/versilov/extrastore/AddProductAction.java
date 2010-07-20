@@ -6,6 +6,9 @@ import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 import org.richfaces.event.UploadEvent;
 import org.richfaces.model.UploadItem;
+import ru.versilov.extrastore.model.Category;
+import ru.versilov.extrastore.model.Inventory;
+import ru.versilov.extrastore.model.Product;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
@@ -111,7 +114,7 @@ public class AddProductAction implements AddProduct {
     }
 
     public void save() {
-        System.out.println("Добавлен продукт: " + product.title);
+        System.out.println("Добавлен продукт: " + product.getTitle());
         Set<Category> cats = new HashSet<Category>();
         for(Category cat: selCategories) {
             cats.add(cat);

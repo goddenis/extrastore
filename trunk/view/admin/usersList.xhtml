@@ -1,0 +1,80 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:a4j="http://richfaces.org/a4j"
+    template="/layout/template.xhtml">
+    
+<ui:define name="title"> Пользователи</ui:define>
+<ui:define name="body">
+
+
+    <a4j:loadStyle src="/stylesheet/admin.css" />
+
+    <a4j:form>
+
+
+
+
+    <rich:extendedDataTable id="usersList"
+                var="user"
+              value="#{usersList.usersDataModel}"
+           rendered="#{not empty usersList.resultList}"
+            selectionMode="multi"
+            selection="#{usersList.selection}"
+            rows="18"
+            height="524px"
+            >
+        <f:facet name="header">
+             <h:outputText value="Пользователи" />
+        </f:facet>
+
+        <rich:column width="45px" sortable="true" sortBy="#{user.id}" label="Номер">
+            <f:facet name="header">
+                <h:outputText value="Номер" />
+            </f:facet>
+            <h:outputText value="#{user.id}" style="font-weight: bold;"/>
+        </rich:column>
+
+        <rich:column sortable="true" sortBy="#{user.firstName}" sortOrder="ASCENDING"
+                filterBy="#{user.firstName}" filterEvent="onkeyup" label="Имя" width="200px">
+            <f:facet name="header">
+                <h:outputText value="Имя" />
+            </f:facet>
+            <h:outputText value="#{user.firstName}" />
+        </rich:column>
+
+        <rich:column sortable="true" sortBy="#{user.email}"
+                filterBy="#{user.email}" filterEvent="onkeyup"  label="Эл. почта" width="150px">
+            <f:facet name="header">
+                <h:outputText value="Эл. почта" />
+            </f:facet>
+            <h:outputText value="#{user.email}" />
+
+        </rich:column>
+
+        <f:facet name="footer">
+             <rich:datascroller renderIfSinglePage="false" maxPages="7" ajaxSingle="true" for="usersList" />
+        </f:facet>
+    </rich:extendedDataTable>
+
+
+    <s:div styleClass="actionButtons" rendered="#{empty from}">
+        <s:button view="/admin/userEdit.xhtml"
+                    id="create"
+           propagation="none"
+                 value="Новый пользователь">
+            <f:param name="userId"/>
+        </s:button>
+        <a4j:commandButton actionListener="#{usersList.removeSelection}" value="Удалить" reRender="usersList" />
+    </s:div>
+
+    </a4j:form>
+
+</ui:define>
+
+</ui:composition>

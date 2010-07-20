@@ -2,6 +2,7 @@ package ru.versilov.extrastore;
 
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.framework.EntityHome;
+import ru.versilov.extrastore.model.Product;
 
 /**
  * Created by IntelliJ IDEA.

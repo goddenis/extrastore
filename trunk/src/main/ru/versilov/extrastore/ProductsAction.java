@@ -4,6 +4,7 @@ import org.jboss.seam.annotations.Factory;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.annotations.datamodel.DataModelSelection;
+import ru.versilov.extrastore.model.Product;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;

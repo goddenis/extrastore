@@ -8,10 +8,12 @@
     xmlns:rich="http://richfaces.org/rich"
     template="/layout/template.xhtml">
 
+<ui:define name="title"> Заказ №#{ordersHome.instance.orderId}</ui:define>
+    
 <ui:define name="body">
 
     <rich:panel>
-        <f:facet name="header">Order Details</f:facet>
+        <f:facet name="header">Заказ №#{ordersHome.instance.orderId}</f:facet>
 
 
         <s:decorate id="number" template="/layout/display.xhtml">
@@ -90,11 +92,11 @@
 
         <s:button view="/admin/orderEdit.xhtml"
                     id="edit"
-                 value="Edit"/>
+                 value="Изменить"/>
 
         <s:button view="/admin/#{empty orderFrom ? 'ordersList' : orderFrom}.xhtml"
                     id="done"
-                 value="Done"/>
+                 value="Назад"/>
 
     </div>
 

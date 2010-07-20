@@ -18,6 +18,8 @@ import org.jboss.seam.annotations.bpm.BeginTask;
 import org.jboss.seam.annotations.bpm.EndTask;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
+import ru.versilov.extrastore.model.Admin;
+import ru.versilov.extrastore.model.Order;
 
 
 @Stateful

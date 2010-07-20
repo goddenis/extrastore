@@ -16,12 +16,11 @@ import org.jboss.seam.faces.Renderer;
 import org.jboss.seam.log.Log;
 import org.jboss.seam.security.Identity;
 import org.jboss.seam.bpm.Actor;
+import ru.versilov.extrastore.model.*;
 
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
-import javax.faces.event.ActionEvent;
-import javax.faces.event.ValueChangeEvent;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -131,14 +130,14 @@ public class CheckoutAction
 
 
                 this.customer = new Customer();
-                this.customer.email = identity.getCredentials().getUsername();
-                this.customer.password = "password";    // If it's less, than 6 symbols weird exception occurs: null id in Customer entyr (don't flush the session, after an exception occurs).
+                this.customer.setEmail(identity.getCredentials().getUsername());
+                this.customer.setPassword("password");    // If it's less, than 6 symbols weird exception occurs: null id in Customer entyr (don't flush the session, after an exception occurs).
 
-                this.customer.zip = "443110";
+                this.customer.setZip("443110");
 
                 em.persist(customer);
 
-                identity.getCredentials().setPassword(this.customer.password);
+                identity.getCredentials().setPassword(this.customer.getPassword());
 
                 // This is our fast injection!
                 Contexts.getSessionContext().set("currentUser", this.customer);
@@ -176,7 +175,7 @@ public class CheckoutAction
 
     public String fillRegionAndAreaByIndex() {
         System.out.println("Checkout: Filling region and city.");
-        int zip = Integer.parseInt(customer.zip);
+        int zip = Integer.parseInt(customer.getZip());
         OPS ops;
         try {
             ops = (OPS)em.createQuery("select o from OPS o where o.index=" + zip).getSingleResult();
@@ -193,7 +192,7 @@ public class CheckoutAction
 
     @Conversational
     public void address() {
-        Events.instance().raiseAsynchronousEvent("submitAddress", currentOrder.customer.getAddress1());
+        Events.instance().raiseAsynchronousEvent("submitAddress", currentOrder.getCustomer().getAddress1());
 
     }
 
@@ -234,7 +233,7 @@ public class CheckoutAction
         return completedOrder;
     }
 
-    private Order purchase(Customer customer, Order order) 
+    private Order purchase(Customer customer, Order order)
         throws InsufficientQuantityException, Exception
     {
         order.setCustomer(customer);

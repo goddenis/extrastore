@@ -6,8 +6,7 @@
  */
 package ru.versilov.extrastore;
 
-import javax.faces.event.ActionEvent;
-import javax.faces.event.ValueChangeEvent;
+import ru.versilov.extrastore.model.Order;
 
 
 public interface Checkout

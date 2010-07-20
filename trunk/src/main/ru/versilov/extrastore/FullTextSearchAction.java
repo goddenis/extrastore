@@ -28,6 +28,7 @@ import org.jboss.seam.annotations.web.RequestParameter;
 import org.jboss.seam.annotations.datamodel.DataModel;
 import org.hibernate.search.jpa.FullTextQuery;
 import org.hibernate.search.jpa.FullTextEntityManager;
+import ru.versilov.extrastore.model.Product;
 
 /**
  * Hibernate Search version of the store querying mechanism

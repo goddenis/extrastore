@@ -12,7 +12,7 @@ import javax.persistence.PersistenceException;
 import org.jboss.seam.mock.SeamTest;
 import org.testng.annotations.Test;
 
-import ru.versilov.extrastore.Product;
+import ru.versilov.extrastore.model.Product;
 
 public class ProductUnitTest 
     extends SeamTest

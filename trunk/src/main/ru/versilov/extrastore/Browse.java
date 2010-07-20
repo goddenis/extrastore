@@ -1,5 +1,7 @@
 package ru.versilov.extrastore;
 
+import ru.versilov.extrastore.model.Product;
+
 import javax.ejb.Local;
 import java.util.List;
 

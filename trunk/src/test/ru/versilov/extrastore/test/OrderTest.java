@@ -15,7 +15,10 @@ import org.jboss.seam.log.LogProvider;
 import org.testng.annotations.Test;
 
 import ru.versilov.extrastore.*;
-import ru.versilov.extrastore.Order.Status;
+import ru.versilov.extrastore.model.Order.Status;
+import ru.versilov.extrastore.model.Order;
+import ru.versilov.extrastore.model.Product;
+import ru.versilov.extrastore.model.User;
 
 public class OrderTest
     extends SeamTest

@@ -6,6 +6,8 @@
  */
 package ru.versilov.extrastore;
 
+import ru.versilov.extrastore.model.Product;
+
 import java.util.List;
 
 import javax.ejb.*;

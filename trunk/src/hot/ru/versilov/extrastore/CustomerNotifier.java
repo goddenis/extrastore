@@ -7,6 +7,7 @@ import org.jboss.seam.annotations.Observer;
 import org.jboss.seam.contexts.Contexts;
 import org.jboss.seam.faces.Renderer;
 import org.jboss.seam.log.Log;
+import ru.versilov.extrastore.model.Order;
 
 /**
  * Created by IntelliJ IDEA.

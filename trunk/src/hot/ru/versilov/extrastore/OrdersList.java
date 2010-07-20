@@ -6,6 +6,7 @@ import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.Selection;
 import org.richfaces.model.selection.SimpleSelection;
+import ru.versilov.extrastore.model.Order;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;

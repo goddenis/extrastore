@@ -17,6 +17,7 @@ import org.jboss.seam.annotations.bpm.BeginTask;
 import org.jboss.seam.annotations.bpm.EndTask;
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
+import ru.versilov.extrastore.model.Order;
 
 @Stateful
 @Name("ship")
@@ -26,7 +27,7 @@ public class ShipAction
 {
     private static final long serialVersionUID = -5284603520443473953L;
     
-    @In 
+    @In
     Order order;
     
     String track;

@@ -7,6 +7,7 @@ import org.jboss.seam.annotations.Out;
 import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.annotations.datamodel.DataModelSelection;
 import org.jboss.seam.annotations.web.RequestParameter;
+import ru.versilov.extrastore.model.Order;
 
 import javax.ejb.Remove;
 import javax.ejb.Stateful;

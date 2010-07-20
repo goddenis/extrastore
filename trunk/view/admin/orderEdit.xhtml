@@ -9,6 +9,8 @@
     xmlns:rich="http://richfaces.org/rich"
     template="/layout/template.xhtml">
 
+<ui:define name="title"> Заказ №#{ordersHome.instance.orderId}</ui:define>
+
 <ui:define name="body">
 
     <h:form id="order" styleClass="edit">
@@ -157,30 +159,30 @@
         <div class="actionButtons">
 
             <h:commandButton id="save"
-                          value="Save"
+                          value="Сохранить"
                          action="#{ordersHome.persist}"
                        disabled="#{!ordersHome.wired}"
                        rendered="#{!ordersHome.managed}"/>
 
             <h:commandButton id="update"
-                          value="Save"
+                          value="Сохранить"
                          action="#{ordersHome.update}"
                        rendered="#{ordersHome.managed}"/>
 
             <h:commandButton id="delete"
-                          value="Delete"
+                          value="Удалить"
                          action="#{ordersHome.remove}"
                       immediate="true"
                        rendered="#{ordersHome.managed}"/>
 
             <s:button id="cancelEdit"
-                   value="Cancel"
+                   value="Отменить"
              propagation="end"
                     view="/admin/order.xhtml"
                 rendered="#{ordersHome.managed}"/>
 
             <s:button id="cancelAdd"
-                   value="Cancel"
+                   value="Отменить"
              propagation="end"
                     view="/admin/#{empty orderFrom ? 'ordersList' : orderFrom}.xhtml"
                 rendered="#{!ordersHome.managed}"/>

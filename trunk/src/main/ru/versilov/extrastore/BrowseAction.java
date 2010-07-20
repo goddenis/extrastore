@@ -2,6 +2,7 @@ package ru.versilov.extrastore;
 
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.annotations.web.RequestParameter;
+import ru.versilov.extrastore.model.Product;
 
 
 import javax.persistence.PersistenceContext;

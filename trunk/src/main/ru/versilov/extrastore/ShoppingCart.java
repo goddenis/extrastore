@@ -6,6 +6,9 @@
  */
 package ru.versilov.extrastore;
 
+import ru.versilov.extrastore.model.OrderLine;
+import ru.versilov.extrastore.model.Product;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;

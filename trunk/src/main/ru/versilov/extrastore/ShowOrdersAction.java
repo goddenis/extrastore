@@ -27,7 +27,9 @@ import org.jboss.seam.annotations.datamodel.DataModel;
 import org.jboss.seam.annotations.datamodel.DataModelSelection;
 import org.jbpm.graph.exe.ProcessInstance;
 
-import ru.versilov.extrastore.Order.Status;
+import ru.versilov.extrastore.model.Order.Status;
+import ru.versilov.extrastore.model.Customer;
+import ru.versilov.extrastore.model.Order;
 
 
 @Stateful
