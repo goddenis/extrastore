@@ -150,9 +150,40 @@
         <a4j:commandButton actionListener="#{ordersList.sendSelection}" value="Отправить" reRender="ordersList" />
         <a4j:commandButton actionListener="#{ordersList.cancelSelection}" value="Отменить" reRender="ordersList" />
         <a4j:commandButton actionListener="#{ordersList.removeSelection}" value="Удалить" reRender="ordersList" />
+        <a4j:commandButton oncomplete="#{rich:component('createBatchPanel')}.show()" value="Создать партию" reRender="ordersList" />
     </s:div>
 
     </a4j:form>
+
+    <rich:modalPanel id="createBatchPanel" autosized="true" width="450">
+        <f:facet name="header">
+            <h:outputText value="Создать партию" />
+        </f:facet>
+        <f:facet name="controls">
+            <h:panelGroup>
+                <h:graphicImage value="/images/modal/close.png" id="hidelink"
+                    styleClass="hidelink" />
+                <rich:componentControl for="editPanel" attachTo="hidelink"
+                    operation="hide" event="onclick" />
+            </h:panelGroup>
+        </f:facet>
+        <h:form>
+            <rich:messages style="color:red;"></rich:messages>
+            <h:panelGrid columns="1">
+                <a4j:outputPanel ajaxRendered="true">
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Дата" />
+                        <rich:calendar value="#{ordersList.batch.shipmentDate}" required="true" datePattern="d MMM yyyy"/>
+                        <h:outputText value="ОПС" />
+                        <h:inputText value="#{ordersList.batch.ops}" required="true" />
+                    </h:panelGrid>
+                </a4j:outputPanel>
+                <a4j:commandButton value="Создать"
+                    action="#{ordersList.createBatchFromSelection}"
+                    oncomplete="if (#{facesContext.maximumSeverity==null}) #{rich:component('createBatchPanel')}.hide();" />
+            </h:panelGrid>
+        </h:form>
+    </rich:modalPanel>
 
 </ui:define>
 

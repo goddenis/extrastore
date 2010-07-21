@@ -72,6 +72,8 @@ public class Order
     String trackingNumber;
     String comment;
 
+    Batch batch;
+
 
     @Id @GeneratedValue
     @Column(name="ORDERID")
@@ -160,6 +162,15 @@ public class Order
         this.totalAmount = amount;
     }
 
+    @ManyToOne
+    @JoinColumn(name="BATCH_ID")
+    public Batch getBatch() {
+        return batch;
+    }
+
+    public void setBatch(Batch batch) {
+        this.batch = batch;
+    }
 
     @Transient
     public int getItemsQuantity() {

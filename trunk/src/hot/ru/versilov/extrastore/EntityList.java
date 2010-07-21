@@ -1,61 +1,63 @@
 package ru.versilov.extrastore;
 
 import org.jboss.seam.annotations.In;
-import org.jboss.seam.annotations.Name;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.Selection;
 import org.richfaces.model.selection.SimpleSelection;
-import ru.versilov.extrastore.model.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Catalyst
- * Date: 20.07.2010
- * Time: 1:38:08
+ * T: Catalyst
+ * Date: 21.07.2010
+ * Time: 0:27:49
  * To change this template use File | Settings | File Templates.
  */
-@Name("usersList")
-public class UsersList {
-
+public abstract class EntityList<T> {
     @In("entityManager")
     private EntityManager em;
 
-    private ExtendedTableDataModel<User> usersDataModel;
+    private ExtendedTableDataModel<T> dataModel;
 
     private Selection selection = new SimpleSelection();
-    private List<User> selectedUsers = new ArrayList<User>();
-    
+    private List<T> selectedEntities = new ArrayList<T>();
 
-    private List<User> resultList;
+
+    private List<T> resultList;
 
     protected void invalidateResultList() {
         resultList = null;
-        usersDataModel = null;
+        dataModel = null;
     }
 
-    public List<User> getResultList() {
+
+    public List<T> getResultList() {
         if (resultList == null) {
-            resultList =  em.createQuery("select u from User u").getResultList();
+            em.clear();
+            resultList =  em.createQuery(getEJBQLQuery()).getResultList();
         }
         return resultList;
     }
 
 
-    
-    public ExtendedTableDataModel<User> getUsersDataModel() {
-     		if (usersDataModel == null) {
-			usersDataModel = new ExtendedTableDataModel<User>(new DataProvider<User>(){
+    public EntityManager getEntityManager() {
+        return this.em;
+    }
 
-				private static final long serialVersionUID = 505408782103164847L;
 
-				public User getItemByKey(Object key) {
-					for(User u : getResultList()){
+    public ExtendedTableDataModel<T> getDataModel() {
+     		if (dataModel == null) {
+			    dataModel = new ExtendedTableDataModel<T>(new DataProvider<T>(){
+
+
+				public T getItemByKey(Object key) {
+					for(T u : getResultList()){
 						if (key.equals(getKey(u))){
 							return u;
 						}
@@ -63,12 +65,12 @@ public class UsersList {
 					return null;
 				}
 
-				public List<User> getItemsByRange(int firstRow, int endRow) {
+				public List<T> getItemsByRange(int firstRow, int endRow) {
 					return getResultList().subList(firstRow, endRow);
 				}
 
-				public Object getKey(User item) {
-					return item.getId();
+				public Object getKey(T item) {
+					return getItemId(item);
 				}
 
 				public int getRowCount() {
@@ -77,7 +79,7 @@ public class UsersList {
 
 			});
 		}
-		return usersDataModel;
+		return dataModel;
     }
 
     public Selection getSelection() {
@@ -87,25 +89,33 @@ public class UsersList {
     public void setSelection(Selection selection) {
         this.selection = selection;
     }
-    
+
+
+    protected List<T> getSelectedEntities() {
+        return selectedEntities;
+    }
+
     protected void takeSelection() {
-    	selectedUsers.clear();
+    	selectedEntities.clear();
 		Iterator<Object> iterator = getSelection().getKeys();
 		while (iterator.hasNext()) {
 			Object key = iterator.next();
-            usersDataModel.setRowKey(key);
-            if (usersDataModel.isRowAvailable()) {
-                User u = usersDataModel.getRowData();
-			    selectedUsers.add(u);
+            dataModel.setRowKey(key);
+            if (dataModel.isRowAvailable()) {
+                T t = dataModel.getRowData();
+			    selectedEntities.add(t);
             }
-		}    
+		}
     }
 
     public void removeSelection() {
         takeSelection();
-        for (User u : selectedUsers) {
+        for (T u : selectedEntities) {
             em.remove(u);
         }
         invalidateResultList();
     }
+
+    protected abstract long getItemId(T item);
+    public abstract String getEJBQLQuery();
 }

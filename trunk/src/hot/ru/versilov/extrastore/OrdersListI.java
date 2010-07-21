@@ -2,6 +2,7 @@ package ru.versilov.extrastore;
 
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.Selection;
+import ru.versilov.extrastore.model.Batch;
 import ru.versilov.extrastore.model.Order;
 
 import java.util.List;
@@ -41,6 +42,10 @@ public interface OrdersListI {
     void sendSelection();
     void removeSelection();
     void cancelSelection();
+
+    Batch getBatch();
+    void setBatch(Batch batch);
+    String createBatchFromSelection();
 
     void remove();
     

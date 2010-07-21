@@ -456,7 +456,9 @@
         <root url="jar://$PROJECT_DIR$/lib/test/hibernate-all.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/persistence-api.jar!/" />
+      </SOURCES>
     </library>
     <library name="to_war">
       <CLASSES>

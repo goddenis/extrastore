@@ -6,6 +6,7 @@ import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.Selection;
 import org.richfaces.model.selection.SimpleSelection;
+import ru.versilov.extrastore.model.Batch;
 import ru.versilov.extrastore.model.Order;
 
 import javax.ejb.Remove;
@@ -43,6 +44,8 @@ public class OrdersList implements OrdersListI {
     private boolean incompleteOnly = true;
 
     private ExtendedTableDataModel<Order> ordersDataModel;
+
+    private Batch batch = new Batch();
 
     public OrdersList() {
     }
@@ -195,6 +198,29 @@ public class OrdersList implements OrdersListI {
         }
 
         return result;
+    }
+
+    public Batch getBatch() {
+        return batch;
+    }
+
+    public void setBatch(Batch batch) {
+        this.batch = batch;
+    }
+
+    public String createBatchFromSelection() {
+        takeSelection();
+        for (Order selectedOrder : selectedOrders) {
+            batch.getOrders().add(selectedOrder);
+            selectedOrder.setBatch(batch);
+            System.out.println("Order #" + selectedOrder.getOrderId() + " was added to batch.");
+        }
+
+        em.persist(batch);
+
+        batch = new Batch();
+
+        return "success";
     }
 
     @Remove
