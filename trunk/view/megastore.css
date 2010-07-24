@@ -72,6 +72,31 @@ a {
 }
 
 
+/********************* HEADERS ***********************/
+
+h1, h2, h3, h4, h5 {
+        font-family: "Trebuchet MS", Arial, sans-serif;
+        line-height: normal;
+        color: #223F74;
+        font-weight: bold;
+}
+h1 {
+        font-size: x-large;
+        padding: 0px;
+        margin-bottom: 10px;
+}
+h2 {
+        font-size: large;
+        letter-spacing: 0px;
+        color: #376098;
+        line-height: 170%
+}
+h3 {
+        font-size: medium;
+        letter-spacing: 0px;
+        color: #333;
+}
+
 /************************ MENU *************************/
 
 #menu ul {
@@ -430,5 +455,13 @@ span.rur span:before { content: '\2013'; }
 }
 
 #sidebar li a {
+    font-size: 81%;
+}
+
+
+/********************* PLAIN TABLE ********************/
+
+.plaintable {
+    width: 90%;
     font-size: 81%;
 }

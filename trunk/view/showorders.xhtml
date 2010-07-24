@@ -13,11 +13,11 @@
             </ui:include>
         </ui:define>
 
-       
+
         <ui:define name="body">
             <h1>Ваши заказы</h1>
 
-            <f:subview id="no_orders" rendered="#{!orders.rowAvailable}">
+            <f:subview id="no_orders" rendered="#{!orders.rowAvailable and identity.loggedIn}">
                 <p>У вас пока нет заказов.</p>
                 <p>←<s:link view="/browse.xhtml">Вернуться в магазин</s:link></p>
             </f:subview>
@@ -26,10 +26,10 @@
 
             <h:dataTable id="OrdersDataTable"
                          value="#{orders}" var="item"
-                         styleClass="dvdtable"
-                         headerClass="dvdtablehead"
-                         rowClasses="dvdtableodd,dvdtableeven"
-                         columnClasses="dvdtablecol">
+                         styleClass="plaintable"
+                         headerClass="plaintablehead"
+                         rowClasses="plaintableodd,plaintableeven"
+                         columnClasses="plaintablecol">
                 <h:column id="orderColumn">
                     <f:facet name="header">Номер</f:facet>
                     #{item.orderId}
@@ -42,7 +42,7 @@
                 </h:column>
                 <h:column id="statusColumn">
                     <f:facet name="header">Статус</f:facet>
-                    #{item.status}
+                    <h:outputText value="#{item.status}" />
                 </h:column>
 
                 <h:column id="column4">
@@ -98,12 +98,6 @@
                                     <h:outputText id="TitleText" value="#{messages.cartTitleColumn}" />
                                 </f:facet>
                                 <h:outputText id="TitleValue" value="#{item.product.title}" />
-                            </h:column>
-                            <h:column id="actorColumn">
-                                <f:facet name="header">
-                                    <h:outputText id="ActorText" value="#{messages.cartActorColumn}" />
-                                </f:facet>
-                                <h:outputText id="ActorValue" value="#{item.product.actors[0].name}" />
                             </h:column>
                             <h:column id="quantityColumn">
                                 <f:facet name="header">
