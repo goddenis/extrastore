@@ -61,6 +61,17 @@
 
         </rich:column>
 
+        <rich:column width="200px">
+            <f:facet name="header">
+                <h:outputText value="Действия" />
+            </f:facet>
+
+            <a4j:commandLink value="Print" target="_blank" action="#{batchesList.printBatch(batch)}" />
+            
+
+            <a4j:commandButton actionListener="#{batchesList.exportToCSV(batch)}" value="CSV" reRender="batchesForm" />
+        </rich:column>
+
 
         <f:facet name="footer">
              <rich:datascroller renderIfSinglePage="false" maxPages="7" ajaxSingle="true" for="batchesList" />

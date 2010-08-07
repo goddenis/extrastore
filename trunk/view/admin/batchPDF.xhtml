@@ -1,0 +1,39 @@
+<document xmlns:ui="http://java.sun.com/jsf/facelets"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:s="http://jboss.com/products/seam/taglib"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns="http://jboss.com/products/seam/pdf">
+
+    <font name="c:/windows/fonts/arial.ttf" encoding="Cp1251" embedded="true" size="9">
+
+    <paragraph spacingAfter="50">Партия на <text value=" " /><text value="#{batch.shipmentDate}"><f:convertDateTime type="date" dateStyle="full" /></text></paragraph>
+
+    <font name="c:/windows/fonts/arial.ttf" encoding="Cp1251" embedded="true" size="7">
+
+    <table columns="6" widths="2 2 2 5 8 2">
+        <ui:repeat value="#{batch.orders}" var="order">
+            <cell><font style="bold">#{order.orderId}</font></cell>
+            <cell><paragraph>#{order.customer.city}</paragraph></cell>
+            <cell><paragraph>#{order.totalAmount}</paragraph></cell>
+            <cell>#{order.customer.zip}, #{order.customer.region}, #{order.customer.area}, #{order.customer.city}, #{order.customer.address1}
+            #{order.customer.firstName}</cell>
+
+            <cell>
+                <ui:repeat value="#{order.orderLines}" var="line">
+                        <text value="#{line.product.ASIN} #{line.product.title} #{line.quantity}">
+                        </text>
+            </ui:repeat>
+
+            </cell>
+
+            <cell><text value="#{order.orderDate}"><f:convertDateTime type="date" dateStyle="medium" /></text>
+            </cell>
+            
+        </ui:repeat>
+
+    </table>
+        </font>
+
+    </font>
+
+</document>

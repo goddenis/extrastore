@@ -2,6 +2,7 @@ package ru.versilov.extrastore;
 
 import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
+import org.jboss.seam.contexts.Contexts;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.Selection;
@@ -48,5 +49,14 @@ public class BatchesList extends EntityList<Batch> {
         }
         getEntityManager().flush();
         super.removeSelection();
+    }
+
+    public void preparePDF(Batch batch) {
+        Contexts.getEventContext().set("batch", batch);
+    }
+
+    public String printBatch(Batch batch) {
+        Contexts.getConversationContext().set("batch", batch);
+        return "/admin/batchPDF.xhtml";
     }
 }

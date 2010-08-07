@@ -472,6 +472,9 @@
         <root url="jar://$PROJECT_DIR$/lib/commons-digester.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/darkX.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jboss-seam-pdf.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/itext.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/itext-rtf.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
