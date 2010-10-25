@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:a="http://richfaces.org/a4j">
+
+<head>
+    <title>Вход</title>
+    <link rel="stylesheet" href="stylesheet/all.css" type="text/css" />
+</head>
+<body id="login">
+
+<f:subview id="enter" rendered="#{not identity.loggedIn}">
+
+    <h1>Вход</h1>
+
+    <h:form id="LoginForm">
+       <h:outputText value="#{messages.login}"/><br />
+       <h:inputText id="Username" value="#{identity.username}" size="16" styleClass="loginControl" /><br />
+       <h:outputText value="#{messages.password}"/><br />
+       <h:inputSecret id="Password" value="#{identity.password}" size="16" styleClass="loginControl" /><br /><br />
+        
+
+       <h:commandButton id="Login" action="#{identity.login}" value="#{messages.enter}"
+                                          styleClass="loginControl"/>
+       
+
+    </h:form>
+    </f:subview>
+
+<f:subview id="already_entered" rendered="#{identity.loggedIn}">
+    <h1>Добро пожаловать,<br/>#{identity.username}!</h1>
+</f:subview>
+
+</body>
+</html>

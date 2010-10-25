@@ -109,17 +109,17 @@
             </f:facet>
             <h:outputText value="#{_order.orderDate}" styleClass="#{_order.status.styleClass}" />
         </rich:column>
-        <rich:column styleClass="action" width="210px">
+        <rich:column styleClass="action" width="290px">
             <f:facet name="header">Действия</f:facet>
             <s:link view="/admin/#{empty from ? 'order' : from}.xhtml"
-                   value="#{empty from ? 'View' : 'Select'}"
+                   value="#{empty from ? 'Смотр.' : 'Выбрать'}"
              propagation="#{empty from ? 'none' : 'default'}"
                       id="ordersViewId">
                 <f:param name="id" value="#{_order.orderId}" />
             </s:link>
             #{' '}
             <s:link view="/admin/orderEdit.xhtml"
-                   value="Edit"
+                   value="Редакт."
              propagation="none"
                       id="orderEdit"
                 rendered="#{empty from}">
