@@ -2,36 +2,54 @@
           xmlns:f="http://java.sun.com/jsf/core"
           xmlns:s="http://jboss.com/products/seam/taglib"
           xmlns:h="http://java.sun.com/jsf/html"
-          xmlns="http://jboss.com/products/seam/pdf">
+          xmlns="http://jboss.com/products/seam/pdf"
+          pageSize="A4"
+          margins="10 10 17 10">
 
-    <font name="c:/windows/fonts/arial.ttf" encoding="Cp1251" embedded="true" size="9">
+    <font name="c:/windows/fonts/arial.ttf" encoding="Cp1251" embedded="true" size="12">
 
-    <paragraph spacingAfter="50">Партия на <text value=" " /><text value="#{batch.shipmentDate}"><f:convertDateTime type="date" dateStyle="full" /></text></paragraph>
+    <header>Партия на#{" "}<text value="#{batch.shipmentDate}"></text>, стр. №<pageNumber /></header>
 
-    <font name="c:/windows/fonts/arial.ttf" encoding="Cp1251" embedded="true" size="7">
 
-    <table columns="6" widths="2 2 2 5 8 2">
+    <paragraph spacingAfter="10">Партия на <text value=" " /><text value="#{batch.shipmentDate}"></text></paragraph>
+
+    <font name="c:/windows/fonts/arial.ttf" encoding="Cp1251" embedded="true" size="8">
+
+    <table columns="7" widths="2 3 2 6 8 2 2" headerRows="1" widthPercentage="99">
+
+        <cell>Номер</cell> <cell>Город</cell> <cell>Стоимость</cell><cell>Адрес</cell><cell>Состав</cell><cell>Дата</cell><cell>Вес</cell>
+
         <ui:repeat value="#{batch.orders}" var="order">
-            <cell><font style="bold">#{order.orderId}</font></cell>
-            <cell><paragraph>#{order.customer.city}</paragraph></cell>
-            <cell><paragraph>#{order.totalAmount}</paragraph></cell>
-            <cell>#{order.customer.zip}, #{order.customer.region}, #{order.customer.area}, #{order.customer.city}, #{order.customer.address1}
-            #{order.customer.firstName}</cell>
+
+            <cell paddingTop="-5"><font style="bold">#{order.orderId}</font></cell>
+            <cell><paragraph>#{order.customer.cityNevertheless}</paragraph></cell>
+            <cell><paragraph><text value="#{order.totalAmount}"><f:convertNumber type="currency" currencySymbol=""/></text></paragraph></cell>
+            <cell paddingTop="-1"><paragraph spacingAfter="5">#{order.customer.zip}, #{order.customer.region}#{order.customer.city.length() > 0 ? ", " : ""}#{order.customer.area}#{order.customer.area.length() > 0 ? ", " : ""}#{order.customer.city}</paragraph>
+                  <paragraph spacingAfter="5">#{order.customer.address1}</paragraph>
+                  <paragraph>#{order.customer.firstName}</paragraph>
+            </cell>
 
             <cell>
                 <ui:repeat value="#{order.orderLines}" var="line">
-                        <text value="#{line.product.ASIN} #{line.product.title} #{line.quantity}">
-                        </text>
+                        <paragraph>#{line.product.ASIN} #{line.product.title}...<font size="10">#{line.quantity}</font></paragraph>
             </ui:repeat>
 
             </cell>
 
-            <cell><text value="#{order.orderDate}"><f:convertDateTime type="date" dateStyle="medium" /></text>
+            <cell paddingTop="0"><text value="#{order.orderDate}"><f:convertDateTime type="date" dateStyle="medium" /></text>
             </cell>
+            <cell> </cell>
             
         </ui:repeat>
 
+
     </table>
+
+        <font name="c:/windows/fonts/arial.ttf" encoding="Cp1251" embedded="true" size="12">
+        <paragraph>Всего #{batch.orders.size} заказов</paragraph><paragraph>на сумму <text value=" " /><text value="#{batch.totalAmount}"><f:convertNumber type="currency" currencySymbol="руб."/></text></paragraph>из #{batch.totalGoodsQuantity} шт. товара
+        </font>
+
+
         </font>
 
     </font>

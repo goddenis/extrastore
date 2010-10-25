@@ -73,6 +73,13 @@ public class Customer
         this.city = city;
     }
 
+    // For captials the city is coded in the region field, while other fields are empty.
+    // This method is guaranteed to return city name in all occasions
+    @Transient
+    public String getCityNevertheless() {
+        return ((this.city != null && this.city.length() > 0) ? this.city : this.region);
+    }
+
 
     @Column(name="ZIP", length=10)
     @Length(min=5, max=10, message = "Слишком длинный или короткий.")

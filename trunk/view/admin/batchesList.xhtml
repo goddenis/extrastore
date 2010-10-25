@@ -30,14 +30,14 @@
              <h:outputText value="Партии" />
         </f:facet>
 
-        <rich:column width="45px" sortable="true" sortBy="#{batch.id}" label="Номер">
+        <rich:column width="45px" sortable="true" sortBy="#{batch.id}" label="Номер" id="batchId" sortOrder="DESCENDING">
             <f:facet name="header">
                 <h:outputText value="Номер" />
             </f:facet>
             <h:outputText value="#{batch.id}" style="font-weight: bold;"/>
         </rich:column>
 
-        <rich:column sortable="true" sortBy="#{batch.shipmentDate}" sortOrder="DESCENDING"
+        <rich:column sortable="true" sortBy="#{batch.shipmentDate}"
                 label="Дата" width="100px">
             <f:facet name="header">
                 <h:outputText value="Дата" />
@@ -67,9 +67,8 @@
             </f:facet>
 
             <a4j:commandLink value="Print" target="_blank" action="#{batchesList.printBatch(batch)}" />
-            
-
-            <a4j:commandButton actionListener="#{batchesList.exportToCSV(batch)}" value="CSV" reRender="batchesForm" />
+            #{" "}
+            <h:commandLink action="#{batchesList.exportToCSV(batch)}" value="CSV" />
         </rich:column>
 
 

@@ -1,6 +1,7 @@
 package ru.versilov.extrastore.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -18,11 +19,14 @@ import java.util.List;
 public class Batch {
     long id;
     Date shipmentDate;
-    int ops;
+    int ops;    // Index of Sender's Postal Division
     List<Order> orders = new ArrayList<Order>();
 
     public Batch() {
         Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR, 9);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
         c.add(Calendar.DAY_OF_YEAR, 1);
         shipmentDate = c.getTime();
         ops = 443961;
@@ -66,5 +70,23 @@ public class Batch {
         this.orders = orders;
     }
 
+    @Transient
+    public BigDecimal getTotalAmount() {
+        BigDecimal totalAmount = new BigDecimal(0);
+        for (Order o: orders) {
+            totalAmount = totalAmount.add(o.getTotalAmount());
+        }
+
+        return totalAmount;
+    }
+
+    @Transient
+    public int getTotalGoodsQuantity() {
+        int totalQuantity = 0;
+        for (Order o: orders) {
+            totalQuantity += o.getItemsQuantity();
+        }
+        return totalQuantity;
+    }
     
 }

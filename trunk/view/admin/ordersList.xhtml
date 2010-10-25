@@ -31,7 +31,7 @@
            rendered="#{not empty ordersList.resultList}"
             selectionMode="multi"
             selection="#{ordersList.selection}"
-            rows="18"
+            rows="28"
             height="524px">
         <f:facet name="header">
              <h:outputText value="Заказы" />
@@ -44,12 +44,12 @@
             <h:outputText value="#{_order.orderId}" style="font-weight: bold;"/>
         </rich:column>
         
-        <rich:column sortable="true" sortBy="#{_order.customer.city}"
-                filterBy="#{_order.customer.city}" filterEvent="onkeyup" label="Город" width="100px">
+        <rich:column sortable="true" sortBy="#{_order.customer.cityNevertheless}"
+                filterBy="#{_order.customer.cityNevertheless}" filterEvent="onkeyup" label="Город" width="100px">
             <f:facet name="header">
                 <h:outputText value="Город" />
             </f:facet>
-            <h:outputText value="#{_order.customer.city}"  styleClass="#{_order.status.styleClass}"/>
+            <h:outputText value="#{_order.customer.cityNevertheless}"  styleClass="#{_order.status.styleClass}"/>
             <rich:toolTip>
                 <h:outputText value="#{_order.customer.zip}, #{_order.customer.region}, #{_order.customer.area}, #{_order.customer.city}," /><br />
                 <h:outputText value="#{_order.customer.address1}" />
