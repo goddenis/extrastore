@@ -1,0 +1,115 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:s="http://jboss.com/products/seam/taglib"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:a="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich"
+    template="/layout/template.xhtml">
+
+<ui:define name="title"> Перемещение товара</ui:define>
+
+<ui:define name="body">
+
+    <h:form id="shipment" styleClass="edit">
+
+            <h1>#{shipmentsHome.managed ? '' : 'Новое'} Перемещение №#{shipmentsHome.managed ? shipmentsHome.instance.id  : ''}</h1>
+
+
+            <s:decorate id="numberField" template="/layout/edit.xhtml">
+                <ui:define name="label">Номер</ui:define>
+                <h:outputText value="#{shipmentsHome.instance.id}" />
+            </s:decorate>
+
+            <s:decorate id="date" template="/layout/edit.xhtml">
+                <ui:define name="label">Дата</ui:define>
+                <rich:calendar value="#{shipmentsHome.instance.date}" required="true" datePattern="d MMM yyyy"/>
+            </s:decorate>
+
+
+
+
+            <s:decorate id="from" template="/layout/edit.xhtml">
+                <ui:define name="label">Откуда</ui:define>
+                <h:selectOneMenu value="#{shipmentsHome.instance.from}">
+                    <s:convertEntity />
+                    <s:selectItems value="#{resourcesList.resultList}"
+                                       var="resource"
+                                       label="#{resource.name}"
+                                       noSelectionLabel="Отсутствует" />
+                    <a:support event="onblur" reRender="from" bypassUpdates="true" ajaxSingle="true"/>
+                </h:selectOneMenu>
+            </s:decorate>
+
+        <s:decorate id="to" template="/layout/edit.xhtml">
+            <ui:define name="label">Куда</ui:define>
+            <h:selectOneMenu value="#{shipmentsHome.instance.to}">
+                <s:convertEntity />
+                <s:selectItems value="#{resourcesList.resultList}"
+                                   var="resource"
+                                   label="#{resource.name}"
+                                   noSelectionLabel="Отсутствует" />
+                <a:support event="onblur" reRender="to" bypassUpdates="true" ajaxSingle="true"/>
+            </h:selectOneMenu>
+        </s:decorate>
+
+
+
+
+            <div style="clear:both">
+                <span class="required">*</span>
+                обязательные поля
+            </div>
+
+
+        <rich:dataTable id="shipmentLines" value="#{shipmentsHome.instance.lines}">
+            <rich:column width="200px">
+                <f:facet name="header">Товар</f:facet>
+            </rich:column>
+
+            <rich:column width="50px">
+                <f:facet name="header">Количество</f:facet>
+            </rich:column>
+
+
+        </rich:dataTable>
+
+        <div class="actionButtons">
+
+            <h:commandButton id="save"
+                          value="Сохранить"
+                         action="#{shipmentsHome.persist}"
+                       disabled="#{!shipmentsHome.wired}"
+                       rendered="#{!shipmentsHome.managed}"/>
+
+            <h:commandButton id="update"
+                          value="Сохранить"
+                         action="#{shipmentsHome.update}"
+                       rendered="#{shipmentsHome.managed}"/>
+
+            <h:commandButton id="delete"
+                          value="Удалить"
+                         action="#{shipmentsHome.remove}"
+                      immediate="true"
+                       rendered="#{shipmentsHome.managed}"/>
+
+            <s:button id="cancelEdit"
+                   value="Отменить"
+             propagation="end"
+                    view="/admin/shipment.xhtml"
+                rendered="#{shipmentsHome.managed}"/>
+
+            <s:button id="cancelAdd"
+                   value="Отменить"
+             propagation="end"
+                    view="/admin/#{empty shipmentFrom ? 'shipmentsList' : shipmentFrom}.xhtml"
+                rendered="#{!shipmentsHome.managed}"/>
+
+        </div>
+    </h:form>
+
+</ui:define>
+
+</ui:composition>

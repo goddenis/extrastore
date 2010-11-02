@@ -64,7 +64,26 @@
 		<u:style name="background-image">
 			<f:resource f:key="org.richfaces.renderkit.images.TabGradientB"/>
 		</u:style>
+        <u:style name="border-right" value="0" />
+        <u:style name="text-align" value="left" />
 	</u:selector>
+    <u:selector name=".rich-table-cell" >
+        <u:style name="border-right" value="0" />
+        <u:style name="border-left" value="0" />
+    </u:selector>
+    <u:selector name=".rich-table-number-cell" >
+        <u:style name="text-align" value="right" />
+    </u:selector>
+
+    <u:selector name=".rich-tab-active">
+        <u:style name="font-weight" value="bold" />
+    </u:selector>
+
+
+    <u:selector name=".rich-table-footercell">
+        <u:style name="border-right" value="0" />
+    </u:selector>
+    
 	<u:selector name=".rich-toolbar a:link, .rich-toolbar a:visited, .rich-toolbar a:active, .rich-toolbar a:hover">
 		<u:style name="color" skin="headerTextColor"/>
 	</u:selector>

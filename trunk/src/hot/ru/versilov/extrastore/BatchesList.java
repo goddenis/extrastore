@@ -57,9 +57,6 @@ public class BatchesList extends EntityList<Batch> {
         super.removeSelection();
     }
 
-    public void preparePDF(Batch batch) {
-        Contexts.getEventContext().set("batch", batch);
-    }
 
     public String printBatch(Batch batch) {
         Contexts.getConversationContext().set("batch", batch);

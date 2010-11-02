@@ -1,6 +1,13 @@
 package ru.versilov.extrastore;
 
+import org.jboss.seam.annotations.Create;
 import org.jboss.seam.annotations.In;
+import org.jboss.seam.annotations.Transactional;
+import org.jboss.seam.core.Expressions;
+import org.jboss.seam.framework.EntityHome;
+import org.jboss.seam.framework.EntityNotFoundException;
+import org.jboss.seam.persistence.PersistenceProvider;
+import org.jboss.seam.transaction.Transaction;
 import org.richfaces.model.DataProvider;
 import org.richfaces.model.ExtendedTableDataModel;
 import org.richfaces.model.selection.Selection;
@@ -8,6 +15,9 @@ import org.richfaces.model.selection.SimpleSelection;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,11 +27,9 @@ import java.util.List;
  * T: Catalyst
  * Date: 21.07.2010
  * Time: 0:27:49
- * To change this template use File | Settings | File Templates.
+ * EntityHome and EntityList merged together into one big home
  */
-public abstract class EntityList<T> {
-    @In("entityManager")
-    private EntityManager em;
+public abstract class EntityList<T> extends EntityHome<T> {
 
     private ExtendedTableDataModel<T> dataModel;
 
@@ -31,6 +39,8 @@ public abstract class EntityList<T> {
 
     private List<T> resultList;
 
+    
+
     protected void invalidateResultList() {
         resultList = null;
         dataModel = null;
@@ -39,16 +49,14 @@ public abstract class EntityList<T> {
 
     public List<T> getResultList() {
         if (resultList == null) {
-            em.clear();
-            resultList =  em.createQuery(getEJBQLQuery()).getResultList();
+            getEntityManager().clear();
+            resultList =  getEntityManager().createQuery(getEJBQLQuery()).getResultList();
         }
         return resultList;
     }
 
 
-    public EntityManager getEntityManager() {
-        return this.em;
-    }
+
 
 
     public ExtendedTableDataModel<T> getDataModel() {
@@ -111,7 +119,7 @@ public abstract class EntityList<T> {
     public void removeSelection() {
         takeSelection();
         for (T u : selectedEntities) {
-            em.remove(u);
+            getEntityManager().remove(u);
         }
         invalidateResultList();
     }

@@ -98,6 +98,12 @@
         <param name="orderFrom"/>
         <param name="id" value="#{ordersHome.orderId}"/>
     </page>
+
+    <page view-id="/admin/resource.xhtml">
+        <param name="resourceFrom"/>
+        <param name="id" value="#{resourcesHome.resourceId}"/>
+    </page>
+
     
 
 

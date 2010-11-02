@@ -3,7 +3,8 @@ html {
 }
 
 body {
-	font-size: 12px;
+    color: #333;
+    font: normal normal normal 85%/normal Verdana, sans-serif;
 	margin: 0px;
 }
 
@@ -52,6 +53,8 @@ select {
 .rich-table {
 	width: 100%;
 }
+
+
 
 .body {
 	padding: 30px;

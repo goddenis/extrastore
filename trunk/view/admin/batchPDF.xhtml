@@ -29,7 +29,7 @@
                   <paragraph>#{order.customer.firstName}</paragraph>
             </cell>
 
-            <cell>
+            <cell paddingTop="0">
                 <ui:repeat value="#{order.orderLines}" var="line">
                         <paragraph>#{line.product.ASIN} #{line.product.title}...<font size="10">#{line.quantity}</font></paragraph>
             </ui:repeat>
