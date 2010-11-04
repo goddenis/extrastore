@@ -89,6 +89,7 @@
                  value="Назад"/>
 
         <s:button view="/admin/shipmentEdit.xhtml"
+                  action="#{editShipment.create()}"
                   id="newShipment"
                   value="Создать Перемещение">
             <f:param name="fromResourceId" value="#{resourcesHome.instance.id}"/>
@@ -133,6 +134,11 @@
                            id="to">
                                 <f:param name="id"  value="#{shipment.to.id}"/>
                             </s:link>
+                         </rich:column>
+
+                         <rich:column width="80px" sortBy="#{shipment.total}">
+                             <f:facet name="header">Кол-во</f:facet>
+                             #{shipment.total}
                          </rich:column>
                          
                          <rich:column></rich:column>

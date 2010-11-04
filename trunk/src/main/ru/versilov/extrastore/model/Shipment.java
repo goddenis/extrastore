@@ -1,6 +1,7 @@
 package ru.versilov.extrastore.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
 @Entity
 @Table(name="SHIPMENTS")
 public class Shipment {
-    int id;
+    Long id;
     Date date;
     Resource from;
     Resource to;
@@ -24,11 +25,11 @@ public class Shipment {
 
     @Id
     @GeneratedValue
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,10 +63,23 @@ public class Shipment {
 
     @OneToMany(mappedBy="shipment", cascade=CascadeType.ALL)
     public List<ShipmentLine> getLines() {
+        if (lines == null) {
+            lines = new ArrayList<ShipmentLine>();
+        }
         return lines;
     }
 
     public void setLines(List<ShipmentLine> lines) {
         this.lines = lines;
     }
+
+    @Transient
+    public int getTotal() {
+        int total = 0;
+        for (ShipmentLine sl: lines) {
+            total += sl.getQuantity();            
+        }
+        return total;
+    }
+
 }

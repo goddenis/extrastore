@@ -12,23 +12,23 @@ import javax.persistence.*;
 @Entity
 @Table(name="SHIPMENTLINES")
 public class ShipmentLine {
-    int id;
+    long id;
     Shipment shipment;
     Product product;
     int quantity;
 
     @Id
     @GeneratedValue
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
     @ManyToOne
-    @JoinColumn(name="shimpment_id")
+    @JoinColumn(name="shipment_id")
     public Shipment getShipment() {
         return shipment;
     }
@@ -37,6 +37,8 @@ public class ShipmentLine {
         this.shipment = shipment;
     }
 
+    @ManyToOne
+    @JoinColumn(name="product_id")
     public Product getProduct() {
         return product;
     }
