@@ -4,7 +4,7 @@ INSERT INTO Company VALUES(3, 'Client Company')
 
 
 
-INSERT INTO Store VALUES (1, 'sozvezdie-store.ru', 'Sozvezdie Delivery', null, 1)
+INSERT INTO Store VALUES (1, 'localhost', 'Sozvezdie Delivery', null, 1)
 INSERT INTO Store VALUES (2, 'avtoraketa2.ru', 'AvtoRaketa', null, 1)
 INSERT INTO Store VALUES (3, 'firstshop.ru', 'First Shop', 'http://extrapost.ru/templates/firstshop', 1)
 INSERT INTO Store VALUES (5, 'shsd-books.ru', 'SHSD Books', null, 2)
