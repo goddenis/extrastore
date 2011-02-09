@@ -1,5 +1,0 @@
-11102009
-
-- urlrewrite for all pages, make product names with categories,
-like "http://megastore.ru/kasha/spirulina/
-- make exploded to jboss work nice (now redeploys in eternal loop)
