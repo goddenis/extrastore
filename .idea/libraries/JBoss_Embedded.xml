@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="JBoss Embedded">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jboss-embedded-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jboss-deployers-core-spi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jboss-deployers-client-spi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/test/thirdparty-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/test/jboss-embedded-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/test/hibernate-all.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
