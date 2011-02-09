@@ -1,0 +1,39 @@
+<component name="libraryTable">
+  <library name="TomcatSeam">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jboss-common-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dom4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cglib-nodep.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/catalina.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-commons-annotations.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-validator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ant-antlr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/asm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-entitymanager.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/hibernate-annotations.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/asm-attrs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lucene-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsf-facelets.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jta.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/persistence-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsf-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsf-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/src/jsf-facelets-1.1.15.B1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

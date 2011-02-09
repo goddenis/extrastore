@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/" debug="5" reloadable="true" crossContext="true">
+    <Resource auth="Container"
+              name="jdbc/extrastoreDatasource"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/extrastore"
+              username="root"
+              password="wuwudu"
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"
+              validationQuery="Select 1" />
+</Context>

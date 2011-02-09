@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/src/hot">
+      <sourceFolder url="file://$MODULE_DIR$/src/hot" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="extrastore3" />
+    <orderEntry type="library" scope="PROVIDED" name="TomcatSeam" level="project" />
+    <orderEntry type="library" name="Java EE6" level="project" />
+    <orderEntry type="library" name="Seam" level="project" />
+    <orderEntry type="library" name="Test" level="project" />
+  </component>
+</module>
+

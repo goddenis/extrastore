@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Test">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/bootstrap" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dom4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/testng.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsf-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

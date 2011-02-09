@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/extrastore" debug="5" reloadable="true" crossContext="true">
+    <Resource auth="Container"
+              name="jdbc/extrastoreDatasource"
+              type="javax.sql.DataSource"
+              driverClassName="org.hsqldb.jdbcDriver"
+              url="jdbc:hsqldb:."
+              username="sa"
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"/>
+</Context>
