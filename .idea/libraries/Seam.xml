@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Seam">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/jsf-facelets.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jboss-el.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jboss-seam.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jboss-seam-debug.jar!/" />
