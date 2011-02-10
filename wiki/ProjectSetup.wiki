@@ -1,0 +1,9 @@
+#labels projectsetup,idea,config,install,checkout
+#How to checkout project and config it for development in IntelliJ IDEA.
+
+= Необходимые шаги =
+ 1 Сделайте checkout проекта из svn-хранилища https://extrastore.googlecode.com/svn/trunk/
+Это можно сделать с помощью Идеи: Version Control->Checkout from Version Control->Subversion. Добавляете указанное выше хранилище, выделяете его мышкой, нажимаете Checkout, создаёте нужную папку (она должна называться extrastore), все остальные настройки оставляете по умолчанию. После checkout Идея спросит вас, не создать ли проект на базе полученых исходников? Уверенно отвечаем "НЕТ".
+ 2
+ 
+  
