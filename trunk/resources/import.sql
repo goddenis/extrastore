@@ -31,7 +31,7 @@ INSERT INTO Product2Store(productId, storeId) VALUES(7, 6)
 INSERT INTO Product2Store(productId, storeId) VALUES(8, 6)
 
 INSERT INTO Product2Store(productId, storeId) VALUES(2, 3)
-INSERT INTO Product2Store(productId, storeId) VALUES(2, 5)
-INSERT INTO Product2Store(productId, storeId) VALUES(6, 5)
-INSERT INTO Product2Store(productId, storeId) VALUES(7, 5)
+INSERT INTO Product2Store(productId, storeId) VALUES(2, 1)
+INSERT INTO Product2Store(productId, storeId) VALUES(6, 1)
+INSERT INTO Product2Store(productId, storeId) VALUES(7, 1)
 
