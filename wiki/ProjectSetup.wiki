@@ -6,8 +6,8 @@
     # Version Control->Checkout from Version Control->Subversion.
     # Добавляете указанное выше хранилище, выделяете его мышкой, нажимаете Checkout, создаёте нужную папку (она должна называться extrastore), все остальные настройки оставляете по умолчанию.
     # После checkout Идея спросит вас, не создать ли проект на базе полученых исходников? Уверенно отвечаем "НЕТ".
-  # Загрузите из раздела Downloads сайта extrastore.googlecode.com папки libs и bootstrap в заархивированом виде. Разархивируйте их в директорию проекта.
-  # Загрузите из Downloads архив tomcat_libs.zip и разархивируйте его содеhжимое в папку tomcat/libs (где 'tomcat' -- ваша инсталляция томката).
+  # Загрузите из раздела Downloads сайта extrastore.googlecode.com папки [http://extrastore.googlecode.com/files/lib.zip lib] и [http://extrastore.googlecode.com/files/bootstrap.zip bootstrap] в заархивированом виде. Разархивируйте их в директорию проекта.
+  # Загрузите из Downloads архив [http://extrastore.googlecode.com/files/tomcat_libs.zip tomcat_libs.zip] и разархивируйте его содеhжимое в папку tomcat/libs (где 'tomcat' -- ваша инсталляция томката).
   # Идеей откройте проект.
   # Создайте настройку Томката, задеплойте туда артефакт extrastore3:dev
   # Можно работать!
