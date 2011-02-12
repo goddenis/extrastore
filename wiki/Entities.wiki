@@ -4,16 +4,16 @@
   * Store
   * Product
   * Order
-  * OrderLine
+  * OrderLine     - строка заказа.
   * User
-  * Category
+  * Category      - группа товаров. 
   
 ===Логистика===
-  * Resource
-  * Shipment
-  * ShipmentLine
-  * Inventory
+  * Resource      - контейнер. 
+  * Shipment      - рейс.
+  * ShipmentLine  - элемент перемещения.
+  * Inventory     - остатки.
 
 ===Почта===
-  * OPS
-  * Batch
+  * OPS           - отделение почтовой связи.
+  * Batch         - почтовая партия.
