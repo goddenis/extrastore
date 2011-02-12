@@ -1,0 +1,18 @@
+===Магазин===
+  * Company
+  * Store
+  * Product
+  * Order
+  * OrderLine
+  * User
+  * Category
+  
+===Логистика===
+  * Resource
+  * Shipment
+  * ShipmentLine
+  * Inventory
+
+===Почта===
+  * OPS
+  * Batch
