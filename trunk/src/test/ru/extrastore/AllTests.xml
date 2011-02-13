@@ -3,6 +3,7 @@
     <test name="ExtraStore: Tests">
         <classes>
             <class name="ru.extrastore.ProductTest" />
+            <class name="ru.extrastore.CategoryTest" />
         </classes>
     </test>
 </suite>
