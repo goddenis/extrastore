@@ -1,11 +1,15 @@
 package ru.extrastore.model;
 
-import org.hibernate.validator.NotNull;
+import org.hibernate.search.annotations.DocumentId;
+import org.hibernate.search.annotations.Indexed;
 import org.jboss.seam.annotations.Name;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * File profile
@@ -15,22 +19,27 @@ import javax.persistence.Id;
  */
 @Entity
 @Name("product")
-public class Product {
+@Indexed
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue
-    Long id;
+    @DocumentId
+    long id;
 
-    @NotNull
-    String urlAlias;
+    @Column(length = 32)
+    String asin;
 
-    @NotNull
+    @Column(nullable = false, length = 128)
     String name;
 
-    @NotNull
-    Long price;
+    @Column(precision = 12, scale = 2)
+    BigDecimal price;
 
-    @NotNull
+    @Column(length = 64)
+    String urlAlias;
+
+    @Column(length = 128)
     String urlImageSmall;
 
     public Long getId() {
@@ -41,6 +50,14 @@ public class Product {
         this.id = id;
     }
 
+    public String getASIN() {
+        return asin;
+    }
+
+    public void setASIN(String asin) {
+        this.asin = asin;
+    }
+
     public String getName() {
         return name;
     }
@@ -49,11 +66,11 @@ public class Product {
         this.name = name;
     }
 
-    public Long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
