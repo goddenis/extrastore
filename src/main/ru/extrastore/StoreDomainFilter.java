@@ -60,6 +60,9 @@ import static org.jboss.seam.annotations.Install.APPLICATION;
 
                         EntityManager em = (EntityManager) Component.getInstance("entityManager");
                         String domain = request.getServerName();
+                        if (domain == null) {
+                            domain = "localhost";
+                        }
                         if (domain.startsWith("www.")) {
                             // Remove "www.", redirect to the short name
                             domain = domain.substring(domain.indexOf(".")+1, domain.length());
