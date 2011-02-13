@@ -27,6 +27,9 @@
       <root url="jar://$PROJECT_DIR$/lib/jsf-impl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jsf-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/slf4j-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-api-3.3.3.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-impl-3.3.3.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-ui-3.3.3.Final.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

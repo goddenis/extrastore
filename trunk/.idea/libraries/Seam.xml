@@ -8,7 +8,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/src/jsf-facelets-1.1.15.B1-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/jboss-seam-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/jboss-seam-ui-sources.jar!/" />
     </SOURCES>
