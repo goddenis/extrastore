@@ -1,6 +1,10 @@
-#labels libs,jar,ClassNotFound
+#labels libs,jar,ClassNotFound,NoSuchMethodException
 #Hacks (ugly and not)
 
-= Different modules libs issue =
+=== Different modules libs issue ===
 
 Solution: move all libs for a project into one dir (ear/lib), and reference them in war through manifest.mf (lies in war/WEB-INF/classes/META-INF).
+
+=== NoSuchMethodException while running seam tests ===
+
+Solution: remove jboss-deployers-client-spi.jar and jboss-deployers-core-spi.jar from classpath, these jars content is already included in jboss-embedded-all.jar. Sometimes bug wont show itself, because jboss-embedded-all.jar stands earlier (and thus is loaded first) in classpath. Here be dragons!
