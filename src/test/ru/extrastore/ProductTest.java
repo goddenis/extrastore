@@ -16,7 +16,7 @@ public class ProductTest extends SeamTest {
     private static final String PRODUCT_NAME = "Тестовый Продукт";
 
     @Test
-    public void testProduct() {
+    public void testProduct() throws Exception {
         Product product = new Product();
         product.setName(PRODUCT_NAME);
         assertEquals("Product name", PRODUCT_NAME, product.getName());

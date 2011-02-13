@@ -10,9 +10,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="extrastore" />
-    <orderEntry type="library" scope="PROVIDED" name="TomcatSeam" level="project" />
-    <orderEntry type="library" name="Java EE6" level="project" />
     <orderEntry type="library" name="Seam" level="project" />
+    <orderEntry type="library" name="Java EE6" level="project" />
     <orderEntry type="library" name="Test" level="project" />
   </component>
 </module>

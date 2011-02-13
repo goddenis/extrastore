@@ -8,15 +8,6 @@
   </component>
   <component name="FacetAutodetectingManager">
     <autodetection-disabled>
-      <facet-type id="jsf">
-        <modules>
-          <module name="extrastore">
-            <files>
-              <file url="file://$PROJECT_DIR$/resources/WEB-INF/faces-config.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
       <facet-type id="web">
         <modules>
           <module name="extrastore">
@@ -48,11 +39,6 @@
   </component>
   <component name="JsfProjectComponent">
     <option name="faceletsSupport" value="ENABLED" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state />
-    </entry>
   </component>
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>

@@ -14,7 +14,7 @@
       <element id="module-output" name="hot" />
       <element id="file-copy" path="$PROJECT_DIR$/resources/import.sql" />
       <element id="file-copy" path="$PROJECT_DIR$/resources/seam.properties" />
-      <element id="dir-copy" path="$PROJECT_DIR$/view" />
+      <element id="javaee-facet-resources" facet="extrastore/web/Web" />
     </root>
   </artifact>
 </component>
