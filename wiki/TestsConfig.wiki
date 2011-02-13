@@ -1,0 +1,1 @@
+#How to create tests configuration in Intellij IDEA
