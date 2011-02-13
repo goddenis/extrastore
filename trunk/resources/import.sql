@@ -11,14 +11,14 @@ INSERT INTO Store VALUES (5, 'shsd-books.ru', 'SHSD Books', null, 2)
 INSERT INTO Store VALUES (6, 'nextshop.ru', 'Next Shop', null, 3)
 
 
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (1, 'wifishirt', 'Wi-Fi T-Shirt', 1500, 'http://extrapost.ru/img/product1.jpg')
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (2, 'microfibrus', 'Microfibrus', 200, 'http://extrapost.ru/img/product2.jpg')
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (3, 'dispenser', 'Scotch dispenser', 500, 'http://extrapost.ru/img/product3.jpg')
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (4, 'magnets', 'Refrigerator magnets', 250, 'http://extrapost.ru/img/product4.jpg')
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (5, 'chocolate', 'Chocolate', 200, 'http://extrapost.ru/img/product5.jpg')
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (6, 'leonardo', 'Leonardo da Vinchi', 1500, 'http://extrapost.ru/img/product6.jpg')
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (7, 'mama', 'Mama Hurries Home', 250, 'http://extrapost.ru/img/product7.jpg')
-INSERT INTO Product (id, urlAlias, name, price, urlImageSmall) VALUES (8, 'keystopper', 'The Key Stopper', 400, 'http://extrapost.ru/img/product8.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (1, 'p1', 'wifishirt', 'Wi-Fi T-Shirt', 1500, 'http://extrapost.ru/img/product1.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (2, 'p2', 'microfibrus', 'Microfibrus', 200, 'http://extrapost.ru/img/product2.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (3, 'p3', 'dispenser', 'Scotch dispenser', 500, 'http://extrapost.ru/img/product3.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (4, 'p4', 'magnets', 'Refrigerator magnets', 250, 'http://extrapost.ru/img/product4.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (5, 'p5', 'chocolate', 'Chocolate', 200, 'http://extrapost.ru/img/product5.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (6, 'p6', 'leonardo', 'Leonardo da Vinchi', 1500, 'http://extrapost.ru/img/product6.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (7, 'p7', 'mama', 'Mama Hurries Home', 250, 'http://extrapost.ru/img/product7.jpg')
+INSERT INTO Product (id, asin, urlAlias, name, price, urlImageSmall) VALUES (8, 'p8', 'keystopper', 'The Key Stopper', 400, 'http://extrapost.ru/img/product8.jpg')
 
 
 INSERT INTO Product2Store(productId, storeId) VALUES(1, 6)
