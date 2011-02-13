@@ -65,6 +65,7 @@
     <orderEntry type="library" scope="TEST" name="JBoss Embedded" level="project" />
     <orderEntry type="library" name="Faceletes" level="project" />
     <orderEntry type="library" name="Java EE6" level="project" />
+    <orderEntry type="library" name="TomcatSeam" level="project" />
   </component>
 </module>
 
