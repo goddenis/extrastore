@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="extrastore:test">
+    <output-path>$PROJECT_DIR$/out/test</output-path>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" output-file-name="persistence.xml" />
+      </element>
+      <element id="directory" name="WEB-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/components-test.xml" output-file-name="components.xml" />
+        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/faces-config.xml" />
+        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
+      </element>
+      <element id="module-output" name="extrastore" />
+      <element id="module-output" name="hot" />
+      <element id="file-copy" path="$PROJECT_DIR$/resources/import.sql" />
+      <element id="file-copy" path="$PROJECT_DIR$/resources/seam.properties" />
+      <element id="dir-copy" path="$PROJECT_DIR$/view" />
+    </root>
+  </artifact>
+</component>

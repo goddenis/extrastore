@@ -4,31 +4,13 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
-        </descriptors>
-        <webroots>
-          <root url="file://$MODULE_DIR$/web" relative="/" />
-        </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/src" />
-        </sourceRoots>
-      </configuration>
-    </facet>
-    <facet type="web" name="Web2">
-      <configuration>
-        <descriptors>
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/resources/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
-          <root url="file://$MODULE_DIR$/resources" relative="/" />
+          <root url="file://$MODULE_DIR$/view" relative="/" />
         </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main" />
-        </sourceRoots>
+        <sourceRoots />
       </configuration>
-      <facet type="jsf" name="JSF">
-        <configuration />
-      </facet>
     </facet>
     <facet type="jpa" name="JPA">
       <configuration>
@@ -41,7 +23,9 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/out/production/extrastore" />
+    <output-test url="file://$MODULE_DIR$/out/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
@@ -59,10 +43,20 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="hot" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/catalina.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Test" level="project" />
     <orderEntry type="library" name="JBoss Embedded" level="project" />
     <orderEntry type="library" name="Seam" level="project" />
     <orderEntry type="library" name="Java EE6" level="project" />
-    <orderEntry type="library" name="Test" level="project" />
+    <orderEntry type="library" name="Faceletes" level="project" />
   </component>
 </module>
 
