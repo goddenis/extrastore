@@ -1,4 +1,2 @@
 #labels test,idea,confgi,unit
 #Как сконфигурировать тесты в идее
-
-[http://extrastore.googlecode.com/files/IdeaTestsConfig.png]
