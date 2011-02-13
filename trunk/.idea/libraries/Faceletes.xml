@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Faceletes">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jsf-facelets.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/src/jsf-facelets-1.1.15.B1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

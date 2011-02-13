@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="extrastore3:dev">
-    <output-path>$PROJECT_DIR$/out/artifacts/extrastore3_dev</output-path>
+  <artifact type="exploded-war" name="extrastore:dev">
+    <output-path>$PROJECT_DIR$/out/artifacts/extrastore_dev</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

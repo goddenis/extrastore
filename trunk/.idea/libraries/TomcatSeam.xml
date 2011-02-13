@@ -18,13 +18,10 @@
       <root url="jar://$PROJECT_DIR$/lib/hibernate-entitymanager.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hibernate-annotations.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/asm-attrs.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/richfaces-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lucene-core.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jstl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jsf-facelets.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jta.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/richfaces-ui.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/persistence-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jsf-impl.jar!/" />
