@@ -1,1 +1,2 @@
-#How to create tests configuration in Intellij IDEA
+#labels test,idea,confgi,unit
+#Как сконфигурировать тесты в идее
