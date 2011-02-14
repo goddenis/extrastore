@@ -9,7 +9,18 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
+
+    <ui:define name="categories">
+        <ul id="categories">
+        <ui:repeat value="#{store.categories.toArray()}" var="cat">
+             <li><h:outputLink value="/category.xhtml">#{cat.name}</h:outputLink> </li>
+        </ui:repeat>
+        </ul>
+    </ui:define>
+
     <ui:define name="body">
+
+        <div id="main">
 
     <h1>#{store.name}</h1>
 
@@ -18,7 +29,7 @@
             <div class="product">
                 <s:link view="/product.xhtml">
                     <f:param name="id" value="#{product.urlAlias}" />
-                    <img src="#{product.urlImageSmall}" /><br />
+                    <img src="#{product.urlImageSmall}" alt="#{product.name} image" /><br />
                 </s:link>
                 <s:link view="/product.xhtml" value="#{product.name}">
                     <f:param name="id" value="#{product.urlAlias}" />
@@ -27,6 +38,8 @@
 
             </div>
         </ui:repeat>
+
+        </div> <!-- #main -->
 
 
     </ui:define>

@@ -2,14 +2,13 @@ package ru.extrastore.model;
 
 import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
 import org.jboss.seam.annotations.Name;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Set;
 
 /**
  * File profile
@@ -41,6 +40,13 @@ public class Product implements Serializable {
 
     @Column(length = 128)
     String urlImageSmall;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="Product2Category",
+               joinColumns=@JoinColumn(name="productId"),
+               inverseJoinColumns=@JoinColumn(name="categoryId"))
+    @IndexedEmbedded
+    Set<Category> categories;
 
     public Long getId() {
         return id;
@@ -89,5 +95,13 @@ public class Product implements Serializable {
     public void setUrlAlias(String urlAlias) {
         this.urlAlias = urlAlias;
     }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
 }
 
