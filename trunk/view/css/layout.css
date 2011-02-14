@@ -7,3 +7,14 @@ div.product {
     min-width: 200px;
     width: 12.5em;
 }
+
+div#main {
+    display: block;
+    float: right;
+}
+
+ul#categories {
+    float: left;
+    width: 250px;
+    display: block;
+}

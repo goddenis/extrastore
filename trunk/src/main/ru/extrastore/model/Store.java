@@ -5,7 +5,9 @@ import org.hibernate.validator.NotNull;
 import org.jboss.seam.annotations.Name;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * File profile
@@ -38,6 +40,10 @@ public class Store {
                inverseJoinColumns=@JoinColumn(name="productId"))
     @IndexedEmbedded
     List<Product> products;
+
+    // Contains all categories of all products of this store.
+    @Transient
+    Set<Category> categories;
 
     public Long getId() {
         return id;
@@ -85,5 +91,15 @@ public class Store {
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    public Set<Category> getCategories() {
+        if (this.categories == null) {
+            this.categories = new HashSet<Category>();
+            for (Product p: this.products) {
+                categories.addAll(p.categories);
+            }
+        }
+        return this.categories;
     }
 }

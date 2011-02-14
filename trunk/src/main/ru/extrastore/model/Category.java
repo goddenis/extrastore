@@ -1,6 +1,8 @@
 package ru.extrastore.model;
 
 import org.hibernate.search.annotations.DocumentId;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 
 import javax.persistence.Column;
@@ -25,6 +27,7 @@ public class Category implements Serializable{
     long id;
 
     @Column(nullable = false, length = 64)
+    @Field(index = Index.TOKENIZED)
     String name;
 
     public long getId() {
