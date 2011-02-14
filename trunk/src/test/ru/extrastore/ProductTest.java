@@ -109,4 +109,22 @@ public class ProductTest extends SeamTest {
 
     }
 
+    @Test
+    public void testProductQuery() throws Exception {
+        new NonFacesRequest("/product.xhtml") {
+            @Override
+            protected void beforeRequest() {
+                setParameter("id", "wifishirt");
+            }
+
+            @Override
+            protected void renderResponse() {
+                Product p = (Product)getValue("#{prod.singleResult}");
+                assertNotNull("product from xml entity query", p);
+                assertEquals("product url alias","wifishirt", p.getUrlAlias());
+            }
+
+        }.run();
+
+    }
 }
