@@ -16,7 +16,7 @@
 
     <core:manager conversation-timeout="120000"/>
 
-    <persistence:entity-manager-factory name="extrastorefactory" persistence-unit-name="extrastore_pu"/>
+    <persistence:entity-manager-factory name="extrastorefactory" persistence-unit-name="extrastore_pu_test"/>
 
     <!-- Strangely, <s:convertEntity /> fails with hard-to-trace NullPointerException, because "entityManger"
     injected variable name is hard-coded into seam persistence lib. So, we'd better use 'entityManager', not 'em' -->
