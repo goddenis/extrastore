@@ -78,6 +78,7 @@ import static org.jboss.seam.annotations.Install.APPLICATION;
                             }
 
                         } catch (NoResultException e) {
+                            System.err.println("Error: No store found for doamin " + domain);
                             e.printStackTrace();
                         }
                     }
