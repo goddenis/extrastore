@@ -8,9 +8,9 @@ import ru.extrastore.model.Store;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
-import static org.testng.AssertJUnit.*;
+import static org.testng.AssertJUnit.assertNotNull;
+import static org.testng.AssertJUnit.assertTrue;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,5 +37,19 @@ public class StoreTest extends SeamTest {
         s.getProducts().add(p);
 
         assertTrue("store contains product categories", s.getCategories().containsAll(p.getCategories()));
+    }
+
+
+    @Test
+    public void testStoreCreation() throws Exception {
+        new FacesRequest("/index.xhtml") {
+            @Override
+            protected void renderResponse(){
+                // #{store} shold be created at StoreDomainFilter on invoke application
+                Store s = (Store)getValue("#{store}");
+                assertNotNull("store from session context", s);
+                assertTrue("store has categories", s.getCategories().size() > 0);
+            }
+        }.run();
     }
 }
