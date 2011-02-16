@@ -78,6 +78,9 @@ public class Store {
     }
 
     public String getTemplatePath() {
+        if (templatePath == null) {
+            templatePath = "/templates/default";
+        }
         return templatePath;
     }
 
