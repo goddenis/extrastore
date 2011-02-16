@@ -1,0 +1,20 @@
+
+div.product {
+    display: inline;
+    float: left;
+
+    margin: 3em 0px 0px 2em;
+    min-width: 200px;
+    width: 12.5em;
+}
+
+div#main {
+    display: block;
+    float: right;
+}
+
+ul#categories {
+    float: left;
+    width: 250px;
+    display: block;
+}
