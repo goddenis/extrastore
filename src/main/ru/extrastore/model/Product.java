@@ -26,7 +26,7 @@ public class Product implements Serializable {
     @DocumentId
     long id;
 
-    @Column(length = 32)
+    @Column(length = 32, unique = true)
     String asin;
 
     @Column(nullable = false, length = 64)
@@ -38,7 +38,7 @@ public class Product implements Serializable {
     @Column(precision = 12, scale = 2)
     BigDecimal price;
 
-    @Column(length = 32)
+    @Column(length = 32, unique = true)
     String urlAlias;
 
     @Column(length = 128)
