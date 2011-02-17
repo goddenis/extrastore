@@ -10,9 +10,10 @@
 
 
     <page view-id="/product.xhtml">
-        <rewrite pattern="/product/{id}" />
-        <param name="id" value="#{product.urlAlias}"/>
+        <rewrite pattern="/{cat}/{alias}" />
+        <param name="alias" value="#{product.urlAlias}"/>
     </page>
+
 
     <page view-id="/browse.xhtml">
         <rewrite pattern="/{cat}" />
