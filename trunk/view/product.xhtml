@@ -9,18 +9,42 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
+    <ui:define name="title">
+        #{prod.name}
+    </ui:define>
 
     <ui:define name="sidebar">
         <ui:include src="/incl/categories.xhtml" />
     </ui:define>
 
-
     <ui:define name="body">
 
-    <h1>#{prod.name}</h1>
+    <div class="product-central-column">
+        <h1>#{prod.name}</h1>
+        <div>#{prod.description}</div>
 
-                <img src="#{prod.urlImageSmall}" alt="#{prod.name} image" /><br />
-                <span class="price">#{prod.price}</span> руб.
+        <div class="product-long-description">
+            <h:outputText value="#{prod.longDescription}" escape="false" />
+        </div>
+
+
+    </div>
+
+    <div class="product-right-column">
+        <div class="product-panel">
+            Цена: <strong>#{prod.price}</strong> руб.<br /><br />
+            <h:commandButton value="Заказать" />
+        </div>
+        <div class="product-properties">
+            <p>Производство: Россия</p>
+
+            <p>Вес: 300 г</p>
+
+            <p>Издатель: студия пейдждаун</p>
+            <p>Размер упаковки: 9×5×3,9 см</p>
+        </div>
+    </div>
+
 
     </ui:define>
 

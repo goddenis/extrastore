@@ -97,6 +97,15 @@ h3 {
     font-size: 81%;
 }
 
+.product-panel {
+    background-color: #eee;
+}
+
+.product-central-column, .product-right-column {
+    font-size: 96%;
+}
+
+
 div.product img {
     border:none;
 }

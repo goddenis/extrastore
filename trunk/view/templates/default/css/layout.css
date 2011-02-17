@@ -69,7 +69,7 @@ a {
 
 
 
-
+/************** SHOWCASE **********/
 
 div.product {
     display: inline;
@@ -81,3 +81,32 @@ div.product {
     height: 280px;
 }
 
+
+/************* PRODUCT PAGE *****************/
+
+.product-central-column {
+    min-width: 27em;
+    width: 70%;
+    float: left;
+
+}
+
+.product-right-column {
+    min-width: 7em;
+    width: 30%;
+    float: left;
+    padding-top: 64px;
+    padding-right: 0px;
+
+}
+
+
+.product-panel, .product-properties {
+    padding: 18px;
+    margin-right: 18px;
+
+}
+
+.product-long-description {
+    margin-top: 27px;
+}
