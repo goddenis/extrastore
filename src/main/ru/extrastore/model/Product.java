@@ -35,6 +35,9 @@ public class Product implements Serializable {
     @Column(length = 100)
     String description;
 
+    @Column(length = 512)
+    String longDescription; // HTML is accepted
+
     @Column(precision = 12, scale = 2)
     BigDecimal price;
 
@@ -81,6 +84,14 @@ public class Product implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
     public BigDecimal getPrice() {
