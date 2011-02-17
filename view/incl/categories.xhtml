@@ -8,11 +8,11 @@
 <ui:fragment>
 <br />
 <span class="pointer green">&gt;</span>
-<s:link view="/browse.xhtml"><f:param name="cat" value=""/>#{messages.allGoods}</s:link>
+<s:link view="/browse.xhtml" propagation=""><f:param name="cat" value="" />#{messages.allGoods}</s:link>
 
 <ui:repeat value="#{store.categories.toArray()}" var="category">
     <span class="pointer red">&gt;</span>
-    <s:link view="/browse.xhtml"><f:param name="cat" value="#{category.id}" />#{category.name}</s:link><br/>
+    <s:link view="/browse.xhtml" propagation="none"><f:param name="cat" value="#{category.id}" />#{category.name}</s:link><br/>
 </ui:repeat>
 </ui:fragment>
 </html>
