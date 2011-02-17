@@ -4,8 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:s="http://jboss.com/products/seam/taglib">
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:rich="http://richfaces.org/rich"
+      xml:lang="ru"
+      lang="ru">
 <f:view>
 
 
@@ -13,9 +15,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>
-            <ui:insert name="title">Заголовок страницы</ui:insert> -- #{store.domain}
+            <ui:insert name="title">Главная</ui:insert> — интернет-магазин #{store.domain}
         </title>
-
         <link href="#{store.templatePath}/css/core.css" rel="stylesheet" type="text/css"/>
         <link href="#{store.templatePath}/css/text.css" rel="stylesheet" type="text/css"/>
         <link href="#{store.templatePath}/css/layout.css" rel="stylesheet" type="text/css"/>
@@ -24,21 +25,74 @@
     </head>
 
     <body>
-    <s:link view="/index.xhtml" value="Начало #{store.domain}" />
-    <h:messages globalOnly="true" styleClass="error global_message" title="Сообщения" />
+    <div id="box">
 
-    <br />
+        <div id="head">
+            <div id="logo">
+                <h:form id="SearchForm">
+                    <s:link id="home" view="/" propagation="none">
+                        <div id="shopname">#{store.domain}</div>
+                    </s:link>
+
+                    <div id="hotline">Тел.: 8 800 100 31 01</div>
+                </h:form>
+            </div>
 
 
-    <ui:insert name="categories" />
+            <div id="menu">
+                <ui:insert name="topnav">
+                </ui:insert>
+            </div>
 
 
-    <ui:insert name="body" />
+        </div>
 
-    <br style="clear: both;" /><br />
+        <div id="left-outer">
+            <div id="left" class="column">
+                <ui:insert name="sidebar">
+                </ui:insert>
+                <br/><br/>
 
-    <ui:debug hotkey="C" rendered="true"/>
+            </div>
+        </div>
 
-</body>
+
+
+        <div id="content-outer">
+            <div id="content" class="column">
+
+                <div id="errors">
+                    <ui:insert name="errors">
+                        <!--<h:messages globalOnly="true"-->
+                                    <!--layout="table"-->
+                                    <!--styleClass="cntError"/>-->
+                    </ui:insert>
+                </div>
+
+                <ui:debug hotkey="D"/>
+                <ui:insert name="body">
+                    PAGE BODY
+                </ui:insert>
+
+
+            </div>
+            <!-- #content -->
+        </div>
+        <!-- #content-outer -->
+
+
+        <div id="foot">
+            <p id="contacts">
+                Телефон: 8 800 100 31 01<br/>
+                Эл. почта: <a href="mailto:order@sozvezdie-store.ru">order@#{store.domain}</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    </body>
+
 </f:view>
 </html>
+

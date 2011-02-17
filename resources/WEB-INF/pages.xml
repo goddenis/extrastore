@@ -4,14 +4,19 @@
        xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd"
         no-conversation-view-id="/index.xhtml" http-port="8080">
 
-
-    <page view-id="/index.xhtml">
-        <rewrite pattern="/" />
+    <page view-id="/cart.xhtml">
+        <rewrite pattern="/cart" />
     </page>
+
 
     <page view-id="/product.xhtml">
         <rewrite pattern="/product/{id}" />
         <param name="id" value="#{product.urlAlias}"/>
+    </page>
+
+    <page view-id="/browse.xhtml">
+        <rewrite pattern="/{cat}" />
+        <param name="cat" value="#{categoryHome.id}" />
     </page>
 
 

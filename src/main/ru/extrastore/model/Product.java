@@ -29,13 +29,16 @@ public class Product implements Serializable {
     @Column(length = 32)
     String asin;
 
-    @Column(nullable = false, length = 128)
+    @Column(nullable = false, length = 64)
     String name;
+
+    @Column(length = 100)
+    String description;
 
     @Column(precision = 12, scale = 2)
     BigDecimal price;
 
-    @Column(length = 64)
+    @Column(length = 32)
     String urlAlias;
 
     @Column(length = 128)
@@ -72,6 +75,14 @@ public class Product implements Serializable {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public BigDecimal getPrice() {
         return price;
     }
@@ -103,5 +114,22 @@ public class Product implements Serializable {
         this.categories = categories;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        if (id != product.id) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
 }
 

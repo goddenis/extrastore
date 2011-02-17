@@ -1,7 +1,106 @@
-span.price {
+#logo a {
+    text-decoration: none;
+}
+
+#shopname {
+    font-size: 27pt;
+    color: #444444;
+
+}
+
+#logo #hotline {
+    padding-left: 3px;
+    font-size: 16pt;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+#contacts {
+    padding: 18px;
+}
+
+
+
+/********************* HEADERS ***********************/
+
+h1, h2, h3, h4, h5 {
+        font-family: "Trebuchet MS", Arial, sans-serif;
+        line-height: normal;
+        color: #444444;
+        font-weight: bold;
+}
+h1 {
+        font-size: x-large;
+        padding: 0px;
+        margin-bottom: 10px;
+}
+h2 {
+        font-size: large;
+        letter-spacing: 0px;
+        color: #376098;
+        line-height: 170%
+}
+h3 {
+        font-size: medium;
+        letter-spacing: 0px;
+        color: #333;
+}
+
+/**************** CATEGORIES ********************/
+.red {
+    color: #C1272D;
+}
+
+.blue {
+    color: #0060A1;
+}
+
+.green {
+    color: #009245;
+}
+
+.yellow {
+    color: #FBB03B;
+}
+
+.violet {
+    color: #662D91;
+}
+
+.brown {
+    color: #754c24;
+}
+
+#left-menu a {
+    font-size: 12pt;
+}
+
+
+
+/**************** SHOWCASE ***********************/
+
+.product-image {
+    height: 220px;
+}
+
+.product-price {
+    padding-top: 2px;
+}
+
+.product-price-digits {
     font-weight: bold;
+}
+
+.product-description {
+    color: #333333;
+    font-size: 81%;
 }
 
 div.product img {
     border:none;
+}
+
+h1.category-title {
+    margin-bottom: -15px;
 }
