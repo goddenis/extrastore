@@ -11,6 +11,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/resources/import.sql" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/seam.properties" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/tomcat-log4j.xml" output-file-name="log4j.xml" />
+          <element id="file-copy" path="$PROJECT_DIR$/resources/messages_ru.properties" output-file-name="messages.properties" />
         </element>
         <element id="directory" name="dev">
           <element id="module-output" name="hot" />

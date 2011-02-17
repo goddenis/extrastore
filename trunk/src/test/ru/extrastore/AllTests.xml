@@ -5,6 +5,7 @@
             <class name="ru.extrastore.StoreTest" />
             <class name="ru.extrastore.ProductTest" />
             <class name="ru.extrastore.CategoryTest" />
+            <class name="ru.extrastore.MessagesTest" />
         </classes>
     </test>
 </suite>
