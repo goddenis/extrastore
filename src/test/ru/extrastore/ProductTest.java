@@ -115,6 +115,7 @@ public class ProductTest extends SeamTest {
             @Override
             protected void beforeRequest() {
                 setParameter("alias", "wifishirt");
+                setParameter("cat", "office");
             }
 
             @Override
