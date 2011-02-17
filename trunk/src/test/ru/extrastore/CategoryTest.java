@@ -7,7 +7,7 @@ import ru.extrastore.model.Category;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 
-import static org.testng.AssertJUnit.fail;
+import static org.testng.AssertJUnit.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,5 +36,26 @@ public class CategoryTest extends SeamTest {
             }
 
         }.run();
+    }
+
+
+    @Test
+    public void testCategoryAliasAndQuery() throws Exception {
+        new NonFacesRequest("/browse.xhtml") {
+            @Override
+            protected void beforeRequest() {
+                setParameter("cat", "office");
+            }
+
+            @Override
+            protected void renderResponse() throws Exception {
+                Category c = (Category)getValue("#{category}");
+                assertNotNull("category by alias", c);
+                assertEquals("category alias", "office", c.getId());
+                assertNotNull("store products", c.getStoreProducts());
+                assertTrue("has products", c.getStoreProducts().length > 0);
+            }
+        }.run();
+
     }
 }
