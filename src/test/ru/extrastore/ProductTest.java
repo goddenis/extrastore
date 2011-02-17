@@ -114,12 +114,12 @@ public class ProductTest extends SeamTest {
         new NonFacesRequest("/product.xhtml") {
             @Override
             protected void beforeRequest() {
-                setParameter("id", "wifishirt");
+                setParameter("alias", "wifishirt");
             }
 
             @Override
             protected void renderResponse() {
-                Product p = (Product)getValue("#{prod.singleResult}");
+                Product p = (Product)getValue("#{prod}");
                 assertNotNull("product from xml entity query", p);
                 assertEquals("product url alias","wifishirt", p.getUrlAlias());
             }
