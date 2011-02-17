@@ -10,3 +10,7 @@ Solution: move all libs for a project into one dir (ear/lib), and reference them
 `java.lang.NoSuchMethodError: org.jboss.deployers.spi.structure.ContextInfo.getMetaDataPath()Ljava/util/List`
 
 Solution: remove jboss-deployers-client-spi.jar and jboss-deployers-core-spi.jar from classpath, these jars content is already included in jboss-embedded-all.jar. Sometimes bug wont show itself, because jboss-embedded-all.jar stands earlier (and thus is loaded first) in classpath. Here be dragons!
+
+
+=== import.sql data in russian is broken ===
+_Solution:_ start tomcat (or JBoss) JVM with `-Dfile.encoding=UTF-8` parameter
