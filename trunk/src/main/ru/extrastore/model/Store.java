@@ -29,6 +29,7 @@ public class Store {
     Company company;
 
     @NotNull
+    @Column(unique = true)
     String domain;
 
     String templatePath;
