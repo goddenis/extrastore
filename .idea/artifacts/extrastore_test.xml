@@ -15,6 +15,7 @@
       <element id="file-copy" path="$PROJECT_DIR$/resources/import.sql" />
       <element id="file-copy" path="$PROJECT_DIR$/resources/seam.properties" />
       <element id="javaee-facet-resources" facet="extrastore/web/Web" />
+      <element id="file-copy" path="$PROJECT_DIR$/resources/messages_ru.properties" output-file-name="messages.properties" />
     </root>
   </artifact>
 </component>
