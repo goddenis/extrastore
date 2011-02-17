@@ -6,7 +6,6 @@ import ru.extrastore.model.Category;
 import ru.extrastore.model.Product;
 import ru.extrastore.model.Store;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 import static org.testng.AssertJUnit.assertNotNull;
@@ -33,7 +32,7 @@ public class StoreTest extends SeamTest {
         p.getCategories().add(c2);
 
         Store s = new Store();
-        s.setProducts(new ArrayList<Product>());
+        s.setProducts(new HashSet<Product>());
         s.getProducts().add(p);
 
         assertTrue("store contains product categories", s.getCategories().containsAll(p.getCategories()));

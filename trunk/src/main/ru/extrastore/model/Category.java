@@ -4,12 +4,13 @@ import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
+import org.jboss.seam.contexts.Contexts;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,19 +23,22 @@ import java.io.Serializable;
 @Indexed
 public class Category implements Serializable{
     @Id
-    @GeneratedValue
     @DocumentId
-    long id;
+    @Field(index = Index.TOKENIZED)
+    String id;
 
     @Column(nullable = false, length = 64)
     @Field(index = Index.TOKENIZED)
     String name;
 
-    public long getId() {
+    @ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
+    Set<Product> products;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -46,6 +50,23 @@ public class Category implements Serializable{
         this.name = name;
     }
 
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
+    /* Return only products of this category, that belong to the current store */
+    @Transient
+    public Product[] getStoreProducts() {
+        Store s = (Store) Contexts.getSessionContext().get("store");
+        Set<Product> intersection = new HashSet<Product>(products);
+        intersection.retainAll(s.getProducts());
+        return intersection.toArray(new Product[] {});
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,11 +74,12 @@ public class Category implements Serializable{
 
         Category other = (Category) o;
 
-        return (id == other.id);
+        return (id.equals(other.id));
     }
 
     @Override
     public int hashCode() {
-        return (int) (id ^ (id >>> 32));
+        return id.hashCode();
     }
+
 }

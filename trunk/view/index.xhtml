@@ -10,17 +10,16 @@
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
 
-    <ui:define name="categories">
-        <ul id="categories">
-        <ui:repeat value="#{store.categories.toArray()}" var="cat">
-             <li><h:outputLink value="/category.xhtml">#{cat.name}</h:outputLink> </li>
+    <ui:define name="sidebar">
+        <br/><br/><br/>
+        <ui:repeat value="#{store.categories.toArray()}" var="category">
+            <span class="pointer red">&gt;</span>
+            <s:link view="/browse.xhtml">#{category.name}</s:link><br/>
         </ui:repeat>
-        </ul>
     </ui:define>
 
     <ui:define name="body">
 
-        <div id="main">
 
     <h1>#{store.name}</h1>
 
@@ -39,7 +38,6 @@
             </div>
         </ui:repeat>
 
-        </div> <!-- #main -->
 
 
     </ui:define>

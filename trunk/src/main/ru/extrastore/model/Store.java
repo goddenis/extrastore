@@ -6,7 +6,6 @@ import org.jboss.seam.annotations.Name;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -39,7 +38,7 @@ public class Store {
                joinColumns=@JoinColumn(name="storeId"),
                inverseJoinColumns=@JoinColumn(name="productId"))
     @IndexedEmbedded
-    List<Product> products;
+    Set<Product> products;
 
     // Contains all categories of all products of this store.
     @Transient
@@ -88,11 +87,11 @@ public class Store {
         this.templatePath = templatePath;
     }
 
-    public List<Product> getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(Set<Product> products) {
         this.products = products;
     }
 
