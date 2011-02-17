@@ -1,4 +1,4 @@
-#labels libs,jar,ClassNotFound,NoSuchMethodException
+#labels libs,jar,ClassNotFound,NoSuchMethodException,import.sql,messages.properties,encoding
 #Hacks (ugly and not)
 
 === Different modules libs issue ===
@@ -12,5 +12,5 @@ Solution: move all libs for a project into one dir (ear/lib), and reference them
 Solution: remove jboss-deployers-client-spi.jar and jboss-deployers-core-spi.jar from classpath, these jars content is already included in jboss-embedded-all.jar. Sometimes bug wont show itself, because jboss-embedded-all.jar stands earlier (and thus is loaded first) in classpath. Here be dragons!
 
 
-=== import.sql data in russian is broken ===
+=== import.sql or messages.properties data in russian is broken ===
 _Solution:_ start tomcat (or JBoss) JVM with `-Dfile.encoding=UTF-8` parameter
