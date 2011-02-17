@@ -22,8 +22,10 @@ public class StoreTest extends SeamTest {
     @Test
     public void testStoreCategories() throws Exception {
         Category c1 = new Category();
+        c1.setId("a");
         c1.setName("CatA");
         Category c2 = new Category();
+        c2.setId("b");
         c2.setName("CatB");
 
         Product p = new Product();
