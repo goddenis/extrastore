@@ -2,21 +2,28 @@
 <pages xmlns="http://jboss.com/products/seam/pages"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd"
-        no-conversation-view-id="/index.xhtml" http-port="8080">
+        no-conversation-view-id="/browse.xhtml" http-port="80">
 
     <page view-id="/cart.xhtml">
         <rewrite pattern="/cart" />
     </page>
 
-
-    <page view-id="/product.xhtml">
-        <rewrite pattern="/{cat}/{alias}" />
-        <param name="alias" />
+    <page view-id="/debug.xhtml">
+        <rewrite pattern="/debug.seam" />
     </page>
 
 
+    <page view-id="/product.xhtml">
+        <rewrite pattern="/all/{cat}/{alias}" />
+        <param name="alias" />
+        <param name="cat" />
+    </page>
+
+
+
+
     <page view-id="/browse.xhtml">
-        <rewrite pattern="/{cat}" />
+        <rewrite pattern="/all/{cat}" />
         <param name="cat" value="#{categoryHome.id}" />
     </page>
 
