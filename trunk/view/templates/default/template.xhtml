@@ -25,18 +25,23 @@
     </head>
 
     <body>
+
     <div id="box">
 
         <div id="head">
             <div id="logo">
-                <h:form id="SearchForm">
-                    <s:link id="home" view="/" propagation="none">
-                        <div id="shopname">#{store.domain}</div>
-                    </s:link>
+                <s:link id="home" view="/" propagation="none">
+                    <div id="shopname">#{store.domain}</div>
+                </s:link>
 
-                    <div id="hotline">Тел.: 8 800 100 31 01</div>
-                </h:form>
+                <div id="hotline">Тел.: 8 800 100 31 01</div>
             </div>
+
+            <f:subview id="cart_view" rendered="#{!cart.isEmpty()}">
+                <div id="cart-panel">
+                    Корзина: #{cart.productsCount} товаров.
+                </div>
+            </f:subview>
 
 
             <div id="menu">
