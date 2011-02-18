@@ -8,6 +8,7 @@ import org.jboss.seam.annotations.Name;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -53,6 +54,9 @@ public class Product implements Serializable {
                inverseJoinColumns=@JoinColumn(name="categoryId"))
     @IndexedEmbedded
     Set<Category> categories;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    List<ProductProperty> properties;
 
     public Long getId() {
         return id;
@@ -125,6 +129,13 @@ public class Product implements Serializable {
         this.categories = categories;
     }
 
+    public List<ProductProperty> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(List<ProductProperty> properties) {
+        this.properties = properties;
+    }
 
     @Override
     public boolean equals(Object o) {

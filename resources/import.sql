@@ -102,3 +102,16 @@ INSERT INTO Product2Store(productId, storeId) VALUES(4, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(1, 1)
 
 
+
+/*************** ProductProperty ******************/
+
+/* Вай-Фай Майка */
+INSERT INTO ProductProperty(productId, name, value) VALUES(1, 'Производство', 'Россия')
+INSERT INTO ProductProperty(productId, name, value) VALUES(1, 'Размеры', 'S, M, L, XL')
+
+
+/* Орфограф */
+INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Производство', 'Россия')
+INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Вес', '300 г')
+INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Издатель', 'студия "Пэйдждаун"')
+INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Размер упаковки', '9×5×3,9 см')
