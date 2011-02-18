@@ -11,7 +11,7 @@
 
     <page view-id="/product.xhtml">
         <rewrite pattern="/{cat}/{alias}" />
-        <param name="alias" value="#{product.urlAlias}"/>
+        <param name="alias" />
     </page>
 
 

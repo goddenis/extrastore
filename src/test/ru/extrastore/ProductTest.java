@@ -134,7 +134,10 @@ public class ProductTest extends SeamTest {
 
             @Override
             protected void renderResponse() {
-                Product p = (Product)getValue("#{prod}");
+                String alias = (String)getValue("#{alias}");
+                assertEquals("alias param", "wifishirt", alias);
+
+                Product p = (Product)getValue("#{product}");
                 assertNotNull("product from xml entity query", p);
                 assertEquals("product url alias","wifishirt", p.getUrlAlias());
             }

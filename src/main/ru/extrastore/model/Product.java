@@ -18,7 +18,6 @@ import java.util.Set;
  * Time: 11:43
  */
 @Entity
-@Name("product")
 @Indexed
 public class Product implements Serializable {
 
