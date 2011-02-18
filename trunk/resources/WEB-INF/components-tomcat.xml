@@ -33,14 +33,18 @@
     <persistence:managed-persistence-context name="entityManager" auto-create="true"
                                              entity-manager-factory="#{extrastorefactory}"/>
 
-    <factory name="prod" value="#{productByAliasQuery.singleResult}" scope="STATELESS" auto-create="true" />
+
+    <factory name="product" value="#{productByAliasQuery.singleResult}" scope="STATELESS" auto-create="true" />
     <framework:entity-query name="productByAliasQuery"
-               max-results="1">
+                            max-results="1">
         <framework:ejbql>select p from Product p</framework:ejbql>
+
         <framework:restrictions>
-            <value>lower(p.urlAlias) like lower(#{product.urlAlias})</value>
+            <value>lower(p.urlAlias) like lower(#{alias})</value>
         </framework:restrictions>
+
     </framework:entity-query>
+
 
     <factory name="category"
              value="#{categoryHome.instance}"
@@ -51,7 +55,7 @@
                            entity-class="ru.extrastore.model.Category"
                            scope="EVENT"
                            auto-create="true"
-                            entity-manager="#{entityManager}">
+                           entity-manager="#{entityManager}">
     </framework:entity-home>
 
     

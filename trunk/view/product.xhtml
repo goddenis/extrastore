@@ -10,7 +10,7 @@
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
 
-    <ui:define name="title">#{prod.name}</ui:define>
+    <ui:define name="title">#{product.name}</ui:define>
 
 
     <ui:define name="sidebar">
@@ -22,12 +22,12 @@
 
     <div class="product-central-column">
 
-        <h1>#{prod.name}</h1>
+        <h1>#{product.name}</h1>
 
-        <div>#{prod.description}</div>
+        <div>#{product.description}</div>
 
         <div class="product-long-description">
-            <h:outputText value="#{prod.longDescription}" escape="false" />
+            <h:outputText value="#{product.longDescription}" escape="false" />
         </div>
 
 
@@ -39,13 +39,13 @@
         <div class="product-panel">
             <span class="product-price">
                 <span class="product-price-digits">
-                    <h:outputText value="#{prod.price}"><f:convertNumber type="currency" currencySymbol="" /></h:outputText></span> руб.</span>
+                    <h:outputText value="#{product.price}"><f:convertNumber type="currency" currencySymbol="" /></h:outputText></span> руб.</span>
             <br /><br />
             <h:commandButton value="Заказать" />
         </div>
 
         <div class="product-properties">
-            <ui:repeat value="#{prod.properties}" var="p">
+            <ui:repeat value="#{product.properties}" var="p">
                 <p>#{p.name}: #{p.value}</p>
             </ui:repeat>
         </div>
