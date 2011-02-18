@@ -5,6 +5,7 @@ import org.hibernate.validator.NotNull;
 import org.jboss.seam.annotations.Name;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ import java.util.Set;
  */
 @Entity
 @Name("store")
-public class Store {
+public class Store implements Serializable {
     @Id
     @GeneratedValue
     Long id;

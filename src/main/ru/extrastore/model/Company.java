@@ -1,11 +1,10 @@
 package ru.extrastore.model;
 
-import org.jboss.seam.annotations.Name;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,8 +14,7 @@ import java.util.List;
  * Time: 3:13
  */
 @Entity
-@Name("company")
-public class Company {
+public class Company implements Serializable {
 
     @Id
     @GeneratedValue
