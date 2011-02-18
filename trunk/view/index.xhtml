@@ -11,32 +11,14 @@
 <ui:composition template="#{store.templatePath}/template.xhtml">
 
     <ui:define name="sidebar">
-        <br/><br/><br/>
-        <ui:repeat value="#{store.categories.toArray()}" var="category">
-            <span class="pointer red">&gt;</span>
-            <s:link view="/browse.xhtml">#{category.name}</s:link><br/>
-        </ui:repeat>
     </ui:define>
 
     <ui:define name="body">
 
 
-    <h1>#{store.name}</h1>
+    <h1>#{store.name} Index. You shouldn't see this normally.</h1>
 
 
-        <ui:repeat value="#{store.products}" var="product">
-            <div class="product">
-                <s:link view="/product.xhtml">
-                    <f:param name="id" value="#{product.urlAlias}" />
-                    <img src="#{product.urlImageSmall}" alt="#{product.name} image" /><br />
-                </s:link>
-                <s:link view="/product.xhtml" value="#{product.name}">
-                    <f:param name="id" value="#{product.urlAlias}" />
-                </s:link><br />
-                <span class="price">#{product.price}</span> руб.
-
-            </div>
-        </ui:repeat>
 
 
 
