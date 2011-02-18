@@ -50,6 +50,8 @@ public class StoreTest extends SeamTest {
                 Store s = (Store)getValue("#{store}");
                 assertNotNull("store from session context", s);
                 assertTrue("store has categories", s.getCategories().size() > 0);
+
+                assertNotNull("store has a parent Company", s.getCompany());
             }
         }.run();
     }
