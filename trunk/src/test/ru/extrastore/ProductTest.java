@@ -3,10 +3,12 @@ package ru.extrastore;
 import org.jboss.seam.mock.SeamTest;
 import org.testng.annotations.Test;
 import ru.extrastore.model.Product;
+import ru.extrastore.model.ProductProperty;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import static org.testng.AssertJUnit.*;
 
@@ -77,6 +79,13 @@ public class ProductTest extends SeamTest {
         final Product p = new Product();
         p.setName(PRODUCT_NAME);
 
+        p.setProperties(new ArrayList<ProductProperty>());
+        ProductProperty pp = new ProductProperty();
+        pp.setName("Size");
+        pp.setValue("XXL");
+        pp.setProduct(p);
+        p.getProperties().add(pp);
+
         new FacesRequest() {
             protected void invokeApplication() {
                 EntityManager em = (EntityManager) getValue("#{entityManager}");
@@ -92,6 +101,11 @@ public class ProductTest extends SeamTest {
                 assertNotNull("find by id", found);
                 assertEquals("id", p.getId(), found.getId());
                 assertEquals("name", PRODUCT_NAME, found.getName());
+
+                assertNotNull("product properties", found.getProperties());
+                assertEquals("product properties size", 1, found.getProperties().size());
+                assertTrue("property name", "Size".equals(found.getProperties().get(0).getName()));
+                assertTrue("property value", "XXL".equals(found.getProperties().get(0).getValue()));
 
                 em.remove(found);
             }
@@ -128,4 +142,5 @@ public class ProductTest extends SeamTest {
         }.run();
 
     }
+
 }
