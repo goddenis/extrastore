@@ -36,7 +36,7 @@
                     <f:param name="alias" value="#{product.urlAlias}" />
                 </s:link><br />
                 <div class="product-description">#{product.description}</div>
-                <div class="product-price"><span class="product-price-digits">#{product.price}</span> руб.</div>
+                <div class="product-price"><span class="product-price-digits"><h:outputText value="#{product.price}"><f:convertNumber type="currency" currencySymbol="" /></h:outputText></span> руб.</div>
 
             </div>
         </ui:repeat>
@@ -58,7 +58,8 @@
                         <f:param name="alias" value="#{product.urlAlias}" />
                     </s:link><br />
                     <div class="product-description">#{product.description}</div>
-                    <div class="product-price"><span class="product-price-digits">#{product.price}</span> руб.</div>
+                    <div class="product-price"><span class="product-price-digits"><h:outputText value="#{product.price}"><f:convertNumber type="currency" currencySymbol="" /></h:outputText></span> руб.</div>
+
 
                 </div>
             </ui:repeat>
