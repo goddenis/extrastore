@@ -18,6 +18,8 @@ import java.util.Set;
 @Entity
 @Name("store")
 public class Store implements Serializable {
+    public static final String DEFAULT_TEMPLATE_PATH = "/templates/default";        // Made public for test purposes.
+
     @Id
     @GeneratedValue
     Long id;
@@ -80,7 +82,7 @@ public class Store implements Serializable {
 
     public String getTemplatePath() {
         if (templatePath == null) {
-            templatePath = "/templates/default";
+            templatePath = DEFAULT_TEMPLATE_PATH;
         }
         return templatePath;
     }

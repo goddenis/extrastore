@@ -20,12 +20,12 @@
     </page>
 
 
-
-
     <page view-id="/browse.xhtml">
         <rewrite pattern="/all/{cat}" />
+        <rewrite pattern="/" />
         <param name="cat" value="#{categoryHome.id}" />
     </page>
+
 
 
 </pages>

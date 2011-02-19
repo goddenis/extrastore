@@ -103,8 +103,11 @@ public class ProductTest extends SeamTest {
 
                 assertNotNull("product properties", found.getProperties());
                 assertEquals("product properties size", 1, found.getProperties().size());
-                assertTrue("property name", "Size".equals(found.getProperties().get(0).getName()));
-                assertTrue("property value", "XXL".equals(found.getProperties().get(0).getValue()));
+
+                ProductProperty prop = found.getProperties().get(0);
+                assertEquals("property name", "Size", prop.getName());
+                assertEquals("property value", "XXL", prop.getValue());
+                assertEquals("property product", found, prop.getProduct());
 
                 em.remove(found);
             }

@@ -8,6 +8,7 @@ import ru.extrastore.model.Store;
 
 import java.util.HashSet;
 
+import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -46,13 +47,26 @@ public class StoreTest extends SeamTest {
         new FacesRequest("/index.xhtml") {
             @Override
             protected void renderResponse(){
-                // #{store} shold be created at StoreDomainFilter on invoke application
+                // #{store} should be created at StoreDomainFilter on invoke application
                 Store s = (Store)getValue("#{store}");
+
+                assertEquals("IP store defaults to localost", "localhost", s.getDomain());
+
                 assertNotNull("store from session context", s);
                 assertTrue("store has categories", s.getCategories().size() > 0);
 
                 assertNotNull("store has a parent Company", s.getCompany());
+                assertEquals("store company is Extra", "Extra", s.getCompany().getName());
+
+                assertTrue("store is in company's stores list", s.getCompany().getStores().contains(s));
             }
         }.run();
+    }
+
+    @Test
+    public void testDefaultTemplatePath() {
+        Store s = new Store();
+
+        assertEquals("store default template path", Store.DEFAULT_TEMPLATE_PATH, s.getTemplatePath());
     }
 }

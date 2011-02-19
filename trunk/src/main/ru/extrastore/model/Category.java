@@ -9,7 +9,6 @@ import org.jboss.seam.contexts.Contexts;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -74,7 +73,15 @@ public class Category implements Serializable{
 
         Category other = (Category) o;
 
-        return (id.equals(other.id));
+        assert this.id != null;
+        assert other.id != null;
+
+        if (this.id.equals(other.id)) {
+            assert this.name.equals(other.name);
+            return true;
+        }
+
+        return false;
     }
 
     @Override
