@@ -1,9 +1,6 @@
 package ru.extrastore.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class Company implements Serializable {
 
     String name;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany(mappedBy = "company", fetch = FetchType.EAGER)
     List<Store> stores;
 
     public Long getId() {
