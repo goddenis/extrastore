@@ -46,4 +46,14 @@ public class Order implements Serializable {
         }
         lines.add(new OrderLine(this, p, quantity));
     }
+
+    public long getTotalCost() {
+        long totalCost = 0;
+        for (OrderLine l: lines) {
+           totalCost += l.getProduct().getPrice()*l.getQuantity();
+        }
+        return totalCost;
+    }
+
+
 }

@@ -114,10 +114,19 @@ div.product {
 
 /****************** CART ********************/
 #cart {
+    margin-top: -18px;
     float: right;
     width: 295px;
-    height: 24px;
-    background-color: #ffdc9c;
+    height: 100%;
     margin-right: 18px;
+    padding-top: 15px;
+}
+
+#inner_cart {
+    background-color: #ffdc9c;
+    height: 100%;
     padding: 18px;
+}
+#cart_form {
+
 }
