@@ -39,13 +39,20 @@
                 <div id="hotline">Тел.: 8 800 100 31 01</div>
             </div>
 
+
+            <ui:insert name="cart">
             <h:panelGroup id="cart" layout="block">
                 <a4j:form id="cart_form"  rendered="#{!cart.isEmpty()}">
-                <s:link view="/cart.xhtml" value="#{messages.cart}" propagation="none" /> (#{cart.itemsCount} товаров)
-                |#{" "}<a4j:commandLink value="#{messages.resetCart}" action="#{cart.reset()}" reRender="cart" />
+                    <div id="inner_cart">
+                <s:link view="/cart.xhtml" value="#{messages.cart}" propagation="none" /> (#{cart.itemsCount} товаров на
+                #{" "}<h:outputText value="#{cart.totalCost}"><f:convertNumber type="currency"
+                                                                            currencySymbol="руб."/></h:outputText>)
+                #{" "}<a4j:commandLink value="#{messages.resetCart}" action="#{cart.reset()}" reRender="cart" />
+                </div>
                 </a4j:form>
 
             </h:panelGroup>
+            </ui:insert>
 
 
 

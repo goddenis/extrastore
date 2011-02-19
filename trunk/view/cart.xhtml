@@ -9,25 +9,44 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
-
+    <ui:define name="title">Корзина</ui:define>
     <ui:define name="sidebar">
-        <br/><br/><br/>
-        <ui:repeat value="#{store.categories.toArray()}" var="category">
-            <span class="pointer red">&gt;</span>
-            <s:link view="/browse.xhtml"><f:param name="cat" value="#{category.urlAlias}" />#{category.name}</s:link><br/>
-        </ui:repeat>
+        <ui:include src="/incl/categories.xhtml"/>
     </ui:define>
+
+    <ui:define name="cart"></ui:define>
 
     <ui:define name="body">
 
 
-    <h1>КорЗина #{store.name}</h1>
+
+        <h1>#{messages.cart}</h1>
+
+
+        <f:subview id="emptycart" rendered="#{cart.isEmpty()}">
+            <p>#{messages.cartIsEmpty}</p>
+
+            <h:form id="EmptyCartForm">
+                <h:commandButton id="ContinueShoppingButton" action="browse" value="Continue Shopping" />
+            </h:form>
+        </f:subview>
+
+        <f:subview id="cartdetails" rendered="#{!cart.isEmpty()}">
+            <ui:repeat value="#{cart.order.lines}" var="l">
+                <s:link view="/product.xhtml" value="#{l.product.name}" propagation="none">
+                    <f:param name="cat" value="#{l.product.categories.toArray()[0].id}" />
+                    <f:param name="alias" value="#{l.product.urlAlias}" />
+                </s:link>
+                - #{l.quantity} штук(и) на сумму <b>#{l.product.price*l.quantity}</b> руб.<br/>
+            </ui:repeat>
+            <br/>Общая сумма заказа <b>#{cart.totalCost} руб.</b>
+        </f:subview>
 
 
 
 
     </ui:define>
 
-    </ui:composition>
+</ui:composition>
 
 </html>

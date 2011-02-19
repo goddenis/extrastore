@@ -39,7 +39,7 @@ public class Product implements Serializable {
     String longDescription; // HTML is accepted
 
     @Column(precision = 12, scale = 2)
-    BigDecimal price;
+    long price;
 
     @Column(length = 32, unique = true)
     String urlAlias;
@@ -97,11 +97,11 @@ public class Product implements Serializable {
         this.longDescription = longDescription;
     }
 
-    public BigDecimal getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 

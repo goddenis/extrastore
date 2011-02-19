@@ -51,4 +51,9 @@ public class Cart implements Serializable {
         }
         return itemsCount;
     }
+
+    public long getTotalCost() {
+        return order.getTotalCost();
+    }
+
 }
