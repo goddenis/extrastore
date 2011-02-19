@@ -4,6 +4,7 @@ import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 import ru.extrastore.model.Order;
+import ru.extrastore.model.OrderLine;
 import ru.extrastore.model.Product;
 
 import java.io.Serializable;
@@ -32,10 +33,22 @@ public class Cart implements Serializable {
     }
 
     public boolean isEmpty() {
-        return order.getLines().size() == 0;
+        return (order.getLines().size() == 0);
+    }
+
+    public void reset() {
+        order = new Order();
     }
 
     public long getProductsCount() {
         return order.getLines().size();
+    }
+
+    public long getItemsCount() {
+        int itemsCount = 0;
+        for (OrderLine l: order.getLines()) {
+            itemsCount += l.getQuantity();
+        }
+        return itemsCount;
     }
 }

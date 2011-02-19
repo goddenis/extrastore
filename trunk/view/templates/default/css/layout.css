@@ -110,3 +110,14 @@ div.product {
 .product-long-description {
     margin-top: 27px;
 }
+
+
+/****************** CART ********************/
+#cart {
+    float: right;
+    width: 295px;
+    height: 24px;
+    background-color: #ffdc9c;
+    margin-right: 18px;
+    padding: 18px;
+}

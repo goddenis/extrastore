@@ -15,54 +15,49 @@
 
 
     <ui:define name="sidebar">
-        <ui:include src="/incl/categories.xhtml" />
+        <ui:include src="/incl/categories.xhtml"/>
     </ui:define>
 
 
     <ui:define name="body">
 
-    <div class="product-central-column">
+        <div class="product-central-column">
 
-        <h1>#{product.name}</h1>
+            <h1>#{product.name}</h1>
 
-        <div>#{product.description}</div>
+            <div>#{product.description}</div>
 
-        <div class="product-long-description">
-            <h:outputText value="#{product.longDescription}" escape="false" />
+            <div class="product-long-description">
+                <h:outputText value="#{product.longDescription}" escape="false"/>
+            </div>
+
+
         </div>
 
 
-    </div>
+        <div class="product-right-column">
 
-
-    <div class="product-right-column">
-
-        <div class="product-panel">
+            <div class="product-panel">
             <span class="product-price">
                 <span class="product-price-digits">
-                    <h:outputText value="#{product.price}"><f:convertNumber type="currency" currencySymbol="" /></h:outputText></span> руб.</span>
-            <br /><br />
-
-            <ui:fragment id="fra" rendered="#{!cart.isEmpty()}">
-                Корзина: #{cart.productsCount} товаров.
-            </ui:fragment>
-
-            <a4j:form>
-                <a4j:commandButton value="Заказать" action="#{cart.addProduct(product, 1)}" reRender="fra, cart_view" />
-            </a4j:form>
+                    <h:outputText value="#{product.price}"><f:convertNumber type="currency"
+                                                                            currencySymbol=""/></h:outputText></span> руб.</span>
+                <br/><br/>
 
 
+                <a4j:form>
+                    <a4j:commandButton value="#{messages.orderButton}" action="#{cart.addProduct(product,1)}" reRender="cart" />
+                </a4j:form>
 
+            </div>
+
+            <div class="product-properties">
+                <ui:repeat value="#{product.properties}" var="p">
+                    <p>#{p.name}: #{p.value}</p>
+                </ui:repeat>
+            </div>
 
         </div>
-
-        <div class="product-properties">
-            <ui:repeat value="#{product.properties}" var="p">
-                <p>#{p.name}: #{p.value}</p>
-            </ui:repeat>
-        </div>
-
-    </div>
 
 
     </ui:define>

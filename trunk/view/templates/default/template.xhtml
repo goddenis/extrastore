@@ -6,6 +6,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core" xmlns:s="http://jboss.com/products/seam/taglib"
       xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
       xml:lang="ru"
       lang="ru">
 <f:view>
@@ -30,18 +31,20 @@
 
         <div id="head">
             <div id="logo">
-                <s:link id="home" view="/" propagation="none">
+                <s:link id="home" view="/browse.xhtml" propagation="none">
+                    <f:param name="cat" value="" />
                     <div id="shopname">#{store.domain}</div>
                 </s:link>
 
                 <div id="hotline">Тел.: 8 800 100 31 01</div>
             </div>
 
-            <f:subview id="cart_view" rendered="#{!cart.isEmpty()}">
-                <div id="cart-panel">
-                    Корзина: #{cart.productsCount} товаров.
-                </div>
-            </f:subview>
+            <h:panelGroup id="cart" rendered="#{!cart.isEmpty()}" layout="block">
+                <s:link view="/cart.xhtml" value="#{messages.cart}" propagation="none" /> (#{cart.itemsCount} товаров)
+                <a4j:form>
+                |#{" "}<a4j:commandLink value="#{messages.resetCart}" action="#{cart.reset()}" reRender="cart" />
+                </a4j:form>
+            </h:panelGroup>
 
 
             <div id="menu">
