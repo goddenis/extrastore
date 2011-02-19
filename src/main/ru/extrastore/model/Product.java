@@ -57,11 +57,11 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     List<ProductProperty> properties;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -143,7 +143,12 @@ public class Product implements Serializable {
 
         Product product = (Product) o;
 
-        if (id != product.id) return false;
+        assert this.id != 0;
+        assert product.id != 0;
+
+        if (this.id != product.id) return false;
+
+        assert this.getName().equals(product.getName()) : this.getName();
 
         return true;
     }

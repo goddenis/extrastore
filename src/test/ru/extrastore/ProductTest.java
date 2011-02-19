@@ -7,7 +7,6 @@ import ru.extrastore.model.ProductProperty;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import static org.testng.AssertJUnit.*;
@@ -20,7 +19,7 @@ import static org.testng.AssertJUnit.*;
  */
 public class ProductTest extends SeamTest {
     private static final String PRODUCT_NAME = "Тестовый Продукт";
-    private static final Long PRODUCT_ID = 777999L;
+    private static final long PRODUCT_ID = 777999L;
     private static final long PRODUCT_PRICE = 395L;
     private static final String PRODUCT_URL_ALIAS = "skovoroda";
     private static final String PRODUCT_ASIN = "skovoroda23";
