@@ -13,12 +13,6 @@
 
     <ui:define name="title">#{product.name}</ui:define>
 
-
-    <ui:define name="sidebar">
-        <ui:include src="/incl/categories.xhtml"/>
-    </ui:define>
-
-
     <ui:define name="body">
 
         <div class="product-central-column">
@@ -46,7 +40,8 @@
 
 
                 <a4j:form>
-                    <a4j:commandButton value="#{messages.orderButton}" action="#{cart.addProduct(product,1)}" reRender="cart" />
+                    <a4j:commandButton value="#{messages.orderButton}" action="#{cart.addProduct(product,1)}"
+                                       reRender="cart"/>
                 </a4j:form>
 
             </div>
