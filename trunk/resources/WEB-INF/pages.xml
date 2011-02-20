@@ -15,6 +15,7 @@
 
     <page view-id="/product.xhtml">
         <rewrite pattern="/all/{cat}/{alias}" />
+        <rewrite pattern="/all/{cat}/{alias}/" />
         <param name="alias" />
         <param name="cat" />
     </page>
@@ -22,6 +23,8 @@
 
     <page view-id="/browse.xhtml">
         <rewrite pattern="/all/{cat}" />
+        <rewrite pattern="/all/{cat}/" />
+        <rewrite pattern="/all" />
         <rewrite pattern="/" />
         <param name="cat" value="#{categoryHome.id}" />
     </page>
