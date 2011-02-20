@@ -26,8 +26,6 @@ a {
     float: left;
 }
 
-
-
 /*** COLUMNS ***/
 
 #left-outer {
@@ -67,8 +65,6 @@ a {
     top: 4px;
 }
 
-
-
 /************** SHOWCASE **********/
 
 div.product {
@@ -80,7 +76,6 @@ div.product {
     width: 15em;
     height: 280px;
 }
-
 
 /************* PRODUCT PAGE *****************/
 
@@ -100,7 +95,6 @@ div.product {
 
 }
 
-
 .product-panel, .product-properties {
     padding: 18px;
     margin-right: 18px;
@@ -111,22 +105,21 @@ div.product {
     margin-top: 27px;
 }
 
-
 /****************** CART ********************/
-#cart {
+div#cart {
     margin-top: -18px;
     float: right;
-    width: 295px;
+    width: 305px;
     height: 100%;
     margin-right: 18px;
     padding-top: 15px;
+
+    text-align: center;
 }
 
-#inner_cart {
+div#cart div {
     background-color: #ffdc9c;
     height: 100%;
     padding: 18px;
-}
-#cart_form {
-
+    white-space: nowrap;
 }

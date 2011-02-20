@@ -1,6 +1,7 @@
 package ru.extrastore;
 
 import org.jboss.seam.ScopeType;
+import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Scope;
 import ru.extrastore.model.Order;
@@ -8,6 +9,7 @@ import ru.extrastore.model.OrderLine;
 import ru.extrastore.model.Product;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * File profile
@@ -19,6 +21,9 @@ import java.io.Serializable;
 @Scope(ScopeType.SESSION)
 public class Cart implements Serializable {
     Order order = new Order();
+
+    @In
+    Map<String, String> messages;
 
     public Order getOrder() {
         return order;
@@ -46,7 +51,7 @@ public class Cart implements Serializable {
 
     public long getItemsCount() {
         int itemsCount = 0;
-        for (OrderLine l: order.getLines()) {
+        for (OrderLine l : order.getLines()) {
             itemsCount += l.getQuantity();
         }
         return itemsCount;
@@ -56,4 +61,22 @@ public class Cart implements Serializable {
         return order.getTotalCost();
     }
 
+    /**
+     * @param itemsCount
+     * @return russian language ending for the count
+     */
+    public String russianEnding(long itemsCount) {
+        if (itemsCount >= 11 && itemsCount <= 19) {
+            return messages.get("russianEnding2");
+        } else {
+            long remain = itemsCount % 10;
+            if (remain == 1) {
+                return "";
+            } else if (remain > 1 && remain <= 4) {
+                return messages.get("russianEnding1");
+            } else {
+                return messages.get("russianEnding2");
+            }
+        }
+    }
 }

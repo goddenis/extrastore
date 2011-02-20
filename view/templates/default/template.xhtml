@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-                             "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -10,7 +10,6 @@
       xml:lang="ru"
       lang="ru">
 <f:view>
-
 
 
     <head>
@@ -32,7 +31,8 @@
         <div id="head">
             <div id="logo">
                 <s:link id="home" view="/browse.xhtml" propagation="none">
-                    <f:param name="cat" value="" />
+                    <f:param name="cat" value=""/>
+
                     <div id="shopname">#{store.domain}</div>
                 </s:link>
 
@@ -41,19 +41,8 @@
 
 
             <ui:insert name="cart">
-            <h:panelGroup id="cart" layout="block">
-                <a4j:form id="cart_form"  rendered="#{!cart.isEmpty()}">
-                    <div id="inner_cart">
-                <s:link view="/cart.xhtml" value="#{messages.cart}" propagation="none" /> (#{cart.itemsCount} товаров на
-                #{" "}<h:outputText value="#{cart.totalCost}"><f:convertNumber type="currency"
-                                                                            currencySymbol="руб."/></h:outputText>)
-                #{" "}<a4j:commandLink value="#{messages.resetCart}" action="#{cart.reset()}" reRender="cart" />
-                </div>
-                </a4j:form>
-
-            </h:panelGroup>
+                <ui:include src="/incl/cart.xhtml"/>
             </ui:insert>
-
 
 
             <div id="menu">
@@ -67,12 +56,10 @@
         <div id="left-outer">
             <div id="left" class="column">
                 <ui:insert name="sidebar">
+                    <ui:include src="/incl/categories.xhtml"/>
                 </ui:insert>
-                <br/><br/>
-
             </div>
         </div>
-
 
 
         <div id="content-outer">
@@ -81,8 +68,8 @@
                 <div id="errors">
                     <ui:insert name="errors">
                         <!--<h:messages globalOnly="true"-->
-                                    <!--layout="table"-->
-                                    <!--styleClass="cntError"/>-->
+                        <!--layout="table"-->
+                        <!--styleClass="cntError"/>-->
                     </ui:insert>
                 </div>
 

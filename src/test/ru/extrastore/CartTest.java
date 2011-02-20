@@ -126,4 +126,48 @@ public class CartTest extends SeamTest {
         }.run();
     }
 
+    @Test
+    public void testRussianEnding() throws Exception {
+        new ComponentTest() {
+            @Override
+            protected void testComponents() throws Exception {
+                Cart c = (Cart) this.getValue("#{cart}");
+
+                assertEquals("ов", c.russianEnding(0));
+                assertEquals("", c.russianEnding(1));
+                assertEquals("а", c.russianEnding(2));
+                assertEquals("а", c.russianEnding(3));
+                assertEquals("а", c.russianEnding(4));
+                assertEquals("ов", c.russianEnding(5));
+                assertEquals("ов", c.russianEnding(6));
+                assertEquals("ов", c.russianEnding(7));
+                assertEquals("ов", c.russianEnding(8));
+                assertEquals("ов", c.russianEnding(9));
+                assertEquals("ов", c.russianEnding(10));
+                assertEquals("ов", c.russianEnding(11));
+                assertEquals("ов", c.russianEnding(12));
+                assertEquals("ов", c.russianEnding(13));
+                assertEquals("ов", c.russianEnding(14));
+                assertEquals("ов", c.russianEnding(15));
+                assertEquals("ов", c.russianEnding(16));
+                assertEquals("ов", c.russianEnding(17));
+                assertEquals("ов", c.russianEnding(18));
+                assertEquals("ов", c.russianEnding(19));
+                assertEquals("ов", c.russianEnding(20));
+                assertEquals("", c.russianEnding(21));
+                assertEquals("а", c.russianEnding(22));
+                assertEquals("а", c.russianEnding(23));
+                assertEquals("а", c.russianEnding(24));
+                assertEquals("ов", c.russianEnding(25));
+
+                assertEquals("ов", c.russianEnding(100));
+                assertEquals("", c.russianEnding(101));
+                assertEquals("а", c.russianEnding(102));
+                assertEquals("а", c.russianEnding(103));
+                assertEquals("а", c.russianEnding(104));
+                assertEquals("ов", c.russianEnding(105));
+            }
+        }.run();
+    }
+
 }
