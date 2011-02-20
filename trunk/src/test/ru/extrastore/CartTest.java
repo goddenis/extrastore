@@ -38,7 +38,7 @@ public class CartTest extends SeamTest {
         cart.addProduct(p1, POURAGE_QUANTITY);
 
         assertEquals("items count", POURAGE_QUANTITY, cart.getItemsCount());
-        assertEquals("total price", POURAGE_QUANTITY*POURAGE_PRICE, cart.getTotalCost());
+        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE, cart.getTotalCost());
         assertEquals("product count", 1, cart.getProductsCount());
 
         Product p2 = new Product();
@@ -48,8 +48,8 @@ public class CartTest extends SeamTest {
 
         cart.addProduct(p2, BREADLETS_QUANTITY);
 
-        assertEquals("items count", POURAGE_QUANTITY+BREADLETS_QUANTITY, cart.getItemsCount());
-        assertEquals("total price", POURAGE_QUANTITY*POURAGE_PRICE+BREADLETS_QUANTITY*BREADLETS_PRICE, cart.getTotalCost());
+        assertEquals("items count", POURAGE_QUANTITY + BREADLETS_QUANTITY, cart.getItemsCount());
+        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE + BREADLETS_QUANTITY * BREADLETS_PRICE, cart.getTotalCost());
         assertEquals("product count", 2, cart.getProductsCount());
 
         assertEquals("product one", cart.getOrder().getLines().get(0).getProduct(), p1);
@@ -57,7 +57,6 @@ public class CartTest extends SeamTest {
 
         assertEquals("product one quantity", cart.getOrder().getLines().get(0).getQuantity(), POURAGE_QUANTITY);
         assertEquals("product two quantity", cart.getOrder().getLines().get(1).getQuantity(), BREADLETS_QUANTITY);
-
 
 
         cart.reset();
@@ -78,7 +77,7 @@ public class CartTest extends SeamTest {
 
             @Override
             protected void renderResponse() throws Exception {
-                Product p = (Product)getValue("#{product}");
+                Product p = (Product) getValue("#{product}");
                 assertEquals("product alias", PRODUCT_NAME, p.getUrlAlias());
             }
 
@@ -99,7 +98,7 @@ public class CartTest extends SeamTest {
 
             @Override
             protected void renderResponse() throws Exception {
-                assertEquals("items count", 4, ((Long)getValue("#{cart.itemsCount}")).longValue());
+                assertEquals("items count", 4, ((Long) getValue("#{cart.itemsCount}")).longValue());
             }
 
         }.run();
@@ -108,7 +107,7 @@ public class CartTest extends SeamTest {
 
             @Override
             protected void renderResponse() throws Exception {
-                assertEquals("items count", 4, ((Long)getValue("#{cart.itemsCount}")).longValue());
+                assertEquals("items count", 4, ((Long) getValue("#{cart.itemsCount}")).longValue());
             }
 
         }.run();
@@ -121,15 +120,10 @@ public class CartTest extends SeamTest {
 
             @Override
             protected void renderResponse() throws Exception {
-                assertEquals("items count", 0, ((Long)getValue("#{cart.itemsCount}")).longValue());
+                assertEquals("items count", 0, ((Long) getValue("#{cart.itemsCount}")).longValue());
             }
 
         }.run();
-
-
-
-
-
     }
 
 }
