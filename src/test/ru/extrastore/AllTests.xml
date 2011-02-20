@@ -2,6 +2,7 @@
 <suite name="ExtraStore" verbose="2" parallel="false">
     <test name="ExtraStore: Tests">
         <classes>
+            <class name="ru.extrastore.AuxiliaryTest" />
             <class name="ru.extrastore.StoreTest" />
             <class name="ru.extrastore.ProductTest" />
             <class name="ru.extrastore.CategoryTest" />
