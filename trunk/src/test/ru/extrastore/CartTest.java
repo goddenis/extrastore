@@ -16,7 +16,6 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class CartTest extends SeamTest {
 
-
     private static final String POURAGE_NAME = "Каша";
     private static final long POURAGE_PRICE = 115;
     private static final long POURAGE_QUANTITY = 3;
@@ -24,6 +23,8 @@ public class CartTest extends SeamTest {
     private static final String BREADLETS_NAME = "Хлебцы";
     private static final long BREADLETS_PRICE = 35;
     private static final long BREADLETS_QUANTITY = 2;
+
+    private static final String PRODUCT_NAME = "orphograph";
 
 
     @Test
@@ -72,13 +73,13 @@ public class CartTest extends SeamTest {
         new NonFacesRequest("/product.xhtml") {
             @Override
             protected void beforeRequest() {
-                setParameter("alias", "orphograph");
+                setParameter("alias", PRODUCT_NAME);
             }
 
             @Override
             protected void renderResponse() throws Exception {
                 Product p = (Product)getValue("#{product}");
-                assertEquals("product alias", "orphograph", p.getUrlAlias());
+                assertEquals("product alias", PRODUCT_NAME, p.getUrlAlias());
             }
 
 
@@ -87,7 +88,7 @@ public class CartTest extends SeamTest {
         new FacesRequest("/product.xhtml") {
             @Override
             protected void beforeRequest() {
-                setParameter("alias", "orphograph");
+                setParameter("alias", PRODUCT_NAME);
             }
 
             @Override
