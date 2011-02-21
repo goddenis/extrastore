@@ -20,6 +20,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.regex.Pattern;
 
 import static org.jboss.seam.annotations.Install.APPLICATION;
 
@@ -37,6 +38,12 @@ import static org.jboss.seam.annotations.Install.APPLICATION;
     @Filter(within="org.jboss.seam.web.ajax4jsfFilter")
     public class StoreDomainFilter implements javax.servlet.Filter {
         FilterConfig filterConfig;
+
+        private static final Pattern IPAddressPattern = Pattern.compile("(\\d{1,3}\\.){3}\\d{1,3}");
+
+        private static final boolean isIPAddress(String address) {
+            return IPAddressPattern.matcher(address).matches();
+        }
 
         public void doFilter(final ServletRequest request,
                              final ServletResponse response,
@@ -60,7 +67,7 @@ import static org.jboss.seam.annotations.Install.APPLICATION;
 
                         EntityManager em = (EntityManager) Component.getInstance("entityManager");
                         String domain = request.getServerName();
-                        if (domain == null) {
+                        if (domain == null || isIPAddress(domain)) {
                             domain = "localhost";
                         }
                         if (domain.startsWith("www.")) {
