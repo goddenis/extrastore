@@ -24,8 +24,16 @@ public class CartTest extends SeamTest {
     private static final long BREADLETS_PRICE = 35;
     private static final long BREADLETS_QUANTITY = 2;
 
-    private static final String PRODUCT_NAME = "orphograph";
+    private static final String PRODUCT_URL_ALIAS = "orphograph";
 
+    private Product createProduct(long id, String name, long price) {
+        Product p = new Product();
+        p.setId(id);
+        p.setName(name);
+        p.setPrice(price);
+
+        return p;
+    }
 
     @Test
     public void testCart() {
@@ -66,11 +74,6 @@ public class CartTest extends SeamTest {
         assertEquals("items count", BREADLETS_QUANTITY-1, cart.getItemsCount());
 
 
-        cart.getSelection().put(p1, false);
-        cart.update();
-
-        assertEquals("product count", 1, cart.getProductsCount());
-        assertEquals("product 2 remained", p2, cart.getOrder().getLines().get(0).getProduct());
 
 
 
@@ -84,17 +87,37 @@ public class CartTest extends SeamTest {
     }
 
     @Test
+    public void testRemovalFromSelection() {
+        Product p1 = createProduct(1, POURAGE_NAME, POURAGE_PRICE);
+        Product p2 = createProduct(2, BREADLETS_NAME, BREADLETS_PRICE);
+
+        Cart cart = new Cart();
+        cart.addProduct(p1, POURAGE_QUANTITY);
+        cart.addProduct(p2, BREADLETS_QUANTITY);
+
+        assertEquals("items count", POURAGE_QUANTITY + BREADLETS_QUANTITY, cart.getItemsCount());
+        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE + BREADLETS_QUANTITY * BREADLETS_PRICE, cart.getTotalCost());
+        assertEquals("product count", 2, cart.getProductsCount());
+
+        cart.getSelection().put(p1, false);
+        cart.update();
+
+        assertEquals("product count", 1, cart.getProductsCount());
+        assertEquals("product 2 remained", p2, cart.getOrder().getLines().get(0).getProduct());
+    }
+
+    @Test
     public void testOrderToCart() throws Exception {
         new NonFacesRequest("/product.xhtml") {
             @Override
             protected void beforeRequest() {
-                setParameter("alias", PRODUCT_NAME);
+                setParameter("alias", PRODUCT_URL_ALIAS);
             }
 
             @Override
             protected void renderResponse() throws Exception {
                 Product p = (Product) getValue("#{product}");
-                assertEquals("product alias", PRODUCT_NAME, p.getUrlAlias());
+                assertEquals("product alias", PRODUCT_URL_ALIAS, p.getUrlAlias());
             }
 
 
@@ -103,7 +126,7 @@ public class CartTest extends SeamTest {
         new FacesRequest("/product.xhtml") {
             @Override
             protected void beforeRequest() {
-                setParameter("alias", PRODUCT_NAME);
+                setParameter("alias", PRODUCT_URL_ALIAS);
             }
 
             @Override
