@@ -59,6 +59,18 @@ public class CartTest extends SeamTest {
         assertEquals("product two quantity", cart.getOrder().getLines().get(1).getQuantity(), BREADLETS_QUANTITY);
 
 
+
+
+
+        cart.getSelection().put(p1, false);
+        cart.update();
+
+        assertEquals("product count", 1, cart.getProductsCount());
+        assertEquals("product 2 remained", p2, cart.getOrder().getLines().get(0).getProduct());
+
+
+
+
         cart.reset();
 
         assertEquals("items count", 0, cart.getItemsCount());

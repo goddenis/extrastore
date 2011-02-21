@@ -21,9 +21,15 @@
 
             <div>#{product.description}</div>
 
-            <div class="product-long-description">
-                <h:outputText value="#{product.longDescription}" escape="false"/>
-            </div>
+            <f:subview id="noDescription" rendered="#{product.longDescription == null}">
+                <img src="#{product.urlImageSmall}" alt="#{product.name}" />
+            </f:subview>
+
+            <f:subview id="hasDescription" rendered="#{product.longDescription != null}">
+                <div class="product-long-description">
+                    <h:outputText value="#{product.longDescription}" escape="false"/>
+                </div>
+            </f:subview>
 
 
         </div>

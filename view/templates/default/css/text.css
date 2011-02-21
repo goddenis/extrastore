@@ -1,3 +1,7 @@
+/***************** HEAD ***********************/
+/***************** HEAD ***********************/
+/***************** HEAD ***********************/
+
 #logo a {
     text-decoration: none;
 }
@@ -10,7 +14,8 @@
 
 #logo #hotline {
     padding-left: 3px;
-    font-size: 16pt;
+    font-size: 10.3pt;
+    font-weight: bold;
     padding-bottom: 0;
     margin-bottom: 0;
 }
@@ -22,6 +27,14 @@
 
 
 
+
+
+
+
+
+
+/********************* HEADERS ***********************/
+/********************* HEADERS ***********************/
 /********************* HEADERS ***********************/
 
 h1, h2, h3, h4, h5 {
@@ -47,7 +60,20 @@ h3 {
         color: #333;
 }
 
+
+
+
+
+
+
+
+
+
+
 /**************** CATEGORIES ********************/
+/**************** CATEGORIES ********************/
+/**************** CATEGORIES ********************/
+
 .red {
     color: #C1272D;
 }
@@ -78,7 +104,14 @@ h3 {
 
 
 
+
+
+
+
+
+/*************************************************/
 /**************** SHOWCASE ***********************/
+/*************************************************/
 
 .product-image {
     height: 220px;
@@ -125,3 +158,53 @@ div.product img {
 h1.category-title {
     margin-bottom: -15px;
 }
+
+
+
+
+
+
+/*************************************************/
+/******************** CART ***********************/
+/*************************************************/
+
+
+table.cartTable {
+    width: 700px;
+}
+
+table.cartTable th {
+    font-weight: normal;
+    font-size: 81%;
+    text-align: left;
+}
+
+table.cartTable thead th, td.cartCell {
+    border-bottom: dotted 1px gray;
+}
+
+table.cartTable tbody td.cartCell {
+    padding: 9px 3px;
+    vertical-align: top;
+}
+
+table.cartTable .priceColumn {
+    width: 120px;
+}
+
+table.cartTable .quantityColumn {
+    width: 100px;
+}
+
+
+img.cartProductImage {
+    width: 70px;
+}
+
+table.cartTable .cartTotal {
+    font-size: 150%;
+    font-weight: bold;
+    font-family: Georgia, Arial, sans-serif;
+    white-space: nowrap;
+}
+

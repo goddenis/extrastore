@@ -7,7 +7,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:a4j="http://richfaces.org/a4j">
+      xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
     <ui:define name="title">Корзина</ui:define>
@@ -32,7 +32,23 @@
 
             <a4j:form>
 
-                <h:dataTable id="cartTable" value="#{cart.order.lines}" var="l">
+                <h:dataTable id="cartTable"
+                             styleClass="cartTable"
+                             columnClasses="cartCell,cartCell,cartCell,cartCell,cartCell"
+                             value="#{cart.order.lines}" var="l"
+                             cellspacing="1">
+
+                    <h:column>
+                        <h:selectBooleanCheckbox value="#{cart.selection[l.product]}" />
+                    </h:column>
+                    <h:column>
+                        <s:link view="/product.xhtml" propagation="none">
+                            <f:param name="cat" value="#{l.product.categories.toArray()[0].id}"/>
+                            <f:param name="alias" value="#{l.product.urlAlias}"/>
+                            <img class="cartProductImage" src="#{l.product.urlImageSmall}" alt="#{l.product.name}" />
+                        </s:link>
+                    </h:column>
+
                     <h:column>
                         <f:facet name="header">
                             Товар
@@ -41,36 +57,47 @@
                             <f:param name="cat" value="#{l.product.categories.toArray()[0].id}"/>
                             <f:param name="alias" value="#{l.product.urlAlias}"/>
                         </s:link>
+                        <div class="product-description">#{l.product.description}</div>
                     </h:column>
 
-                    <h:column>
+                    <h:column headerClass="quantityColumn">
                         <f:facet name="header">
                             Количество
                         </f:facet>
-                        <h:inputText value="#{l.quantity}" size="1"/>
+                        <rich:inputNumberSpinner value="#{l.quantity}" minValue="0" maxValue="1000000" cycled="false" inputSize="1">
+                            <a4j:support event="onchange" action="#{cart.updateTotals()}" reRender="cartTable" />
+                        </rich:inputNumberSpinner>
+                        <f:facet name="footer">
+                            Итого:
+                        </f:facet>
                     </h:column>
 
-                    <h:column>
+                    <h:column headerClass="priceColumn" footerClass="cartTotal">
                         <f:facet name="header">
                             Стоимость
                         </f:facet>
-                        <h:outputText value="#{l.quantity*l.product.price}">
-                            <f:convertNumber type="currency" currencySymbol="руб."/>
-                        </h:outputText>
-                    </h:column>
+                        <div class="product-price">
+                            <span class="product-price-digits">
+                                <h:outputText value="#{l.quantity*l.product.price}">
+                                    <f:convertNumber type="currency" currencySymbol=""/>
+                                </h:outputText></span> руб.
+                        </div>
 
+                        <f:facet name="footer">
+                            <h:outputText value="#{cart.totalCost}">
+                                <f:convertNumber type="currency" currencySymbol="р."/>
+                            </h:outputText>
+                        </f:facet>
+                    </h:column>
 
                 </h:dataTable>
 
-                <br/>Итого: <b><h:outputText value="#{cart.totalCost}">
-                <f:convertNumber type="currency" currencySymbol="руб."/>
-            </h:outputText></b>
-                <br/>
 
+                <a4j:commandButton value="Обновить" action="#{cart.update()}" type="submit" reRender="cartTable"/>
 
-                <a4j:commandButton value="Пересчитать" type="submit" reRender="cartTable"/>
                 <h:commandButton action="#{cart.reset()}" value="#{messages.resetCart}"/>
-                <h:commandButton value="Оформить заказ"/>
+
+                <h:commandButton value="Оформить заказ →"/>
             </a4j:form>
         </f:subview>
 
