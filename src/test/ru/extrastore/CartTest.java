@@ -59,7 +59,11 @@ public class CartTest extends SeamTest {
         assertEquals("product two quantity", cart.getOrder().getLines().get(1).getQuantity(), BREADLETS_QUANTITY);
 
 
+        cart.getOrder().getLines().remove(0);   //remove first line in order
+        assertEquals("items count", BREADLETS_QUANTITY, cart.getItemsCount()); //only breadlets quantity left
 
+        cart.getOrder().getLines().get(0).setQuantity(cart.getOrder().getLines().get(0).getQuantity()-1); //remove 1 item in order line
+        assertEquals("items count", BREADLETS_QUANTITY-1, cart.getItemsCount());
 
 
         cart.getSelection().put(p1, false);
