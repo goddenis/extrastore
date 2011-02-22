@@ -31,6 +31,7 @@
       <root url="jar://$PROJECT_DIR$/lib/richfaces-ui.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/richfaces-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mail.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

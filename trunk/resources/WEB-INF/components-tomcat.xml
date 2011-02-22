@@ -7,7 +7,7 @@
             xmlns:framework="http://jboss.com/products/seam/framework"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:transaction="http://jboss.com/products/seam/transaction"
-            xmlns:web="http://jboss.com/products/seam/web"
+            xmlns:web="http://jboss.com/products/seam/web" xmlns:mail="http://jboss.com/products/seam/mail"
             xsi:schemaLocation=
                     "http://jboss.com/products/seam/core http://jboss.com/products/seam/core-2.2.xsd
                     http://jboss.com/products/seam/web http://jboss.com/products/seam/web-2.2.xsd
@@ -16,12 +16,13 @@
                  http://jboss.com/products/seam/security http://jboss.com/products/seam/security-2.2.xsd
                  http://jboss.com/products/seam/framework http://jboss.com/products/seam/framework-2.2.xsd
                  http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.2.xsd
-                http://jboss.com/products/seam/transaction http://jboss.com/products/seam/transaction-2.2.xsd">
+                http://jboss.com/products/seam/transaction http://jboss.com/products/seam/transaction-2.2.xsd
+                http://jboss.com/products/seam/mail http://jboss.com/products/seam/mail-2.2.xsd">
 
     <core:init debug="true"/>
 
     <!-- 120 second conversation timeout -->
-    <core:manager conversation-timeout="120000" conversation-id-parameter="cid" />
+    <core:manager conversation-timeout="120000" conversation-id-parameter="cid"/>
 
     <transaction:entity-transaction entity-manager="#{entityManager}"/>
 
@@ -33,8 +34,12 @@
     <persistence:managed-persistence-context name="entityManager" auto-create="true"
                                              entity-manager-factory="#{extrastorefactory}"/>
 
+    <mail:mail-session host="smtp.sozvesdie.su" port="25" username="info@sozvesdie.su" password="picadecti4ni9"/>
 
-    <factory name="product" value="#{productByAliasQuery.singleResult}" scope="STATELESS" auto-create="true" />
+    <web:rewrite-filter view-mapping="*.seam"/>
+
+
+    <factory name="product" value="#{productByAliasQuery.singleResult}" scope="STATELESS" auto-create="true"/>
     <framework:entity-query name="productByAliasQuery"
                             max-results="1">
         <framework:ejbql>select p from Product p</framework:ejbql>
@@ -49,7 +54,7 @@
     <factory name="category"
              value="#{categoryHome.instance}"
              scope="STATELESS"
-             auto-create="true" />
+             auto-create="true"/>
 
     <framework:entity-home name="categoryHome"
                            entity-class="ru.extrastore.model.Category"
@@ -58,8 +63,5 @@
                            entity-manager="#{entityManager}">
     </framework:entity-home>
 
-    
-
-    <web:rewrite-filter view-mapping="*.seam"/>
 
 </components>

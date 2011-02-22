@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="#{store.templatePath}/template.xhtml">
+    <ui:define name="title">Оформление заказа — подтверждение</ui:define>
+
+    <ui:define name="cart"></ui:define>
+    <ui:define name="sidebar"></ui:define>
+
+    <ui:define name="body">
+
+        <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span>#{messages.delivery}</span> → <span class="current">#{messages.confirmation}</span></div>
+
+
+        <h:form>
+
+            <h:dataTable id="cartTable"
+                         styleClass="cartTable"
+                         columnClasses="cartCell,cartCell,cartCell,cartCell"
+                         value="#{cart.order.lines}" var="l"
+                         cellspacing="1">
+
+                <h:column>
+                    <s:link view="/product.xhtml" propagation="none">
+                        <f:param name="cat" value="#{l.product.categories.toArray()[0].id}"/>
+                        <f:param name="alias" value="#{l.product.urlAlias}"/>
+                        <img class="cartProductImage" src="#{l.product.urlImageSmall}" alt="#{l.product.name}" />
+                    </s:link>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Товар
+                    </f:facet>
+                    <s:link view="/product.xhtml" value="#{l.product.name}" propagation="none">
+                        <f:param name="cat" value="#{l.product.categories.toArray()[0].id}"/>
+                        <f:param name="alias" value="#{l.product.urlAlias}"/>
+                    </s:link>
+                    <div class="product-description">#{l.product.description}</div>
+                </h:column>
+
+                <h:column headerClass="quantityColumn">
+                    <f:facet name="header">
+                        Количество
+                    </f:facet>
+                    <h:outputText value="#{l.quantity}" />
+                    <f:facet name="footer">
+                        Итого:
+                    </f:facet>
+                </h:column>
+
+                <h:column headerClass="priceColumn" footerClass="cartTotal">
+                    <f:facet name="header">
+                        Стоимость
+                    </f:facet>
+                    <div class="product-price">
+                                        <span class="product-price-digits">
+                                            <h:outputText value="#{l.quantity*l.product.price}">
+                                                <f:convertNumber type="currency" currencySymbol=""/>
+                                            </h:outputText></span> руб.
+                    </div>
+
+                    <f:facet name="footer">
+                        <h:outputText value="#{cart.totalCost}">
+                            <f:convertNumber type="currency" currencySymbol="р."/>
+                        </h:outputText>
+                    </f:facet>
+                </h:column>
+
+            </h:dataTable>
+
+
+
+            <h:panelGrid columns="2">
+                <h:outputText value="#{messages.receiver}" /> <h:outputText value="#{currentOrder.customer.firstName} #{currentOrder.customer.fatherName} #{currentOrder.customer.lastName}" />
+                <h:outputText value="#{messages.zip}" /> <h:outputText value="#{currentOrder.customer.address.zip}" />
+                <h:outputText value="#{messages.region}" /> <h:outputText value="#{currentOrder.customer.address.region}" />
+                <h:outputText value="#{messages.area}" rendered="#{currentOrder.customer.address.area.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.area}" rendered="#{currentOrder.customer.address.area.length() > 0}" />
+                <h:outputText value="#{messages.town}" rendered="#{currentOrder.customer.address.town.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.town}" rendered="#{currentOrder.customer.address.town.length() > 0}" />
+                <h:outputText value="#{messages.address}" />  <h:outputText value="#{currentOrder.customer.address.address}" />
+            </h:panelGrid>
+
+            <p></p>
+
+            <s:button view="/order/delivery.xhtml" value="← #{messages.back}" />
+            <s:button action="#{checkout.confirm()}" value="#{messages.allRight} →" />
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
+
+</html>
