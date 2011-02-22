@@ -2,75 +2,73 @@
 <pages xmlns="http://jboss.com/products/seam/pages"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd"
-        no-conversation-view-id="/browse.xhtml" http-port="80">
+       no-conversation-view-id="/browse.xhtml" http-port="80">
 
     <!-- CART -->
 
     <page view-id="/cart.xhtml">
-        <rewrite pattern="/cart" />
-        <rewrite pattern="/cart/" />
+        <rewrite pattern="/cart"/>
+        <rewrite pattern="/cart/"/>
 
         <navigation from-action="#{checkout.createOrder()}">
             <rule if-outcome="success">
                 <!--suppress PagesModelInspection -->
-                <redirect view-id="/order/delivery.xhtml" />
+                <redirect view-id="/order/delivery.xhtml"/>
             </rule>
         </navigation>
     </page>
-
 
 
     <!-- CHECKOUT CONVERSATION -->
 
     <page view-id="/order/delivery.xhtml" conversation-required="true">
-        <rewrite pattern="/order/delivery" />
-        <rewrite pattern="/order/delivery/" />
+        <rewrite pattern="/order/delivery"/>
+        <rewrite pattern="/order/delivery/"/>
 
         <navigation from-action="#{checkout.submitDelivery()}">
             <rule if-outcome="success">
                 <!--suppress PagesModelInspection -->
-                <redirect view-id="/order/confirm.xhtml" />
+                <redirect view-id="/order/confirm.xhtml"/>
             </rule>
         </navigation>
     </page>
 
     <page view-id="/order/confirm.xhtml" conversation-required="true">
-        <rewrite pattern="/order/confirm" />
-        <rewrite pattern="/order/confirm/" />
+        <rewrite pattern="/order/confirm"/>
+        <rewrite pattern="/order/confirm/"/>
 
         <navigation from-action="#{checkout.confirm()}">
             <rule if-outcome="success">
                 <!--suppress PagesModelInspection -->
-                <redirect view-id="/order/thanks.xhtml" />
+                <redirect view-id="/order/thanks.xhtml"/>
             </rule>
         </navigation>
     </page>
 
-    <page view-id="/order/thanks.xhtml">
-        <rewrite pattern="/order/thanks" />
-        <rewrite pattern="/order/thanks/" />
+    <page view-id="/order/thanks.xhtml" conversation-required="true">
+        <rewrite pattern="/order/thanks"/>
+        <rewrite pattern="/order/thanks/"/>
+        <action execute="#{checkout.thanks()}"/>
+        <!-- Just to end conversation -->
     </page>
-
-
 
 
     <!-- SHOWCASE -->
 
     <page view-id="/product.xhtml">
-        <rewrite pattern="/all/{cat}/{alias}" />
-        <rewrite pattern="/all/{cat}/{alias}/" />
-        <param name="alias" />
-        <param name="cat" />
+        <rewrite pattern="/all/{cat}/{alias}"/>
+        <rewrite pattern="/all/{cat}/{alias}/"/>
+        <param name="alias"/>
+        <param name="cat"/>
     </page>
 
     <page view-id="/browse.xhtml">
-        <rewrite pattern="/all/{cat}" />
-        <rewrite pattern="/all/{cat}/" />
-        <rewrite pattern="/all" />
-        <rewrite pattern="/" />
-        <param name="cat" value="#{categoryHome.id}" />
+        <rewrite pattern="/all/{cat}"/>
+        <rewrite pattern="/all/{cat}/"/>
+        <rewrite pattern="/all"/>
+        <rewrite pattern="/"/>
+        <param name="cat" value="#{categoryHome.id}"/>
     </page>
-
 
 
 </pages>
