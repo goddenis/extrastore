@@ -5,6 +5,7 @@
       <root url="jar://$PROJECT_DIR$/lib/jboss-seam.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jboss-seam-debug.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jboss-seam-ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jboss-seam-mail.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

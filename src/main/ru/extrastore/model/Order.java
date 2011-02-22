@@ -18,6 +18,12 @@ public class Order implements Serializable {
     @GeneratedValue
     long id;
 
+    @ManyToOne()
+    @JoinColumn(name = "customerId")
+    Customer customer;
+
+    int deliveryType = 1;
+
     @OneToMany(mappedBy = "order")
     List<OrderLine> lines = new ArrayList<OrderLine>();
 
@@ -35,6 +41,22 @@ public class Order implements Serializable {
 
     public void setLines(List<OrderLine> lines) {
         this.lines = lines;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public int getDeliveryType() {
+        return deliveryType;
+    }
+
+    public void setDeliveryType(int deliveryType) {
+        this.deliveryType = deliveryType;
     }
 
     public void addProduct(Product p, long quantity) {

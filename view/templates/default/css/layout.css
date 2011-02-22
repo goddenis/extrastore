@@ -105,7 +105,15 @@ div.product {
     margin-top: 27px;
 }
 
+
+
+
+
+
 /****************** CART ********************/
+/****************** CART ********************/
+/****************** CART ********************/
+
 div#cart {
     margin-top: -18px;
     float: right;
@@ -122,4 +130,52 @@ div#cart div {
     height: 100%;
     padding: 18px;
     white-space: nowrap;
+}
+
+
+
+
+
+
+/****************** EDIT TEMPLATE **************/
+/****************** EDIT TEMPLATE **************/
+/****************** EDIT TEMPLATE **************/
+
+.propName {
+	vertical-align: top;
+	font-weight: bold;
+    font-size: 95%;
+	width: 150px;
+	float: left;
+	padding: 5px;
+	clear: left;
+}
+
+.propValue {
+	float: left;
+	padding: 5px;
+    width: 270px;
+}
+
+.error {
+	float: left;
+	padding: 5px;
+}
+
+.errors {
+	color: #FF0000;
+	vertical-align: middle;
+}
+
+img.errors {
+	padding-right: 5px;
+}
+
+.errors input, .errors textarea, .errors select {
+	border: 1px solid red !important;
+}
+
+.required {
+	color: #FF0000;
+	padding-left: 2px;
 }

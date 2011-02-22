@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="#{store.templatePath}/template.xhtml">
+    <ui:define name="title">Оформление заказа — доставка</ui:define>
+
+    <ui:define name="cart"></ui:define>
+    <ui:define name="sidebar"></ui:define>
+
+    <ui:define name="body">
+
+        <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span class="current">#{messages.delivery}</span> → <span>#{messages.confirmation}</span></div>
+
+
+        <h:form>
+
+            <s:decorate template="/incl/edit.xhtml" id="deliveryType">
+                <ui:define name="label">Способ доставки</ui:define>
+                <h:selectOneRadio value="#{currentOrder.deliveryType}" required="true" layout="pageDirection">
+                    <f:selectItem itemLabel="Почта России" itemValue="1" />
+                    <f:selectItem itemLabel="Курьер (только по Самаре)" itemValue="2" itemDisabled="true" />
+                    <f:selectItem itemLabel="Деловые линии" itemValue="3" itemDisabled="true" />
+                </h:selectOneRadio>
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+
+            <s:decorate template="/incl/edit.xhtml" id="lastName">
+                <ui:define name="label">#{messages.lastName}</ui:define>
+                <h:inputText value="#{currentOrder.customer.lastName}" required="true" size="36" />
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" id="firstName">
+                <ui:define name="label">#{messages.firstName}</ui:define>
+                <h:inputText value="#{currentOrder.customer.firstName}" required="true" size="36" />
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" id="fathersName">
+                <ui:define name="label">#{messages.fathersName}</ui:define>
+                <h:inputText value="#{currentOrder.customer.fatherName}" size="36" />
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+
+            <s:decorate template="/incl/edit.xhtml" id="zip">
+                <ui:define name="label">#{messages.zip}</ui:define>
+                <h:inputText value="#{currentOrder.customer.address.zip}" required="true" size="4" />
+            </s:decorate>
+            <s:decorate template="/incl/edit.xhtml" id="region">
+                <ui:define name="label">#{messages.region}</ui:define>
+                <h:inputText value="#{currentOrder.customer.address.region}" required="true" />
+            </s:decorate>
+            <s:decorate template="/incl/edit.xhtml" id="area">
+                <ui:define name="label">#{messages.area}</ui:define>
+                <h:inputText value="#{currentOrder.customer.address.area}" />
+            </s:decorate>
+            <s:decorate template="/incl/edit.xhtml" id="town">
+                <ui:define name="label">#{messages.town}</ui:define>
+                <h:inputText value="#{currentOrder.customer.address.town}" />
+            </s:decorate>
+
+
+            <s:decorate template="/incl/edit.xhtml" id="address">
+                <ui:define name="label">#{messages.address}</ui:define>
+                <h:inputText value="#{currentOrder.customer.address.address}" required="true" size="36" />
+            </s:decorate>
+            <f:selectItem itemLabel="Курьер (только по Самаре)" itemValue="2" itemDisabled="true" />
+
+            <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+            <br style="clear: both;" />
+
+            <s:button view="/cart.xhtml" value="← #{messages.back}" propagation="none" />
+            <h:commandButton type="submit" action="#{checkout.submitDelivery()}" value="#{messages.allRight} →" />
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

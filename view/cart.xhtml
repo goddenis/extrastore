@@ -97,7 +97,7 @@
 
                 <h:commandButton action="#{cart.reset()}" value="#{messages.resetCart}"/>
 
-                <h:commandButton value="Оформить заказ →"/>
+                <s:button action="#{checkout.createOrder()}" value="Оформить заказ →" />
             </a4j:form>
         </f:subview>
 
