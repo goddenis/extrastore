@@ -74,7 +74,8 @@ public class CheckoutAction implements Serializable {
         return "success";
     }
 
-    @End
+
+    @Conversational
     public String confirm() {
         log.info("CheckoutAction(#0).confirm()", this.hashCode());
 
@@ -87,21 +88,15 @@ public class CheckoutAction implements Serializable {
         }
 
         em.persist(currentOrder);
-        events.raiseTransactionSuccessEvent("newOrder");    // Makes this slow operation asynchronous
+        events.raiseAsynchronousEvent("newOrder", currentOrder);    // Makes this slow operation asynchronous
 
         cart.reset();
 
         return "success";
     }
 
-    @Observer("newOrder")
-    public void onNewOrder() {
-        log.info("CheckoutAction(#0).onNewOrder()", this.hashCode());
-        try {
-            renderer.render("/order/email_notification.xhtml");
-        } catch (Exception e) {
-            log.error("Error saving new order", e);
-        }
+    @End
+    public void thanks() {  // Method is just for ending conversation. It's called from pages.xml-><page thanks.xhtml/>
+        log.info("CheckoutAction(#0).thanks()", this.hashCode());
     }
-
 }

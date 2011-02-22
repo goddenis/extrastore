@@ -17,6 +17,8 @@
     <ui:define name="body">
 
         <h1>Спасибо!</h1>
+
+        <p>Номер вашего заказа: #{currentOrder.id}</p>
         <s:link view="/browse.xhtml" value="← #{messages.continueShopping}" propagation="none"><f:param
                 name="cat" value=""/></s:link>
 
