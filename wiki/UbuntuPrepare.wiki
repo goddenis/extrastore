@@ -1,24 +1,59 @@
 #labels Tomcat,Java
-Prepare Ubuntu Server to work with Extrastore
-
 sudo aptitude update
+
+
 sudo aptitude safe-upgrade
 
+
+
+
 apt-get install python-software-properties
+
 sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+
 sudo apt-get update
 
+
+
+
+
+
 sudo apt-get install sun-java6-jdk -y
+
+
+
 sudo update-java-alternatives -s java-6-sun 
 
-Add system variables(sudo vi /etc/environment)
-----
+
+
+
+sudo vi /etc/environment
+
+
+>>
+
+
 JDK_HOME="/usr/lib/jvm/java-6-sun"
+
+
 JAVA_HOME="/usr/lib/jvm/java-6-sun"
-----
+
+
+
 reboot
 
-Install Tomcat6 from binary
+
+
+
+
+Ставим из репозитория.
+
+sudo apt-get install tomcat6
+
+
+
+
+Либо ставим бинарник.
 
 cd /opt/
 
@@ -32,93 +67,168 @@ sudo adduser --system tomcat
 
 sudo chown -RLv tomcat:nogroup /opt/apache-tomcat
 
-Starting on port 8080
+Запускаем на порту 8080
 
 sudo -u tomcat /opt/apache-tomcat/bin/catalina.sh run
 
-Edit /opt/apache-tomcat/conf/server.xml
+правим /opt/apache-tomcat/conf/server.xml
 
 <connector port="80" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443" URIEncoding="UTF-8"></connector>
 
 sudo apt-get install jsvc -y
 
-vi /etc/init.d/tomcat
----
+мш /etc/init.d/tomcat
+
+------------------------
+
 #!/bin/sh
 
 JAVA_HOME=/usr/lib/jvm/java-6-sun
+
 CATALINA_HOME=/opt/apache-tomcat
+
 TOMCAT_USER=tomcat
+
+
+
 TMP_DIR=/var/tmp
+
 PID_FILE=/var/run/apache-tomcat.pid
+
 CATALINA_BASE=/opt/apache-tomcat
+
+
+
 CATALINA_OPTS="-Xmx1024m -Xms512m -XX:MaxPermSize=128m -Djava.awt.headless=true"
+
 CLASSPATH=\
+
 $JAVA_HOME/lib/tools.jar:\
+
 $CATALINA_HOME/bin/commons-daemon.jar:\
+
 $CATALINA_HOME/bin/tomcat-juli.jar:\
+
 $CATALINA_HOME/bin/bootstrap.jar
 
+
+
 case "$1" in
+
 start)
+
 #
+
 # Start Tomcat
+
 #
+
 jsvc \
+
 -user $TOMCAT_USER \
+
 -home $JAVA_HOME \
+
 -Dcatalina.home=$CATALINA_HOME \
+
 -Dcatalina.base=$CATALINA_BASE \
+
 -Djava.io.tmpdir=$TMP_DIR \
+
 -Dfile.encoding=UTF-8 \
+
 -Duser.timezone=Europe/Samara \
+
 -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
+
 -Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties \
+
 -wait 10 \
+
 -pidfile $PID_FILE \
+
 -outfile $CATALINA_HOME/logs/catalina.out \
+
 -errfile '&1' \
+
 $CATALINA_OPTS \
+
 -cp $CLASSPATH \
+
 org.apache.catalina.startup.Bootstrap
+
 #
 
 # To get a verbose JVM
+
 #-verbose \
+
 # To get a debug of jsvc.
+
 #-debug \
+
 exit $?
+
 ;;
+
+
+
 stop)
 
 #
+
 # Stop Tomcat
+
 #
 
 jsvc \
+
 -stop \
+
 -pidfile $PID_FILE \
+
 org.apache.catalina.startup.Bootstrap
+
 exit $?
+
 ;;
+
 restart)
 
 #
+
 # Restart Tomcat
+
 #
 
 $0 stop
+
 sleep 2
+
 $0 start
+
 ;;
 
 *)
+
 echo "Usage tomcat start/stop"
+
 exit 1;;
+
 esac
----
+
+------------------------------------------------------
+
+
 
 sudo chown root:root /etc/init.d/tomcat
+
 sudo chmod 755 /etc/init.d/tomcat
+
+
+
 sudo /etc/init.d/tomcat start
+
+
+
 sudo update-rc.d tomcat defaults
