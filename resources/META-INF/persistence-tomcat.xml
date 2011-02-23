@@ -10,6 +10,7 @@
          <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
          <property name="hibernate.show_sql" value="false"/>
          <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider"/>
+         <property name="hibernate.search.default.indexBase" value="/hibernate_extrastore_indexes_tmp" />
          <!-- RESOURCE_LOCAL
          <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
          -->

@@ -13,6 +13,8 @@
                       value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.search.default.indexBase" value="/hibernate_extrastore_indexes_tmp" />
+
             <property name="hibernate.transaction.manager_lookup_class"
                       value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
         </properties>
