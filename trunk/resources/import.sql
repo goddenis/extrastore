@@ -35,6 +35,8 @@ INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall
 INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (20, 'yellow-submarine', 'yellow-submarine', 'Tea-Sub', 'Yellow submarine', 550, 'http://extrapost.ru/img/yellow-submarine.jpg')
 INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (21, 'aqua-tower', 'aqua-tower', 'The bottle and the cup', '"Aquatower" set', 1100, 'http://extrapost.ru/img/aqua-tower.jpg')
 
+INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (22, 'kz30', 'zdorovyak30', 'Каша пшеничная, с расторопшей и спирулиной', 'Самарский Здоровяк №30', 139, 'http://extrastore.ru/i/zdorovyak.gif')
+
 
 INSERT INTO Category (id, name) VALUES('office', 'Для офиса')
 INSERT INTO Category (id, name) VALUES('kitchen', 'Кухня')
@@ -43,6 +45,8 @@ INSERT INTO Category (id, name) VALUES('games', 'Игры')
 INSERT INTO Category (id, name) VALUES('food', 'Еда')
 INSERT INTO Category (id, name) VALUES('computer', 'Компьютер')
 INSERT INTO Category (id, name) VALUES('books', 'Книги')
+INSERT INTO Category (id, name) VALUES('pourage', 'Каши Здоровяк')
+
 
 
 INSERT INTO Product2Category(productId, categoryId) VALUES(1, 'office')
@@ -70,6 +74,9 @@ INSERT INTO Product2Category(productId, categoryId) VALUES(19, 'games')
 INSERT INTO Product2Category(productId, categoryId) VALUES(20, 'kitchen')
 INSERT INTO Product2Category(productId, categoryId) VALUES(21, 'kitchen')
 
+INSERT INTO Product2Category(productId, categoryId) VALUES(22, 'pourage')
+INSERT INTO Product2Category(productId, categoryId) VALUES(22, 'kitchen')
+
 
 
 INSERT INTO Product2Store(productId, storeId) VALUES(1, 6)
@@ -90,7 +97,9 @@ INSERT INTO Product2Store(productId, storeId) VALUES(8, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(9, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(10, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(11, 1)
+INSERT INTO Product2Store(productId, storeId) VALUES(12, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(13, 1)
+INSERT INTO Product2Store(productId, storeId) VALUES(14, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(15, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(16, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(17, 1)
@@ -100,6 +109,7 @@ INSERT INTO Product2Store(productId, storeId) VALUES(21, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(3, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(4, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(1, 1)
+INSERT INTO Product2Store(productId, storeId) VALUES(22, 1)
 
 
 
@@ -115,3 +125,15 @@ INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Производ
 INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Вес', '300 г')
 INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Издатель', 'студия "Пэйдждаун"')
 INSERT INTO ProductProperty(productId, name, value) VALUES(13, 'Размер упаковки', '9×5×3,9 см')
+
+/* Каша Здоровяк */
+INSERT INTO ProductProperty(productId, name, value) VALUES(22, 'Производство', 'Россия')
+INSERT INTO ProductProperty(productId, name, value) VALUES(22, 'Вес', '240 г')
+
+
+
+/********************** CustomPrices *****************/
+
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(1, null, 1700, null, true, false)
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(2, null, 300, null, true, false)
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(2, null, 250, null, false, true)
