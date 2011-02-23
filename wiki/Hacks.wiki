@@ -19,6 +19,7 @@ _Solution:_ start tomcat (or JBoss) JVM with `-Dfile.encoding=UTF-8` parameter
 === Strange directories, named after entity classes, appear (like ru.extrastore.model.Product) ===
 
 _Explanation_: This is the hibernate index data for entities annotated with `@Indexed`.
+
 _Solution_:  Add the following property to `persistence.xml`:        `<property name="hibernate.search.default.indexBase" value="/home/tomcat/extrastore_index/" />`
 
 === Data is read from database in correct encoding, but written in question marks (???????? ?????) ===
