@@ -24,7 +24,7 @@ public class Order implements Serializable {
 
     int deliveryType = 1;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     List<OrderLine> lines = new ArrayList<OrderLine>();
 
     public long getId() {
