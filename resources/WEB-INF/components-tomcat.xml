@@ -34,7 +34,7 @@
     <persistence:managed-persistence-context name="entityManager" auto-create="true"
                                              entity-manager-factory="#{extrastorefactory}"/>
 
-    <mail:mail-session host="smtp.gmail.com" port="465" username="order@sozvezdie-store.ru" password="wuwudu"
+    <mail:mail-session host="smtp.gmail.com" port="465" username="smtp@sozvezdie-store.ru" password="6B5377"
                        ssl="true"/>
 
     <web:rewrite-filter view-mapping="*.seam"/>
