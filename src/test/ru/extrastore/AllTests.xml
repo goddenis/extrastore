@@ -2,13 +2,14 @@
 <suite name="ExtraStore" verbose="2" parallel="false">
     <test name="ExtraStore: Tests">
         <classes>
-            <class name="ru.extrastore.AuxiliaryTest" />
-            <class name="ru.extrastore.StoreTest" />
-            <class name="ru.extrastore.ProductTest" />
-            <class name="ru.extrastore.CategoryTest" />
-            <class name="ru.extrastore.MessagesTest" />
-            <class name="ru.extrastore.CartTest" />
-            <class name="ru.extrastore.CheckoutTest" />
+            <class name="ru.extrastore.AuxiliaryTest"/>
+            <class name="ru.extrastore.StoreTest"/>
+            <class name="ru.extrastore.ProductTest"/>
+            <class name="ru.extrastore.CategoryTest"/>
+            <class name="ru.extrastore.MessagesTest"/>
+            <class name="ru.extrastore.CartTest"/>
+            <class name="ru.extrastore.CheckoutTest"/>
+            <class name="ru.extrastore.PriceTest"/>
         </classes>
     </test>
 </suite>
