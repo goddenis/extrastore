@@ -40,7 +40,7 @@
         <p>#{messages.region}: #{currentOrder.customer.address.zip}, #{currentOrder.customer.address.region}, #{currentOrder.customer.address.area}, #{currentOrder.customer.address.town}</p>
         <p>#{messages.address}: #{currentOrder.customer.address.address}</p>
         <p>Номер заказа: #{currentOrder.id}</p>
-        <p>Полная стоимость: <h:outputText value="#{currentOrder.totalCost}">
+        <p>Полная стоимость:#{" "}<h:outputText value="#{currentOrder.totalCost}">
             <f:convertNumber type="currency" currencySymbol="руб." />
         </h:outputText></p>
 
