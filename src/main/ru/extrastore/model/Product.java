@@ -3,13 +3,11 @@ package ru.extrastore.model;
 import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
-import org.jboss.seam.annotations.Name;
+import org.jboss.seam.contexts.Contexts;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * File profile
@@ -57,6 +55,9 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     List<ProductProperty> properties;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    Set<Price> prices;
+
     public long getId() {
         return id;
     }
@@ -97,14 +98,6 @@ public class Product implements Serializable {
         this.longDescription = longDescription;
     }
 
-    public long getPrice() {
-        return price;
-    }
-
-    public void setPrice(long price) {
-        this.price = price;
-    }
-
     public String getUrlImageSmall() {
         return urlImageSmall;
     }
@@ -135,6 +128,82 @@ public class Product implements Serializable {
     public void setProperties(List<ProductProperty> properties) {
         this.properties = properties;
     }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+    }
+
+    public Set<Price> getPrices() {
+        return prices;
+    }
+
+    public void setPrices(Set<Price> prices) {
+        this.prices = prices;
+    }
+
+    @Transient
+    public long getMainPrice() {
+        Store s = (Store)Contexts.getSessionContext().get("store");
+        for (Price p: prices) {
+            if ((p.getStore() == null || p.getStore().equals(s)) && p.isMain()) {
+                return p.getValue();
+            }
+        }
+        return price;
+    }
+
+    @Transient
+    public long getOldPrice() {
+        Store s = (Store)Contexts.getSessionContext().get("store");
+        for (Price p: prices) {
+            if ((p.getStore() == null || p.getStore().equals(s)) && p.isOld()) {
+                return p.getValue();
+            }
+        }
+        return 0;
+    }
+
+    @Transient
+    public Collection<Price> getExtraPrices() {
+        List<Price> extraPrices = new ArrayList<Price>();
+        Store s = (Store)Contexts.getSessionContext().get("store");
+        for (Price p: prices) {
+            if ((p.getStore() == null || p.getStore().equals(s)) && !p.isOld() && !p.isMain()) {
+                extraPrices.add(p);
+            }
+        }
+        return extraPrices;
+    }
+
+    @Transient
+    public final Price[] getPricesByStore(Store store) {
+        Set<Price> r =  filterByStore(prices, store);
+        Price result[] = new Price[r.size()];
+        return r.toArray(result);
+    }
+
+
+    public static <E extends StoreConstraint> Set<E> filterByStore(Set<E> source, Store store)  {
+        return filterByStore(source, store, true);
+    }
+
+    public static <E extends StoreConstraint> Set<E> filterByStore(Set<E> source, Store store, boolean includeOrphans) {
+        Set<E> result = new HashSet<E>();
+        for (E sc: source) {
+            if (
+                    (sc.getStore() == null && includeOrphans)
+                    || sc.getStore().equals(store)
+                ) {
+                result.add(sc);
+            }
+        }
+        return result;
+    }
+
 
     @Override
     public boolean equals(Object o) {

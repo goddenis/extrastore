@@ -136,4 +136,10 @@ INSERT INTO ProductProperty(productId, name, value) VALUES(22, 'Вес', '240 г
 
 INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(1, null, 1700, null, true, false)
 INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(2, null, 300, null, true, false)
-INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(2, null, 250, null, false, true)
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(2, 1, 250, null, false, true)
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(2, null, 150, 'для членов клуба', false, false)
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(2, null, 120, 'для ударников', false, false)
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(3, null, 450, 'для членов клуба', false, false)
+
+INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(22, 1, 115, 'для членов клуба', false, false)
+

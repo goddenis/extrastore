@@ -70,5 +70,8 @@
         <param name="cat" value="#{categoryHome.id}"/>
     </page>
 
+    <exception class="javax.faces.application.ViewExpiredException" log="false">
+        <redirect view-id="/browse.xhtml" />
+    </exception>
 
 </pages>

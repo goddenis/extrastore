@@ -6,9 +6,9 @@
            xmlns:f="http://java.sun.com/jsf/core"
            charset="UTF-8">
 
-    <m:from name="#{currentOrder.customer.firstName} #{currentOrder.customer.lastName}" address="stas.versilov@gmail.com" />
+    <m:from name="#{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}" address="stas.versilov@gmail.com" />
     <m:to>order@sozvezdie-store.ru</m:to>
-    <m:subject>Заказ [ТЕСТОВЫЙ] для #{currentOrder.customer.firstName} #{currentOrder.customer.lastName}</m:subject>
+    <m:subject>Заказ [ТЕСТОВЫЙ] для #{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}</m:subject>
 
     <m:body>
         <rich:dataTable value="#{currentOrder.lines}" var="orderLine" columnsWidth="80,250,80">
@@ -36,12 +36,13 @@
 
         <p></p>
 
-        <p>#{messages.receiver}: #{currentOrder.customer.firstName} #{currentOrder.customer.lastName}</p>
-        <p>#{messages.zip}:  #{currentOrder.customer.address.zip}</p>
-        <p>#{messages.region}: #{currentOrder.customer.address.region}</p>
+        <p>#{messages.receiver}: #{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}</p>
+        <p>#{messages.region}: #{currentOrder.customer.address.zip}, #{currentOrder.customer.address.region}, #{currentOrder.customer.address.area}, #{currentOrder.customer.address.town}</p>
         <p>#{messages.address}: #{currentOrder.customer.address.address}</p>
         <p>Номер заказа: #{currentOrder.id}</p>
-        <p>Полная стоимость: #{currentOrder.totalCost} руб.</p>
+        <p>Полная стоимость: <h:outputText value="#{currentOrder.totalCost}">
+            <f:convertNumber type="currency" currencySymbol="руб." />
+        </h:outputText></p>
 
         <p>С уважением,<br/>Служба доставки "Созвездие"</p>
     </m:body>

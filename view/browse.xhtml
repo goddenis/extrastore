@@ -35,9 +35,9 @@
                     </s:link><br/>
 
                     <div class="product-description">#{product.description}</div>
-                    <div class="product-price"><span class="product-price-digits"><h:outputText
-                            value="#{product.price}"><f:convertNumber type="currency" currencySymbol=""/></h:outputText></span> руб.
-                    </div>
+
+                    <ui:include src="/incl/price.xhtml" />
+
 
                 </div>
             </ui:repeat>
@@ -60,9 +60,8 @@
                     </s:link><br/>
 
                     <div class="product-description">#{product.description}</div>
-                    <div class="product-price"><span class="product-price-digits"><h:outputText
-                            value="#{product.price}"><f:convertNumber type="currency" currencySymbol=""/></h:outputText></span> руб.
-                    </div>
+
+                    <ui:include src="/incl/price.xhtml" />
 
 
                 </div>

@@ -108,4 +108,23 @@ public class Store implements Serializable {
         }
         return this.categories;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Store store = (Store) o;
+
+        assert this.id != 0;
+        assert store.id != 0;
+
+        if (!this.id.equals(store.id)) return false;
+
+        assert this.getName().equals(store.getName()) : this.getName();
+        assert this.getDomain().equals(store.getDomain()) : this.getDomain();
+
+        return true;
+    }
+
 }
