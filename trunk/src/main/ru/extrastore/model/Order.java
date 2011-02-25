@@ -12,7 +12,7 @@ import java.util.List;
  * Time: 16:39
  */
 @Entity
-@Table(name = "ORDERS")
+@Table(name = "Orders") // Explicitly set, because Order is a keyword in ejb-ql and sql.
 public class Order implements Serializable {
     @Id
     @GeneratedValue

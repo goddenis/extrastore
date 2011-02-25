@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:outputText value="#{product.oldPrice}" rendered="#{product.oldPrice > 0}"
+              styleClass="product-price old-price">
+    <f:convertNumber type="currency" currencySymbol="руб."/>
+</h:outputText>#{" "}
+
+<h:outputText value="#{product.mainPrice}" rendered="#{product.oldPrice > 0}"
+              styleClass="product-price new-price"><f:convertNumber type="currency"
+                                                                           currencySymbol="руб."/></h:outputText>
+
+<h:outputText value="#{product.mainPrice}" rendered="#{product.oldPrice == 0}"
+              styleClass="product-price"><f:convertNumber type="currency" currencySymbol="руб."/></h:outputText>
+
+<ui:repeat value="${product.extraPrices}" var="p">
+    <br/>
+    <h:outputText value="#{p.value}" styleClass="product-price extra-price">
+        <f:convertNumber type="currency" currencySymbol="руб."/>
+</h:outputText>
+    <h:outputText value="— #{p.description}" styleClass="price-description" />
+</ui:repeat>
+</html>

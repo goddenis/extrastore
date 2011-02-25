@@ -81,7 +81,7 @@ import static org.jboss.seam.annotations.Install.APPLICATION;
 
                             if (store != null) {
                                 Contexts.getSessionContext().set("store", store);
-                                System.out.println("Store domain set to " + store.getDomain() + ", session: " + httpRequest.getSession().getId());
+                                System.out.println("Store domain set to " + store.getDomain() + ", store(" + store.hashCode() + "), session: " + httpRequest.getSession().getId());
                             }
 
                         } catch (NoResultException e) {
