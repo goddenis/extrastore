@@ -10,6 +10,54 @@
       xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
+    <ui:define name="analytics">
+        <f:subview id="google-analytics" rendered="#{store.gaAccount != null}">
+            <script type="text/javascript">
+
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', '#{store.gaAccount}']);
+                _gaq.push(['_trackPageview']);
+                _gaq.push(['_addTrans',
+                    '#{currentOrder.id}',           // order ID - required
+                    '#{store.name}',  // affiliation or store name
+                    '#{currentOrder.totalCost}}',          // total - required
+                    '0',           // tax
+                    '0',              // shipping
+                    '#{currentOrder.customer.address.town}',       // city
+                    '#{currentOrder.customer.address.region}',     // state or province
+                    'Россия'             // country
+                ]);
+
+                // add item might be called for every item in the shopping cart
+                // where your ecommerce engine loops through each item in the cart and
+                // prints out _addItem for each
+                <ui:repeat value = "#{currentOrder.lines}" var = "l" >
+                _gaq.push(['_addItem',
+                    '#{currentOrder.id}',           // order ID - required
+                    '#{l.product.ASIN}',           // SKU/code - required
+                    '#{l.product.name}',        // product name
+                    '',   // category or variation
+                    '#{l.product.mainPrice}',          // unit price - required
+                    '#{l.quantity}'               // quantity - required
+                ]);
+                </ui:repeat>
+                _gaq.push(['_trackTrans']); //submits transaction to the Analytics servers
+
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+
+            </script>
+
+        </f:subview>
+
+    </ui:define>
+
     <ui:define name="title">Заказ принят — спасибо</ui:define>
 
     <ui:define name="cart"></ui:define>
