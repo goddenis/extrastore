@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="#{store.templatePath}/template.xhtml">
+    <ui:define name="title">Оформление заказа — Клуб</ui:define>
+
+    <ui:define name="cart"></ui:define>
+    <ui:define name="sidebar"></ui:define>
+
+    <ui:define name="body">
+
+        <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span>#{messages.delivery}</span> → <span class="current">#{messages.club}</span> → <span>#{messages.confirmation}</span></div>
+
+
+        <h:form>
+
+            <s:decorate template="/incl/edit.xhtml" id="clubType">
+                <ui:define name="label">Вы хотите</ui:define>
+                <h:selectOneRadio value="#{currentOrder.deliveryType}" required="true" layout="pageDirection" onchange="">
+                    <f:selectItem itemLabel="Купить как обычный покупатель" itemValue="1" />
+
+                    <f:selectItem itemLabel="Купить как участник клуба" itemValue="2" />
+                    <f:selectItem itemLabel="Зарегистрироваться в клуб (и купить со скидкой)" itemValue="3" />
+                </h:selectOneRadio>
+            </s:decorate>
+
+
+            <s:button view="/delivery.xhtml" value="← #{messages.back}" propagation="none" />
+            <h:commandButton type="submit" action="#{checkout.submitClub()}" value="#{messages.allRight} →" />
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
+
+</html>
