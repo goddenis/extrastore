@@ -45,6 +45,20 @@ public class Product implements Serializable {
     @Column(length = 128)
     String urlImageSmall;
 
+    // SchemaExport needs length.. MySQL has "tinyblob", "mediumblob" and other such nonsense types
+    @org.hibernate.annotations.Type(type = "binary")
+    @Column(nullable = true, length = 300000)
+    @Basic(fetch = FetchType.LAZY)
+    byte[] imageSmall;
+
+    // SchemaExport needs length.. MySQL has "tinyblob", "mediumblob" and other such nonsense types
+    @org.hibernate.annotations.Type(type = "binary")
+    @Column(nullable = true, length = 300000)
+    @Basic(fetch = FetchType.LAZY)
+    byte[] imageLarge;
+
+
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="Product2Category",
                joinColumns=@JoinColumn(name="productId"),
@@ -104,6 +118,22 @@ public class Product implements Serializable {
 
     public void setUrlImageSmall(String urlImageSmall) {
         this.urlImageSmall = urlImageSmall;
+    }
+
+    public byte[] getImageSmall() {
+        return imageSmall;
+    }
+
+    public void setImageSmall(byte[] imageSmall) {
+        this.imageSmall = imageSmall;
+    }
+
+    public byte[] getImageLarge() {
+        return imageLarge;
+    }
+
+    public void setImageLarge(byte[] imageLarge) {
+        this.imageLarge = imageLarge;
     }
 
     public String getUrlAlias() {
