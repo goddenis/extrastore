@@ -37,6 +37,8 @@ public class Store implements Serializable {
 
     String templatePath;
 
+    String gaAccount;
+
     @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name="Product2Store",
                joinColumns=@JoinColumn(name="storeId"),
@@ -89,6 +91,14 @@ public class Store implements Serializable {
 
     public void setTemplatePath(String templatePath) {
         this.templatePath = templatePath;
+    }
+
+    public String getGaAccount() {
+        return gaAccount;
+    }
+
+    public void setGaAccount(String gaAccount) {
+        this.gaAccount = gaAccount;
     }
 
     public Set<Product> getProducts() {

@@ -4,11 +4,11 @@ INSERT INTO Company VALUES(3, 'Client Company')
 
 
 
-INSERT INTO Store VALUES (1, 'localhost', 'Sozvezdie Delivery', null, 1)
-INSERT INTO Store VALUES (2, 'avtoraketa2.ru', 'AvtoRaketa', null, 1)
-INSERT INTO Store VALUES (3, 'firstshop.ru', 'First Shop', 'http://extrapost.ru/templates/firstshop', 1)
-INSERT INTO Store VALUES (5, 'shsd-books.ru', 'SHSD Books', null, 2)
-INSERT INTO Store VALUES (6, 'nextshop.ru', 'Next Shop', null, 3)
+INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (1, 1, 'localhost', 'Sozvezdie Delivery', null, 'UA-21705970-1')
+INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (2, 1, 'avtoraketa2.ru', 'AvtoRaketa', null, null)
+INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (3, 1, 'firstshop.ru', 'First Shop', 'http://extrapost.ru/templates/firstshop', null)
+INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (5, 2, 'shsd-books.ru', 'SHSD Books', null, null)
+INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (6, 3, 'nextshop.ru', 'Next Shop', null, null)
 
 
 
