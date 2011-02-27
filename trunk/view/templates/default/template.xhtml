@@ -21,7 +21,7 @@
         <link href="#{store.templatePath}/css/text.css" rel="stylesheet" type="text/css"/>
         <link href="#{store.templatePath}/css/layout.css" rel="stylesheet" type="text/css"/>
 
-        <ui:include src="/incl/google_analytics.xhtml" />
+        <ui:insert name="analytics"><ui:include src="/incl/google_analytics.xhtml"/></ui:insert>
     </head>
 
     <body>
@@ -41,7 +41,7 @@
 
 
             <ui:insert name="cart">
-                <ui:include src="/incl/cart.xhtml" />
+                <ui:include src="/incl/cart.xhtml"/>
             </ui:insert>
 
 
