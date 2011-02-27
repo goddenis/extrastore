@@ -22,7 +22,12 @@
             <div>#{product.description}</div>
 
             <f:subview id="noDescription" rendered="#{product.longDescription == null}">
-                <img src="#{product.urlImageSmall}" alt="#{product.name}" />
+                <h:graphicImage value="#{product.urlImageSmall}"
+                                alt="#{product.name}"
+                                rendered="#{product.urlImageSmall != null}" />
+                <h:graphicImage value="/r/productImage/#{product.urlAlias}-s.jpg"
+                                alt="#{product.name}"
+                                rendered="#{product.urlImageSmall == null}" /><br/>
             </f:subview>
 
             <f:subview id="hasDescription" rendered="#{product.longDescription != null}">

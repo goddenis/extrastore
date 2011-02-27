@@ -26,7 +26,13 @@
                         <s:link view="/product.xhtml" propagation="none">
                             <f:param name="cat" value="#{product.categories.toArray()[0].id}"/>
                             <f:param name="alias" value="#{product.urlAlias}"/>
-                            <img src="#{product.urlImageSmall}" alt="#{product.name} image"/><br/>
+                            <h:graphicImage value="#{product.urlImageSmall}"
+                                            alt="#{product.name}"
+                                            rendered="#{product.urlImageSmall != null}" />
+                            <h:graphicImage value="/r/productImage/#{product.urlAlias}-s.jpg"
+                                            alt="#{product.name}"
+                                            rendered="#{product.urlImageSmall == null}" /><br/>
+
                         </s:link>
                     </div>
                     <s:link view="/product.xhtml" value="#{product.name}" propagation="none">
@@ -51,7 +57,12 @@
                         <s:link view="/product.xhtml" propagation="none">
                             <f:param name="cat" value="#{product.categories.toArray()[0].id}"/>
                             <f:param name="alias" value="#{product.urlAlias}"/>
-                            <img src="#{product.urlImageSmall}" alt="#{product.name} image"/><br/>
+                            <h:graphicImage value="#{product.urlImageSmall}"
+                                            alt="#{product.name}"
+                                            rendered="#{product.urlImageSmall != null}" />
+                            <h:graphicImage value="/r/productImage/#{product.urlAlias}-s.jpg"
+                                            alt="#{product.name}"
+                                            rendered="#{product.urlImageSmall == null}" /><br/>
                         </s:link>
                     </div>
                     <s:link view="/product.xhtml" value="#{product.name}" propagation="none">
