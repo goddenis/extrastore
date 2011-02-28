@@ -11,6 +11,7 @@
             <class name="ru.extrastore.CheckoutTest"/>
             <class name="ru.extrastore.PriceTest"/>
             <class name="ru.extrastore.ProductImageResourceTest" />
+            <class name="ru.extrastore.ShowcaseTest" />
         </classes>
     </test>
 </suite>

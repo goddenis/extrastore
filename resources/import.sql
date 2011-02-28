@@ -112,6 +112,12 @@ INSERT INTO Product2Store(productId, storeId) VALUES(1, 1)
 INSERT INTO Product2Store(productId, storeId) VALUES(22, 1)
 
 
+/************** Non-existent products **************/
+-- INSERT INTO Product2Store(productId, storeId) VALUES(1001, 1)
+-- INSERT INTO Product2Store(productId, storeId) VALUES(1002, 1)
+-- INSERT INTO Product2Store(productId, storeId) VALUES(1003, 1)
+
+
 
 /*************** ProductProperty ******************/
 

@@ -7,6 +7,7 @@ import org.jboss.seam.annotations.Name;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -39,12 +40,12 @@ public class Store implements Serializable {
 
     String gaAccount;
 
-    @ManyToMany(fetch=FetchType.EAGER)
+    @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name="Product2Store",
                joinColumns=@JoinColumn(name="storeId"),
                inverseJoinColumns=@JoinColumn(name="productId"))
     @IndexedEmbedded
-    Set<Product> products;
+    List<Product> products;
 
     // Contains all categories of all products of this store.
     @Transient
@@ -101,11 +102,11 @@ public class Store implements Serializable {
         this.gaAccount = gaAccount;
     }
 
-    public Set<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 

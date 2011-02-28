@@ -32,7 +32,7 @@ public class ProductImageResource extends AbstractResource {
     // Resources URIs end with /<productAlias>/<l|s>
     public static Pattern RESOURCE_PATTERN = Pattern.compile("^/([a-zA-Z0-9]+)\\-([ls]{1})\\.jpg$");
 
-    public static final String REGISTER_SEAM_RESOURCE = "/productImage";
+    public static final String REGISTER_SEAM_RESOURCE = "/pi";
 
     private Log log = Logging.getLog(ProductImageResource.class);
 
@@ -70,7 +70,7 @@ public class ProductImageResource extends AbstractResource {
         }
 
         if (productAlias == null || imageSize == null) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid request path, use: /productImage/[a-zA-Z0-9]+\\-(l|s)\\.jpg");
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid request path, use: /pi/[a-zA-Z0-9]+\\-(l|s)\\.jpg");
             return;
         }
 

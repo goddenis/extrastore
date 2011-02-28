@@ -52,8 +52,7 @@ public class CategoryTest extends SeamTest {
                 Category c = (Category)getValue("#{category}");
                 assertNotNull("category by alias", c);
                 assertEquals("category alias", "office", c.getId());
-                assertNotNull("store products", c.getStoreProducts());
-                assertTrue("has products", c.getStoreProducts().length > 0);
+                assertTrue("has products", c.getProducts().size() > 0);
 
                 EntityManager em = (EntityManager)getValue("#{entityManager}");
                 Category c2 = em.find(Category.class, "office");
