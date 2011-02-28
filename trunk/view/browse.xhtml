@@ -18,9 +18,7 @@
                 value="#{messages.allGoods}" rendered="#{category.name == null}"/></h1>
 
 
-        <ui:fragment rendered="#{category.id == null}">
-
-            <ui:repeat value="#{store.products.toArray()}" var="product">
+            <ui:repeat value="#{products}" var="product">
                 <div class="product">
                     <div class="product-image">
                         <s:link view="/product.xhtml" propagation="none">
@@ -29,7 +27,7 @@
                             <h:graphicImage value="#{product.urlImageSmall}"
                                             alt="#{product.name}"
                                             rendered="#{product.urlImageSmall != null}" />
-                            <h:graphicImage value="/r/productImage/#{product.urlAlias}-s.jpg"
+                            <h:graphicImage value="/r/pi/#{product.urlAlias}-s.jpg"
                                             alt="#{product.name}"
                                             rendered="#{product.urlImageSmall == null}" /><br/>
 
@@ -47,40 +45,6 @@
 
                 </div>
             </ui:repeat>
-        </ui:fragment>
-
-        <ui:fragment rendered="#{category.id != null}">
-
-            <ui:repeat value="#{category.storeProducts}" var="product">
-                <div class="product">
-                    <div class="product-image">
-                        <s:link view="/product.xhtml" propagation="none">
-                            <f:param name="cat" value="#{product.categories.toArray()[0].id}"/>
-                            <f:param name="alias" value="#{product.urlAlias}"/>
-                            <h:graphicImage value="#{product.urlImageSmall}"
-                                            alt="#{product.name}"
-                                            rendered="#{product.urlImageSmall != null}" />
-                            <h:graphicImage value="/r/productImage/#{product.urlAlias}-s.jpg"
-                                            alt="#{product.name}"
-                                            rendered="#{product.urlImageSmall == null}" /><br/>
-                        </s:link>
-                    </div>
-                    <s:link view="/product.xhtml" value="#{product.name}" propagation="none">
-                        <f:param name="cat" value="#{product.categories.toArray()[0].id}"/>
-                        <f:param name="alias" value="#{product.urlAlias}"/>
-                    </s:link><br/>
-
-                    <div class="product-description">#{product.description}</div>
-
-                    <ui:include src="/incl/price.xhtml" />
-
-
-                </div>
-            </ui:repeat>
-
-
-        </ui:fragment>
-
 
     </ui:define>
 

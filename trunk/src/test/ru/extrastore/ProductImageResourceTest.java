@@ -15,7 +15,7 @@ import static org.testng.AssertJUnit.assertEquals;
  */
 public class ProductImageResourceTest extends SeamTest {
 
-    static final String IMAGE_PATH = "/r/productImage/noproduct-s.jpg";
+    static final String IMAGE_PATH = "/r/pi/noproduct-s.jpg";
 
     @Test
     public void testGetProductImage() throws Exception {

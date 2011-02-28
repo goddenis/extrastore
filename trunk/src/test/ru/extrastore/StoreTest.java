@@ -6,11 +6,11 @@ import ru.extrastore.model.Category;
 import ru.extrastore.model.Product;
 import ru.extrastore.model.Store;
 
+import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.HashSet;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertNotNull;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.AssertJUnit.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,7 +35,7 @@ public class StoreTest extends SeamTest {
         p.getCategories().add(c2);
 
         Store s = new Store();
-        s.setProducts(new HashSet<Product>());
+        s.setProducts(new ArrayList<Product>());
         s.getProducts().add(p);
 
         assertTrue("store contains product categories", s.getCategories().containsAll(p.getCategories()));
@@ -53,6 +53,8 @@ public class StoreTest extends SeamTest {
                 assertEquals("IP store defaults to localost", "localhost", s.getDomain());
 
                 assertNotNull("store from session context", s);
+
+                s = ((EntityManager)getInstance("entityManager")).merge(s);
                 assertTrue("store has categories", s.getCategories().size() > 0);
 
                 assertNotNull("store has a parent Company", s.getCompany());
