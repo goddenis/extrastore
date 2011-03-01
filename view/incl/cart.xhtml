@@ -1,20 +1,15 @@
-<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:s="http://jboss.com/products/seam/taglib"
+<h:panelGroup id="cart" layout="block" xmlns:s="http://jboss.com/products/seam/taglib"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:a4j="http://richfaces.org/a4j">
-
-<h:panelGroup id="cart" layout="block">
     <a4j:form rendered="#{!cart.isEmpty()}">
         <div>
             <s:link view="/cart.xhtml" value="#{messages.cart}" propagation="none"/> (#{cart.itemsCount}
             товар<h:outputText value="#{cart.russianEnding(cart.itemsCount)}"/> на
-            #{" "}<h:outputText value="#{cart.totalCost}"><f:convertNumber type="currency"
+            #{" "}<h:outputText value="#{cart.subTotal}"><f:convertNumber type="currency"
                                                                            currencySymbol="руб."/></h:outputText>)
         </div>
     </a4j:form>
 
 </h:panelGroup>
-
-</html>

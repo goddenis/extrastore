@@ -27,6 +27,8 @@ public class Order implements Serializable {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     List<OrderLine> lines = new ArrayList<OrderLine>();
 
+    long totalCost;
+
     public long getId() {
         return id;
     }
@@ -51,6 +53,14 @@ public class Order implements Serializable {
         this.customer = customer;
     }
 
+    public long getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(long totalCost) {
+        this.totalCost = totalCost;
+    }
+
     public int getDeliveryType() {
         return deliveryType;
     }
@@ -69,12 +79,12 @@ public class Order implements Serializable {
         lines.add(new OrderLine(this, p, quantity));
     }
 
-    public long getTotalCost() {
-        long totalCost = 0;
+    public long getSubTotal() {
+        long subTotal = 0;
         for (OrderLine l: lines) {
-           totalCost += l.getProduct().getPrice()*l.getQuantity();
+           subTotal += l.getProduct().getPrice()*l.getQuantity();
         }
-        return totalCost;
+        return subTotal;
     }
 
 

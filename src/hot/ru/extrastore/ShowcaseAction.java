@@ -2,6 +2,7 @@ package ru.extrastore;
 
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
+import ru.extrastore.model.Article;
 import ru.extrastore.model.Category;
 import ru.extrastore.model.Product;
 import ru.extrastore.model.Store;
@@ -34,6 +35,9 @@ public class ShowcaseAction {
     List<Product> products;
 
     @Out(required = false)
+    List<Article> articles;
+
+    @Out(required = false)
     Set<Category> allCategories;
 
     @Factory("products")
@@ -56,5 +60,12 @@ public class ShowcaseAction {
         for (Product p: store.getProducts()) {
             allCategories.addAll(p.getCategories());
         }
+    }
+
+    @Factory("articles")
+    public void loadArticles() {
+        store = em.merge(store);
+
+        this.articles = store.getArticles();
     }
 }

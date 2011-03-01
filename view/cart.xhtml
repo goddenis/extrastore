@@ -30,7 +30,7 @@
 
         <f:subview id="cartdetails" rendered="#{!cart.isEmpty()}">
 
-            <a4j:form>
+            <a4j:form id="cartForm">
 
                 <h:dataTable id="cartTable"
                              styleClass="cartTable"
@@ -70,14 +70,11 @@
                             Количество
                         </f:facet>
                         <rich:inputNumberSpinner value="#{l.quantity}" minValue="0" maxValue="1000000" cycled="false" inputSize="1">
-                            <a4j:support event="onchange" action="#{cart.updateTotals()}" reRender="cartTable" />
+                            <a4j:support event="onchange" action="#{cart.updateTotals()}" reRender="cartForm" />
                         </rich:inputNumberSpinner>
-                        <f:facet name="footer">
-                            Итого:
-                        </f:facet>
                     </h:column>
 
-                    <h:column headerClass="priceColumn" footerClass="cartTotal">
+                    <h:column headerClass="priceColumn">
                         <f:facet name="header">
                             Стоимость
                         </f:facet>
@@ -88,14 +85,48 @@
                                 </h:outputText></span> руб.
                         </div>
 
-                        <f:facet name="footer">
-                            <h:outputText value="#{cart.totalCost}">
-                                <f:convertNumber type="currency" currencySymbol="р."/>
-                            </h:outputText>
-                        </f:facet>
                     </h:column>
 
+
                 </h:dataTable>
+
+                <table width="700px" cellspacing="9" cellpadding="0">
+                    <tr>
+                        <td width="450px"></td>
+                        <td align="right" width="120px" style="padding-right: 25px;">Товары:</td>
+                        <td width="120px">
+                            <div class="product-price">
+                                <span class="product-price-digits">
+                                    <h:outputText value="#{cart.subTotal}">
+                                        <f:convertNumber type="currency" currencySymbol=""/>
+                                    </h:outputText></span> руб.
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="450px"></td>
+                        <td align="right" width="130px" style="padding-right: 25px;">Доставка:</td>
+                        <td width="120px">
+                            <div class="product-price">
+                                <span class="product-price-digits">
+                                    <h:outputText value="#{cart.deliveryCost}">
+                                        <f:convertNumber type="currency" currencySymbol=""/>
+                                    </h:outputText></span> руб.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="right" style="padding-right: 25px;">Итого:</td>
+                        <td class="cartTotal">
+                            <h:outputText value="#{cart.totalCost}">
+                                 <f:convertNumber type="currency" currencySymbol="р."/>
+                            </h:outputText>
+                        </td>
+                    </tr>
+                </table>
+
 
 
                 <a4j:commandButton value="Обновить" action="#{cart.update()}" type="submit" reRender="cartTable"/>

@@ -8,6 +8,7 @@ import org.jboss.seam.contexts.Contexts;
 import org.jboss.seam.faces.Renderer;
 import org.jboss.seam.log.Log;
 import ru.extrastore.model.Order;
+import ru.extrastore.model.Store;
 
 import java.io.Serializable;
 
@@ -24,9 +25,10 @@ public class NewOrderNotifier implements Serializable {
     Renderer renderer;
 
     @Observer("newOrder")
-    public void onNewOrder(Order newOrder) {
+    public void onNewOrder(Order newOrder, Store store) {
         log.info("#0.onNewOrder()", this.hashCode());
         Contexts.getEventContext().set("currentOrder", newOrder);
+        Contexts.getEventContext().set("store", store);
         try {
             renderer.render("/order/email_notification.xhtml");
         } catch (Exception e) {

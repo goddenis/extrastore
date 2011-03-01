@@ -81,7 +81,7 @@ public class ProductImageResource extends AbstractResource {
             return;
         }
 
-        response.addHeader("Cache-Control", "max-age=10"); // 10 minutes freshness in browser cache
+        response.addHeader("Cache-Control", "max-age=604800"); // freshness in seconds. 86400 sec. == 24 hour.
 
         byte[] image = imageSize.equals("s") ? product.getImageSmall() : product.getImageLarge();
         response.setContentType("image/jpeg");

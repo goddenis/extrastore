@@ -24,6 +24,8 @@ public class CartTest extends SeamTest {
     private static final long BREADLETS_PRICE = 35;
     private static final long BREADLETS_QUANTITY = 2;
 
+    private static final long DELIVERY_PRICE = 99;
+
     private static final String PRODUCT_URL_ALIAS = "orphograph";
 
     private Product createProduct(long id, String name, long price) {
@@ -46,7 +48,7 @@ public class CartTest extends SeamTest {
         cart.addProduct(p1, POURAGE_QUANTITY);
 
         assertEquals("items count", POURAGE_QUANTITY, cart.getItemsCount());
-        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE, cart.getTotalCost());
+        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE, cart.getSubTotal());
         assertEquals("product count", 1, cart.getProductsCount());
 
         Product p2 = new Product();
@@ -57,7 +59,7 @@ public class CartTest extends SeamTest {
         cart.addProduct(p2, BREADLETS_QUANTITY);
 
         assertEquals("items count", POURAGE_QUANTITY + BREADLETS_QUANTITY, cart.getItemsCount());
-        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE + BREADLETS_QUANTITY * BREADLETS_PRICE, cart.getTotalCost());
+        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE + BREADLETS_QUANTITY * BREADLETS_PRICE, cart.getSubTotal());
         assertEquals("product count", 2, cart.getProductsCount());
 
         assertEquals("product one", cart.getOrder().getLines().get(0).getProduct(), p1);
@@ -81,7 +83,7 @@ public class CartTest extends SeamTest {
         cart.reset();
 
         assertEquals("items count", 0, cart.getItemsCount());
-        assertEquals("total price", 0, cart.getTotalCost());
+        assertEquals("sub-total price", 0, cart.getSubTotal());
         assertEquals("product count", 0, cart.getProductsCount());
 
     }
@@ -96,7 +98,7 @@ public class CartTest extends SeamTest {
         cart.addProduct(p2, BREADLETS_QUANTITY);
 
         assertEquals("items count", POURAGE_QUANTITY + BREADLETS_QUANTITY, cart.getItemsCount());
-        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE + BREADLETS_QUANTITY * BREADLETS_PRICE, cart.getTotalCost());
+        assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE + BREADLETS_QUANTITY * BREADLETS_PRICE, cart.getSubTotal());
         assertEquals("product count", 2, cart.getProductsCount());
 
         cart.getSelection().put(p1, false);
@@ -167,46 +169,39 @@ public class CartTest extends SeamTest {
 
     @Test
     public void testRussianEnding() throws Exception {
-        new ComponentTest() {
-            @Override
-            protected void testComponents() throws Exception {
-                Cart c = (Cart) this.getValue("#{cart}");
+                assertEquals("ов", Cart.russianEnding(0));
+                assertEquals("", Cart.russianEnding(1));
+                assertEquals("а", Cart.russianEnding(2));
+                assertEquals("а", Cart.russianEnding(3));
+                assertEquals("а", Cart.russianEnding(4));
+                assertEquals("ов", Cart.russianEnding(5));
+                assertEquals("ов", Cart.russianEnding(6));
+                assertEquals("ов", Cart.russianEnding(7));
+                assertEquals("ов", Cart.russianEnding(8));
+                assertEquals("ов", Cart.russianEnding(9));
+                assertEquals("ов", Cart.russianEnding(10));
+                assertEquals("ов", Cart.russianEnding(11));
+                assertEquals("ов", Cart.russianEnding(12));
+                assertEquals("ов", Cart.russianEnding(13));
+                assertEquals("ов", Cart.russianEnding(14));
+                assertEquals("ов", Cart.russianEnding(15));
+                assertEquals("ов", Cart.russianEnding(16));
+                assertEquals("ов", Cart.russianEnding(17));
+                assertEquals("ов", Cart.russianEnding(18));
+                assertEquals("ов", Cart.russianEnding(19));
+                assertEquals("ов", Cart.russianEnding(20));
+                assertEquals("", Cart.russianEnding(21));
+                assertEquals("а", Cart.russianEnding(22));
+                assertEquals("а", Cart.russianEnding(23));
+                assertEquals("а", Cart.russianEnding(24));
+                assertEquals("ов", Cart.russianEnding(25));
 
-                assertEquals("ов", c.russianEnding(0));
-                assertEquals("", c.russianEnding(1));
-                assertEquals("а", c.russianEnding(2));
-                assertEquals("а", c.russianEnding(3));
-                assertEquals("а", c.russianEnding(4));
-                assertEquals("ов", c.russianEnding(5));
-                assertEquals("ов", c.russianEnding(6));
-                assertEquals("ов", c.russianEnding(7));
-                assertEquals("ов", c.russianEnding(8));
-                assertEquals("ов", c.russianEnding(9));
-                assertEquals("ов", c.russianEnding(10));
-                assertEquals("ов", c.russianEnding(11));
-                assertEquals("ов", c.russianEnding(12));
-                assertEquals("ов", c.russianEnding(13));
-                assertEquals("ов", c.russianEnding(14));
-                assertEquals("ов", c.russianEnding(15));
-                assertEquals("ов", c.russianEnding(16));
-                assertEquals("ов", c.russianEnding(17));
-                assertEquals("ов", c.russianEnding(18));
-                assertEquals("ов", c.russianEnding(19));
-                assertEquals("ов", c.russianEnding(20));
-                assertEquals("", c.russianEnding(21));
-                assertEquals("а", c.russianEnding(22));
-                assertEquals("а", c.russianEnding(23));
-                assertEquals("а", c.russianEnding(24));
-                assertEquals("ов", c.russianEnding(25));
-
-                assertEquals("ов", c.russianEnding(100));
-                assertEquals("", c.russianEnding(101));
-                assertEquals("а", c.russianEnding(102));
-                assertEquals("а", c.russianEnding(103));
-                assertEquals("а", c.russianEnding(104));
-                assertEquals("ов", c.russianEnding(105));
-            }
-        }.run();
+                assertEquals("ов", Cart.russianEnding(100));
+                assertEquals("", Cart.russianEnding(101));
+                assertEquals("а", Cart.russianEnding(102));
+                assertEquals("а", Cart.russianEnding(103));
+                assertEquals("а", Cart.russianEnding(104));
+                assertEquals("ов", Cart.russianEnding(105));
     }
 
 }

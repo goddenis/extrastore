@@ -8,7 +8,7 @@
 
     <m:from name="#{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}" address="stas.versilov@gmail.com" />
     <m:to>order@sozvezdie-store.ru</m:to>
-    <m:subject>Заказ [ТЕСТОВЫЙ] для #{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}</m:subject>
+    <m:subject>Заказ [#{store.domain}] для #{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}</m:subject>
 
     <m:body>
         <rich:dataTable value="#{currentOrder.lines}" var="orderLine" columnsWidth="80,250,80">
@@ -16,7 +16,7 @@
                 <f:facet name="header">
                     Артикул
                 </f:facet>
-                <h:outputText value="#{orderLine.product.ASIN}"/>
+                <h:outputText value="#{orderLine.product.SKU}"/>
             </h:column>
 
             <h:column>

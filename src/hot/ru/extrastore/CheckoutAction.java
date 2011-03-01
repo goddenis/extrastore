@@ -9,6 +9,7 @@ import org.jboss.seam.log.Log;
 import ru.extrastore.model.Address;
 import ru.extrastore.model.Customer;
 import ru.extrastore.model.Order;
+import ru.extrastore.model.Store;
 
 import javax.persistence.EntityManager;
 import java.io.Serializable;
@@ -37,9 +38,11 @@ public class CheckoutAction implements Serializable {
     @In
     private FacesMessages facesMessages;
 
-
     @In
     Cart cart;
+
+    @In
+    Store store;
 
     @Out(scope = ScopeType.CONVERSATION)
     Order currentOrder;
@@ -60,6 +63,7 @@ public class CheckoutAction implements Serializable {
 
         cart.update();
         this.currentOrder = cart.getOrder();
+        this.currentOrder.setTotalCost(cart.getTotalCost());
 
         Customer customer = new Customer();
         customer.setAddress(new Address());
@@ -88,7 +92,7 @@ public class CheckoutAction implements Serializable {
         }
 
         em.persist(currentOrder);
-        events.raiseAsynchronousEvent("newOrder", currentOrder);    // Makes this slow operation asynchronous
+        events.raiseAsynchronousEvent("newOrder", currentOrder, store);    // Makes this slow operation asynchronous
 
         cart.reset();
 

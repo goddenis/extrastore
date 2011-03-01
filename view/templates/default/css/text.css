@@ -219,7 +219,7 @@ img.cartProductImage {
     width: 70px;
 }
 
-table.cartTable .cartTotal {
+.cartTotal {
     font-size: 150%;
     font-weight: bold;
     font-family: Georgia, Arial, sans-serif;
