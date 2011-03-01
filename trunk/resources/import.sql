@@ -4,7 +4,7 @@ INSERT INTO Company VALUES(3, 'Client Company')
 
 
 
-INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (1, 1, 'localhost', 'Sozvezdie Delivery', null, 'UA-21705970-1')
+INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (1, 1, 'localhost', 'Локал Хост', null, 'UA-21705970-1')
 INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (2, 1, 'avtoraketa2.ru', 'AvtoRaketa', null, null)
 INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (3, 1, 'firstshop.ru', 'First Shop', 'http://extrapost.ru/templates/firstshop', null)
 INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (5, 2, 'shsd-books.ru', 'SHSD Books', null, null)
@@ -12,30 +12,30 @@ INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES
 
 
 
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall, longDescription) VALUES (1, 'p1', 'wifishirt', 'Майка с индикатором качества Вай-Фай сигнала', 'Wi-Fi Майка', 1500, 'http://extrapost.ru/img/product1.jpg', '<img src="http://extrapost.ru/img/wi-fi-tshirt-big.jpg" alt="Вай-фай майка" /><br /><p>Владельцу такой майки нет необходимости открывать ноутбук, чтобы узнать, есть ли рядом открытая вай-фай точка, или носить с собой брелок-детектор. Светящийся анимированный рисунок на футболке показывает всем вокруг текущую силу сигнала вай-фая.</p><p>Работает со стандартами 802.11b и 802.11g. Батарея спрятана в маленьком кармане с внутренней стороны.</p>')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (2, 'p2', 'microfibrus', 'Тряпочки для протирки оптики', 'Микрофибрус', 200, 'http://extrapost.ru/img/product2.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (3, 'p3', 'dispenser', null, 'Диспенсер для скотча "Кассета"', 500, 'http://extrapost.ru/img/product3.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (4, 'p4', 'magnets', null, 'Refrigerator magnets', 250, 'http://extrapost.ru/img/product4.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (5, 'p5', 'chocolate', null, 'Chocolate', 200, 'http://extrapost.ru/img/product5.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (6, 'p6', 'leonardo', null, 'Leonardo da Vinchi', 1500, 'http://extrapost.ru/img/product6.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (7, 'p7', 'mama', null, 'Mama Hurries Home', 250, 'http://extrapost.ru/img/product7.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (8, 'p8', 'keystopper', null, 'The Key Stopper', 400, 'http://extrapost.ru/img/product8.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall, longDescription) VALUES (1, 'p1', 'wifishirt', 'Майка с индикатором качества Вай-Фай сигнала', 'Wi-Fi Майка', 1500, 240, 'http://extrapost.ru/img/product1.jpg', '<img src="http://extrapost.ru/img/wi-fi-tshirt-big.jpg" alt="Вай-фай майка" /><br /><p>Владельцу такой майки нет необходимости открывать ноутбук, чтобы узнать, есть ли рядом открытая вай-фай точка, или носить с собой брелок-детектор. Светящийся анимированный рисунок на футболке показывает всем вокруг текущую силу сигнала вай-фая.</p><p>Работает со стандартами 802.11b и 802.11g. Батарея спрятана в маленьком кармане с внутренней стороны.</p>')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (2, 'p2', 'microfibrus', 'Тряпочки для протирки оптики', 'Микрофибрус', 200, 240, 'http://extrapost.ru/img/product2.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (3, 'p3', 'dispenser', null, 'Диспенсер для скотча "Кассета"', 500, 240, 'http://extrapost.ru/img/product3.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (4, 'p4', 'magnets', null, 'Refrigerator magnets', 250, 240, 'http://extrapost.ru/img/product4.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (5, 'p5', 'chocolate', null, 'Chocolate', 200, 240, 'http://extrapost.ru/img/product5.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (6, 'p6', 'leonardo', null, 'Leonardo da Vinchi', 1500, 240, 'http://extrapost.ru/img/product6.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (7, 'p7', 'mama', null, 'Mama Hurries Home', 250, 240, 'http://extrapost.ru/img/product7.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (8, 'p8', 'keystopper', null, 'The Key Stopper', 400, 240, 'http://extrapost.ru/img/product8.jpg')
 
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (9, 'gagarin1', 'poehali', '22 cards', 'Poehali! cards', 300, 'http://extrapost.ru/img/gagarin.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (10, 'rosetcus1', 'rosetcus', 'Electric port for 12 euro-plugs', 'Rosetcus', 1500, 'http://extrapost.ru/img/rosetcus.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (11, 'mus3', 'mus3', 'Wireless optical 2-button mouse', 'Mus-3', 2500, 'http://extrapost.ru/img/mus3.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (12, 'udarnik12', 'udarnki', 'Cards set', 'The hitter of literature speech', 370, 'http://extrapost.ru/img/udarnik.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall, longDescription) VALUES (13, 'orfograf77', 'orphograph', 'Набор из 120 карточек для обучения русскому языку', 'Орфограф русского языка', 370, 'http://extrapost.ru/img/orfograf.jpg', '<img src="http://extrapost.ru/img/orfograf-big.jpg" /><p>В русском, как и в любом другом языке, есть слова, написать которые рука не поднимается. То есть она поднимается, но тут же и опускается. Потому что как писать-то? И так вроде правильно, и так тоже неплохо. Или все-таки плохо? Или нет? В общем, один из вариантов приведенных здесь слов точно правильный. Хотя...</p><p>При составлении «Орфографа» использовались данные современных словарей. Набор состоит из 120 двусторонних проверочных карточек.</p><center><img src="http://extrapost.ru/img/orfograf1.jpg" /><br /><i>Лицевая сторона</i></center><center><img src="http://extrapost.ru/img/orfograf2.jpg" align="center" /><br /><i>Оборотная сторона</i></center>')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (14, 'erundopel22', 'erundlopel', 'Rare words game', 'The russian language Erundopel', 370, 'http://extrapost.ru/img/erundopel.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (15, 'abajurus29032-23', 'abajurus', 'Modular light constructor', 'Abajurus', 700, 'http://extrapost.ru/img/abajurus.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (16, 'heart-board-232-23.2', 'heart-board', 'Magnet blackboard', 'The Heard note board', 1400, 'http://extrapost.ru/img/serdce.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (17, 'paneli-23.2', 'paneli', '6 pcs', 'The panels set', 600, 'http://extrapost.ru/img/paneli.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (18, 'gori-board-23.2.2', 'gori', 'The set of board and 9 staples', 'Mountains board', 650, 'http://extrapost.ru/img/gori-board.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (19, 'moon-ball', 'moon-ball', null, 'Ball "Moon"', 600, 'http://extrapost.ru/img/moon-ball.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (20, 'yellow-submarine', 'yellow-submarine', 'Tea-Sub', 'Yellow submarine', 550, 'http://extrapost.ru/img/yellow-submarine.jpg')
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (21, 'aqua-tower', 'aqua-tower', 'The bottle and the cup', '"Aquatower" set', 1100, 'http://extrapost.ru/img/aqua-tower.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (9, 'gagarin1', 'poehali', '22 cards', 'Poehali! cards', 300, 240, 'http://extrapost.ru/img/gagarin.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (10, 'rosetcus1', 'rosetcus', 'Electric port for 12 euro-plugs', 'Rosetcus', 1500, 240, 'http://extrapost.ru/img/rosetcus.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (11, 'mus3', 'mus3', 'Wireless optical 2-button mouse', 'Mus-3', 2500, 240, 'http://extrapost.ru/img/mus3.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (12, 'udarnik12', 'udarnki', 'Cards set', 'The hitter of literature speech', 370, 240, 'http://extrapost.ru/img/udarnik.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall, longDescription) VALUES (13, 'orfograf77', 'orphograph', 'Набор из 120 карточек для обучения русскому языку', 'Орфограф русского языка', 370, 240, 'http://extrapost.ru/img/orfograf.jpg', '<img src="http://extrapost.ru/img/orfograf-big.jpg" /><p>В русском, как и в любом другом языке, есть слова, написать которые рука не поднимается. То есть она поднимается, но тут же и опускается. Потому что как писать-то? И так вроде правильно, и так тоже неплохо. Или все-таки плохо? Или нет? В общем, один из вариантов приведенных здесь слов точно правильный. Хотя...</p><p>При составлении «Орфографа» использовались данные современных словарей. Набор состоит из 120 двусторонних проверочных карточек.</p><center><img src="http://extrapost.ru/img/orfograf1.jpg" /><br /><i>Лицевая сторона</i></center><center><img src="http://extrapost.ru/img/orfograf2.jpg" align="center" /><br /><i>Оборотная сторона</i></center>')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (14, 'erundopel22', 'erundlopel', 'Rare words game', 'The russian language Erundopel', 370, 240, 'http://extrapost.ru/img/erundopel.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (15, 'abajurus29032-23', 'abajurus', 'Modular light constructor', 'Abajurus', 700, 240, 'http://extrapost.ru/img/abajurus.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (16, 'heart-board-232-23.2', 'heart-board', 'Magnet blackboard', 'The Heard note board', 1400, 240, 'http://extrapost.ru/img/serdce.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (17, 'paneli-23.2', 'paneli', '6 pcs', 'The panels set', 600, 240, 'http://extrapost.ru/img/paneli.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (18, 'gori-board-23.2.2', 'gori', 'The set of board and 9 staples', 'Mountains board', 650, 240, 'http://extrapost.ru/img/gori-board.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (19, 'moon-ball', 'moon-ball', null, 'Ball "Moon"', 600, 240, 'http://extrapost.ru/img/moon-ball.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (20, 'yellow-submarine', 'yellow-submarine', 'Tea-Sub', 'Yellow submarine', 550, 240, 'http://extrapost.ru/img/yellow-submarine.jpg')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (21, 'aqua-tower', 'aqua-tower', 'The bottle and the cup', '"Aquatower" set', 1100, 240, 'http://extrapost.ru/img/aqua-tower.jpg')
 
-INSERT INTO Product (id, asin, urlAlias, description, name, price, urlImageSmall) VALUES (22, 'kz30', 'zdorovyak30', 'Каша пшеничная, с расторопшей и спирулиной', 'Самарский Здоровяк №30', 139, 'http://extrastore.ru/i/zdorovyak.gif')
+INSERT INTO Product (id, SKU, urlAlias, description, name, price, weight, urlImageSmall) VALUES (22, 'kz30', 'zdorovyak30', 'Каша пшеничная, с расторопшей и спирулиной', 'Самарский Здоровяк №30', 139, 240, 'http://extrastore.ru/i/zdorovyak.gif')
 
 
 INSERT INTO Category (id, name) VALUES('office', 'Для офиса')
@@ -138,6 +138,9 @@ INSERT INTO ProductProperty(productId, name, value) VALUES(22, 'Вес', '240 г
 
 
 
+
+
+
 /********************** CustomPrices *****************/
 
 INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(1, null, 1700, null, true, false)
@@ -149,3 +152,19 @@ INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(3, n
 
 INSERT INTO Price(productId, storeId, value, description, old, main) VALUES(22, 1, 115, 'для членов клуба', false, false)
 
+
+
+
+
+
+/************************ ARTICLES **********************/
+
+INSERT INTO Article(storeId, urlAlias, name, html) VALUES(1, 'delivery', 'Доставка и оплата', '<p>Доставка осуществляется Почтой России</p>')
+INSERT INTO Article(storeId, urlAlias, name, html) VALUES(1, 'contacts', 'Контакты', '<p>Горячая линия: 8-800-100-31-01</p>')
+
+
+
+/********************** Delivery types ******************/
+
+INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('POSTAL', 1, 'Почта России, наложенный платёж', 99, 695)
+INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('COURIER', 1, 'Курьер (только по Самаре)', 250, 1000)

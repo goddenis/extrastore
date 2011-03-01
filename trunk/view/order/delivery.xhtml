@@ -12,8 +12,10 @@
 <ui:composition template="#{store.templatePath}/template.xhtml">
     <ui:define name="title">Оформление заказа — доставка</ui:define>
 
+    <ui:define name="menu"></ui:define>
     <ui:define name="cart"></ui:define>
     <ui:define name="sidebar"></ui:define>
+    
 
     <ui:define name="body">
 
@@ -26,8 +28,6 @@
                 <ui:define name="label">Способ доставки</ui:define>
                 <h:selectOneRadio value="#{currentOrder.deliveryType}" required="true" layout="pageDirection">
                     <f:selectItem itemLabel="Почта России" itemValue="1" />
-                    <f:selectItem itemLabel="Курьер (только по Самаре)" itemValue="2" itemDisabled="true" />
-                    <f:selectItem itemLabel="Деловые линии" itemValue="3" itemDisabled="true" />
                 </h:selectOneRadio>
             </s:decorate>
 

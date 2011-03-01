@@ -22,7 +22,7 @@ public class ProductTest extends SeamTest {
     private static final long PRODUCT_ID = 777999L;
     private static final long PRODUCT_PRICE = 395L;
     private static final String PRODUCT_URL_ALIAS = "skovoroda";
-    private static final String PRODUCT_ASIN = "skovoroda23";
+    private static final String PRODUCT_SKU = "skovoroda23";
     private static final String PRODUCT_IMAGE_URL = "http://extrastore.org/img/skovoroda_small.jpg";
 
     @Test
@@ -32,8 +32,8 @@ public class ProductTest extends SeamTest {
         product.setId(PRODUCT_ID);
         assertEquals("Product id", PRODUCT_ID, product.getId());
 
-        product.setASIN(PRODUCT_ASIN);
-        assertEquals("Product ASIN", PRODUCT_ASIN, product.getASIN());
+        product.setSKU(PRODUCT_SKU);
+        assertEquals("Product SKU", PRODUCT_SKU, product.getSKU());
 
         product.setName(PRODUCT_NAME);
         assertEquals("Product name", PRODUCT_NAME, product.getName());

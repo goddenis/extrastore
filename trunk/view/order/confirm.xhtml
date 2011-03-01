@@ -12,6 +12,7 @@
 <ui:composition template="#{store.templatePath}/template.xhtml">
     <ui:define name="title">Оформление заказа — подтверждение</ui:define>
 
+    <ui:define name="menu"></ui:define>
     <ui:define name="cart"></ui:define>
     <ui:define name="sidebar"></ui:define>
 
@@ -32,7 +33,12 @@
                     <s:link view="/product.xhtml" propagation="none">
                         <f:param name="cat" value="#{l.product.categories.toArray()[0].id}"/>
                         <f:param name="alias" value="#{l.product.urlAlias}"/>
-                        <img class="cartProductImage" src="#{l.product.urlImageSmall}" alt="#{l.product.name}" />
+                        <h:graphicImage value="#{l.product.urlImageSmall}"
+                                            alt="#{l.product.name}"
+                                            rendered="#{l.product.urlImageSmall != null}" styleClass="cartProductImage" />
+                            <h:graphicImage value="/r/pi/#{l.product.urlAlias}-s.jpg"
+                                            alt="#{l.product.name}"
+                                            rendered="#{l.product.urlImageSmall == null}" styleClass="cartProductImage" />
                     </s:link>
                 </h:column>
 

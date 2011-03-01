@@ -110,6 +110,31 @@ div.product {
 
 
 
+
+
+
+/******************* MENU-ARTICLES********************/
+/******************* MENU-ARTICLES********************/
+/******************* MENU-ARTICLES********************/
+
+
+div#menu {
+    float: left;
+    width: 400px;
+    margin-top: 42px;
+    margin-left: 72px;
+}
+
+div#menu a {
+    padding-right: 18px;
+}
+
+
+
+
+
+
+
 /****************** CART ********************/
 /****************** CART ********************/
 /****************** CART ********************/
@@ -126,7 +151,7 @@ div#cart {
 }
 
 div#cart div {
-    background-color: #ffdc9c;
+    background-color: #99cc00;
     height: 100%;
     padding: 18px;
     white-space: nowrap;

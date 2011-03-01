@@ -7,6 +7,7 @@ import org.jboss.seam.annotations.Scope;
 import ru.extrastore.model.Order;
 import ru.extrastore.model.OrderLine;
 import ru.extrastore.model.Product;
+import ru.extrastore.model.Store;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -22,10 +23,11 @@ import java.util.Map;
 @Name("cart")
 @Scope(ScopeType.SESSION)
 public class Cart implements Serializable {
-    Order order = new Order();
 
     @In
-    Map<String, String> messages;
+    Store store;
+
+    Order order = new Order();
 
     Map<Product, Boolean> selection = new HashMap<Product, Boolean>();
 
@@ -66,9 +68,21 @@ public class Cart implements Serializable {
         return itemsCount;
     }
 
-    public long getTotalCost() {
-        return order.getTotalCost();
+    /**
+     * @return products total cost, without delivery.
+     */
+    public long getSubTotal() {
+        return order.getSubTotal();
     }
+
+    public long getDeliveryCost() {
+        return store.getDeliveryTypes().iterator().next().getCost(this.order);
+    }
+
+    public long getTotalCost() {
+        return getSubTotal() + getDeliveryCost();
+    }
+
 
     public void updateTotals() {
         // empty, because totals are calculated inline.
@@ -89,17 +103,20 @@ public class Cart implements Serializable {
      * @param itemsCount
      * @return russian language ending for the count
      */
-    public String russianEnding(long itemsCount) {
+    public static String russianEnding(long itemsCount) {
+        final String RUSSIAN_ENDING1 = "а";
+        final String RUSSIAN_ENDING2 = "ов";
+
         if (itemsCount >= 11 && itemsCount <= 19) {
-            return messages.get("russianEnding2");
+            return RUSSIAN_ENDING2;
         } else {
             long remain = itemsCount % 10;
             if (remain == 1) {
                 return "";
             } else if (remain > 1 && remain <= 4) {
-                return messages.get("russianEnding1");
+                return RUSSIAN_ENDING1;
             } else {
-                return messages.get("russianEnding2");
+                return RUSSIAN_ENDING2;
             }
         }
     }

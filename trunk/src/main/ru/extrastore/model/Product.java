@@ -25,7 +25,7 @@ public class Product implements Serializable {
     long id;
 
     @Column(length = 32, unique = true)
-    String asin;
+    String SKU;
 
     @Column(nullable = false, length = 64)
     String name;
@@ -33,11 +33,13 @@ public class Product implements Serializable {
     @Column(length = 100)
     String description;
 
-    @Column(length = 512)
+    @Column(length = 4096)
     String longDescription; // HTML is accepted
 
     @Column(precision = 12, scale = 2)
     long price;
+
+    long weight;    // In gramms.
 
     @Column(length = 32, unique = true)
     String urlAlias;
@@ -80,12 +82,12 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public String getASIN() {
-        return asin;
+    public String getSKU() {
+        return SKU;
     }
 
-    public void setASIN(String asin) {
-        this.asin = asin;
+    public void setSKU(String SKU) {
+        this.SKU = SKU;
     }
 
     public String getName() {
@@ -165,6 +167,14 @@ public class Product implements Serializable {
 
     public void setPrice(long price) {
         this.price = price;
+    }
+
+    public long getWeight() {
+        return weight;
+    }
+
+    public void setWeight(long weight) {
+        this.weight = weight;
     }
 
     public Set<Price> getPrices() {

@@ -38,6 +38,7 @@ public class Store implements Serializable {
 
     String templatePath;
 
+    @Column(nullable = true)
     String gaAccount;
 
     @ManyToMany(fetch=FetchType.LAZY)
@@ -46,6 +47,12 @@ public class Store implements Serializable {
                inverseJoinColumns=@JoinColumn(name="productId"))
     @IndexedEmbedded
     List<Product> products;
+
+    @OneToMany(mappedBy = "store", fetch = FetchType.LAZY)
+    List<Article> articles;
+
+    @OneToMany(mappedBy = "store", fetch = FetchType.EAGER)
+    Set<DeliveryType> deliveryTypes;
 
     // Contains all categories of all products of this store.
     @Transient
@@ -108,6 +115,22 @@ public class Store implements Serializable {
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
+    public Set<DeliveryType> getDeliveryTypes() {
+        return deliveryTypes;
+    }
+
+    public void setDeliveryTypes(Set<DeliveryType> deliveryTypes) {
+        this.deliveryTypes = deliveryTypes;
     }
 
     public Set<Category> getCategories() {

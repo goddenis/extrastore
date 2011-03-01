@@ -48,12 +48,14 @@
     <page view-id="/order/thanks.xhtml" conversation-required="true">
         <rewrite pattern="/order/thanks"/>
         <rewrite pattern="/order/thanks/"/>
-        <action execute="#{checkout.thanks()}"/>
+
         <!-- Just to end conversation -->
+        <action execute="#{checkout.thanks()}"/>
     </page>
 
 
     <!-- SHOWCASE -->
+
 
     <page view-id="/product.xhtml">
         <rewrite pattern="/all/{cat}/{alias}"/>
@@ -69,6 +71,13 @@
         <rewrite pattern="/"/>
         <param name="cat" value="#{categoryHome.id}"/>
     </page>
+
+    <page view-id="/article.xhtml">
+        <rewrite pattern="/articles/{articleAlias}" />
+        <rewrite pattern="/articles/{articleAlias}/" />
+        <param name="articleAlias" />
+    </page>
+
 
     <exception class="javax.faces.application.ViewExpiredException" log="false">
         <redirect view-id="/browse.xhtml" />

@@ -1,11 +1,7 @@
-<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:s="http://jboss.com/products/seam/taglib"
+<ui:fragment xmlns:s="http://jboss.com/products/seam/taglib"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-
-
-<ui:fragment>
     <span class="pointer green">&gt;</span>
     <s:link view="/browse.xhtml" propagation=""><f:param name="cat" value=""/>#{messages.allGoods}</s:link><br/>
 
@@ -15,4 +11,3 @@
         </s:link><br/>
     </ui:repeat>
 </ui:fragment>
-</html>

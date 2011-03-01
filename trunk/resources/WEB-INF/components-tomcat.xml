@@ -39,6 +39,18 @@
 
     <web:rewrite-filter view-mapping="*.seam"/>
 
+    <factory name="article" value="#{articleByAliasQuery.singleResult}" scope="STATELESS" auto-create="true"/>
+    <framework:entity-query name="articleByAliasQuery"
+                            max-results="1">
+        <framework:ejbql>select a from Article a</framework:ejbql>
+
+        <framework:restrictions>
+            <value>lower(a.urlAlias) like lower(#{articleAlias})</value>
+        </framework:restrictions>
+
+    </framework:entity-query>
+
+
 
     <factory name="product" value="#{productByAliasQuery.singleResult}" scope="STATELESS" auto-create="true"/>
     <framework:entity-query name="productByAliasQuery"

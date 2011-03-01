@@ -8,7 +8,7 @@ import java.util.Set;
  * Created by Catalyst on 22.02.11 at 16:12
  */
 @Entity
-@DiscriminatorValue("customer")
+@DiscriminatorValue("CUSTOMER")
 public class Customer extends User{
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
     Address address;
