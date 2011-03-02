@@ -41,6 +41,9 @@ public class Store implements Serializable {
     @Column(nullable = true)
     String gaAccount;
 
+    @Column(nullable = true)
+    String yaMetrika;
+
     @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name="Product2Store",
                joinColumns=@JoinColumn(name="storeId"),
@@ -107,6 +110,14 @@ public class Store implements Serializable {
 
     public void setGaAccount(String gaAccount) {
         this.gaAccount = gaAccount;
+    }
+
+    public String getYaMetrika() {
+        return yaMetrika;
+    }
+
+    public void setYaMetrika(String yaMetrika) {
+        this.yaMetrika = yaMetrika;
     }
 
     public List<Product> getProducts() {
