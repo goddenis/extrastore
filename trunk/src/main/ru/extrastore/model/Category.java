@@ -26,9 +26,12 @@ public class Category implements Serializable{
     @Field(index = Index.TOKENIZED)
     String id;
 
-    @Column(nullable = false, length = 64)
+    @Column(length = 64, nullable = false)
     @Field(index = Index.TOKENIZED)
     String name;
+
+    @Column(length = 1024, nullable = true)
+    String description;
 
     @ManyToMany(mappedBy = "categories", fetch = FetchType.LAZY)
     Set<Product> products;
@@ -47,6 +50,14 @@ public class Category implements Serializable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<Product> getProducts() {

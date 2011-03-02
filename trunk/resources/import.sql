@@ -44,7 +44,7 @@ INSERT INTO Category (id, name) VALUES('cellar', 'Подвал')
 INSERT INTO Category (id, name) VALUES('games', 'Игры')
 INSERT INTO Category (id, name) VALUES('food', 'Еда')
 INSERT INTO Category (id, name) VALUES('computer', 'Компьютер')
-INSERT INTO Category (id, name) VALUES('books', 'Книги')
+INSERT INTO Category (id, name, description) VALUES('books', 'Книги', '<p>Читать книги очень полезно.</p><p>Это знает каждый школьник.</p>')
 INSERT INTO Category (id, name) VALUES('pourage', 'Каши Здоровяк')
 
 

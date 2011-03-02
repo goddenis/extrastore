@@ -18,9 +18,11 @@
     <ui:define name="body">
 
 
-        <h1 class="category-title"><h:outputText value="#{category.name}"
-                                                 rendered="#{category.name != null}"/><h:outputText
-                value="#{messages.allGoods}" rendered="#{category.name == null}"/></h1>
+        <h1 class="category-title">
+            <h:outputText value="#{category.name}"  rendered="#{category.name != null}"/>
+            <h:outputText value="#{messages.allGoods}" rendered="#{category.name == null}"/>
+        </h1>
+        <h:outputText value="#{category.description}" rendered="#{category.description != null}" escape="false" />
 
 
             <ui:repeat value="#{products}" var="product">
