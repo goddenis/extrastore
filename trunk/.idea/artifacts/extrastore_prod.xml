@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="war" build-on-make="true" name="extrastore:prod">
+  <artifact type="war" name="extrastore:prod">
     <output-path>$PROJECT_DIR$/out</output-path>
     <properties id="ant-postprocessing">
       <options enabled="true">

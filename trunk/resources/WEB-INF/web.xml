@@ -33,7 +33,7 @@
 
     <context-param>
         <param-name>facelets.DEVELOPMENT</param-name>
-        <param-value>true</param-value>
+        <param-value>false</param-value>
     </context-param>
 
     <context-param>
@@ -77,6 +77,16 @@
         <filter-name>Seam Filter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.seam?code=404</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.seam?code=500</location>
+    </error-page>
 
 
 </web-app>

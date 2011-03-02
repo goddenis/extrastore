@@ -36,7 +36,6 @@
                 </div>
             </f:subview>
 
-
         </div>
 
 
@@ -51,10 +50,23 @@
 
 
                 <a4j:form>
-                    <a4j:commandButton value="#{messages.orderButton}" action="#{cart.addProduct(product,1)}"
-                                       reRender="cart" />
+                    <script type="text/javascript">
+                        function onAddToCart() {
+                            var request = new Ajax.Request('/cart/added', {
+
+                                onSuccess: function(response) {alert(response)},
+                                onFailure: function() {alert('failure!')}
+                            }
+                          );
+                            return true;
+
+                        }
+                    </script>
+                    <a4j:commandButton value="#{messages.orderButton}"  action="#{cart.addProduct(product,1)}"
+                                       reRender="cart" oncomplete="onAddToCart" />
                     <p>Количество товара можно изменить при оформлении заказа.</p>
                 </a4j:form>
+
 
             </div>
 

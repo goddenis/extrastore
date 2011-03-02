@@ -18,6 +18,12 @@
         </navigation>
     </page>
 
+    <!-- Page for monitoring "Add to cart" clicks -->
+    <page view-id="/cart_added.xhtml">
+        <rewrite pattern="/cart/added" />
+        <rewrite pattern="/cart/added/" />
+    </page>
+
 
     <!-- CHECKOUT CONVERSATION -->
 
@@ -79,9 +85,33 @@
         <param name="articleAlias" />
     </page>
 
+    <page view-id="/error.xhtml">
+        <rewrite pattern="/error/{code}" />
+        <param name="code" />
+    </page>
+
 
     <exception class="javax.faces.application.ViewExpiredException" log="false">
+        <end-conversation />
         <redirect view-id="/browse.xhtml" />
     </exception>
+
+    <exception class="org.jboss.seam.framework.EntityNotFoundException" log="false">
+        <end-conversation/>
+        <http-error error-code="404"/>
+    </exception>
+
+    <exception class="javax.persistence.NoResultException" log="false">
+        <end-conversation/>
+        <http-error error-code="404"/>
+    </exception>
+
+
+
+    <exception class="java.lang.Exception">
+        <end-conversation />
+        <http-error error-code="500" />
+    </exception>
+
 
 </pages>

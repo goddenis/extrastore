@@ -28,7 +28,7 @@ public class ShowcaseAction {
     @In
     Store store;
 
-    @In
+    @In(required = false)
     Category category;
 
     @Out(required = false)
