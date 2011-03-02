@@ -5,10 +5,11 @@
       xmlns:a4j="http://richfaces.org/a4j">
     <a4j:form rendered="#{!cart.isEmpty()}">
         <div>
-            <s:link view="/cart.xhtml" value="#{messages.cart}" propagation="none"/> (#{cart.itemsCount}
-            товар<h:outputText value="#{cart.russianEnding(cart.itemsCount)}"/> на
+            <p>#{messages.inCart} #{cart.itemsCount} товар<h:outputText value="#{cart.russianEnding(cart.itemsCount)}"/> на
             #{" "}<h:outputText value="#{cart.subTotal}"><f:convertNumber type="currency"
-                                                                           currencySymbol="руб."/></h:outputText>)
+                                                                           currencySymbol="руб."/></h:outputText></p>
+
+            <s:link styleClass="checkout" view="/cart.xhtml" value="#{messages.checkout}" propagation="none"/>
         </div>
     </a4j:form>
 
