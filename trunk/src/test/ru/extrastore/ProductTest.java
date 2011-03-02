@@ -146,6 +146,26 @@ public class ProductTest extends SeamTest {
 
         }.run();
 
+
+        // Test without category
+        new NonFacesRequest("/product.xhtml") {
+            @Override
+            protected void beforeRequest() {
+                setParameter("alias", "wifishirt");
+            }
+
+            @Override
+            protected void renderResponse() {
+                String alias = (String)getValue("#{alias}");
+                assertEquals("alias param", "wifishirt", alias);
+
+                Product p = (Product)getValue("#{product}");
+                assertNotNull("product from xml entity query", p);
+                assertEquals("product url alias","wifishirt", p.getUrlAlias());
+            }
+
+        }.run();
+
     }
 
 }

@@ -74,8 +74,8 @@ INSERT INTO Product2Category(productId, categoryId) VALUES(19, 'games')
 INSERT INTO Product2Category(productId, categoryId) VALUES(20, 'kitchen')
 INSERT INTO Product2Category(productId, categoryId) VALUES(21, 'kitchen')
 
-INSERT INTO Product2Category(productId, categoryId) VALUES(22, 'pourage')
-INSERT INTO Product2Category(productId, categoryId) VALUES(22, 'kitchen')
+-- INSERT INTO Product2Category(productId, categoryId) VALUES(22, 'pourage')
+-- INSERT INTO Product2Category(productId, categoryId) VALUES(22, 'kitchen')
 
 
 
