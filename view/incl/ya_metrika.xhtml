@@ -1,0 +1,19 @@
+<f:subview id="ya-metrika" xmlns:f="http://java.sun.com/jsf/core" rendered="#{store.yaMetrika != null}">
+
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter = new Ya.Metrika(#{store.yaMetrika}});
+             yaCounter.clickmap(true);
+             yaCounter.trackLinks(true);
+
+        } catch(e) { }
+    });
+})(window, 'yandex_metrika_callbacks');
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><img src="//mc.yandex.ru/watch/#{store.yaMetrika}" style="position:absolute; left:-9999px;" alt="" /></noscript>
+<!-- /Yandex.Metrika counter -->
+</f:subview>
