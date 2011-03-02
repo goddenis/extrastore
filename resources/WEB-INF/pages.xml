@@ -60,6 +60,7 @@
     <page view-id="/product.xhtml">
         <rewrite pattern="/all/{cat}/{alias}"/>
         <rewrite pattern="/all/{cat}/{alias}/"/>
+        <rewrite pattern="/all/product/{alias}" />  <!-- product, that don't belong to any category -->
         <param name="alias"/>
         <param name="cat"/>
     </page>
