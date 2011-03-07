@@ -86,6 +86,16 @@
         <param name="OutSum" />
         <param name="SignatureValue" />
     </page>
+    
+    <page view-id="/pay/robokassa/fail.xhtml">
+        <rewrite pattern="/pay/robokassa/fail" />
+        <rewrite pattern="/pay/robokassa/fail/" />
+
+        <param name="InvId" />
+        <param name="OutSum" />
+        <param name="SignatureValue" />
+    </page>
+    
 
 
 

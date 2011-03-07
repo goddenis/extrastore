@@ -53,7 +53,7 @@ public class RoboKassaWebService implements Serializable {
         return null;
     }
 
-    public boolean isSuccess() {
+    public boolean checkResponse() {
         PaymentTypeRobokassa pt = (PaymentTypeRobokassa)store.getPaymentType("robokassa");
         assert pt != null;
 

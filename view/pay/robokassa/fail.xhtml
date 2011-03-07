@@ -10,14 +10,14 @@
 
     <ui:define name="body">
 
-        <h1>Оплата — RoboKassa</h1>
+          <h1>Оплата отменена — RoboKassa</h1>
 
-        <ui:fragment rendered="#{robokassa.checkResponse()}">
-            <p>Оплата заказа №<span class="orderNum">#{InvId}</span> прошла успешно. Спасибо за покупку!</p>
-        </ui:fragment>
+          <ui:fragment rendered="#{robokassa.checkResponse()}">
+              <p>Оплата заказа №<span class="orderNum">#{InvId}</span> отменена. Будем рады видеть вас снова!</p>
+          </ui:fragment>
 
         <ui:fragment rendered="#{!robokassa.checkResponse()}">
-            <p>Оплата заказа №<span class="orderNum">#{InvId}</span> — параметры не прошли проверку. Возможна ошибка.</p>
+            <p>Оплата заказа №<span class="orderNum">#{InvId}</span> как будто отменена, но входные параметры не прошли проверку. Будем рады видеть вас снова!</p>
         </ui:fragment>
 
 
