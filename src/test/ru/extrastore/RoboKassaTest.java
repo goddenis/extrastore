@@ -62,6 +62,8 @@ public class RoboKassaTest extends SeamTest {
             }
         }.run();
 
+
+
         new NonFacesRequest("/pay/robokassa/success.xhtml") {
             @Override
             protected void beforeRequest() {
@@ -76,6 +78,8 @@ public class RoboKassaTest extends SeamTest {
                 assertTrue(((RoboKassaWebService)getValue("#{robokassa}")).checkResponse());
             }
         }.run();
+
+
 
         new NonFacesRequest("/pay/robokassa/fail.xhtml") {
             @Override
