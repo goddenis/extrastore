@@ -18,6 +18,14 @@
     
 
     <ui:define name="body">
+        <script src="/js/jquery.js" type="text/javascript"></script>
+        <script type="text/javascript">
+             $(document).ready(function() {
+                 $("input[name*='deliveryType']:first").click();
+
+             });
+        </script>
+
 
         <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span class="current">#{messages.delivery}</span> → <span>#{messages.pay}</span> → <span>#{messages.confirmation}</span></div>
 
@@ -33,7 +41,20 @@
                                    label="#{deliveryType.name} — #{deliveryType.getCost(currentOrder)} руб."
                                    />
 
+                    <a4j:support event="onchange" reRender="paySum" />
+
                 </h:selectOneRadio>
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" id="paySum">
+                <ui:define name="label">#{messages.paySum}</ui:define>
+                <div class="product-price">
+                    <span class="product-price-digits">
+                        <h:outputText value="#{cart.totalCost}">
+                             <f:convertNumber type="currency" currencySymbol=""/>
+                        </h:outputText>
+                    </span> руб.
+                </div>
             </s:decorate>
 
 

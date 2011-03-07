@@ -18,13 +18,21 @@
     
 
     <ui:define name="body">
+        <script src="/js/jquery.js" type="text/javascript"></script>
+        <script type="text/javascript">
+             $(document).ready(function() {
+                 $("input[name*='paymentType']:first").click();
+
+             });
+        </script>
+
 
         <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span>#{messages.delivery}</span> → <span class="current">#{messages.pay}</span> → <span>#{messages.confirmation}</span></div>
 
 
         <h:form>
 
-            <s:decorate template="/incl/edit.xhtml" id="deliveryType">
+            <s:decorate template="/incl/edit.xhtml" id="paymentType">
                 <ui:define name="label">Способ оплаты</ui:define>
                 <h:selectOneRadio value="#{currentOrder.paymentType}" required="true" layout="pageDirection">
                         <s:convertEntity/>

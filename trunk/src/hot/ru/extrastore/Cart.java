@@ -76,7 +76,7 @@ public class Cart implements Serializable {
     }
 
     public long getDeliveryCost() {
-        return store.getDeliveryTypes().iterator().next().getCost(this.order);
+        return order.getDeliveryCost();
     }
 
     public long getTotalCost() {

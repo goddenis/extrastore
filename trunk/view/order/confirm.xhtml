@@ -58,9 +58,6 @@
                         Количество
                     </f:facet>
                     <h:outputText value="#{l.quantity}" />
-                    <f:facet name="footer">
-                        Итого:
-                    </f:facet>
                 </h:column>
 
                 <h:column headerClass="priceColumn" footerClass="cartTotal">
@@ -68,20 +65,54 @@
                         Стоимость
                     </f:facet>
                     <div class="product-price">
-                                        <span class="product-price-digits">
-                                            <h:outputText value="#{l.quantity*l.product.price}">
-                                                <f:convertNumber type="currency" currencySymbol=""/>
-                                            </h:outputText></span> руб.
+                        <span class="product-price-digits">
+                            <h:outputText value="#{l.quantity*l.product.price}">
+                                <f:convertNumber type="currency" currencySymbol=""/>
+                            </h:outputText>
+                        </span> руб.
                     </div>
 
-                    <f:facet name="footer">
-                        <h:outputText value="#{cart.totalCost}">
-                            <f:convertNumber type="currency" currencySymbol="р."/>
-                        </h:outputText>
-                    </f:facet>
                 </h:column>
 
             </h:dataTable>
+
+            <table width="700px" cellspacing="9" cellpadding="0">
+                <tr>
+                    <td width="450px"></td>
+                    <td align="right" width="120px" style="padding-right: 25px;">Товары:</td>
+                    <td width="120px">
+                        <div class="product-price">
+                            <span class="product-price-digits">
+                                <h:outputText value="#{cart.subTotal}">
+                                    <f:convertNumber type="currency" currencySymbol=""/>
+                                </h:outputText></span> руб.
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="450px"></td>
+                    <td align="right" width="130px" style="padding-right: 25px;">Доставка:</td>
+                    <td width="120px">
+                        <div class="product-price">
+                            <span class="product-price-digits">
+                                <h:outputText value="#{cart.deliveryCost}">
+                                    <f:convertNumber type="currency" currencySymbol=""/>
+                                </h:outputText></span> руб.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="right" style="padding-right: 25px;">Итого:</td>
+                    <td class="cartTotal">
+                        <h:outputText value="#{cart.totalCost}">
+                             <f:convertNumber type="currency" currencySymbol="р."/>
+                        </h:outputText>
+                    </td>
+                </tr>
+            </table>
+
 
 
 
