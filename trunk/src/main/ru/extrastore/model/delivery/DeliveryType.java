@@ -1,4 +1,7 @@
-package ru.extrastore.model;
+package ru.extrastore.model.delivery;
+
+import ru.extrastore.model.Order;
+import ru.extrastore.model.Store;
 
 import javax.persistence.*;
 import java.io.Serializable;

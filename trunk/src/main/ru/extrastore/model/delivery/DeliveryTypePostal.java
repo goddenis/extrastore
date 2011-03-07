@@ -1,4 +1,4 @@
-package ru.extrastore.model;
+package ru.extrastore.model.delivery;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

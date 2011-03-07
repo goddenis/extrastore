@@ -18,7 +18,7 @@
 
     <ui:define name="body">
 
-        <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span>#{messages.delivery}</span> → <span class="current">#{messages.confirmation}</span></div>
+        <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span>#{messages.delivery}</span> → <span>#{messages.pay}</span> → <span class="current">#{messages.confirmation}</span></div>
 
 
         <h:form>
@@ -36,7 +36,7 @@
                         <h:graphicImage value="#{l.product.urlImageSmall}"
                                             alt="#{l.product.name}"
                                             rendered="#{l.product.urlImageSmall != null}" styleClass="cartProductImage" />
-                            <h:graphicImage value="/r/pi/#{l.product.urlAlias}-s.jpg"
+                         <h:graphicImage value="/r/pi/#{l.product.urlAlias}-s.jpg"
                                             alt="#{l.product.name}"
                                             rendered="#{l.product.urlImageSmall == null}" styleClass="cartProductImage" />
                     </s:link>
@@ -86,17 +86,20 @@
 
 
             <h:panelGrid columns="2">
-                <h:outputText value="#{messages.receiver}" /> <h:outputText value="#{currentOrder.customer.firstName} #{currentOrder.customer.fatherName} #{currentOrder.customer.lastName}" />
-                <h:outputText value="#{messages.zip}" /> <h:outputText value="#{currentOrder.customer.address.zip}" />
-                <h:outputText value="#{messages.region}" /> <h:outputText value="#{currentOrder.customer.address.region}" />
-                <h:outputText value="#{messages.area}" rendered="#{currentOrder.customer.address.area.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.area}" rendered="#{currentOrder.customer.address.area.length() > 0}" />
-                <h:outputText value="#{messages.town}" rendered="#{currentOrder.customer.address.town.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.town}" rendered="#{currentOrder.customer.address.town.length() > 0}" />
-                <h:outputText value="#{messages.address}" />  <h:outputText value="#{currentOrder.customer.address.address}" />
+                <h:outputText value="#{messages.deliveryType}:" /> <h:outputText value="#{currentOrder.deliveryType.name}" />
+                <h:outputText value="#{messages.paymentType}:" /> <h:outputText value="#{currentOrder.paymentType.name}" />
+
+                <h:outputText value="#{messages.receiver}:" /> <h:outputText value="#{currentOrder.customer.firstName} #{currentOrder.customer.fatherName} #{currentOrder.customer.lastName}" />
+                <h:outputText value="#{messages.zip}:" /> <h:outputText value="#{currentOrder.customer.address.zip}" />
+                <h:outputText value="#{messages.region}:" /> <h:outputText value="#{currentOrder.customer.address.region}" />
+                <h:outputText value="#{messages.area}:" rendered="#{currentOrder.customer.address.area.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.area}" rendered="#{currentOrder.customer.address.area.length() > 0}" />
+                <h:outputText value="#{messages.town}:" rendered="#{currentOrder.customer.address.town.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.town}" rendered="#{currentOrder.customer.address.town.length() > 0}" />
+                <h:outputText value="#{messages.address}:" />  <h:outputText value="#{currentOrder.customer.address.address}" />
             </h:panelGrid>
 
             <p></p>
 
-            <s:button view="/order/delivery.xhtml" value="← #{messages.back}" />
+            <s:button view="/order/pay.xhtml" value="← #{messages.back}" />
             <s:button action="#{checkout.confirm()}" value="#{messages.allRight} →" />
         </h:form>
 

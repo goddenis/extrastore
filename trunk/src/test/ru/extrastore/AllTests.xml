@@ -12,6 +12,9 @@
             <class name="ru.extrastore.PriceTest"/>
             <class name="ru.extrastore.ProductImageResourceTest" />
             <class name="ru.extrastore.ShowcaseTest" />
+            <class name="ru.extrastore.PaymentTypeTest" />
+            <class name="ru.extrastore.DeliveryTypeTest" />
+            <class name="ru.extrastore.RoboKassaTest" />
         </classes>
     </test>
 </suite>

@@ -39,6 +39,7 @@
 
     <web:rewrite-filter view-mapping="*.seam"/>
 
+
     <factory name="article" value="#{articleByAliasQuery.singleResult}" scope="STATELESS" auto-create="true"/>
     <framework:entity-query name="articleByAliasQuery"
                             max-results="1">
@@ -49,6 +50,32 @@
         </framework:restrictions>
 
     </framework:entity-query>
+
+
+
+    <factory name="deliveryTypes" value="#{deliveryTypesForStoreQuery.resultList}" scope="STATELESS" auto-create="true"/>
+    <framework:entity-query name="deliveryTypesForStoreQuery">
+        <framework:ejbql>select dt from DeliveryType dt</framework:ejbql>
+
+        <framework:restrictions>
+            <value>dt.store = #{store}</value>
+        </framework:restrictions>
+
+    </framework:entity-query>
+
+
+
+    <factory name="paymentTypes" value="#{paymentTypesForStoreQuery.resultList}" scope="STATELESS" auto-create="true"/>
+    <framework:entity-query name="paymentTypesForStoreQuery">
+        <framework:ejbql>select pt from PaymentType pt</framework:ejbql>
+
+        <framework:restrictions>
+            <value>pt.store = #{store}</value>
+        </framework:restrictions>
+
+    </framework:entity-query>
+
+
 
 
 

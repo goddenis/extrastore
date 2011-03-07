@@ -61,6 +61,8 @@ public class StoreTest extends SeamTest {
                 assertEquals("store company is Extra", "Extra", s.getCompany().getName());
 
                 assertTrue("store is in company's stores list", s.getCompany().getStores().contains(s));
+
+                assertTrue("store has payment types", s.getPaymentTypes().size() > 0);
             }
         }.run();
     }

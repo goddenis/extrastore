@@ -1,5 +1,8 @@
 package ru.extrastore.model;
 
+import ru.extrastore.model.delivery.DeliveryType;
+import ru.extrastore.model.payment.PaymentType;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,7 +25,14 @@ public class Order implements Serializable {
     @JoinColumn(name = "customerId")
     Customer customer;
 
-    int deliveryType = 1;
+    @OneToOne
+    @JoinColumn(name = "deliveryTypeId")
+    DeliveryType deliveryType;
+
+    @OneToOne
+    @JoinColumn(name = "paymentTypeId")
+    PaymentType paymentType;
+
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     List<OrderLine> lines = new ArrayList<OrderLine>();
@@ -61,12 +71,20 @@ public class Order implements Serializable {
         this.totalCost = totalCost;
     }
 
-    public int getDeliveryType() {
+    public DeliveryType getDeliveryType() {
         return deliveryType;
     }
 
-    public void setDeliveryType(int deliveryType) {
+    public void setDeliveryType(DeliveryType deliveryType) {
         this.deliveryType = deliveryType;
+    }
+
+    public PaymentType getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
     }
 
     public void addProduct(Product p, long quantity) {

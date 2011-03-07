@@ -66,10 +66,14 @@
 
         <h1>Спасибо!</h1>
 
-        <p>Номер вашего заказа: #{currentOrder.id}</p>
-        <p>Заказ будет отправлен в течении 24-х часов.</p>
+        <p>Номер вашего заказа: <span class="orderNum">#{currentOrder.id}</span></p>
+
+        <ui:include src="/pay/#{currentOrder.paymentType.alias}/pay.xhtml" />
+
         <s:link view="/browse.xhtml" value="← #{messages.continueShopping}" propagation="none"><f:param
                 name="cat" value=""/></s:link>
+
+
 
 
     </ui:define>

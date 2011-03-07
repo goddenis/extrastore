@@ -34,10 +34,23 @@
         <navigation from-action="#{checkout.submitDelivery()}">
             <rule if-outcome="success">
                 <!--suppress PagesModelInspection -->
+                <redirect view-id="/order/pay.xhtml"/>
+            </rule>
+        </navigation>
+    </page>
+
+    <page view-id="/order/pay.xhtml" conversation-required="true">
+        <rewrite pattern="/order/pay"/>
+        <rewrite pattern="/order/pay/"/>
+
+        <navigation from-action="#{checkout.submitPay()}">
+            <rule if-outcome="success">
+                <!--suppress PagesModelInspection -->
                 <redirect view-id="/order/confirm.xhtml"/>
             </rule>
         </navigation>
     </page>
+
 
     <page view-id="/order/confirm.xhtml" conversation-required="true">
         <rewrite pattern="/order/confirm"/>
@@ -60,8 +73,25 @@
     </page>
 
 
-    <!-- SHOWCASE -->
 
+
+
+    <!-- PAYMENT - ROBOKASSA -->
+
+    <page view-id="/pay/robokassa/success.xhtml">
+        <rewrite pattern="/pay/robokassa/success" />
+        <rewrite pattern="/pay/robokassa/success/" />
+
+        <param name="InvId" />
+        <param name="OutSum" />
+        <param name="SignatureValue" />
+    </page>
+
+
+
+
+
+    <!-- SHOWCASE -->
 
     <page view-id="/product.xhtml">
         <rewrite pattern="/all/{cat}/{alias}"/>
