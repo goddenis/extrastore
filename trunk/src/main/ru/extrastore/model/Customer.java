@@ -13,6 +13,8 @@ public class Customer extends User{
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
     Address address;
 
+    String phone;
+
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     Set<Order> orders;
 
@@ -22,6 +24,14 @@ public class Customer extends User{
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public Set<Order> getOrders() {

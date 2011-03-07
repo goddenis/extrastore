@@ -67,7 +67,7 @@ public abstract class DeliveryType implements Serializable{
     }
 
     public long getCost(Order order) {
-        long totalCost = order.getSubTotal();
-        return (totalCost > 0 && totalCost < this.getFreeAfter() ? this.getPrice() : 0);
+        long subTotal = order.getSubTotal();
+        return (subTotal > 0 && subTotal < this.getFreeAfter() ? this.getPrice() : 0);
     }
 }

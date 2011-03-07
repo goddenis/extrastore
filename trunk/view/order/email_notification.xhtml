@@ -6,7 +6,8 @@
            xmlns:f="http://java.sun.com/jsf/core"
            charset="UTF-8">
 
-    <m:from name="#{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}" address="stas.versilov@gmail.com" />
+    <m:from name="#{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}" address="order@sozvezdie-store.ru" rendered="#{currentOrder.customer.email == null}" />
+    <m:from name="#{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}" address="#{currentOrder.customer.email}" rendered="#{currentOrder.customer.email != null}" />
     <m:to>order@sozvezdie-store.ru</m:to>
     <m:subject>Заказ [#{store.domain}] для #{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}</m:subject>
 
@@ -37,13 +38,18 @@
         <p></p>
 
         <p>#{messages.receiver}: #{currentOrder.customer.lastName} #{currentOrder.customer.firstName} #{currentOrder.customer.fatherName}</p>
+        <p>#{messages.phone}: #{currentOrder.customer.phone}</p>
         <p>#{messages.region}: #{currentOrder.customer.address.zip}, #{currentOrder.customer.address.region}, #{currentOrder.customer.address.area}, #{currentOrder.customer.address.town}</p>
         <p>#{messages.address}: #{currentOrder.customer.address.address}</p>
+
+        <p>#{messages.deliveryType}: #{currentOrder.deliveryType.name}</p>
+        <p>#{messages.paymentType}: #{currentOrder.paymentType.name}</p>
+
         <p>Номер заказа: #{currentOrder.id}</p>
         <p>Полная стоимость:#{" "}<h:outputText value="#{currentOrder.totalCost}">
             <f:convertNumber type="currency" currencySymbol="руб." />
         </h:outputText></p>
 
-        <p>С уважением,<br/>интернет-магазин #{store.name}.</p>
+        <p>С уважением,<br/>Интернет-магазин #{store.name}.</p>
     </m:body>
 </m:message>

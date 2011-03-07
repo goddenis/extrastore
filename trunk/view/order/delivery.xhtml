@@ -30,10 +30,12 @@
                     <s:convertEntity/>
                     <s:selectItems value="#{deliveryTypes}"
                                    var="deliveryType"
-                                   label="#{deliveryType.name}"
+                                   label="#{deliveryType.name} — #{deliveryType.getCost(currentOrder)} руб."
                                    />
+
                 </h:selectOneRadio>
             </s:decorate>
+
 
             <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
 
@@ -52,7 +54,18 @@
                 <h:inputText value="#{currentOrder.customer.fatherName}" size="36" />
             </s:decorate>
 
+
+
             <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+
+            <s:decorate template="/incl/edit.xhtml" id="phone">
+                <ui:define name="label">#{messages.phone}</ui:define>
+                +7<h:inputText value="#{currentOrder.customer.phone}" maxlength="10" size="33" />
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+
+
 
             <s:decorate template="/incl/edit.xhtml" id="zip">
                 <ui:define name="label">#{messages.zip}</ui:define>
@@ -60,7 +73,7 @@
             </s:decorate>
             <s:decorate template="/incl/edit.xhtml" id="region">
                 <ui:define name="label">#{messages.region}</ui:define>
-                <h:inputText value="#{currentOrder.customer.address.region}" required="true" />
+                <h:inputText value="#{currentOrder.customer.address.region}" required="false" />
             </s:decorate>
             <s:decorate template="/incl/edit.xhtml" id="area">
                 <ui:define name="label">#{messages.area}</ui:define>
@@ -68,7 +81,7 @@
             </s:decorate>
             <s:decorate template="/incl/edit.xhtml" id="town">
                 <ui:define name="label">#{messages.town}</ui:define>
-                <h:inputText value="#{currentOrder.customer.address.town}" />
+                <h:inputText value="#{currentOrder.customer.address.town}" required="true" />
             </s:decorate>
 
 

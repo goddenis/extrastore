@@ -90,10 +90,10 @@
                 <h:outputText value="#{messages.paymentType}:" /> <h:outputText value="#{currentOrder.paymentType.name}" />
 
                 <h:outputText value="#{messages.receiver}:" /> <h:outputText value="#{currentOrder.customer.firstName} #{currentOrder.customer.fatherName} #{currentOrder.customer.lastName}" />
-                <h:outputText value="#{messages.zip}:" /> <h:outputText value="#{currentOrder.customer.address.zip}" />
-                <h:outputText value="#{messages.region}:" /> <h:outputText value="#{currentOrder.customer.address.region}" />
-                <h:outputText value="#{messages.area}:" rendered="#{currentOrder.customer.address.area.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.area}" rendered="#{currentOrder.customer.address.area.length() > 0}" />
-                <h:outputText value="#{messages.town}:" rendered="#{currentOrder.customer.address.town.length() > 0}" /> <h:outputText value="#{currentOrder.customer.address.town}" rendered="#{currentOrder.customer.address.town.length() > 0}" />
+                <h:outputText value="#{messages.phone}:" /> <h:outputText value="#{currentOrder.customer.phone}" />
+
+                <h:outputText value="#{messages.region}:" /> <h:outputText value="#{currentOrder.customer.address.zip}, \
+                #{currentOrder.customer.address.region}, #{currentOrder.customer.address.area}, #{currentOrder.customer.address.town}" />
                 <h:outputText value="#{messages.address}:" />  <h:outputText value="#{currentOrder.customer.address.address}" />
             </h:panelGrid>
 
