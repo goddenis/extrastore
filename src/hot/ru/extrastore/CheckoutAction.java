@@ -62,8 +62,8 @@ public class CheckoutAction implements Serializable {
         log.info("CheckoutAction(#0).createOrder()", this.hashCode());
 
         cart.update();
-        this.currentOrder = cart.getOrder();
-        this.currentOrder.setTotalCost(cart.getTotalCost());
+        currentOrder = cart.getOrder();
+        currentOrder.setTotalCost(cart.getTotalCost());
 
         Customer customer = new Customer();
         customer.setAddress(new Address());
@@ -74,6 +74,8 @@ public class CheckoutAction implements Serializable {
             customer.setLastName("Тестовый");
             customer.setFirstName("Пользователь");
             customer.setFatherName("Не надо этот заказ принимать");
+
+            customer.setPhone("9053042007");
 
             customer.getAddress().setZip(443000);
             customer.getAddress().setRegion("Несуществующая обл.");
