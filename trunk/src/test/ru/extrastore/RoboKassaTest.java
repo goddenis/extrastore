@@ -73,7 +73,22 @@ public class RoboKassaTest extends SeamTest {
 
             @Override
             protected void renderResponse() throws Exception {
-                assertTrue(((RoboKassaWebService)getValue("#{robokassa}")).isSuccess());
+                assertTrue(((RoboKassaWebService)getValue("#{robokassa}")).checkResponse());
+            }
+        }.run();
+
+        new NonFacesRequest("/pay/robokassa/fail.xhtml") {
+            @Override
+            protected void beforeRequest() {
+                setParameter("InvId", "63");
+                setParameter("OutSum", "620");
+                setParameter("SignatureValue", "b9dd5609176486153432972b773628f6");
+                setParameter("Culture", "ru");
+            }
+
+            @Override
+            protected void renderResponse() throws Exception {
+                assertTrue(((RoboKassaWebService)getValue("#{robokassa}")).checkResponse());
             }
         }.run();
     }
