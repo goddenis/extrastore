@@ -105,5 +105,13 @@ public class Order implements Serializable {
         return subTotal;
     }
 
+    public long getDeliveryCost() {
+        if (this.getDeliveryType() != null) {
+            return this.getDeliveryType().getCost(this);
+        } else {
+            return -1;
+        }
+    }
+
 
 }
