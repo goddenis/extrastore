@@ -69,6 +69,8 @@ public class CheckoutAction implements Serializable {
         customer.setAddress(new Address());
         currentOrder.setCustomer(customer);
 
+        currentOrder.setDeliveryType(store.getDeliveryTypes().iterator().next());
+
         // For testing purposes only
         if ("localhost".equals(store.getDomain())) {
             customer.setLastName("Тестовый");
