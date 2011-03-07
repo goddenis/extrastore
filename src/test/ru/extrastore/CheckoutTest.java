@@ -4,6 +4,7 @@ import org.jboss.seam.core.Manager;
 import org.jboss.seam.mock.SeamTest;
 import org.testng.annotations.Test;
 import ru.extrastore.model.Order;
+import ru.extrastore.model.Store;
 
 import static org.testng.AssertJUnit.*;
 
@@ -86,7 +87,9 @@ public class CheckoutTest extends SeamTest {
                 assertNotNull(currentOrder.getCustomer());
                 assertNotNull(currentOrder.getCustomer().getAddress());
 
-                assertEquals("delivery type", null, currentOrder.getDeliveryType());
+                Store store = (Store)getValue("#{store}");
+
+                assertEquals("delivery type", store.getDeliveryTypes().iterator().next(), currentOrder.getDeliveryType());
             }
 
             @Override

@@ -169,7 +169,7 @@ INSERT INTO Article(storeId, urlAlias, name, html) VALUES(1, 'contacts', 'Кон
 INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('POSTAL', 1, 'Почта России', 99, 695)
 INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('COURIER', 1, 'Курьер (только по Самаре)', 250, 1000)
 
-INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('POSTAL', 2, 'Почта России', 99, 695)
+INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('POSTAL', 6, 'Почта России', 99, 695)
 
 
 INSERT INTO PaymentType(DTYPE, alias, storeId, name, description, fee, login, password1, password2, currency, culture) VALUES('ROBOKASSA', 'robokassa', 1, 'RoboKassa', 'После подтверждения заказа вы будете перенаправлены в систему RoboKassa для оплаты.', 5.0, 'extrastore', 'jena8enu5', 'haduwe7e8', 'BANKOCEAN2R', 'ru')
