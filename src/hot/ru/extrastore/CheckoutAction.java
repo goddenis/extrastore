@@ -69,12 +69,31 @@ public class CheckoutAction implements Serializable {
         customer.setAddress(new Address());
         currentOrder.setCustomer(customer);
 
+        // For testing purposes only
+        if ("localhost".equals(store.getDomain())) {
+            customer.setLastName("Тестовый");
+            customer.setFirstName("Пользователь");
+            customer.setFatherName("Не надо этот заказ принимать");
+
+            customer.getAddress().setZip(443000);
+            customer.getAddress().setRegion("Несуществующая обл.");
+            customer.getAddress().setArea("Неизвестный р-он");
+            customer.getAddress().setTown("с. Забытое");
+            customer.getAddress().setAddress("ул. Покинутая, д. 23, корп. 9, кв. 19");
+        }
+
         return "success";
     }
 
     @Conversational
     public String submitDelivery() {
         log.info("CheckoutAction(#0).submitDelivery()", this.hashCode());
+        return "success";
+    }
+
+    @Conversational
+    public String submitPay() {
+        log.info("CheckoutAction(#0).submitPay()", this.hashCode());
         return "success";
     }
 

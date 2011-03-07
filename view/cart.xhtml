@@ -16,7 +16,8 @@
 
     <ui:define name="body">
 
-        <h1>#{messages.cart}</h1>
+        <div class="orderBreadcrumbs"><span class="current">#{messages.cart}</span> → <span>#{messages.delivery}</span> → <span>#{messages.pay}</span> → <span>#{messages.confirmation}</span></div>
+
 
 
         <f:subview id="emptycart" rendered="#{cart.isEmpty()}">

@@ -2,8 +2,6 @@ package ru.extrastore;
 
 import org.jboss.seam.mock.SeamTest;
 import org.testng.annotations.Test;
-import ru.extrastore.model.Category;
-import ru.extrastore.model.Product;
 
 import java.util.List;
 import java.util.Set;
@@ -21,7 +19,7 @@ public class ShowcaseTest extends SeamTest {
         new NonFacesRequest("/index.xhtml") {
             @Override
             protected void renderResponse() throws Exception {
-                List<Product> products = (List<Product>)getValue("#{products}");
+                List products = (List)getValue("#{products}");
                 assertNotNull(products);
                 assertTrue(products.size() > 0);
             }
@@ -33,7 +31,7 @@ public class ShowcaseTest extends SeamTest {
         new NonFacesRequest("/index.xhtml") {
             @Override
             protected void renderResponse() throws Exception {
-                Set<Category> allCategories = (Set<Category>)getValue("#{allCategories}");
+                Set allCategories = (Set)getValue("#{allCategories}");
                 assertNotNull(allCategories);
                 assertTrue(allCategories.size() > 0);
             }

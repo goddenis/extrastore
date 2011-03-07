@@ -19,7 +19,7 @@
 
     <ui:define name="body">
 
-        <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span class="current">#{messages.delivery}</span> → <span>#{messages.confirmation}</span></div>
+        <div class="orderBreadcrumbs"><span>#{messages.cart}</span> → <span class="current">#{messages.delivery}</span> → <span>#{messages.pay}</span> → <span>#{messages.confirmation}</span></div>
 
 
         <h:form>
@@ -27,7 +27,11 @@
             <s:decorate template="/incl/edit.xhtml" id="deliveryType">
                 <ui:define name="label">Способ доставки</ui:define>
                 <h:selectOneRadio value="#{currentOrder.deliveryType}" required="true" layout="pageDirection">
-                    <f:selectItem itemLabel="Почта России" itemValue="1" />
+                    <s:convertEntity/>
+                    <s:selectItems value="#{deliveryTypes}"
+                                   var="deliveryType"
+                                   label="#{deliveryType.name}"
+                                   />
                 </h:selectOneRadio>
             </s:decorate>
 

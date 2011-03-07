@@ -13,6 +13,7 @@
     <orderEntry type="library" name="Seam" level="project" />
     <orderEntry type="library" name="Java EE6" level="project" />
     <orderEntry type="library" name="Test" level="project" />
+    <orderEntry type="library" name="TomcatSeam" level="project" />
   </component>
 </module>
 

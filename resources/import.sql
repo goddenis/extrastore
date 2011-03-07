@@ -166,5 +166,14 @@ INSERT INTO Article(storeId, urlAlias, name, html) VALUES(1, 'contacts', 'Кон
 
 /********************** Delivery types ******************/
 
-INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('POSTAL', 1, 'Почта России, наложенный платёж', 99, 695)
+INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('POSTAL', 1, 'Почта России', 99, 695)
 INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('COURIER', 1, 'Курьер (только по Самаре)', 250, 1000)
+
+INSERT INTO DeliveryType(DTYPE, storeId, name, price, freeAfter) VALUES('POSTAL', 2, 'Почта России', 99, 695)
+
+
+INSERT INTO PaymentType(DTYPE, alias, storeId, name, description, fee, login, password1, password2, currency, culture) VALUES('ROBOKASSA', 'robokassa', 1, 'RoboKassa', 'После подтверждения заказа вы будете перенаправлены в систему RoboKassa для оплаты.', 5.0, 'extrastore', 'jena8enu5', 'haduwe7e8', 'BANKOCEAN2R', 'ru')
+INSERT INTO PaymentType(DTYPE, alias, storeId, name, description, fee, login) VALUES('CARD', 'card', 1, 'Пластиковая карта', 'После подтверждения заказа вы будете перенаправлены на сайт банка для оплаты картой.', 3.5, 'extrastore')
+INSERT INTO PaymentType(DTYPE, alias, storeId, name, description, fee) VALUES('CASHONDELIVERY', 'cashondelivery', 1, 'Наложенный платёж', 'Заказ будет выслан немедленно. Оплачиваете на почте, при получении.', 6)
+
+

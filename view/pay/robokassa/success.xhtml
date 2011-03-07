@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="#{store.templatePath}/template.xhtml">
+
+    <ui:define name="title">RoboKassa — итог оплаты</ui:define>
+
+    <ui:define name="body">
+
+          <h1>Оплата — RoboKassa</h1>
+
+          <ui:fragment rendered="#{robokassa.isSuccess()}">
+              <p>Оплата заказа №#{InvId} прошла успешно. Спасибо за покупку!</p>
+          </ui:fragment>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

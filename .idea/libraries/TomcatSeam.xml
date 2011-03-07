@@ -32,6 +32,8 @@
       <root url="jar://$PROJECT_DIR$/lib/richfaces-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/richfaces-impl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jaxrs-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

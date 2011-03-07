@@ -86,7 +86,7 @@ public class CheckoutTest extends SeamTest {
                 assertNotNull(currentOrder.getCustomer());
                 assertNotNull(currentOrder.getCustomer().getAddress());
 
-                assertEquals("delivery type", 1, currentOrder.getDeliveryType());
+                assertEquals("delivery type", null, currentOrder.getDeliveryType());
             }
 
             @Override
