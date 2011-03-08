@@ -85,14 +85,14 @@ public class StoreDomainFilter implements javax.servlet.Filter {
                     }
 
                     EntityManager em = (EntityManager) Component.getInstance("entityManager");
-                    String domain = httpRequest.getHeader("Host");
+                    String domain = request.getServerName();    // User getServerName() here, cuz it returns server name free of port.
                     if (domain == null || isIPAddress(domain)) {
                         domain = "localhost";
                     }
                     if (domain.startsWith("www.")) {
                         // Remove "www.", redirect to the short name
                         domain = domain.substring(domain.indexOf(".")+1, domain.length());
-                        httpResponse.setStatus(301);
+                        httpResponse.setStatus(301);    // Moved permanently.
                         httpResponse.setHeader("Location", "http://" + domain + httpRequest.getRequestURI()
                                 + (httpRequest.getQueryString() != null ? "?" + httpRequest.getQueryString() : ""));
                         continueChain.setValue(false);
