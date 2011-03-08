@@ -5,10 +5,11 @@ INSERT INTO Company VALUES(3, 'Client Company')
 
 
 INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (1, 1, 'localhost', 'Локал Хост', null, 'UA-21705970-1')
-INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (2, 1, 'avtoraketa2.ru', 'AvtoRaketa', null, null)
 INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (3, 1, 'firstshop.ru', 'First Shop', 'http://extrapost.ru/templates/firstshop', null)
 INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (5, 2, 'shsd-books.ru', 'SHSD Books', null, null)
 INSERT INTO Store(id, company_id, domain, name, templatePath,  gaAccount) VALUES (6, 3, 'nextshop.ru', 'Next Shop', null, null)
+
+INSERT INTO AliasDomain(id, storeId, domain) VALUES (1, 6, 'next-shop.ru')
 
 
 

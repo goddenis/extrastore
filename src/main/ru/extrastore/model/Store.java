@@ -19,7 +19,6 @@ import java.util.Set;
  * Time: 3:14
  */
 @Entity
-@Name("store")
 public class Store implements Serializable {
     public static final String DEFAULT_TEMPLATE_PATH = "/templates/default";        // Made public for test purposes.
 
@@ -37,6 +36,9 @@ public class Store implements Serializable {
     @NotNull
     @Column(unique = true)
     String domain;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    Set<AliasDomain> aliasDomains;
 
     String templatePath;
 
@@ -97,6 +99,14 @@ public class Store implements Serializable {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public Set<AliasDomain> getAliasDomains() {
+        return aliasDomains;
+    }
+
+    public void setAliasDomains(Set<AliasDomain> aliasDomains) {
+        this.aliasDomains = aliasDomains;
     }
 
     public String getTemplatePath() {

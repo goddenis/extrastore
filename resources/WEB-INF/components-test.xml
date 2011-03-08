@@ -61,6 +61,11 @@
     </framework:entity-query>
 
 
+    <factory name="storesList" value="#{storesListQuery.resultList}" scope="STATELESS" auto-create="true"/>
+    <framework:entity-query name="storesListQuery">
+        <framework:ejbql>select s from Store s</framework:ejbql>
+    </framework:entity-query>
+
 
     <factory name="product" value="#{productByAliasQuery.singleResult}" scope="STATELESS" auto-create="true" />
     <framework:entity-query name="productByAliasQuery"
