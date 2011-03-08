@@ -125,6 +125,12 @@
         <param name="articleAlias" />
     </page>
 
+    <page view-id="/stores.xhtml">
+        <rewrite pattern="/stores" />
+        <rewrite pattern="/stores/" />
+    </page>
+
+
     <page view-id="/error.xhtml">
         <rewrite pattern="/error/{code}" />
         <param name="code" />
@@ -134,6 +140,12 @@
     <exception class="javax.faces.application.ViewExpiredException" log="false">
         <end-conversation />
         <redirect view-id="/browse.xhtml" />
+    </exception>
+
+    <exception class="ru.extrastore.StoreNotFoundException">
+        <redirect view-id="/stores.xthml">
+            <message severity="ERROR">Магазин для данного домена не найден.</message>
+        </redirect>
     </exception>
 
     <exception class="org.jboss.seam.framework.EntityNotFoundException" log="false">
@@ -148,7 +160,7 @@
 
 
 
-    <exception class="java.lang.Exception">
+    <exception>
         <end-conversation />
         <http-error error-code="500" />
     </exception>

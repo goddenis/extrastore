@@ -10,16 +10,17 @@ import org.jboss.seam.annotations.intercept.BypassInterceptors;
 import org.jboss.seam.annotations.web.Filter;
 import org.jboss.seam.contexts.Contexts;
 import org.jboss.seam.servlet.ContextualHttpServletRequest;
+import ru.extrastore.model.AliasDomain;
 import ru.extrastore.model.Store;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.regex.Pattern;
 
 import static org.jboss.seam.annotations.Install.APPLICATION;
@@ -98,17 +99,32 @@ public class StoreDomainFilter implements javax.servlet.Filter {
                         return;
                     }
 
-                    try {
 
-                        Store store = (Store)em.createQuery("from Store s where s.domain = :domainName").setParameter("domainName", domain).getSingleResult();
+                    List storesList = em.createQuery("from Store s where s.domain = :domainName").setParameter("domainName", domain).getResultList();
 
-                        if (store != null) {
-                            Contexts.getSessionContext().set("store", store);
-                            System.out.println("Store domain set to " + store.getDomain() + ", store(" + store.hashCode() + "), session: " + httpRequest.getSession().getId());
+                    if (storesList.size() == 0) {   // No store with such primary domain found — look in domain aliases
+                        List domainsList = em.createQuery("from AliasDomain ad where ad.domain = :domainName").setParameter("domainName", domain).getResultList();
+                        if (domainsList.size() == 0) {
+                            throw new StoreNotFoundException("No store found for domain " + domain);
+                        } else if (domainsList.size() > 1) {
+                            throw new IllegalStateException("More than one domain alias for domain '" + domain + "'.");
+                        } else { // Redirect to the primary domain
+                            AliasDomain aliasDomain = (AliasDomain)domainsList.get(0);
+                            httpResponse.setStatus(301);
+                            httpResponse.setHeader("Location", "http://" + aliasDomain.getStore().getDomain() + httpRequest.getRequestURI()
+                                    + (httpRequest.getQueryString() != null ? "?" + httpRequest.getQueryString() : ""));
+                            continueChain.setValue(false);
+                            return;
                         }
 
-                    } catch (NoResultException e) {
-                        throw new IllegalArgumentException("Error: No store found for domain " + domain, e);
+                    } else if (storesList.size() > 1) { //Error: more than one store for a domain
+                        throw new IllegalStateException("More than one store with domain name '" + domain + "'.");
+
+                    } else {    // One store found
+                        assert storesList.get(0) instanceof Store;
+                        Store store = (Store)storesList.get(0);
+                        Contexts.getSessionContext().set("store", store);
+                        System.out.println("Store domain set to " + store.getDomain() + ", store(" + store.hashCode() + "), session: " + httpRequest.getSession().getId());
                     }
                 }
 

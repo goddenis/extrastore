@@ -88,5 +88,10 @@
         <location>/error.seam?code=500</location>
     </error-page>
 
+    <error-page>
+        <exception-type>ru.extrastore.StoreNotFoundException</exception-type>
+        <location>/stores.seam</location>
+    </error-page>
+
 
 </web-app>
