@@ -64,7 +64,7 @@
                     </script>
                     <a4j:commandButton value="#{messages.orderButton}"  action="#{cart.addProduct(product,1)}"
                                        reRender="cart" oncomplete="onAddToCart" />
-                    <p>Количество товара можно изменить при оформлении заказа.</p>
+                    <p>#{messages.youCanChangeQuantityLater}</p>
                 </a4j:form>
 
 

@@ -15,7 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>
-            <ui:insert name="title">Главная</ui:insert> — #{store.domain}
+            <ui:insert name="title">#{messages.home}</ui:insert> — #{store.domain}
         </title>
         <link href="#{store.templatePath}/css/core.css" rel="stylesheet" type="text/css"/>
         <link href="#{store.templatePath}/css/text.css" rel="stylesheet" type="text/css"/>
@@ -36,7 +36,7 @@
                     <div id="shopname">#{store.name}</div>
                 </s:link>
 
-                <div id="hotline">Тел.: 8 800 100 31 01</div>
+                <div id="hotline">#{messages.phn}: 8 800 100 31 01</div>
             </div>
 
 
@@ -93,8 +93,8 @@
 
         <div id="foot">
             <p id="contacts">
-                Телефон: 8 800 100 31 01<br/>
-                Эл. почта: <a href="mailto:smtp@sozvezdie-store.ru">order@#{store.domain}</a>
+                #{messages.phone}: 8 800 100 31 01<br/>
+                #{messages.email}: <a href="mailto:smtp@sozvezdie-store.ru">order@#{store.domain}</a>
             </p>
 
         </div>

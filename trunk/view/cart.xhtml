@@ -10,7 +10,7 @@
       xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
 
 <ui:composition template="#{store.templatePath}/template.xhtml">
-    <ui:define name="title">Корзина</ui:define>
+    <ui:define name="title">#{messages.cart}</ui:define>
 
     <ui:define name="cart"></ui:define>
 
@@ -54,7 +54,7 @@
 
                     <h:column>
                         <f:facet name="header">
-                            Товар
+                            #{messages.product}
                         </f:facet>
                         <s:link view="/product.xhtml" value="#{l.product.name}" propagation="none">
                             <f:param name="cat" value="#{l.product.categories.toArray()[0].id}"/>
@@ -65,19 +65,19 @@
 
                     <h:column headerClass="quantityColumn">
                         <f:facet name="header">
-                            Количество
+                            #{messages.quantity}
                         </f:facet>
                         <rich:inputNumberSpinner value="#{l.quantity}" minValue="0" maxValue="1000000" cycled="false" inputSize="1">
                             <a4j:support event="onchange" action="#{cart.updateTotals()}" reRender="cartForm" />
                         </rich:inputNumberSpinner>
                         <f:facet name="footer">
-                            Итого, без доставки:
+                            #{messages.subTotal}:
                         </f:facet>
                     </h:column>
 
                     <h:column headerClass="priceColumn" footerClass="cartTotal">
                         <f:facet name="header">
-                            Стоимость
+                            #{messages.cost}
                         </f:facet>
                         <div class="product-price">
                             <span class="product-price-digits">
@@ -104,7 +104,7 @@
 
                 <h:commandButton action="#{cart.reset()}" value="#{messages.resetCart}"/>
 
-                <s:button action="#{checkout.createOrder()}" value="Оформить заказ →" /><br /><br />
+                <s:button action="#{checkout.createOrder()}" value="#{messages.checkout} →" /><br /><br />
 
                 <s:link view="/browse.xhtml" value="← #{messages.continueShopping}" propagation="none"><f:param
                         name="cat" value=""/></s:link>
