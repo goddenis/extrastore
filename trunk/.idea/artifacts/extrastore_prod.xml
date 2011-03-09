@@ -19,9 +19,10 @@
           <element id="file-copy" path="$PROJECT_DIR$/resources/messages_ru.properties" output-file-name="messages.properties" />
           <element id="module-output" name="hot" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/import.sql" />
+          <element id="file-copy" path="$PROJECT_DIR$/resources/components.properties" />
         </element>
         <element id="directory" name="lib" />
-        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/components-tomcat.xml" output-file-name="components.xml" />
+        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/components.xml" output-file-name="components.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/faces-config.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/web.xml" />

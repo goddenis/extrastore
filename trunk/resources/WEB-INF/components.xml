@@ -19,14 +19,14 @@
                 http://jboss.com/products/seam/transaction http://jboss.com/products/seam/transaction-2.2.xsd
                 http://jboss.com/products/seam/mail http://jboss.com/products/seam/mail-2.2.xsd">
 
-    <core:init debug="true"/>
+    <core:init debug="@debug@" />
 
     <!-- 120 second conversation timeout -->
     <core:manager conversation-timeout="120000" conversation-id-parameter="cid"/>
 
     <transaction:entity-transaction entity-manager="#{entityManager}"/>
 
-    <persistence:entity-manager-factory name="extrastorefactory" persistence-unit-name="extrastore_pu"/>
+    <persistence:entity-manager-factory name="extrastorefactory" persistence-unit-name="@puName@"/>
 
     <!-- Strangely, <s:convertEntity /> fails with hard-to-trace NullPointerException, because "entityManger"
     injected variable name is hard-coded into seam persistence lib. So, we'd better use 'entityManager', not 'em'. -->
@@ -39,6 +39,13 @@
 
     <web:rewrite-filter view-mapping="*.seam"/>
 
+    <security:identity authenticate-method="#{authenticator.authenticate}" />
+
+
+
+
+
+    <!-- Factories and other XML-based components -->
 
     <factory name="article" value="#{articleByAliasQuery.singleResult}" scope="STATELESS" auto-create="true"/>
     <framework:entity-query name="articleByAliasQuery"

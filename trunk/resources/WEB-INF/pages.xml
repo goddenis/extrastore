@@ -125,6 +125,14 @@
         <param name="articleAlias" />
     </page>
 
+
+    <page view-id="/login.xhtml">
+        <rewrite pattern="/login" />
+        <rewrite pattern="/login/" />
+    </page>
+
+
+
     <page view-id="/stores.xhtml">
         <rewrite pattern="/stores" />
         <rewrite pattern="/stores/" />

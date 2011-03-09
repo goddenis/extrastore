@@ -12,6 +12,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/resources/seam.properties" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/tomcat-log4j.xml" output-file-name="log4j.xml" />
           <element id="file-copy" path="$PROJECT_DIR$/resources/messages_ru.properties" output-file-name="messages.properties" />
+          <element id="file-copy" path="$PROJECT_DIR$/resources/components.properties" />
         </element>
         <element id="directory" name="dev">
           <element id="module-output" name="hot" />
@@ -19,7 +20,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Seam" />
         </element>
-        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/components-tomcat.xml" output-file-name="components.xml" />
+        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/components.xml" output-file-name="components.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/faces-config.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/web.xml" />
