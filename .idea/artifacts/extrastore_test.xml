@@ -6,9 +6,9 @@
         <element id="file-copy" path="$PROJECT_DIR$/resources/META-INF/persistence-test.xml" output-file-name="persistence.xml" />
       </element>
       <element id="directory" name="WEB-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/components-test.xml" output-file-name="components.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/faces-config.xml" />
         <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/pages.xml" />
+        <element id="file-copy" path="$PROJECT_DIR$/resources/WEB-INF/components.xml" output-file-name="components.xml" />
       </element>
       <element id="module-output" name="extrastore" />
       <element id="module-output" name="hot" />
@@ -16,6 +16,7 @@
       <element id="file-copy" path="$PROJECT_DIR$/resources/seam.properties" />
       <element id="javaee-facet-resources" facet="extrastore/web/Web" />
       <element id="file-copy" path="$PROJECT_DIR$/resources/messages_ru.properties" output-file-name="messages.properties" />
+      <element id="file-copy" path="$PROJECT_DIR$/resources/components-test.properties" output-file-name="components.properties" />
     </root>
   </artifact>
 </component>
