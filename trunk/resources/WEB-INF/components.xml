@@ -39,7 +39,9 @@
 
     <web:rewrite-filter view-mapping="*.seam"/>
 
-    <security:identity authenticate-method="#{authenticator.authenticate}" />
+    <security:jpa-identity-store entity-manager="#{entityManager}"
+            user-class="ru.extrastore.model.User"
+            role-class="ru.extrastore.model.Role" />
 
 
 

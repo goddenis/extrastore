@@ -48,6 +48,10 @@
                         </s:link>
                     </ui:repeat>
 
+                    <s:link view="/login.xhtml" propagation="none" value="#{messages.login}" rendered="#{!identity.loggedIn}" />
+                    <s:link action="#{identity.logout()}" propagation="none" value="#{messages.logout}" rendered="#{identity.loggedIn}" />
+
+
                 </ui:insert>
             </div>
 

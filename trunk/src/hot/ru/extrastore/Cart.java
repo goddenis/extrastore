@@ -92,8 +92,7 @@ public class Cart implements Serializable {
         Iterator<OrderLine> i = order.getLines().iterator();
         while (i.hasNext()) {
             OrderLine l = i.next();
-            if (selection.get(l.getProduct()) == false) {
-                selection.remove(l.getProduct());
+            if (l.getQuantity() == 0) {
                 i.remove();
             }
         }

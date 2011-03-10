@@ -3,13 +3,14 @@ package ru.extrastore;
 import org.jboss.seam.ScopeType;
 import org.jboss.seam.annotations.*;
 import org.jboss.seam.core.Events;
-import org.jboss.seam.faces.FacesMessages;
 import org.jboss.seam.faces.Renderer;
 import org.jboss.seam.log.Log;
-import ru.extrastore.model.Address;
-import ru.extrastore.model.Customer;
+import org.jboss.seam.security.Identity;
+import org.jboss.seam.security.RunAsOperation;
+import org.jboss.seam.security.management.IdentityManager;
 import ru.extrastore.model.Order;
 import ru.extrastore.model.Store;
+import ru.extrastore.model.User;
 
 import javax.persistence.EntityManager;
 import java.io.Serializable;
@@ -23,6 +24,7 @@ import java.io.Serializable;
 @Name("checkout")
 @Scope(ScopeType.CONVERSATION)
 public class CheckoutAction implements Serializable {
+
     @In("entityManager")
     EntityManager em;
 
@@ -36,7 +38,7 @@ public class CheckoutAction implements Serializable {
     Events events;
 
     @In
-    private FacesMessages facesMessages;
+    IdentityManager identityManager;
 
     @In
     Cart cart;
@@ -44,7 +46,11 @@ public class CheckoutAction implements Serializable {
     @In
     Store store;
 
-    @Out(scope = ScopeType.CONVERSATION)
+    @In("user")
+    User customer;
+
+
+    @Out(scope = ScopeType.CONVERSATION, required = false)
     Order currentOrder;
 
     @Create
@@ -57,7 +63,7 @@ public class CheckoutAction implements Serializable {
         log.info("CheckoutAction(#0).destroy()", this.hashCode());
     }
 
-    @Begin(join = true)
+    @Conversational
     public String createOrder() {
         log.info("CheckoutAction(#0).createOrder()", this.hashCode());
 
@@ -65,26 +71,11 @@ public class CheckoutAction implements Serializable {
         currentOrder = cart.getOrder();
         currentOrder.setTotalCost(cart.getTotalCost());
 
-        Customer customer = new Customer();
-        customer.setAddress(new Address());
         currentOrder.setCustomer(customer);
 
         currentOrder.setDeliveryType(store.getDeliveryTypes().iterator().next());
+        currentOrder.setPaymentType(store.getPaymentTypes().iterator().next());
 
-        // For testing purposes only
-        if ("localhost".equals(store.getDomain())) {
-            customer.setLastName("Тестовый");
-            customer.setFirstName("Пользователь");
-            customer.setFatherName("Не надо этот заказ принимать");
-
-            customer.setPhone("9053042007");
-
-            customer.getAddress().setZip(443000);
-            customer.getAddress().setRegion("Несуществующая обл.");
-            customer.getAddress().setArea("Неизвестный р-он");
-            customer.getAddress().setTown("с. Забытое");
-            customer.getAddress().setAddress("ул. Покинутая, д. 23, корп. 9, кв. 19");
-        }
 
         return "success";
     }
@@ -106,13 +97,27 @@ public class CheckoutAction implements Serializable {
     public String confirm() {
         log.info("CheckoutAction(#0).confirm()", this.hashCode());
 
-        if (currentOrder.getCustomer().getAddress().getId() == 0) {
-            em.persist(currentOrder.getCustomer().getAddress());
-        }
-
         if (currentOrder.getCustomer().getId() == 0) {
             em.persist(currentOrder.getCustomer());
+        } else {
+            em.merge(currentOrder.getCustomer());
         }
+
+
+        if (currentOrder.getCustomer().getEmail() != null) {
+
+            new RunAsOperation(true) {
+                public void execute() {
+                    IdentityManager.instance().changePassword(currentOrder.getCustomer().getEmail(), "password");
+                }
+            }.run();
+
+            Identity id = Identity.instance();
+            id.getCredentials().setUsername(currentOrder.getCustomer().getEmail());
+            id.getCredentials().setPassword("password");
+            id.login();
+        }
+
 
         em.persist(currentOrder);
         events.raiseAsynchronousEvent("newOrder", currentOrder, store);    // Makes this slow operation asynchronous
@@ -123,7 +128,7 @@ public class CheckoutAction implements Serializable {
     }
 
     @End
-    public void thanks() {  // Method is just for ending conversation. It's called from pages.xml-><page thanks.xhtml/>
+    public void thanks() {  // Method is just for ending conversation. It's called from pages.xml <page view-id="thanks.xhtml"/>
         log.info("CheckoutAction(#0).thanks()", this.hashCode());
     }
 }

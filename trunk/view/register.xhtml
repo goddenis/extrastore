@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="#{store.templatePath}/template.xhtml">
+    <ui:define name="title">#{messages.registration}</ui:define>
+
+    <ui:define name="menu"></ui:define>
+    <ui:define name="cart"></ui:define>
+    <ui:define name="sidebar"></ui:define>
+
+
+    <ui:define name="body">
+
+        <h:form>
+
+            <h1>#{messages.registration}</h1>
+
+            <h:messages />
+
+            <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+
+            <s:decorate template="/incl/edit.xhtml" id="email">
+                <ui:define name="label">#{messages.email}</ui:define>
+                <h:inputText value="#{register.email}" required="true" size="36" />
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" id="password">
+                <ui:define name="label">#{messages.password}</ui:define>
+                <h:inputSecret value="#{register.password}" required="true" size="36" />
+            </s:decorate>
+
+            <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+            <br style="clear: both;" />
+
+            <h:commandButton action="#{register.register}" value="#{messages.register}" />
+        </h:form>
+
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

@@ -17,7 +17,7 @@ public class Address implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "customerId")
-    Customer customer;
+    User customer;
 
     long zip;
 
@@ -37,11 +37,11 @@ public class Address implements Serializable {
         this.id = id;
     }
 
-    public Customer getCustomer() {
+    public User getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(User customer) {
         this.customer = customer;
     }
 

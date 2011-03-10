@@ -178,3 +178,11 @@ INSERT INTO PaymentType(DTYPE, alias, storeId, name, description, fee, login) VA
 INSERT INTO PaymentType(DTYPE, alias, storeId, name, description, fee) VALUES('CASHONDELIVERY', 'cashondelivery', 1, 'Наложенный платёж', 'Заказ будет выслан немедленно. Оплачиваете на почте, при получении.', 6)
 
 
+
+
+
+/******************** User **********************/
+
+INSERT INTO User(id, email, password, firstName, lastName, phone) VALUES(1, 'ivanov@mail.ru', 'DFvLCvEdeddiEjC3nzxNJw==', 'Иван', 'Иванов', '+123456789101')
+
+INSERT INTO Address(id, customerId, zip, area, region, town, address) VALUES(1, 1, 443000, 'Самарская обл.', '', 'Тольятти', 'ул. Брежнева, д. 3, кв. 11')

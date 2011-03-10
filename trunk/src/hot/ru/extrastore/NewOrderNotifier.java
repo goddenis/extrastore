@@ -32,7 +32,7 @@ public class NewOrderNotifier implements Serializable {
         try {
             renderer.render("/order/email_notification.xhtml");
         } catch (Exception e) {
-            log.error("Error saving new order", e);
+            log.error("Error sending notification email.", e);
         }
     }
 }

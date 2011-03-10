@@ -7,6 +7,7 @@ import ru.extrastore.model.Order;
 import ru.extrastore.model.Store;
 
 import static org.testng.AssertJUnit.*;
+import static org.testng.AssertJUnit.assertEquals;
 
 /**
  * http://extrastore.ru
@@ -77,11 +78,34 @@ public class CheckoutTest extends SeamTest {
 
         }.run();
 
-        id = new FacesRequest("/cart.xhtml", id) {
+        id = new FacesRequest("/order/auth.xhtml", id) {
+        }.run();
+
+
+        id = new FacesRequest("/order/auth.xhtml", id) {
+
+            @Override
+            protected void applyRequestValues() throws Exception {
+                setValue("#{credentials.username}", "bart@nightmail.ru");
+                setValue("#{authenticator.authType}", 1);
+            }
+
+            @Override
+            protected void invokeApplication() throws Exception {
+                assertEquals("success", invokeAction("#{authenticator.authenticate()}"));
+                assertNotNull(getValue("#{user}"));
+                assertTrue(Manager.instance().isLongRunningConversation());
+            }
+        }.run();
+
+
+
+
+        id = new FacesRequest("/order/delivery.xhtml", id) {
+
             @Override
             protected void invokeApplication() {
                 assertEquals("success", invokeAction("#{checkout.createOrder()}"));
-
                 Order currentOrder = (Order)getValue("#{currentOrder}");
                 assertNotNull(currentOrder);
                 assertNotNull(currentOrder.getCustomer());
@@ -102,12 +126,14 @@ public class CheckoutTest extends SeamTest {
                 assertNotNull(currentOrder.getCustomer());
                 assertNotNull(currentOrder.getCustomer().getAddress());
 
-                assertEquals("delivery type", 1, currentOrder.getDeliveryType());
+                Store store = (Store)getValue("#{store}");
+
+                assertEquals("delivery type", store.getDeliveryTypes().iterator().next(), currentOrder.getDeliveryType());
             }
 
             @Override
             protected void afterRequest() {
-               assert isInvokeApplicationComplete();
+//               assert isInvokeApplicationComplete();
             }
         }.run();
 
@@ -115,20 +141,16 @@ public class CheckoutTest extends SeamTest {
 
         id = new FacesRequest("/order/delivery.xhtml", id) {
             @Override
-            protected void renderResponse() {
-                assert Manager.instance().isLongRunningConversation();
-            }
-        }.run();
-
-        id = new FacesRequest("/order/delivery.xhtml", id) {
-            @Override
-            protected void updateModelValues() throws Exception {
+            protected void applyRequestValues() throws Exception {
                 Order currentOrder = (Order)getValue("#{currentOrder}");
                 assertNotNull(currentOrder);
                 assertNotNull(currentOrder.getCustomer());
                 assertNotNull(currentOrder.getCustomer().getAddress());
 
-                assertEquals("delivery type", 1, currentOrder.getDeliveryType());
+
+                Store store = (Store)getValue("#{store}");
+
+                assertEquals("delivery type", store.getDeliveryTypes().iterator().next(), currentOrder.getDeliveryType());
 
                 setValue("#{currentOrder.customer.firstName}", "Пися");
                 setValue("#{currentOrder.customer.firstName}", "Камушкин");
@@ -144,13 +166,26 @@ public class CheckoutTest extends SeamTest {
             @Override
             protected void invokeApplication() {
                 assertEquals("success", invokeAction("#{checkout.submitDelivery()}"));
-            }
-
-            @Override
-            protected void renderResponse() {
                 assert Manager.instance().isLongRunningConversation();
             }
 
+        }.run();
+
+        id = new FacesRequest("/order/pay.xhtml", id) {
+        }.run();
+
+        id = new FacesRequest("/order/pay.xhtml", id) {
+            @Override
+            protected void applyRequestValues() throws Exception {
+                Order currentOrder = (Order)getValue("#{currentOrder}");
+                Store store = (Store)getValue("#{store}");
+                assertEquals(store.getPaymentTypes().iterator().next(), currentOrder.getPaymentType());
+            }
+
+            @Override
+            protected void invokeApplication() throws Exception {
+                assertEquals("success", invokeAction("#{checkout.submitPay()}"));
+            }
         }.run();
 
 
@@ -158,21 +193,25 @@ public class CheckoutTest extends SeamTest {
         id = new FacesRequest("/order/confirm.xhtml", id) {
         }.run();
 
-        new FacesRequest("/order/confirm.xhtml", id) {
+        id = new FacesRequest("/order/confirm.xhtml", id) {
             @Override
             protected void invokeApplication() {
                 assertEquals("success", invokeAction("#{checkout.confirm()}"));
-            }
-
-            @Override
-            protected void renderResponse() {
-                assert !Manager.instance().isLongRunningConversation();
-
-                assertNull(getValue("#{currentOrder}"));
+                assert Manager.instance().isLongRunningConversation();
+                assertNotNull(getValue("#{currentOrder}"));
 
                 Cart cart = (Cart)getValue("#{cart}");
                 assertNotNull(cart);
                 assertTrue(cart.isEmpty());
+            }
+
+        }.run();
+
+
+        new FacesRequest("/order/thanks.xhtml", id) {
+            @Override
+            protected void renderResponse() throws Exception {
+                assertFalse(Manager.instance().isLongRunningConversation());
             }
         }.run();
     }

@@ -2,7 +2,9 @@
 <pages xmlns="http://jboss.com/products/seam/pages"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd"
-       no-conversation-view-id="/browse.xhtml" http-port="80">
+       no-conversation-view-id="/browse.xhtml"
+       login-view-id="/login.xhtml"
+       http-port="80">
 
     <!-- CART -->
 
@@ -10,26 +12,51 @@
         <rewrite pattern="/cart"/>
         <rewrite pattern="/cart/"/>
 
-        <navigation from-action="#{checkout.createOrder()}">
-            <rule if-outcome="success">
-                <!--suppress PagesModelInspection -->
-                <redirect view-id="/order/delivery.xhtml"/>
-            </rule>
+        <navigation from-action="#{checkout.checkout()}">
+            <!--suppress PagesModelInspection -->
+            <redirect view-id="/order/auth.xhtml" />
         </navigation>
+
+
     </page>
 
     <!-- Page for monitoring "Add to cart" clicks -->
     <page view-id="/cart_added.xhtml">
         <rewrite pattern="/cart/added" />
         <rewrite pattern="/cart/added/" />
+
     </page>
 
 
     <!-- CHECKOUT CONVERSATION -->
 
-    <page view-id="/order/delivery.xhtml" conversation-required="true">
+    <page view-id="/order/auth.xhtml">
+        <rewrite pattern="/order/auth" />
+        <rewrite pattern="/order/auth/" />
+
+        <navigation from-action="#{authenticator.forwardToDelivery()}">
+            <rule if-outcome="success">
+                <!--suppress PagesModelInspection -->
+                <redirect view-id="/order/delivery.xhtml" />
+            </rule>
+        </navigation>
+
+
+        <navigation from-action="#{authenticator.authenticate()}">
+            <rule if-outcome="success">
+                <!--suppress PagesModelInspection -->
+                <redirect view-id="/order/delivery.xhtml" />
+            </rule>
+        </navigation>
+
+    </page>
+
+
+    <page view-id="/order/delivery.xhtml" conversation-required="true" no-conversation-view-id="/cart.xhtml">
         <rewrite pattern="/order/delivery"/>
         <rewrite pattern="/order/delivery/"/>
+
+        <action execute="#{checkout.createOrder}" if="#{currentOrder == null}" />
 
         <navigation from-action="#{checkout.submitDelivery()}">
             <rule if-outcome="success">
@@ -39,7 +66,7 @@
         </navigation>
     </page>
 
-    <page view-id="/order/pay.xhtml" conversation-required="true">
+    <page view-id="/order/pay.xhtml" conversation-required="true" no-conversation-view-id="/cart.xhtml">
         <rewrite pattern="/order/pay"/>
         <rewrite pattern="/order/pay/"/>
 
@@ -52,7 +79,7 @@
     </page>
 
 
-    <page view-id="/order/confirm.xhtml" conversation-required="true">
+    <page view-id="/order/confirm.xhtml" conversation-required="true" no-conversation-view-id="/cart.xhtml">
         <rewrite pattern="/order/confirm"/>
         <rewrite pattern="/order/confirm/"/>
 
@@ -64,7 +91,7 @@
         </navigation>
     </page>
 
-    <page view-id="/order/thanks.xhtml" conversation-required="true">
+    <page view-id="/order/thanks.xhtml" conversation-required="true" no-conversation-view-id="/cart.xhtml">
         <rewrite pattern="/order/thanks"/>
         <rewrite pattern="/order/thanks/"/>
 
@@ -86,7 +113,7 @@
         <param name="OutSum" />
         <param name="SignatureValue" />
     </page>
-    
+
     <page view-id="/pay/robokassa/fail.xhtml">
         <rewrite pattern="/pay/robokassa/fail" />
         <rewrite pattern="/pay/robokassa/fail/" />
@@ -95,7 +122,7 @@
         <param name="OutSum" />
         <param name="SignatureValue" />
     </page>
-    
+
 
 
 
@@ -129,6 +156,11 @@
     <page view-id="/login.xhtml">
         <rewrite pattern="/login" />
         <rewrite pattern="/login/" />
+    </page>
+
+    <page view-id="/register.xhtml">
+        <rewrite pattern="/register" />
+        <rewrite pattern="/register/" />
     </page>
 
 

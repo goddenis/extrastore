@@ -23,7 +23,7 @@ public class Order implements Serializable {
 
     @ManyToOne()
     @JoinColumn(name = "customerId")
-    Customer customer;
+    User customer;
 
     @OneToOne
     @JoinColumn(name = "deliveryTypeId")
@@ -55,11 +55,11 @@ public class Order implements Serializable {
         this.lines = lines;
     }
 
-    public Customer getCustomer() {
+    public User getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(User customer) {
         this.customer = customer;
     }
 

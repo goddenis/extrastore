@@ -101,7 +101,7 @@ public class CartTest extends SeamTest {
         assertEquals("total price", POURAGE_QUANTITY * POURAGE_PRICE + BREADLETS_QUANTITY * BREADLETS_PRICE, cart.getSubTotal());
         assertEquals("product count", 2, cart.getProductsCount());
 
-        cart.getSelection().put(p1, false);
+        cart.getOrder().getLines().get(0).setQuantity(0);
         cart.update();
 
         assertEquals("product count", 1, cart.getProductsCount());
