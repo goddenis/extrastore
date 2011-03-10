@@ -15,6 +15,7 @@
             <class name="ru.extrastore.PaymentTypeTest" />
             <class name="ru.extrastore.DeliveryTypeTest" />
             <class name="ru.extrastore.RoboKassaTest" />
+            <class name="ru.extrastore.AuthenticationTest" />
         </classes>
     </test>
 </suite>

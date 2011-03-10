@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:s="http://jboss.com/products/seam/taglib"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich">
+
+<ui:composition template="#{store.templatePath}/template.xhtml">
+    <ui:define name="title">Оформление заказа — авторизация</ui:define>
+
+    <ui:define name="menu"></ui:define>
+    <ui:define name="cart"></ui:define>
+    <ui:define name="sidebar"></ui:define>
+    
+
+    <ui:define name="body">
+
+
+        <div class="orderBreadcrumbs"><span>#{messages.cart}</span>→ <span class="current">#{messages.authorization}</span> → <span>#{messages.delivery}</span> → <span>#{messages.pay}</span> → <span>#{messages.confirmation}</span></div>
+
+        <f:subview id="userLoggedIn" rendered="#{identity.loggedIn}">
+            <p>Вы вошли как #{user.firstName} #{user.lastName}.</p>
+            <s:button view="/cart.xhtml" value="← #{messages.back}" propagation="none" />
+            <s:button action="#{authenticator.forwardToDelivery()}" value="#{messages.allRight} →" propagation="none" />
+
+        </f:subview>
+
+
+        <a4j:form id="authForm" rendered="#{!identity.loggedIn}">
+            <script src="/js/jquery.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                 $(document).ready(function() {
+                     $("input[name*='authType']:first").click();
+                 });
+            </script>
+
+            <h:messages globalOnly="true" />
+
+
+            <s:decorate template="/incl/edit.xhtml" id="email">
+                <ui:define name="label">#{messages.email}</ui:define>
+                <h:inputText id="email-input" value="#{credentials.username}" size="36"
+                             title="Например: ivanov@mail.ru"
+                                disabled="#{authenticator.authType == 3}" styleClass="#{authenticator.authType == 3 ? 'disabled' : ''}">
+                    <a4j:support event="onblur" reRender="email"/>
+                </h:inputText>
+            </s:decorate>
+            <br style="clear: both;" />
+
+
+            <h:panelGrid columns="2">
+
+                <h:selectOneRadio layout="pageDirection" value="#{authenticator.authType}" id="authType">
+                    <a4j:support event="onchange" reRender="email-input, password" />
+                    <f:selectItem itemLabel="Вы новый покупатель" itemValue="1" />
+                    <f:selectItem itemLabel="Вы уже наш клиент, введите пароль" itemValue="2" />
+                    <f:selectItem itemLabel="Вы не хотите вводить свою эл. почту" itemValue="3"  />
+                </h:selectOneRadio>
+
+                <h:inputSecret id="password" value="#{credentials.password}" size="36" immediate="true" disabled="#{authenticator.authType != 2}" styleClass="#{authenticator.authType != 2 ? 'disabled' : ''}"/>
+
+            </h:panelGrid>
+
+
+            <s:decorate template="/incl/edit.xhtml" />  <!-- SPACER -->
+            <br style="clear: both;" />
+
+            <s:button view="/cart.xhtml" value="← #{messages.back}" propagation="none" />
+            <h:commandButton type="submit" action="#{authenticator.authenticate()}" value="#{messages.allRight} →" />
+        </a4j:form>
+
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

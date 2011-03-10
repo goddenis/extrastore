@@ -37,7 +37,7 @@ public class Store implements Serializable {
     @Column(unique = true)
     String domain;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "store", fetch = FetchType.LAZY)
     Set<AliasDomain> aliasDomains;
 
     String templatePath;

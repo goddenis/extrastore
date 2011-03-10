@@ -10,6 +10,7 @@ import org.jboss.seam.annotations.intercept.BypassInterceptors;
 import org.jboss.seam.annotations.web.Filter;
 import org.jboss.seam.contexts.Contexts;
 import org.jboss.seam.servlet.ContextualHttpServletRequest;
+import ru.extrastore.auxiliary.BooleanWrapper;
 import ru.extrastore.model.AliasDomain;
 import ru.extrastore.model.Store;
 
@@ -38,22 +39,6 @@ import static org.jboss.seam.annotations.Install.APPLICATION;
 @BypassInterceptors
 @Filter(within="org.jboss.seam.web.ajax4jsfFilter")
 public class StoreDomainFilter implements javax.servlet.Filter {
-
-    private class BooleanWrapper {  // Enables us to change boolean value from inline class ContextualHttpServletRequest.
-        boolean value;
-
-        private BooleanWrapper(boolean value) {
-            this.value = value;
-        }
-
-        public boolean getValue() {
-            return value;
-        }
-
-        public void setValue(boolean value) {
-            this.value = value;
-        }
-    }
 
     FilterConfig filterConfig;
 

@@ -16,7 +16,7 @@
 
     <ui:define name="body">
 
-        <div class="orderBreadcrumbs"><span class="current">#{messages.cart}</span> → <span>#{messages.delivery}</span> → <span>#{messages.pay}</span> → <span>#{messages.confirmation}</span></div>
+        <div class="orderBreadcrumbs"><span class="current">#{messages.cart}</span> → <span>#{messages.authorization}</span> → <span>#{messages.delivery}</span> → <span>#{messages.pay}</span> → <span>#{messages.confirmation}</span></div>
 
 
 
@@ -104,7 +104,7 @@
 
                 <h:commandButton action="#{cart.reset()}" value="#{messages.resetCart}"/>
 
-                <s:button action="#{checkout.createOrder()}" value="#{messages.checkout} →" /><br /><br />
+                <s:button view="/order/auth.xhml" value="#{messages.checkout} →" propagation="none"/><br /><br />
 
                 <s:link view="/browse.xhtml" value="← #{messages.continueShopping}" propagation="none"><f:param
                         name="cat" value=""/></s:link>
