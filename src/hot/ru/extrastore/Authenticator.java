@@ -89,6 +89,12 @@ public class Authenticator {
                 customer.getAddress().setCustomer(customer);
 
                 if (authType != AUTH_TYPE_NO_EMAIL) {
+                    if (identity.getCredentials().getUsername() == null
+                     || identity.getCredentials().getUsername().length() == 0) {
+                        facesMessages.addToControl("email-input","Введите верный адрес эл. почты.");
+                        return null;
+                    }
+
                     if (!userExists(identity.getCredentials().getUsername())) {
                         customer.setEmail(identity.getCredentials().getUsername());
                     } else {
