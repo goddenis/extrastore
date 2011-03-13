@@ -1,11 +1,9 @@
 #labels Tomcat,Java
+==Prepate repositories==
+
 sudo aptitude update
 
-
 sudo aptitude safe-upgrade
-
-
-
 
 apt-get install python-software-properties
 
@@ -14,18 +12,12 @@ sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
 sudo apt-get update
 
 
-
-
+==Install JDK==
 
 
 sudo apt-get install sun-java6-jdk -y
 
-
-
 sudo update-java-alternatives -s java-6-sun 
-
-
-
 
 sudo vi /etc/environment
 
@@ -43,7 +35,7 @@ JAVA_HOME="/usr/lib/jvm/java-6-sun"
 reboot
 
 
-
+==Install Tomcat==
 
 
 Ставим из репозитория.
@@ -124,37 +116,21 @@ start)
 #
 
 jsvc \
-
 -user $TOMCAT_USER \
-
 -home $JAVA_HOME \
-
 -Dcatalina.home=$CATALINA_HOME \
-
 -Dcatalina.base=$CATALINA_BASE \
-
 -Djava.io.tmpdir=$TMP_DIR \
-
 -Dfile.encoding=UTF-8 \
-
 -Duser.timezone=Europe/Samara \
-
 -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
-
 -Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties \
-
 -wait 10 \
-
 -pidfile $PID_FILE \
-
 -outfile $CATALINA_HOME/logs/catalina.out \
-
 -errfile '&1' \
-
 $CATALINA_OPTS \
-
 -cp $CLASSPATH \
-
 org.apache.catalina.startup.Bootstrap
 
 #
@@ -232,3 +208,6 @@ sudo /etc/init.d/tomcat start
 
 
 sudo update-rc.d tomcat defaults
+
+
+==Install MySQL==
