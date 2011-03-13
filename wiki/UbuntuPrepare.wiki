@@ -24,11 +24,10 @@ sudo vi /etc/environment
 
 >>
 
-
+{{{
 JDK_HOME="/usr/lib/jvm/java-6-sun"
-
-
 JAVA_HOME="/usr/lib/jvm/java-6-sun"
+}}}
 
 
 
@@ -72,21 +71,17 @@ sudo apt-get install jsvc -y
 мш /etc/init.d/tomcat
 
 ------------------------
-
+{{{
 #!/bin/sh
 
 JAVA_HOME=/usr/lib/jvm/java-6-sun
-
 CATALINA_HOME=/opt/apache-tomcat
-
 TOMCAT_USER=tomcat
 
 
 
 TMP_DIR=/var/tmp
-
 PID_FILE=/var/run/apache-tomcat.pid
-
 CATALINA_BASE=/opt/apache-tomcat
 
 
@@ -94,25 +89,18 @@ CATALINA_BASE=/opt/apache-tomcat
 CATALINA_OPTS="-Xmx1024m -Xms512m -XX:MaxPermSize=128m -Djava.awt.headless=true"
 
 CLASSPATH=\
-
 $JAVA_HOME/lib/tools.jar:\
-
 $CATALINA_HOME/bin/commons-daemon.jar:\
-
 $CATALINA_HOME/bin/tomcat-juli.jar:\
-
 $CATALINA_HOME/bin/bootstrap.jar
 
 
 
 case "$1" in
-
 start)
 
 #
-
 # Start Tomcat
-
 #
 
 jsvc \
@@ -134,65 +122,47 @@ $CATALINA_OPTS \
 org.apache.catalina.startup.Bootstrap
 
 #
-
 # To get a verbose JVM
-
 #-verbose \
-
 # To get a debug of jsvc.
-
 #-debug \
 
 exit $?
-
 ;;
-
 
 
 stop)
 
 #
-
 # Stop Tomcat
-
 #
 
 jsvc \
-
 -stop \
-
 -pidfile $PID_FILE \
-
 org.apache.catalina.startup.Bootstrap
 
 exit $?
-
 ;;
 
 restart)
 
 #
-
 # Restart Tomcat
-
 #
 
 $0 stop
-
 sleep 2
-
 $0 start
-
 ;;
 
 *)
 
 echo "Usage tomcat start/stop"
-
 exit 1;;
 
 esac
-
+}}}
 ------------------------------------------------------
 
 
